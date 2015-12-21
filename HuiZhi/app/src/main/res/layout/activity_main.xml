@@ -11,15 +11,22 @@
         android:id="@+id/vp_content"
         android:layout_width="match_parent"
         android:background="#ffffff"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
+        android:layout_height="wrap_content"
+ >
     </android.support.v4.view.ViewPager>
 
 
-    <include layout="@layout/activity_bottom"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"/>
+        android:showDividers="beginning"
+        android:divider="@drawable/divid_line"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+        <include layout="@layout/activity_bottom"
+             />
+    </LinearLayout>
+
 
 
 </RelativeLayout>
