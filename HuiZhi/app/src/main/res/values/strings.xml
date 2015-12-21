@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HuiZhi</string>
+    <string name="app_name">汇知</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
