@@ -33,14 +33,18 @@ import java.util.ArrayList;
  * Created by wyq on 2015/12/21.
  */
 public class HomeFragment extends Fragment {
-
+    View view;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view =inflater.inflate(R.layout.page_01, container, false);
+        view =inflater.inflate(R.layout.page_01, container, false);
+        initHomeTabView();
+        return view;
+    }
+    //曲线显示
+    private void initHomeTabView() {
         ListView lv = (ListView) view.findViewById(R.id.overListView);
         if(lv != null) {
             ArrayList<ChartItem> list = new ArrayList<ChartItem>();
-
             // 30 items
             for (int i = 0; i < 30; i++) {
                 if (i % 3 == 0) {
@@ -55,12 +59,6 @@ public class HomeFragment extends Fragment {
             ChartDataAdapter cda = new ChartDataAdapter(getActivity(), list);
             lv.setAdapter(cda);
         }
-
-        return view;
-    }
-    //曲线显示
-    private void initHomeTabView() {
-
     }
 
 
