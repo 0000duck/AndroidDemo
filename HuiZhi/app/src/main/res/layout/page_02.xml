@@ -6,11 +6,11 @@
     android:layout_height="match_parent">
 
 
-    <com.bigkoo.convenientbanner.ConvenientBanner
-        android:id="@+id/convenientBanner"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:canLoop="true"/>
+    <!--<com.bigkoo.convenientbanner.ConvenientBanner-->
+        <!--android:id="@+id/convenientBanner"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="500dp"-->
+        <!--app:canLoop="true"/>-->
 
     <ListView
         android:id="@+id/listView"

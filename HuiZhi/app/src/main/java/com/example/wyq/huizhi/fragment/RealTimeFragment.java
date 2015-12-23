@@ -54,7 +54,7 @@ public class RealTimeFragment extends Fragment implements AdapterView.OnItemClic
     private ConvenientBanner convenientBanner;//顶部广告栏控件
     private ArrayList<Integer> localImages = new ArrayList<Integer>();
     private List<String> networkImages;
-    private String[] images = {"http://img2.imgtn.bdimg.com/it/u=3093785514,1341050958&fm=21&gp=0.jpg",
+    private String[] images = {
             "http://img2.3lian.com/2014/f2/37/d/40.jpg",
             "http://d.3987.com/sqmy_131219/001.jpg",
             "http://img2.3lian.com/2014/f2/37/d/39.jpg",
@@ -79,33 +79,16 @@ public class RealTimeFragment extends Fragment implements AdapterView.OnItemClic
 
 
     private void initViews() {
-        convenientBanner = (ConvenientBanner) view.findViewById(R.id.convenientBanner);
+        convenientBanner = new ConvenientBanner(this.getContext(),false);
         listView = (ListView) view.findViewById(R.id.listView);
         transformerArrayAdapter = new ArrayAdapter(this.getContext(),R.layout.adapter_transformer,transformerList);
         listView.setAdapter(transformerArrayAdapter);
-        //listView.setOnItemClickListener(this);
+        listView.setOnItemClickListener(this);
     }
 
     private void init(){
         initImageLoader();
         loadTestDatas();
-        //本地图片例子
-//        convenientBanner.setPages(
-//                new CBViewHolderCreator<LocalImageHolderView>() {
-//                    @Override
-//                    public LocalImageHolderView createHolder() {
-//                        return new LocalImageHolderView();
-//                    }
-//                }, localImages)
-//                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
-//                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
-//                        //设置指示器的方向
-//                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
-//                .setOnItemClickListener(this);
-//                //.setOnPageChangeListener(this);//监听翻页事件
-//
-//        convenientBanner.setManualPageable(false);//设置不能手动影响
-
         //网络加载例子
 //        networkImages= Arrays.asList(images);
 //        convenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
@@ -116,11 +99,10 @@ public class RealTimeFragment extends Fragment implements AdapterView.OnItemClic
 //        },networkImages);
 
 
-
 //手动New并且添加到ListView Header的例子
-        ConvenientBanner mConvenientBanner = new ConvenientBanner(this.getContext(),false);
-        mConvenientBanner.setMinimumHeight(500);
-        mConvenientBanner.setPages(
+//        ConvenientBanner mConvenientBanner = new ConvenientBanner(this.getContext(),false);
+        convenientBanner.setMinimumHeight(500);
+        convenientBanner.setPages(
                 new CBViewHolderCreator<LocalImageHolderView>() {
                     @Override
                     public LocalImageHolderView createHolder() {
@@ -132,7 +114,7 @@ public class RealTimeFragment extends Fragment implements AdapterView.OnItemClic
                         //设置指示器的方向
                 .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
                 .setOnItemClickListener(this);
-        listView.addHeaderView(mConvenientBanner);
+        listView.addHeaderView(convenientBanner);
     }
 
     //初始化网络图片缓存库
@@ -155,27 +137,26 @@ public class RealTimeFragment extends Fragment implements AdapterView.OnItemClic
     * */
     private void loadTestDatas() {
         //本地图片集合
-        for (int position = 0; position < 7; position++)
+        for (int position = 4; position >=0; position--)
             localImages.add(getResId("ic_test_" + position, R.drawable.class));
 
 
 //        //各种翻页效果
-//        transformerList.add(DefaultTransformer.class.getSimpleName());
-//        transformerList.add(AccordionTransformer.class.getSimpleName());
-//        transformerList.add(BackgroundToForegroundTransformer.class.getSimpleName());
-//        transformerList.add(CubeInTransformer.class.getSimpleName());
-//        transformerList.add(CubeOutTransformer.class.getSimpleName());
-//        transformerList.add(DepthPageTransformer.class.getSimpleName());
-//        transformerList.add(FlipHorizontalTransformer.class.getSimpleName());
-//        transformerList.add(FlipVerticalTransformer.class.getSimpleName());
-//        transformerList.add(ForegroundToBackgroundTransformer.class.getSimpleName());
-//        transformerList.add(RotateDownTransformer.class.getSimpleName());
-//        transformerList.add(RotateUpTransformer.class.getSimpleName());
-//        transformerList.add(StackTransformer.class.getSimpleName());
-//        transformerList.add(ZoomInTransformer.class.getSimpleName());
-//        transformerList.add(ZoomOutTranformer.class.getSimpleName());
-//
-//        transformerArrayAdapter.notifyDataSetChanged();
+        transformerList.add(DefaultTransformer.class.getSimpleName());
+        transformerList.add(AccordionTransformer.class.getSimpleName());
+        transformerList.add(BackgroundToForegroundTransformer.class.getSimpleName());
+        transformerList.add(CubeInTransformer.class.getSimpleName());
+        transformerList.add(CubeOutTransformer.class.getSimpleName());
+        transformerList.add(DepthPageTransformer.class.getSimpleName());
+        transformerList.add(FlipHorizontalTransformer.class.getSimpleName());
+        transformerList.add(FlipVerticalTransformer.class.getSimpleName());
+        transformerList.add(ForegroundToBackgroundTransformer.class.getSimpleName());
+        transformerList.add(RotateDownTransformer.class.getSimpleName());
+        transformerList.add(RotateUpTransformer.class.getSimpleName());
+        transformerList.add(StackTransformer.class.getSimpleName());
+        transformerList.add(ZoomInTransformer.class.getSimpleName());
+        transformerList.add(ZoomOutTranformer.class.getSimpleName());
+        transformerArrayAdapter.notifyDataSetChanged();
     }
 
     /**
@@ -223,25 +204,25 @@ public class RealTimeFragment extends Fragment implements AdapterView.OnItemClic
 
 
 
-//        String transforemerName = transformerList.get(position);
-//        try {
-//            Class cls = Class.forName("com.ToxicBakery.viewpager.transforms." + transforemerName);
-//            ABaseTransformer transforemer= (ABaseTransformer)cls.newInstance();
-//            convenientBanner.getViewPager().setPageTransformer(true,transforemer);
-//
-//            //部分3D特效需要调整滑动速度
-//            if(transforemerName.equals("StackTransformer")){
-//                convenientBanner.setScrollDuration(1200);
-//            }
-//
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (InstantiationException e) {
-//            e.printStackTrace();
-//        } catch (IllegalAccessException e) {
-//            e.printStackTrace();
-//        }catch (Exception e){
-//            e.printStackTrace();}
+        String transforemerName = transformerList.get(position);
+        try {
+            Class cls = Class.forName("com.ToxicBakery.viewpager.transforms." + transforemerName);
+            ABaseTransformer transforemer= (ABaseTransformer)cls.newInstance();
+            convenientBanner.getViewPager().setPageTransformer(true,transforemer);
+
+            //部分3D特效需要调整滑动速度
+            if(transforemerName.equals("StackTransformer")){
+                convenientBanner.setScrollDuration(1200);
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }catch (Exception e){
+            e.printStackTrace();}
 
     }
 
