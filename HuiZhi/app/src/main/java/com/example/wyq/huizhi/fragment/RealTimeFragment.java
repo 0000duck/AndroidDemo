@@ -8,8 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -75,46 +77,50 @@ public class RealTimeFragment extends Fragment implements AdapterView.OnItemClic
         return view;
     }
 
-
-
-
     private void initViews() {
         convenientBanner = new ConvenientBanner(this.getContext(),false);
         listView = (ListView) view.findViewById(R.id.listView);
         transformerArrayAdapter = new ArrayAdapter(this.getContext(),R.layout.adapter_transformer,transformerList);
         listView.setAdapter(transformerArrayAdapter);
         listView.setOnItemClickListener(this);
+
     }
 
     private void init(){
         initImageLoader();
         loadTestDatas();
         //网络加载例子
-//        networkImages= Arrays.asList(images);
-//        convenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
-//            @Override
-//            public NetworkImageHolderView createHolder() {
-//                return new NetworkImageHolderView();
-//            }
-//        },networkImages);
-
-
-//手动New并且添加到ListView Header的例子
-//        ConvenientBanner mConvenientBanner = new ConvenientBanner(this.getContext(),false);
-        convenientBanner.setMinimumHeight(500);
-        convenientBanner.setPages(
-                new CBViewHolderCreator<LocalImageHolderView>() {
+        networkImages= Arrays.asList(images);
+        convenientBanner.setMinimumHeight(600);
+        convenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
                     @Override
-                    public LocalImageHolderView createHolder() {
-                        return new LocalImageHolderView();
+                public NetworkImageHolderView createHolder() {
+                        return new NetworkImageHolderView();
                     }
-                }, localImages)
+                }, networkImages)
                 //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
                 .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
-                        //设置指示器的方向
-                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
-                .setOnItemClickListener(this);
+                    //设置指示器的方向
+                 .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT);
         listView.addHeaderView(convenientBanner);
+
+        //本地图片加载
+//手动New并且添加到ListView Header的例子
+//        ConvenientBanner mConvenientBanner = new ConvenientBanner(this.getContext(),false);
+//        convenientBanner.setMinimumHeight(600);
+//        convenientBanner.setPages(
+//                new CBViewHolderCreator<LocalImageHolderView>() {
+//                    @Override
+//                    public LocalImageHolderView createHolder() {
+//                        return new LocalImageHolderView();
+//                    }
+//                }, localImages)
+//                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
+//                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
+//                        //设置指示器的方向
+//                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
+//                .setOnItemClickListener(this);
+//        listView.addHeaderView(convenientBanner);
     }
 
     //初始化网络图片缓存库
