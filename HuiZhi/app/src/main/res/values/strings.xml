@@ -17,4 +17,16 @@
     <string name="title_activity_splash">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+
+    <string name="Btn1">转账</string>
+    <string name="Btn2">余额宝</string>
+    <string name="Btn3">手机充值</string>
+    <string name="Btn4">信用卡还款</string>
+    <string name="Btn5">淘宝电影</string>
+    <string name="Btn6">彩票</string>
+    <string name="Btn7">当面付</string>
+    <string name="Btn8">亲密付</string>
+    <string name="Btn9">机票</string>
+
 </resources>

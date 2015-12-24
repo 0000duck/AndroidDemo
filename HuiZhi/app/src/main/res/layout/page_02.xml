@@ -12,11 +12,6 @@
         <!--android:layout_height="500dp"-->
         <!--app:canLoop="true"/>-->
 
-    <ListView
-        android:id="@+id/listViewH"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </ListView>
 
         <ListView
             android:id="@+id/listView"

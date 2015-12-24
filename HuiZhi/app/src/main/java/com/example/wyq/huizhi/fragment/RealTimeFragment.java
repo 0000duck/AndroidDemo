@@ -78,12 +78,11 @@ public class RealTimeFragment extends Fragment implements AdapterView.OnItemClic
     }
 
     private void initViews() {
-        convenientBanner = new ConvenientBanner(this.getContext(),false);
+        convenientBanner = new ConvenientBanner(this.getContext(),true);
         listView = (ListView) view.findViewById(R.id.listView);
         transformerArrayAdapter = new ArrayAdapter(this.getContext(),R.layout.adapter_transformer,transformerList);
         listView.setAdapter(transformerArrayAdapter);
         listView.setOnItemClickListener(this);
-
     }
 
     private void init(){
@@ -92,6 +91,7 @@ public class RealTimeFragment extends Fragment implements AdapterView.OnItemClic
         //网络加载例子
         networkImages= Arrays.asList(images);
         convenientBanner.setMinimumHeight(600);
+
         convenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
                     @Override
                 public NetworkImageHolderView createHolder() {

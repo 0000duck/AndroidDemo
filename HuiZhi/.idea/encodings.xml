@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/app/libs/universal-image-loader-1.9.4.jar" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_default_adimage.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_page_indicator.png" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_page_indicator_focused.png" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_test_0.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_test_1.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_test_2.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_test_3.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_test_4.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/wyq/huizhi/Common/BaseViewHolder.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/wyq/huizhi/gridViewBtn/MyGridAdapter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/wyq/huizhi/gridViewBtn/MyGridView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_aapay.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_aligame.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_appcenter.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_assign.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_citycard.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_close.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_coupon.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_creditcard.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_donate.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_essential.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_exchange.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_facepay.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_financial.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_freewifi.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_fund.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_game.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_inter_transfer.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_lottery.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_movie.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_phonecharge.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_plane.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/app_transfer.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_gv.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/grid_item.xml" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
