@@ -21,21 +21,6 @@ import com.example.wyq.huizhi.R;
  * status bar and navigation/system bar) with user interaction.
  */
 public class SplashActivity extends Activity {
-//        private Handler mMainHandler = new Handler() {
-//          @Override
-//          public void handleMessage(Message msg) {
-//              Intent intent = new Intent(Intent.ACTION_MAIN);
-//              if(HZApplication.isFirst()){
-//                  intent.setClass(getApplication(), GuidePageActivity.class);
-//              }else{
-//                  intent.setClass(getApplication(), MainActivity.class);
-//              }
-//              intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//              startActivity(intent);
-//              finish();
-//          }
-//      };
-
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -65,7 +50,6 @@ public class SplashActivity extends Activity {
 
             }
         }).start();
-        //mMainHandler.sendEmptyMessageDelayed(0, 3000);
     }
 
     @Override
