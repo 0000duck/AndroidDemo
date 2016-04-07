@@ -113,7 +113,7 @@ public class EditTextCanClean extends RelativeLayout {
     }
 
     //获取输入值
-    protected String getText(){
+    public String getText(){
         return et.getText().toString();
     }
 
