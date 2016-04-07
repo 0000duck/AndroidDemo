@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Noactionbar -->
+    <style name="NoActionBar" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@null</item>
+    </style>
+</resources>
