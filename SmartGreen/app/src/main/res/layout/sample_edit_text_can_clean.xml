@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/hb.smartgreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <hb.smartgreen.fragment.EditTextCanClean
+        android:id="@+id/et_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:hint="测试hint是否设置正确"
+        app:text="测试文字颜色和字号大小"
+        app:textColor="#273590"
+        app:maxLength="10"/>
+
+</FrameLayout>
