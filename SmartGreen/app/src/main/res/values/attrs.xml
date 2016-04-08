@@ -17,5 +17,6 @@
         <attr name="textColor" format="reference|color" />
         <attr name="maxLength" format="integer" />
         <attr name="password" format="boolean" />
+        <attr name="bkground" format="reference" />
     </declare-styleable>
 </resources>

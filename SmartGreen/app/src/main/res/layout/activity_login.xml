@@ -29,7 +29,9 @@
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="200dp">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -41,13 +43,15 @@
                     android:layout_height="wrap_content"
                     app:hint="用户名"
                     app:textColor="#273590"
-                    app:maxLength="20"/>
+                    app:maxLength="20"
+                    app:bkground = "@drawable/edt"/>
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
 
                 <hb.smartgreen.fragment.EditTextCanClean
                     android:id="@+id/password"
@@ -56,7 +60,8 @@
                     app:hint="@string/prompt_password"
                     app:textColor="#273590"
                     app:maxLength="20"
-                    app:password="true"/>
+                    app:password="true"
+                    app:bkground = "@drawable/edt"/>
 
             </android.support.design.widget.TextInputLayout>
 

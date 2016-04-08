@@ -103,6 +103,13 @@ public class EditTextCanClean extends RelativeLayout {
                         et.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
                     }
                     break;
+                case R.styleable.EditTextCanClean_bkground:
+                    resourceId = ta.getResourceId(R.styleable.EditTextCanClean_bkground, 0);
+                    //若resourceId>0，说明读到hint设置为reference类型，则找到资源字段进行设置
+                    if(resourceId > 0) {
+                        et.setBackgroundResource(resourceId);
+                    }
+                    break;
 
                 default:
                     break;
