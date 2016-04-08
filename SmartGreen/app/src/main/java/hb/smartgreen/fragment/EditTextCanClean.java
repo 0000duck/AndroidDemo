@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.InputFilter;
+import android.text.InputType;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -80,8 +81,7 @@ public class EditTextCanClean extends RelativeLayout {
                     break;
 
                 case R.styleable.EditTextCanClean_textColor:
-                    resourceId = ta.getResourceId(R.styleable.EditTextCanClean_textColor, 0);
-                    et.setTextColor(resourceId > 0 ? getResources().getColor(resourceId) : ta.getColor(R.styleable.EditTextCanClean_textColor, Color.BLACK));
+                    et.setTextColor(ta.getColor(R.styleable.EditTextCanClean_textColor, Color.BLACK));
                     break;
 
                 case R.styleable.EditTextCanClean_textSize:
@@ -93,6 +93,15 @@ public class EditTextCanClean extends RelativeLayout {
 //                    et.setMaxEms(ta.getInt(R.styleable.EditTextCanClean_maxLength, 0));
                     et.setFilters(new InputFilter[]{new InputFilter.LengthFilter(ta.getInt(R.styleable.EditTextCanClean_maxLength, 0))});
                     Log.e("WangJie", ta.getInt(R.styleable.EditTextCanClean_maxLength, 0) + "个");
+                    break;
+
+                case R.styleable.EditTextCanClean_password:
+                    if(ta.getBoolean(R.styleable.EditTextCanClean_password, false)) {
+                        et.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    }
+                    else{
+                        et.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    }
                     break;
 
                 default:

@@ -19,5 +19,5 @@
         android:layout_centerVertical="true"
         android:paddingLeft="10dp"
         android:layout_toLeftOf="@id/imgClean"
-        android:background="@null" />
+        />
 </RelativeLayout>

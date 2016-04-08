@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     app:hint="用户名"
                     app:textColor="#273590"
-                    app:maxLength="10" />
+                    app:maxLength="20"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -55,7 +55,8 @@
                     android:layout_height="wrap_content"
                     app:hint="@string/prompt_password"
                     app:textColor="#273590"
-                    app:maxLength="10"/>
+                    app:maxLength="20"
+                    app:password="true"/>
 
             </android.support.design.widget.TextInputLayout>
 

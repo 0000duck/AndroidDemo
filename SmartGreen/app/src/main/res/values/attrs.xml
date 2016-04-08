@@ -8,6 +8,7 @@
         <attr name="metaButtonBarStyle" format="reference" />
         <attr name="metaButtonBarButtonStyle" format="reference" />
     </declare-styleable>
+
     <declare-styleable name="EditTextCanClean">    <!-- *记住* declare-styleable的name就是自定义控件的名字 -->
         <attr name="cleanIconDrawable" format="reference" />
         <attr name="hint" format="reference|string" />
@@ -15,5 +16,6 @@
         <attr name="textSize" format="reference|dimension" />
         <attr name="textColor" format="reference|color" />
         <attr name="maxLength" format="integer" />
+        <attr name="password" format="boolean" />
     </declare-styleable>
 </resources>
