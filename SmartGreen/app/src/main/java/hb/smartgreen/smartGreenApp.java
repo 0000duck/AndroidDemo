@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import org.xutils.x;
+
 /**
  * Created by wyq on 2016/4/7.
  */
@@ -13,7 +15,8 @@ public class smartGreenApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        x.Ext.init(this);
+        x.Ext.setDebug(BuildConfig.DEBUG); // 开启debug会影响性能
         initSharedPreferences(getApplicationContext());
     }
 

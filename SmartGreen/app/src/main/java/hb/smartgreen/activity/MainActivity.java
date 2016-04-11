@@ -8,20 +8,34 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.gigamole.library.NavigationTabBar;
+
+import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.ViewInject;
 
 import java.util.ArrayList;
 
 import hb.smartgreen.R;
 
-public class MainActivity extends AppCompatActivity {
+@ContentView(R.layout.activity_main)
+public class MainActivity extends BaseActivity {
+
+    @ViewInject(R.id.vp_horizontal_ntb)
+    private ViewPager viewPager;
+
+    @ViewInject(R.id.ntb_horizontal)
+    private NavigationTabBar navigationTabBar;
+
+    @ViewInject(R.id.bg_ntb_horizontal)
+    private View bgNavigationTabBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        initUI();
     }
     @Override
     protected void onDestroy() {
@@ -32,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initUI() {
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.vp_horizontal_ntb);
         viewPager.setAdapter(new PagerAdapter() {
             @Override
             public int getCount() {
@@ -64,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
 
         final String[] colors = getResources().getStringArray(R.array.default_preview);
 
-        final NavigationTabBar navigationTabBar = (NavigationTabBar) findViewById(R.id.ntb_horizontal);
         final ArrayList<NavigationTabBar.Model> models = new ArrayList<>();
         models.add(new NavigationTabBar.Model(
                 getResources().getDrawable(R.drawable.ic_first), Color.parseColor(colors[0]), "Heart"));
@@ -94,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
         navigationTabBar.post(new Runnable() {
             @Override
             public void run() {
-                final View bgNavigationTabBar = findViewById(R.id.bg_ntb_horizontal);
                 bgNavigationTabBar.getLayoutParams().height = (int) navigationTabBar.getBarHeight();
                 bgNavigationTabBar.requestLayout();
             }
@@ -107,19 +118,19 @@ public class MainActivity extends AppCompatActivity {
                     final NavigationTabBar.Model model = navigationTabBar.getModels().get(i);
                     switch (i) {
                         case 0:
-                            model.setBadgeTitle("NTB");
+                            model.setBadgeTitle("2");
                             break;
                         case 1:
-                            model.setBadgeTitle("with");
+                            model.setBadgeTitle("2");
                             break;
                         case 2:
-                            model.setBadgeTitle("title");
+                            model.setBadgeTitle("2");
                             break;
                         case 3:
-                            model.setBadgeTitle("badge");
+                            model.setBadgeTitle("2");
                             break;
                         case 4:
-                            model.setBadgeTitle("777");
+                            model.setBadgeTitle("2");
                             break;
                     }
                     navigationTabBar.postDelayed(new Runnable() {
@@ -132,4 +143,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 500);
     }
+
+
 }

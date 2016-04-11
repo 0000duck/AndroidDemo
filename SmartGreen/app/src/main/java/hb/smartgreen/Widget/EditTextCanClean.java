@@ -1,4 +1,4 @@
-package hb.smartgreen.fragment;
+package hb.smartgreen.Widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
