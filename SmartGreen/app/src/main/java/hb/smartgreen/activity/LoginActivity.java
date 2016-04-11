@@ -26,6 +26,7 @@ import java.util.List;
 
 import hb.smartgreen.R;
 import hb.smartgreen.Widget.EditTextCanClean;
+import hb.smartgreen.fragment.DbService;
 
 /**
  * A login screen that offers login via email/password.
@@ -184,12 +185,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      */
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
-        private final String mEmail;
+        private final String mName;
         private final String mPassword;
+        private boolean validation;
 
-        UserLoginTask(String email, String password) {
-            mEmail = email;
+        UserLoginTask(String name, String password) {
+            mName = name;
             mPassword = password;
+            validation = false;
         }
 
         @Override
@@ -205,7 +208,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
 
             //判断账号密码对不对。
-
+            DbService db = new DbService();
+            validation= db.ValidateUser(mName,mPassword);
 
             // TODO: register the new account here.
             return true;
@@ -215,7 +219,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         protected void onPostExecute(final Boolean success) {
             mAuthTask = null;
             showProgress(false);
-            mActivity.startActivity(new Intent(mActivity, MainActivity.class));
+            if(validation) {
+                mActivity.startActivity(new Intent(mActivity, MainActivity.class));
+            }
             }
 
         @Override
