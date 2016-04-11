@@ -2,29 +2,22 @@ package hb.smartgreen.Widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
-import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-
 import hb.smartgreen.R;
 
-/**
- * TODO: document your custom view class.
- */
+
 public class EditTextCanClean extends RelativeLayout {
     private EditText et;
     private ImageView img;
@@ -59,22 +52,16 @@ public class EditTextCanClean extends RelativeLayout {
         for (int i = 0; i < n; i++) {
             int attr = ta.getIndex(i);
             switch (attr) {
-
-                //若读到hint属性设置，否则走不到该case
                 case R.styleable.EditTextCanClean_hint:
                     resourceId = ta.getResourceId(R.styleable.EditTextCanClean_hint, 0);
-                    //若resourceId>0，说明读到hint设置为reference类型，则找到资源字段进行设置
-                    //否则，说明读到为hint设置了String字段，获取从读到的字段中取出对应String设置给et
                     et.setHint(resourceId > 0 ? getResources().getText(resourceId) : ta.getString(R.styleable.EditTextCanClean_hint));
                     break;
 
-                //若读到text属性设置，否则走不到该case
                 case R.styleable.EditTextCanClean_text:
                     resourceId = ta.getResourceId(R.styleable.EditTextCanClean_text, 0);
                     et.setText(resourceId > 0 ? getResources().getText(resourceId) : ta.getString(R.styleable.EditTextCanClean_text));
                     break;
 
-                //若没有设置cleanIconDrawable属性，则走不到该case，cleanIconDrawable显示ImageView中默认的图标
                 case R.styleable.EditTextCanClean_cleanIconDrawable:
                     resourceId = ta.getResourceId(R.styleable.EditTextCanClean_cleanIconDrawable, 0);
                     img.setImageResource(resourceId > 0 ? resourceId : R.drawable.icon_clean);
@@ -90,9 +77,7 @@ public class EditTextCanClean extends RelativeLayout {
                     break;
 
                 case R.styleable.EditTextCanClean_maxLength:
-//                    et.setMaxEms(ta.getInt(R.styleable.EditTextCanClean_maxLength, 0));
                     et.setFilters(new InputFilter[]{new InputFilter.LengthFilter(ta.getInt(R.styleable.EditTextCanClean_maxLength, 0))});
-                    Log.e("WangJie", ta.getInt(R.styleable.EditTextCanClean_maxLength, 0) + "个");
                     break;
 
                 case R.styleable.EditTextCanClean_password:
@@ -105,7 +90,6 @@ public class EditTextCanClean extends RelativeLayout {
                     break;
                 case R.styleable.EditTextCanClean_bkground:
                     resourceId = ta.getResourceId(R.styleable.EditTextCanClean_bkground, 0);
-                    //若resourceId>0，说明读到hint设置为reference类型，则找到资源字段进行设置
                     if(resourceId > 0) {
                         et.setBackgroundResource(resourceId);
                     }
@@ -153,10 +137,7 @@ public class EditTextCanClean extends RelativeLayout {
         public void afterTextChanged(Editable s) {}
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            //在输入框没有输入时不显示清除图标，有输入后显示
             if (TextUtils.isEmpty(s)){
-                //为什么不用View.GONE呢？——GONE会使被隐藏的控件不再占用它原本的位置
-                // 为了放置在隐藏和显示变化过程中由于位置有无导致自定义控件外观产生抖动或是变化，所以用了View.INVISIBLE
                 img.setVisibility(View.INVISIBLE);
             }else {
                 img.setVisibility(View.VISIBLE);
