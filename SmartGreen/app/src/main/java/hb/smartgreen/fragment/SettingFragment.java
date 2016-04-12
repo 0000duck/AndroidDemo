@@ -8,6 +8,7 @@ import org.xutils.view.annotation.ContentView;
 
 import hb.smartgreen.R;
 import hb.smartgreen.db.sgUser;
+import hb.smartgreen.util.DbService;
 
 @ContentView(R.layout.fragment_setting)
 public class SettingFragment extends BaseFragment {

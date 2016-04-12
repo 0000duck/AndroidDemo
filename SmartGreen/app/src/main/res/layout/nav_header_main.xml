@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="bottom"
+    android:background="@color/lightskyblue"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <!--<com.bigkoo.convenientbanner.ConvenientBanner-->
+    <!--android:id="@+id/convenientBanner"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="600dp"-->
+    <!--app:canLoop="true"/>-->
+
+    <ListView
+        android:id="@+id/cBannerList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+</RelativeLayout>

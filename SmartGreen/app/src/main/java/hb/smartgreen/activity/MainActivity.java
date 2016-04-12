@@ -12,6 +12,7 @@ import org.xutils.view.annotation.ViewInject;
 import java.util.ArrayList;
 import java.util.List;
 import hb.smartgreen.R;
+import hb.smartgreen.fragment.MainFragment;
 import hb.smartgreen.fragment.SettingFragment;
 
 @ContentView(R.layout.activity_main)
@@ -45,7 +46,7 @@ public class MainActivity extends BaseActivity {
 
     private  void initUIData() {
         fragments = new ArrayList<Fragment>() ;
-        fragments.add(new SettingFragment());
+        fragments.add(new MainFragment());
         fragments.add(new SettingFragment());
         fragments.add(new SettingFragment());
         fragments.add(new SettingFragment());
@@ -54,7 +55,7 @@ public class MainActivity extends BaseActivity {
         models = new ArrayList<>();
         final String[] colors = getResources().getStringArray(R.array.default_preview);
         models.add(new NavigationTabBar.Model(
-                getResources().getDrawable(R.drawable.ic_first), Color.parseColor(colors[0]), "Heart"));
+                getResources().getDrawable(R.drawable.ic_sixth), Color.parseColor(colors[0]), "Heart"));
         models.add(new NavigationTabBar.Model(
                 getResources().getDrawable(R.drawable.ic_second), Color.parseColor(colors[1]), "Cup"));
         models.add(new NavigationTabBar.Model(
@@ -79,7 +80,7 @@ public class MainActivity extends BaseActivity {
 
         });
         navigationTabBar.setModels(models);
-        navigationTabBar.setViewPager(viewPager, 1);
+        navigationTabBar.setViewPager(viewPager, 0);
 
         navigationTabBar.setOnTabBarSelectedIndexListener(new NavigationTabBar.OnTabBarSelectedIndexListener() {
             @Override

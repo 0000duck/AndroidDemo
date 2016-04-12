@@ -1,4 +1,4 @@
-package hb.smartgreen.fragment;
+package hb.smartgreen.util;
 
 import android.util.Log;
 
