@@ -108,7 +108,7 @@ public class EditTextCanClean extends RelativeLayout {
     }
 
     //设置编辑框显示文字的方法，以便通过Java代码进行设置
-    protected void setText(String string) {
+    public void setText(String string) {
         et.setText(string);
     }
 

@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content">
 
                 <hb.smartgreen.Widget.EditTextCanClean
-                    android:id="@+id/email"
+                    android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:hint="用户名"
@@ -65,6 +65,26 @@
                     app:bkground = "@drawable/edt"/>
 
             </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="记住密码"
+                    android:id="@+id/cbRemember"
+                    android:layout_marginTop="10dp"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="自动登录"
+                    android:id="@+id/cbAutologin"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/email_sign_in_button"

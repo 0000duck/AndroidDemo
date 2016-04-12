@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
 
@@ -17,9 +18,12 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,30 +35,68 @@ import hb.smartgreen.fragment.DbService;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+public class LoginActivity extends AppCompatActivity {
 
-    private Activity mActivity;
-    /**
-     * Keep track of the login task to ensure we can cancel it if requested.
-     */
-    private UserLoginTask mAuthTask = null;
-
-    // UI references.
-    //private AutoCompleteTextView mEmailView;
     private EditTextCanClean mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
 
-    private EditTextCanClean etCanClean;
+    private EditTextCanClean etName;
+    private CheckBox cbRemember;
+    private CheckBox cbAutoLogin;
 
+    private SharedPreferences sp;
+    private SharedPreferences.Editor ed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
-        etCanClean = (EditTextCanClean) findViewById(R.id.email);
+        etName = (EditTextCanClean) findViewById(R.id.name);
         mPasswordView = (EditTextCanClean) findViewById(R.id.password);
+        cbRemember = (CheckBox)findViewById(R.id.cbRemember);
+        cbAutoLogin = (CheckBox)findViewById(R.id.cbAutologin);
+        AutoLogin();
 
+        mLoginFormView = findViewById(R.id.login_form);
+        mProgressView = findViewById(R.id.login_progress);
+    }
+
+    private void AutoLogin() {
+        sp = getSharedPreferences("users", MODE_PRIVATE);
+        ed = sp.edit();
+        if (sp.getBoolean("IS_REME_CHECK", false)) {
+            cbRemember.setChecked(true);
+        }
+
+        if (sp.getBoolean("AUTO_ISCHECK", false)) {
+            cbAutoLogin.setChecked(true);
+            cbRemember.setChecked(true);
+        }
+        if(cbRemember.isChecked()) {
+            etName.setText(sp.getString("oa_name", ""));
+            mPasswordView.setText(sp.getString("oa_pass", ""));
+        }
+        cbRemember.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Boolean isChecked1 = cbRemember.isChecked();
+                ed.putBoolean("IS_REME_CHECK", isChecked1);
+                ed.commit();
+            }
+        });
+        cbAutoLogin.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Boolean isChecked2 = cbAutoLogin.isChecked();
+                ed.putBoolean("AUTO_ISCHECK", isChecked2);
+                ed.commit();
+            }
+        });
+
+        if (cbRemember.isChecked() && cbAutoLogin.isChecked()) {
+            attemptLogin();
+        }
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
@@ -63,172 +105,35 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 attemptLogin();
             }
         });
-
-        mLoginFormView = findViewById(R.id.login_form);
-        mProgressView = findViewById(R.id.login_progress);
-        mActivity = this;
     }
 
-    /**
-     * Attempts to sign in or register the account specified by the login form.
-     * If there are form errors (invalid email, missing fields, etc.), the
-     * errors are presented and no actual login attempt is made.
-     */
     private void attemptLogin() {
-        if (mAuthTask != null) {
+        // Store values at the time of the login attempt.
+        String name = etName.getText().toString();
+        String password = mPasswordView.getText().toString();
+
+        // 将信息存入到users里面
+        ed.putString("oa_name", name);
+        ed.putString("oa_pass", password);
+        ed.commit();
+        if (TextUtils.isEmpty(name)) {
+            Toast.makeText(this, "请输入用户名", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "请输入密码", Toast.LENGTH_LONG).show();
             return;
         }
 
-        // Store values at the time of the login attempt.
-        String email = etCanClean.getText().toString();
-        String password = mPasswordView.getText().toString();
-
-        boolean cancel = false;
-        View focusView = null;
-
-        if (cancel) {
-            // There was an error; don't attempt login and focus the first
-            // form field with an error.
-            focusView.requestFocus();
-        } else {
-            // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
-            showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
-        }
+        //判断账号密码对不对。
+        DbService db = new DbService();
+        Boolean validation= db.ValidateUser(name,password);
+        final Intent intent = new Intent(this,MainActivity.class);
+        ;intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        this.startActivity(intent);
+        finish();
     }
 
-
-    /**
-     * Shows the progress UI and hides the login form.
-     */
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
-    private void showProgress(final boolean show) {
-        // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
-        // for very easy animations. If available, use these APIs to fade-in
-        // the progress spinner.
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
-            int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
-
-            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
-            mLoginFormView.animate().setDuration(shortAnimTime).alpha(
-                    show ? 0 : 1).setListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
-                }
-            });
-
-            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-            mProgressView.animate().setDuration(shortAnimTime).alpha(
-                    show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-                }
-            });
-        } else {
-            // The ViewPropertyAnimator APIs are not available, so simply show
-            // and hide the relevant UI components.
-            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
-        }
-    }
-
-    @Override
-    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
-        return new CursorLoader(this,
-                // Retrieve data rows for the device user's 'profile' contact.
-                Uri.withAppendedPath(ContactsContract.Profile.CONTENT_URI,
-                        ContactsContract.Contacts.Data.CONTENT_DIRECTORY), ProfileQuery.PROJECTION,
-
-                // Select only email addresses.
-                ContactsContract.Contacts.Data.MIMETYPE +
-                        " = ?", new String[]{ContactsContract.CommonDataKinds.Email
-                .CONTENT_ITEM_TYPE},
-
-                // Show primary email addresses first. Note that there won't be
-                // a primary email address if the user hasn't specified one.
-                ContactsContract.Contacts.Data.IS_PRIMARY + " DESC");
-    }
-
-    @Override
-    public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
-        List<String> emails = new ArrayList<>();
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            emails.add(cursor.getString(ProfileQuery.ADDRESS));
-            cursor.moveToNext();
-        }
-
-    }
-
-    @Override
-    public void onLoaderReset(Loader<Cursor> cursorLoader) {
-
-    }
-
-    private interface ProfileQuery {
-        String[] PROJECTION = {
-                ContactsContract.CommonDataKinds.Email.ADDRESS,
-                ContactsContract.CommonDataKinds.Email.IS_PRIMARY,
-        };
-
-        int ADDRESS = 0;
-        int IS_PRIMARY = 1;
-    }
-
-    /**
-     * Represents an asynchronous login/registration task used to authenticate
-     * the user.
-     */
-    public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
-
-        private final String mName;
-        private final String mPassword;
-        private boolean validation;
-
-        UserLoginTask(String name, String password) {
-            mName = name;
-            mPassword = password;
-            validation = false;
-        }
-
-        @Override
-        protected Boolean doInBackground(Void... params) {
-            // TODO: attempt authentication against a network service.
-
-            //做一些初始化动作
-            try {
-                // Simulate network access.
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                return false;
-            }
-
-            //判断账号密码对不对。
-            DbService db = new DbService();
-            validation= db.ValidateUser(mName,mPassword);
-
-            // TODO: register the new account here.
-            return true;
-        }
-
-        @Override
-        protected void onPostExecute(final Boolean success) {
-            mAuthTask = null;
-            showProgress(false);
-            if(validation) {
-                mActivity.startActivity(new Intent(mActivity, MainActivity.class));
-            }
-            }
-
-        @Override
-        protected void onCancelled() {
-            mAuthTask = null;
-            showProgress(false);
-        }
-    }
 }
 
