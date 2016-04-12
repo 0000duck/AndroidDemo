@@ -55,15 +55,15 @@ public class MainActivity extends BaseActivity {
         models = new ArrayList<>();
         final String[] colors = getResources().getStringArray(R.array.default_preview);
         models.add(new NavigationTabBar.Model(
-                getResources().getDrawable(R.drawable.ic_sixth), Color.parseColor(colors[0]), "Heart"));
+                getResources().getDrawable(R.drawable.ic_sixth), Color.parseColor(colors[0]), "首页"));
         models.add(new NavigationTabBar.Model(
-                getResources().getDrawable(R.drawable.ic_second), Color.parseColor(colors[1]), "Cup"));
+                getResources().getDrawable(R.drawable.ic_second), Color.parseColor(colors[1]), "动态"));
         models.add(new NavigationTabBar.Model(
-                getResources().getDrawable(R.drawable.ic_third), Color.parseColor(colors[2]), "Diploma"));
+                getResources().getDrawable(R.drawable.ic_third), Color.parseColor(colors[2]), "统计"));
         models.add(new NavigationTabBar.Model(
-                getResources().getDrawable(R.drawable.ic_fourth), Color.parseColor(colors[3]), "Flag"));
+                getResources().getDrawable(R.drawable.ic_fourth), Color.parseColor(colors[3]), "发现"));
         models.add(new NavigationTabBar.Model(
-                getResources().getDrawable(R.drawable.ic_fifth), Color.parseColor(colors[4]), "Medal"));
+                getResources().getDrawable(R.drawable.ic_fifth), Color.parseColor(colors[4]), "我"));
     }
     private void initUI() {
         initUIData();

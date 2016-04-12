@@ -3,6 +3,8 @@ package hb.smartgreen.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,8 +34,6 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
-import org.xutils.common.util.DensityUtil;
-import org.xutils.image.ImageOptions;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
@@ -48,6 +48,10 @@ import hb.smartgreen.util.NetworkImageHolderView;
 public class MainFragment extends BaseFragment {
     @ViewInject(R.id.cBannerList)
     private ListView mBannerList;
+
+    @ViewInject(R.id.vp_tablist_frament)
+    private ViewPager viewPager;
+
     private ConvenientBanner convenientBanner;//顶部广告栏控件
     private List<String> networkImages;
     private String[] images = {
@@ -68,6 +72,20 @@ public class MainFragment extends BaseFragment {
         convenientBanner = new ConvenientBanner(this.getContext(),true);
         transformerArrayAdapter = new ArrayAdapter(this.getContext(),R.layout.adapter_transformer,transformerList);
         mBannerList.setAdapter(transformerArrayAdapter);
+
+        viewPager.setAdapter(new FragmentPagerAdapter(this.getActivity().getSupportFragmentManager()) {
+            @Override
+            public int getCount() {
+                return 1;
+            }
+
+            @Override
+            public android.support.v4.app.Fragment getItem(int item) {
+                return new TabListFragment();
+            }
+
+        });
+
         initBanner();
     }
 

@@ -72,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         cbAutoLogin.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                cbRemember.setChecked(true);
                 Boolean isChecked2 = cbAutoLogin.isChecked();
                 ed.putBoolean("AUTO_ISCHECK", isChecked2);
                 ed.commit();
