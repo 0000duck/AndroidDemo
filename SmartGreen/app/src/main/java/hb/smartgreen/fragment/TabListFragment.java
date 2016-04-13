@@ -42,7 +42,6 @@ public class TabListFragment extends BaseFragment implements View.OnClickListene
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         init();
-
     }
 
     private void init() {
@@ -64,7 +63,7 @@ public class TabListFragment extends BaseFragment implements View.OnClickListene
         fragment = new Tab3Fragment();
         fragmentsList.add(fragment);
 
-        viewPager.setAdapter(new FragmentPagerAdapter(this.getActivity().getSupportFragmentManager()) {
+        viewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public int getCount() {
                 return fragmentsList.size();

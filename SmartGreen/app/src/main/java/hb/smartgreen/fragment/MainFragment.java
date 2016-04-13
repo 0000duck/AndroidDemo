@@ -52,6 +52,7 @@ public class MainFragment extends BaseFragment {
     @ViewInject(R.id.vp_tablist_frament)
     private ViewPager viewPager;
 
+    private TabListFragment tabListFragment;
     private ConvenientBanner convenientBanner;//顶部广告栏控件
     private List<String> networkImages;
     private String[] images = {
@@ -63,6 +64,11 @@ public class MainFragment extends BaseFragment {
             "http://f.hiphotos.baidu.com/image/pic/item/09fa513d269759ee50f1971ab6fb43166c22dfba.jpg"
     };
 
+    public MainFragment()
+    {
+        tabListFragment = new TabListFragment();
+    }
+
     private ArrayAdapter transformerArrayAdapter;
     private ArrayList<String> transformerList = new ArrayList<String>();
 
@@ -73,7 +79,8 @@ public class MainFragment extends BaseFragment {
         transformerArrayAdapter = new ArrayAdapter(this.getContext(),R.layout.adapter_transformer,transformerList);
         mBannerList.setAdapter(transformerArrayAdapter);
 
-        viewPager.setAdapter(new FragmentPagerAdapter(this.getActivity().getSupportFragmentManager()) {
+
+        viewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public int getCount() {
                 return 1;
@@ -81,11 +88,9 @@ public class MainFragment extends BaseFragment {
 
             @Override
             public android.support.v4.app.Fragment getItem(int item) {
-                return new TabListFragment();
+                return tabListFragment;
             }
-
         });
-
         initBanner();
     }
 

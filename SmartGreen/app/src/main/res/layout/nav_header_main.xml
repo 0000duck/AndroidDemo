@@ -4,7 +4,7 @@
     android:layout_height="160dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="bottom"
-    android:background="@color/lightskyblue"
+    android:background="#9f90af"
     android:orientation="vertical"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
