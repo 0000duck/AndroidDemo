@@ -5,27 +5,17 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.bigkoo.convenientbanner.ConvenientBanner;
-
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
-
 import java.util.ArrayList;
 
 import hb.smartgreen.R;
+import hb.smartgreen.Widget.NoScrollViewPager;
 
 @ContentView(R.layout.fragment_tab_list)
-public class TabListFragment extends BaseFragment implements View.OnClickListener {
+public class TabListFragment extends BaseFragment implements View.OnClickListener{
     @ViewInject(R.id.tab1_tv)
     private TextView tab1Tv;
     @ViewInject(R.id.tab2_tv)
@@ -34,7 +24,7 @@ public class TabListFragment extends BaseFragment implements View.OnClickListene
     private TextView tab3Tv;
 
     @ViewInject(R.id.third_vp)
-    private ViewPager viewPager;
+    private NoScrollViewPager viewPager;
     // fragment对象集合
     private ArrayList<Fragment> fragmentsList;
 
@@ -103,7 +93,5 @@ public class TabListFragment extends BaseFragment implements View.OnClickListene
                 break;
         }
     }
-
-
 
 }

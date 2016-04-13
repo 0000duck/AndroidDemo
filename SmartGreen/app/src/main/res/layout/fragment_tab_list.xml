@@ -85,7 +85,7 @@
                 android:textColor="#707070" />
         </LinearLayout>
 
-        <android.support.v4.view.ViewPager
+        <hb.smartgreen.Widget.NoScrollViewPager
             android:id="@+id/third_vp"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

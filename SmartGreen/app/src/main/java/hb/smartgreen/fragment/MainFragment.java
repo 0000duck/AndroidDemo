@@ -119,7 +119,9 @@ public class MainFragment extends BaseFragment {
             }
         }, networkImages)
                 .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
+                .setPointViewVisible(true)
                 .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT);
+
         mBannerList.addHeaderView(convenientBanner);
     }
 
