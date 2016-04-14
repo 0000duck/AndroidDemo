@@ -56,12 +56,12 @@ public class MainFragment extends BaseFragment {
     private ConvenientBanner convenientBanner;//顶部广告栏控件
     private List<String> networkImages;
     private String[] images = {
-            "http://img2.3lian.com/2014/f2/37/d/40.jpg",
-            "http://d.3987.com/sqmy_131219/001.jpg",
-            "http://img2.3lian.com/2014/f2/37/d/39.jpg",
-            "http://www.8kmm.com/UploadFiles/2012/8/201208140920132659.jpg",
-            "http://f.hiphotos.baidu.com/image/h%3D200/sign=1478eb74d5a20cf45990f9df460b4b0c/d058ccbf6c81800a5422e5fdb43533fa838b4779.jpg",
-            "http://f.hiphotos.baidu.com/image/pic/item/09fa513d269759ee50f1971ab6fb43166c22dfba.jpg"
+            "https://img3.doubanio.com/view/photo/photo/public/p2323129960.jpg",
+            "https://img1.doubanio.com/view/photo/photo/public/p2323129717.jpg",
+            "http://img5.imgtn.bdimg.com/it/u=1647875596,2342657881&fm=206&gp=0.jpg",
+            "http://pic5.nipic.com/20091223/3821057_091221087136_2.jpg",
+            "http://pic1.nipic.com/2008-11-07/200811792932383_2.jpg",
+            "https://img1.doubanio.com/view/photo/photo/public/p2311539539.jpg"
     };
 
     public MainFragment()
