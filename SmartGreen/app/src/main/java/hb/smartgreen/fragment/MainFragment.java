@@ -111,7 +111,7 @@ public class MainFragment extends BaseFragment {
     private void initBanner() {
         initImageLoader();
         networkImages = Arrays.asList(images);
-        convenientBanner.setMinimumHeight(600);
+        convenientBanner.setMinimumHeight(500);
         convenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
             @Override
             public NetworkImageHolderView createHolder() {

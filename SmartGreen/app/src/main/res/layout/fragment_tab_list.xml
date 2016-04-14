@@ -85,7 +85,7 @@
                 android:textColor="#707070" />
         </LinearLayout>
 
-        <hb.smartgreen.Widget.NoScrollViewPager
+        <hb.smartgreen.Widget.TabListViewPager
             android:id="@+id/third_vp"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
