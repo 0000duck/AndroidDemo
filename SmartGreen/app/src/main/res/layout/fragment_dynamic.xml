@@ -14,6 +14,12 @@
         android:id = "@+id/newsBtn"
         android:layout_marginTop="30dp"
         android:background="@color/rippelColor">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:src= "@drawable/i5"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,7 +27,7 @@
             android:layout_gravity="center"
             android:textColor="@color/contents_text"
             android:textSize="20dp"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="20dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -30,6 +36,12 @@
         android:id = "@+id/waterBtn"
         android:layout_marginTop="30dp"
         android:background="@color/rippelColor">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:src= "@drawable/i6"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,7 +49,7 @@
             android:layout_gravity="center"
             android:textColor="@color/contents_text"
             android:textSize="20dp"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="20dp"/>
     </LinearLayout>
     <View
         android:layout_width="fill_parent"
@@ -49,6 +61,12 @@
         android:layout_height="60dp"
         android:id = "@+id/airBtn"
         android:background="@color/rippelColor">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:src= "@drawable/i7"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,7 +74,7 @@
             android:layout_gravity="center"
             android:textColor="@color/contents_text"
             android:textSize="20dp"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="20dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -65,6 +83,12 @@
         android:id = "@+id/ooBtn"
         android:layout_marginTop="30dp"
         android:background="@color/rippelColor">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:src= "@drawable/i8"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,7 +96,7 @@
             android:layout_gravity="center"
             android:textColor="@color/contents_text"
             android:textSize="20dp"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="20dp"/>
     </LinearLayout>
 
 
