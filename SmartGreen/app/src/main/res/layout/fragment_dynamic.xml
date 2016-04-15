@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:id = "@+id/newsBtn"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@color/rippelColor">
         <ImageView
             android:layout_width="20dp"
@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:id = "@+id/waterBtn"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@color/rippelColor">
         <ImageView
             android:layout_width="20dp"
@@ -81,7 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:id = "@+id/ooBtn"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@color/rippelColor">
         <ImageView
             android:layout_width="20dp"
