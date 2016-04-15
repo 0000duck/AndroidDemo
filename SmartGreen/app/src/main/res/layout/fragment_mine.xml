@@ -1,0 +1,76 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background = "@color/search_item_bg"
+    tools:context="hb.smartgreen.fragment.MineFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id = "@+id/settingBtn"
+        android:layout_marginTop="30dp"
+        android:background="@color/rippelColor">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通讯设置"
+            android:layout_gravity="center"
+            android:textColor="@color/contents_text"
+            android:textSize="20dp"
+            android:layout_marginLeft="30dp"/>
+    </LinearLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="#ffdddddd" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id = "@+id/alarmBtn"
+        android:background="@color/rippelColor">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="报警设置"
+            android:layout_gravity="center"
+            android:textColor="@color/contents_text"
+            android:textSize="20dp"
+            android:layout_marginLeft="30dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:id = "@+id/accountBtn"
+        android:background="@color/rippelColor">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="账户信息"
+            android:layout_gravity="center"
+            android:textColor="@color/contents_text"
+            android:textSize="20dp"
+            android:layout_marginLeft="30dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id = "@+id/safeBtn"
+        android:layout_marginTop="30dp"
+        android:background="@color/rippelColor">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="安全"
+            android:layout_gravity="center"
+            android:textColor="@color/contents_text"
+            android:textSize="20dp"
+            android:layout_marginLeft="30dp"/>
+    </LinearLayout>
+
+</LinearLayout>

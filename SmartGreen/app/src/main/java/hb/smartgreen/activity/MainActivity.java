@@ -12,8 +12,10 @@ import org.xutils.view.annotation.ViewInject;
 import java.util.ArrayList;
 import java.util.List;
 import hb.smartgreen.R;
+import hb.smartgreen.fragment.DynamicFragment;
 import hb.smartgreen.fragment.MainFragment;
-import hb.smartgreen.fragment.SettingFragment;
+import hb.smartgreen.fragment.MineFragment;
+import hb.smartgreen.fragment.StatisticFragment;
 
 @ContentView(R.layout.activity_main)
 public class MainActivity extends BaseActivity {
@@ -47,10 +49,10 @@ public class MainActivity extends BaseActivity {
     private  void initUIData() {
         fragments = new ArrayList<Fragment>() ;
         fragments.add(new MainFragment());
-        fragments.add(new SettingFragment());
-        fragments.add(new SettingFragment());
-        fragments.add(new SettingFragment());
-        fragments.add(new SettingFragment());
+        fragments.add(new DynamicFragment());
+        fragments.add(new StatisticFragment());
+        fragments.add(new StatisticFragment());
+        fragments.add(new MineFragment());
 
         models = new ArrayList<>();
         final String[] colors = getResources().getStringArray(R.array.default_preview);

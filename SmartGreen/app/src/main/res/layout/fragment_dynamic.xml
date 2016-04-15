@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background = "@color/search_item_bg"
+    tools:context="hb.smartgreen.fragment.DynamicFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id = "@+id/newsBtn"
+        android:layout_marginTop="30dp"
+        android:background="@color/rippelColor">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新闻报道"
+            android:layout_gravity="center"
+            android:textColor="@color/contents_text"
+            android:textSize="20dp"
+            android:layout_marginLeft="30dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id = "@+id/waterBtn"
+        android:layout_marginTop="30dp"
+        android:background="@color/rippelColor">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="水质信息"
+            android:layout_gravity="center"
+            android:textColor="@color/contents_text"
+            android:textSize="20dp"
+            android:layout_marginLeft="30dp"/>
+    </LinearLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="#ffdddddd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id = "@+id/airBtn"
+        android:background="@color/rippelColor">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大气信息"
+            android:layout_gravity="center"
+            android:textColor="@color/contents_text"
+            android:textSize="20dp"
+            android:layout_marginLeft="30dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id = "@+id/ooBtn"
+        android:layout_marginTop="30dp"
+        android:background="@color/rippelColor">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预警报警"
+            android:layout_gravity="center"
+            android:textColor="@color/contents_text"
+            android:textSize="20dp"
+            android:layout_marginLeft="30dp"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -11,10 +11,10 @@ import hb.smartgreen.db.sgUser;
 import hb.smartgreen.util.DbService;
 
 @ContentView(R.layout.fragment_setting)
-public class SettingFragment extends BaseFragment {
+public class StatisticFragment extends BaseFragment {
 
 
-    public SettingFragment() {
+    public StatisticFragment() {
         // Required empty public constructor
         DbService db = new DbService();
         sgUser tuser = db.GetUserByName("123");
