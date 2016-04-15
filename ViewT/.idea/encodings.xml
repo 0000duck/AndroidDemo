@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/res/anim" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ad_silent_selcetor.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/pausebutton.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/play_ctrl_back.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/play_ctrl_fullscreen.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/play_ctrl_pause.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/play_ctrl_play.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/play_ctrl_video_list.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/play_ctrl_volume.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/play_ctrl_volume_mute.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/play_seekbar_background.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/play_seekbar_color_bg.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/play_soundseekbar_background.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/playbutton.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/quality_bg.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/resolution_textcolor.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/default_decodingtype_adapter.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/dlna_connection_layout_include.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/dlna_device_list_item.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/dlna_list_layout_include.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/indicater_layer_include.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/tip_layout.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/video_play_error_layout.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/raw" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

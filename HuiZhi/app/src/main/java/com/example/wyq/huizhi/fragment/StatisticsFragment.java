@@ -71,7 +71,7 @@ public class StatisticsFragment extends Fragment implements AdapterView.OnItemCl
         switch (imgs[position]) {
             case R.drawable.app_transfer:
                 startActivity(new Intent(this.getContext(), PullToRefreshActivity.class));//启动另一个Activity
-                this.getActivity().finish();//结束此Activity，可回收
+                //this.getActivity().finish();//结束此Activity，可回收
                 break;
         }
     }
