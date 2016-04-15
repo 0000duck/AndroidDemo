@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import hb.smartgreen.R;
 import hb.smartgreen.fragment.DynamicFragment;
+import hb.smartgreen.fragment.FindFragment;
 import hb.smartgreen.fragment.MainFragment;
 import hb.smartgreen.fragment.MineFragment;
 import hb.smartgreen.fragment.StatisticFragment;
@@ -51,7 +52,7 @@ public class MainActivity extends BaseActivity {
         fragments.add(new MainFragment());
         fragments.add(new DynamicFragment());
         fragments.add(new StatisticFragment());
-        fragments.add(new StatisticFragment());
+        fragments.add(new FindFragment());
         fragments.add(new MineFragment());
 
         models = new ArrayList<>();
@@ -110,7 +111,7 @@ public class MainActivity extends BaseActivity {
                     final NavigationTabBar.Model model = navigationTabBar.getModels().get(i);
                     switch (i) {
                         case 0:
-                            model.setBadgeTitle("2");
+                            model.setBadgeTitle("new");
                             break;
                         case 1:
                             model.setBadgeTitle("2");

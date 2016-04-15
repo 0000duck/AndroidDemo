@@ -31,4 +31,5 @@ dependencies {
     compile 'com.bigkoo:convenientbanner:2.0.2'
     compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
     compile 'com.github.lecho:hellocharts-library:1.5.8@aar'
+//    compile 'com.github.PhilJay:MPAndroidChart:v2.1.6'
 }
