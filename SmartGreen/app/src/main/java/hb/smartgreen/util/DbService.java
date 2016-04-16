@@ -107,20 +107,21 @@ public class DbService {
     }
 
     public boolean ValidateUser(String name,String password) {
-        boolean ret = false;
-        try{
-            DbManager db = x.getDb(daoConfig);
-            List<sgUser> userList = db.selector(sgUser.class).where("username","=", name).and("password","=",password).findAll();
-            int userCount =  userList.size();
-            Log.e("user count:", "" + userCount);
-            if (userCount > 0){
-                ret = true;
-            }
-        }
-        catch (Throwable e){
-            Log.e("ValidateUser", e.getMessage());
-        }
-        return ret;
+        return true;
+//        boolean ret = false;
+//        try{
+//            DbManager db = x.getDb(daoConfig);
+//            List<sgUser> userList = db.selector(sgUser.class).where("username","=", name).and("password","=",password).findAll();
+//            int userCount =  userList.size();
+//            Log.e("user count:", "" + userCount);
+//            if (userCount > 0){
+//                ret = true;
+//            }
+//        }
+//        catch (Throwable e){
+//            Log.e("ValidateUser", e.getMessage());
+//        }
+//        return ret;
     }
 
 }

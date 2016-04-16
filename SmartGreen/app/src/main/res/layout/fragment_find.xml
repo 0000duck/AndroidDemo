@@ -4,6 +4,14 @@
     android:layout_height="match_parent"
     tools:context="hb.smartgreen.fragment.FindFragment">
 
-
+    <GridView
+        android:id = "@+id/gridBtns"
+        android:verticalSpacing="1dp"
+        android:horizontalSpacing="1dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </GridView>
 
 </FrameLayout>

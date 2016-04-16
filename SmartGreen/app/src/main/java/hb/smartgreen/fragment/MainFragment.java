@@ -1,17 +1,22 @@
 package hb.smartgreen.fragment;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.ToxicBakery.viewpager.transforms.AccordionTransformer;
 import com.ToxicBakery.viewpager.transforms.BackgroundToForegroundTransformer;
@@ -51,6 +56,8 @@ public class MainFragment extends BaseFragment {
 
     @ViewInject(R.id.vp_tablist_frament)
     private ViewPager viewPager;
+
+
 
     private TabListFragment tabListFragment;
     private ConvenientBanner convenientBanner;//顶部广告栏控件
@@ -92,6 +99,7 @@ public class MainFragment extends BaseFragment {
             }
         });
         initBanner();
+
     }
 
     private void initImageLoader(){
@@ -135,4 +143,6 @@ public class MainFragment extends BaseFragment {
     public void onPause() {
         super.onPause();convenientBanner.stopTurning();
     }
+
+
 }
