@@ -1,11 +1,16 @@
 package hb.smartgreen.activity;
 
 import android.graphics.Color;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
+
 import com.gigamole.library.NavigationTabBar;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -34,9 +39,13 @@ public class MainActivity extends BaseActivity {
     private ArrayList<NavigationTabBar.Model> models;
 
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mIsExit = false;
         initUI();
     }
     @Override
@@ -137,5 +146,38 @@ public class MainActivity extends BaseActivity {
         }, 500);
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+            exit();
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
+    /**
+     * 实现点击两次退出程序
+     */
+    private boolean mIsExit;
+    //点击返回键时，延时 TIME_TO_EXIT 毫秒发送此handler重置mIsExit，再其被重置前如果再按一次返回键则退出应用
+    private Handler mExitHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            mIsExit = false;
+        }
+    };
+    final static int TIME_TO_EXIT = 2000;
+
+    private void exit(){
+        if (mIsExit){
+            finish();
+            System.exit(0);
+        }else {
+            mIsExit = true;
+            Toast.makeText(getApplicationContext(),R.string.click_to_exit, Toast.LENGTH_SHORT).show();
+            //两秒内不点击back则重置mIsExit
+            mExitHandler.sendEmptyMessageDelayed(0,TIME_TO_EXIT);
+        }
+    }
 }

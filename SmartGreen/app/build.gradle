@@ -34,4 +34,6 @@ dependencies {
     compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
     compile 'com.github.lecho:hellocharts-library:1.5.8@aar'
     compile 'com.github.PhilJay:MPAndroidChart:v2.2.4'
+    compile 'com.github.medyo:fancybuttons:1.7'
+    compile 'in.srain.cube:ultra-ptr:1.0.11'
 }
