@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import com.example.wyq.pullrefreshlibrary.PullToRefreshView;
@@ -28,9 +29,19 @@ public class NewsListActivity extends BaseActivity {
     @ViewInject(R.id.fab)
     private  FloatingActionButton fab;
 
+    @ViewInject(R.id.btn_back)
+    private mehdi.sakout.fancybuttons.FancyButton imgBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        imgBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,4 +70,6 @@ public class NewsListActivity extends BaseActivity {
     private void initView() {
 
     }
+
+
 }

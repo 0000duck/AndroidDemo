@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="hb.smartgreen.activity.NewsListActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/btn_back"
+                fancy:fb_fontIconResource="&#xf104;"
+                fancy:fb_iconPosition="left"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="新闻列表" />
+
+        </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_news_list" />
 
