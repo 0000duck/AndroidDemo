@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.wyq.pullrefreshlibrary.PullToRefreshView;
+
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
@@ -30,6 +32,10 @@ import hb.smartgreen.dataStruct.factorItem;
 @ContentView(R.layout.fragment_tab1)
 public class Tab1Fragment extends BaseFragment {
 
+    @ViewInject(R.id.pull_to_refresh)
+    private PullToRefreshView mPullToRefreshView;
+
+    public static final int REFRESH_DELAY = 2000;
     @ViewInject(R.id.allStationItem)
     private ListView stationList;
 
@@ -74,8 +80,24 @@ public class Tab1Fragment extends BaseFragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState)  {
+
         stationList.setAdapter(new StationAdapter());
         stationList.getParent().requestDisallowInterceptTouchEvent(true);
+
+        mPullToRefreshView.setOnRefreshListener(new PullToRefreshView.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mPullToRefreshView.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mPullToRefreshView.setRefreshing(false);
+                        InitData();
+                        stationList.setAdapter(new StationAdapter());
+                        stationList.getParent().requestDisallowInterceptTouchEvent(true);
+                    }
+                }, REFRESH_DELAY);
+            }
+        });
     }
 
 

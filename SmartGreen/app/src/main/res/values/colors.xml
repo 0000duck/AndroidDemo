@@ -178,4 +178,7 @@
     <color name="mediumseagreen">#3CB371</color><!--中海蓝 -->
     <color name="limegreen">#32CD32</color><!--橙绿色 -->
     <color name="darkslategray">#2F4F4F</color><!--暗瓦灰色 -->
+
+    <color name="back_ground_color">#FCFCFC</color>
+    <color name="light_primary_color">#B2DFDB</color>
 </resources>

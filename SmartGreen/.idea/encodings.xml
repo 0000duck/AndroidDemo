@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/hb/smartgreen/adapter/MyRecyclerAdapter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/hb/smartgreen/bean" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/hb/smartgreen/db/NewsContent.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/hb/smartgreen/db/NewsItem.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/materialdesign_pic_1.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/materialdesign_pic_2.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/materialdesign_pic_3.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/materialdesign_pic_4.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/materialdesign_pic_5.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/view_click_state.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/item_recyclerview.xml" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
