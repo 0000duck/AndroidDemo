@@ -1,2 +1,2 @@
-include ':app', ':Libraries:DroidPlugin'
+include ':app'
 //include ':DroidPlugin-master'
