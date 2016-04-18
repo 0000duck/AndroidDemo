@@ -18,6 +18,8 @@ public class smartGreenApp extends Application {
         x.Ext.init(this);
         x.Ext.setDebug(BuildConfig.DEBUG); // 开启debug会影响性能
         initSharedPreferences(getApplicationContext());
+
+//        PluginHelper.getInstance().applicationOnCreate(getBaseContext()); //must behind super.onCreate()
     }
 
 
