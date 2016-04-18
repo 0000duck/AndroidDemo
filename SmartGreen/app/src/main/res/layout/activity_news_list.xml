@@ -22,6 +22,8 @@
                 android:id="@+id/btn_back"
                 fancy:fb_fontIconResource="&#xf104;"
                 fancy:fb_iconPosition="left"
+                fancy:fb_fontIconSize = "30dp"
+                fancy:fb_defaultColor = "@color/colorPrimary"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
 
