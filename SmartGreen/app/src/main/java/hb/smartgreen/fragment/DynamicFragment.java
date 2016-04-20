@@ -19,12 +19,17 @@ import org.xutils.view.annotation.ViewInject;
 import hb.smartgreen.R;
 import hb.smartgreen.activity.LoginActivity;
 import hb.smartgreen.activity.NewsListActivity;
+import hb.smartgreen.activity.StatisticActivity;
 
 @ContentView(R.layout.fragment_dynamic)
 public class DynamicFragment extends BaseFragment {
 
-@ViewInject(R.id.newsBtn)
-private LinearLayout mLayoutBtn;
+    @ViewInject(R.id.newsBtn)
+    private LinearLayout mLayoutBtn;
+
+    @ViewInject(R.id.tjBtn)
+    private LinearLayout mTjLayoutBtn;
+
     public DynamicFragment() {
         // Required empty public constructor
     }
@@ -37,6 +42,13 @@ private LinearLayout mLayoutBtn;
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),NewsListActivity.class);
+                startActivity(intent);
+            }
+        });
+        mTjLayoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),StatisticActivity.class);
                 startActivity(intent);
             }
         });

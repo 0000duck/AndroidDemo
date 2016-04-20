@@ -114,7 +114,9 @@ public class MainFragment extends BaseFragment {
                 .denyCacheImageMultipleSizesInMemory()
                 .diskCacheFileNameGenerator(new Md5FileNameGenerator())
                 .tasksProcessingOrder(QueueProcessingType.LIFO).build();
-        ImageLoader.getInstance().init(config);
+        if(!ImageLoader.getInstance().isInited()){
+            ImageLoader.getInstance().init(config);
+        }
     }
     private void initBanner() {
         initImageLoader();

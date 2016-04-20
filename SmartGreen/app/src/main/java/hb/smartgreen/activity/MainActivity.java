@@ -60,7 +60,7 @@ public class MainActivity extends BaseActivity {
         fragments = new ArrayList<Fragment>() ;
         fragments.add(new MainFragment());
         fragments.add(new DynamicFragment());
-        fragments.add(new StatisticFragment());
+        //fragments.add(new StatisticFragment());
         fragments.add(new FindFragment());
         fragments.add(new MineFragment());
 
@@ -70,12 +70,12 @@ public class MainActivity extends BaseActivity {
                 getResources().getDrawable(R.drawable.ic_sixth), Color.parseColor(colors[0]), "首页"));
         models.add(new NavigationTabBar.Model(
                 getResources().getDrawable(R.drawable.ic_second), Color.parseColor(colors[1]), "动态"));
+//        models.add(new NavigationTabBar.Model(
+//                getResources().getDrawable(R.drawable.ic_third), Color.parseColor(colors[2]), "统计"));
         models.add(new NavigationTabBar.Model(
-                getResources().getDrawable(R.drawable.ic_third), Color.parseColor(colors[2]), "统计"));
+                getResources().getDrawable(R.drawable.ic_fourth), Color.parseColor(colors[2]), "发现"));
         models.add(new NavigationTabBar.Model(
-                getResources().getDrawable(R.drawable.ic_fourth), Color.parseColor(colors[3]), "发现"));
-        models.add(new NavigationTabBar.Model(
-                getResources().getDrawable(R.drawable.ic_fifth), Color.parseColor(colors[4]), "我"));
+                getResources().getDrawable(R.drawable.ic_fifth), Color.parseColor(colors[3]), "我"));
     }
     private void initUI() {
         initUIData();
@@ -120,20 +120,20 @@ public class MainActivity extends BaseActivity {
                     final NavigationTabBar.Model model = navigationTabBar.getModels().get(i);
                     switch (i) {
                         case 0:
-                            model.setBadgeTitle("new");
+                            model.setBadgeTitle("1");
                             break;
                         case 1:
                             model.setBadgeTitle("2");
                             break;
                         case 2:
-                            model.setBadgeTitle("2");
+                            model.setBadgeTitle("3");
                             break;
                         case 3:
-                            model.setBadgeTitle("2");
+                            model.setBadgeTitle("4");
                             break;
-                        case 4:
-                            model.setBadgeTitle("2");
-                            break;
+//                        case 4:
+//                            model.setBadgeTitle("5");
+//                            break;
                     }
                     navigationTabBar.postDelayed(new Runnable() {
                         @Override

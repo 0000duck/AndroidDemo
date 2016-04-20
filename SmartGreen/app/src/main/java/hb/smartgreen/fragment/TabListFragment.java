@@ -34,6 +34,11 @@ public class TabListFragment extends BaseFragment implements View.OnClickListene
     // fragment对象集合
     private ArrayList<Fragment> fragmentsList;
 
+    public TabListFragment(){
+        mIndex = 0;
+
+    }
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -44,7 +49,6 @@ public class TabListFragment extends BaseFragment implements View.OnClickListene
         tab1Tv.setOnClickListener(this);
         tab2Tv.setOnClickListener(this);
         tab3Tv.setOnClickListener(this);
-        viewPager.SetFragment(this);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener(){
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -120,19 +124,16 @@ public class TabListFragment extends BaseFragment implements View.OnClickListene
                 tab1Tv.setBackgroundResource(R.color.gainsboro);
                 tab2Tv.setBackgroundResource(R.color.encode_view);
                 tab3Tv.setBackgroundResource(R.color.encode_view);
-                Log.e("MoveViewByIndex","00000");
                 break;
             case 1:
                 tab1Tv.setBackgroundResource(R.color.encode_view);
                 tab2Tv.setBackgroundResource(R.color.gainsboro);
                 tab3Tv.setBackgroundResource(R.color.encode_view);
-                Log.e("MoveViewByIndex", "11111");
                 break;
             case 2:
                 tab1Tv.setBackgroundResource(R.color.encode_view);
                 tab2Tv.setBackgroundResource(R.color.encode_view);
                 tab3Tv.setBackgroundResource(R.color.gainsboro);
-                Log.e("MoveViewByIndex", "2222");
                 break;
         }
     }
