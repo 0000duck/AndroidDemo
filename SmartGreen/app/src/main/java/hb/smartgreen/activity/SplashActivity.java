@@ -26,7 +26,6 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.activity_splash);
 
         LinearLayout layout = (LinearLayout)findViewById(R.id.splashLayout);
-
         final Intent intent = new Intent(SplashActivity.this,LoginActivity.class);
         if(smartGreenApp.isFirst()){
             intent.setClass(getApplication(), GuidePageActivity.class);
@@ -40,7 +39,7 @@ public class SplashActivity extends Activity {
 
         AnimationSet animationSet = new AnimationSet(true);
         animationSet.setFillAfter(true);
-        animationSet.setDuration(2000);
+        animationSet.setDuration(3000);
         animationSet.addAnimation(topExit);
         animationSet.addAnimation(alphaAnimation);
 
@@ -48,7 +47,7 @@ public class SplashActivity extends Activity {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(1500);
                     startActivity(intent);
                     finish();
                 }catch (InterruptedException error){
@@ -57,7 +56,6 @@ public class SplashActivity extends Activity {
             }
         }).start();
         layout.startAnimation(animationSet);
-
     }
 
 
