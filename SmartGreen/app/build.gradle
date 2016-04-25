@@ -44,4 +44,6 @@ dependencies {
     compile(name: 'pullrefreshlibrary', ext: 'aar')
     compile 'com.github.medyo:fancybuttons:1.7'
 
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+
 }

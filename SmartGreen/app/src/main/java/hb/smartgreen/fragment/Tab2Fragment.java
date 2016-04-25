@@ -3,7 +3,6 @@ package hb.smartgreen.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -18,10 +17,10 @@ import org.xutils.view.annotation.ViewInject;
 
 import hb.smartgreen.R;
 import hb.smartgreen.Widget.HorizontalListView;
-import hb.smartgreen.dataStruct.FactorSource;
-import hb.smartgreen.dataStruct.StationItem;
-import hb.smartgreen.dataStruct.StationSource;
-import hb.smartgreen.dataStruct.factorItem;
+import hb.smartgreen.bean.FactorSource;
+import hb.smartgreen.bean.StationItem;
+import hb.smartgreen.bean.StationSource;
+import hb.smartgreen.bean.factorItem;
 
 /**
  * A simple {@link Fragment} subclass.

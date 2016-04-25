@@ -1,4 +1,4 @@
-package hb.smartgreen.dataStruct;
+package hb.smartgreen.bean;
 
 import java.util.ArrayList;
 

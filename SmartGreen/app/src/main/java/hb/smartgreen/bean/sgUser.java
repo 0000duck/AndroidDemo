@@ -1,4 +1,4 @@
-package hb.smartgreen.db;
+package hb.smartgreen.bean;
 
 import org.xutils.db.annotation.Column;
 import org.xutils.db.annotation.Table;

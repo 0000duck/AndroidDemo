@@ -3,14 +3,12 @@ package hb.smartgreen.util;
 import android.util.Log;
 
 import org.xutils.DbManager;
-import org.xutils.db.sqlite.WhereBuilder;
 import org.xutils.x;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import hb.smartgreen.db.sgUser;
+import hb.smartgreen.bean.sgUser;
 
 /**
  * Created by wyq on 2016/4/11.

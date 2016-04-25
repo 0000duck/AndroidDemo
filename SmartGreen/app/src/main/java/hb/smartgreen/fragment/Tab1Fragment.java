@@ -2,16 +2,11 @@ package hb.smartgreen.fragment;
 
 
 
-import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,17 +15,18 @@ import com.example.wyq.pullrefreshlibrary.PullToRefreshView;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
-import java.util.ArrayList;
-
 import hb.smartgreen.R;
 import hb.smartgreen.Widget.HorizontalListView;
-import hb.smartgreen.dataStruct.FactorSource;
-import hb.smartgreen.dataStruct.StationItem;
-import hb.smartgreen.dataStruct.StationSource;
-import hb.smartgreen.dataStruct.factorItem;
+import hb.smartgreen.bean.FactorSource;
+import hb.smartgreen.bean.StationItem;
+import hb.smartgreen.bean.StationSource;
+import hb.smartgreen.bean.factorItem;
+import hb.smartgreen.presenter.RealTimeStationListPresenter;
+import hb.smartgreen.presenter.impl.RealTimeStationListPresenterImpl;
+import hb.smartgreen.view.StationListView;
 
 @ContentView(R.layout.fragment_tab1)
-public class Tab1Fragment extends BaseFragment {
+public class Tab1Fragment extends BaseFragment implements StationListView {
 
     @ViewInject(R.id.pull_to_refresh)
     private PullToRefreshView mPullToRefreshView;
@@ -39,50 +35,24 @@ public class Tab1Fragment extends BaseFragment {
     @ViewInject(R.id.allStationItem)
     private ListView stationList;
 
-    private StationSource mStationSource;
+
+    private RealTimeStationListPresenter realTimeStationList = null;
 
     public Tab1Fragment() {
-        InitData();
+        realTimeStationList = new RealTimeStationListPresenterImpl(this.getContext(),this);
     }
 
-    private void InitData()
-    {
-        factorItem item1 = new factorItem("湿度", "12.2");
-        factorItem item2 = new factorItem("雨量", "15.2");
-        factorItem item3 = new factorItem("CO2", "62.2");
-        factorItem item4 = new factorItem("硫化氢", "1.2");
-        factorItem item5 = new factorItem("铅含量", "0.53");
-        factorItem item6 = new factorItem("SO2", "0.25");
-        factorItem item7 = new factorItem("氨氮", "0.25");
-        FactorSource fsource = new FactorSource();
-        fsource.AddFactorItem(item1);
-        fsource.AddFactorItem(item2);
-        fsource.AddFactorItem(item3);
-        fsource.AddFactorItem(item4);
-        fsource.AddFactorItem(item5);
-        fsource.AddFactorItem(item6);
-        fsource.AddFactorItem(item7);
-        StationItem sitem1 = new StationItem("001", "站点001", fsource);
-        StationItem sitem2 = new StationItem("002", "站点002", fsource);
-        StationItem sitem3 = new StationItem("003", "站点003", fsource);
-        StationItem sitem4 = new StationItem("001", "站点031", fsource);
-        StationItem sitem5 = new StationItem("002", "站点022", fsource);
-        StationItem sitem6 = new StationItem("003", "站点013", fsource);
-        mStationSource = new StationSource();
-        mStationSource.AddStationItem(sitem1);
-        mStationSource.AddStationItem(sitem2);
-        mStationSource.AddStationItem(sitem3);
-        mStationSource.AddStationItem(sitem4);
-        mStationSource.AddStationItem(sitem5);
-        mStationSource.AddStationItem(sitem6);
-    }
 
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState)  {
-
-        stationList.setAdapter(new StationAdapter());
+    public void refreshListData(StationSource stationSource){
+        stationList.setAdapter(new StationAdapter(stationSource));
         stationList.getParent().requestDisallowInterceptTouchEvent(true);
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState)  {
+        realTimeStationList.loadListData("request tag","eventtag",1,true);
 
         mPullToRefreshView.setOnRefreshListener(new PullToRefreshView.OnRefreshListener() {
             @Override
@@ -91,9 +61,9 @@ public class Tab1Fragment extends BaseFragment {
                     @Override
                     public void run() {
                         mPullToRefreshView.setRefreshing(false);
-                        InitData();
-                        stationList.setAdapter(new StationAdapter());
-                        stationList.getParent().requestDisallowInterceptTouchEvent(true);
+                        //update data
+                        realTimeStationList.loadListData("request tag","eventtag",1,true);
+
                     }
                 }, REFRESH_DELAY);
             }
@@ -101,19 +71,24 @@ public class Tab1Fragment extends BaseFragment {
     }
 
 
-
-
     private class StationAdapter extends BaseAdapter {
         private boolean checked = false;
+        private StationSource mmstationSource;
 
+        public StationAdapter(StationSource stationSource){
+            mmstationSource = new StationSource();
+            for(int i = 0;i < stationSource.getCount();i++){
+                mmstationSource.AddStationItem(stationSource.getItem(i));
+            }
+        }
         @Override
         public int getCount() {
-            return mStationSource.getCount();
+            return mmstationSource.getCount();
         }
 
         @Override
         public StationItem getItem(int position) {
-            return mStationSource.getItem(position);
+            return mmstationSource.getItem(position);
         }
 
         @Override
@@ -169,8 +144,9 @@ public class Tab1Fragment extends BaseFragment {
         private FactorSource mfsource;
         public FactorAdapter(FactorSource fsource){
             mfsource = new FactorSource();
-            for(int i = 0; i < fsource.getCount(); i++)
-            this.mfsource.AddFactorItem(fsource.getItem(i));
+            for(int i = 0; i < fsource.getCount(); i++) {
+                this.mfsource.AddFactorItem(fsource.getItem(i));
+            }
         }
 
         @Override

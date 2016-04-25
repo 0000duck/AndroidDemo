@@ -1,4 +1,4 @@
-package hb.smartgreen.dataStruct;
+package hb.smartgreen.bean;
 
 /**
  * Created by wyq on 2016/4/14.
