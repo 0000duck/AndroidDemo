@@ -39,7 +39,7 @@ public class RealTimeStationListPresenterImpl implements RealTimeStationListPres
 
 
     @Override
-    public void loadListData(String requestTag, String keywords, int page, boolean isSwipeRefresh){
-        mCommonListInteractor.getCommonListData(requestTag,1,keywords,page);
+    public void loadListData(String requestTag, int event_tag,String keywords, int page, boolean isSwipeRefresh){
+        mCommonListInteractor.getCommonListData(requestTag,event_tag,keywords,page);
     }
 }

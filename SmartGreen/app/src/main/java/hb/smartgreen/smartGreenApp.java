@@ -38,4 +38,16 @@ public class smartGreenApp extends Application {
     public static boolean isFirst(){
         return mSpSetting.getBoolean("ISFIRST", true);
     }
+
+    @Override
+    public void onLowMemory() {
+        android.os.Process.killProcess(android.os.Process.myPid());
+        super.onLowMemory();
+    }
+
+    public void exitApp() {
+        System.gc();
+        android.os.Process.killProcess(android.os.Process.myPid());
+    }
+
 }
