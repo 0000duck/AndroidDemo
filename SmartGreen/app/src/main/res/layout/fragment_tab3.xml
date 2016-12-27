@@ -5,11 +5,11 @@
     tools:context="hb.smartgreen.fragment.Tab3Fragment">
     <com.example.wyq.pullrefreshlibrary.PullToRefreshView
         android:id="@+id/pull_to_refresh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
     <ListView
         android:id="@+id/focusStationItem"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content">
     </ListView>
     </com.example.wyq.pullrefreshlibrary.PullToRefreshView>
