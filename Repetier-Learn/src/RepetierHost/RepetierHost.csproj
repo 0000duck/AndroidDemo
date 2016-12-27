@@ -376,7 +376,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="RepetierHost_TemporaryKey.pfx" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -648,8 +647,6 @@
   <ItemGroup>
     <Content Include="images\switch_on.bmp" />
     <Content Include="images\switch_off.bmp" />
-    <Content Include="repetier-logo-trans32.ico" />
-    <Content Include="repetier-logo32.ico" />
     <None Include="Properties\DataSources\Main.datasource" />
     <None Include="Properties\DataSources\RepetierHost.model.PrinterModel.datasource" />
     <None Include="Resources\home.png" />
