@@ -1,0 +1,8 @@
+﻿.title {margin:10px 0px 5px 0px;border-bottom:1px #ccc solid;padding:0px 0px 0px 10px;margin:0px 0px 20px 0px;}
+.title span{font-size:18px;line-height:26px; vertical-align:middle;padding:0px 10px 0px 10px;border-bottom:2px #0093e8 solid;}
+
+.NewsOperation{width:100%;background-color:#fff;padding:10px 0px 20px 0px;}
+.addNewsBtn{margin:0px 30px 0px 60px;}
+.delNewsBtn{}
+.btn-BlueBorder{height:30px;width:150px;font-weight:bold;}
+.search{margin:0px 50px 0px 0px;}

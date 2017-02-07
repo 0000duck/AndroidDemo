@@ -1,0 +1,14 @@
+﻿.title {margin:10px 0px 5px 0px;border-bottom:1px #ccc solid;padding:0px 0px 0px 10px;margin:0px 0px 20px 0px;}
+.title span{font-size:18px;line-height:26px; vertical-align:middle;padding:0px 10px 0px 10px;border-bottom:2px #0093e8 solid;}
+
+.EduPayInfoOperation{width:100%;background-color:#fff;padding:10px 0px 20px 0px;}
+
+.btn-BlueBorder{height:30px;width:150px;font-weight:bold;}
+.search{margin:0px 50px 0px 0px;}
+.pagin{margin:25px 0px 10px 0px;}
+
+.tal{text-align:left;}
+.tar{text-align:right;}
+select{width:175px;height:25px; border: 1px #ccc solid;}
+.pieBox-Status, .pieBox-Cayment{text-align:center;padding:20px 0px 20px 0px;display:none;}
+.pieBox-Status p, .pieBox-Cayment p{margin:20px 0px 0px 0px;height:30px;font-size:16px;font-weight:bold;}

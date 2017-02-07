@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserManage</title>
+</head>
+<body>
+    <link href="~/CSS/base.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/js/base.js"></script>
+
+    <link href="~/Scripts/kindeditor-4.1.7/themes/default/default.css" rel="stylesheet" />
+    <link href="~/Scripts/kindeditor-4.1.7/plugins/code/prettify.css" rel="stylesheet" />
+    <script src="~/Scripts/kindeditor-4.1.7/kindeditor-min.js"></script>
+    <script src="~/Scripts/kindeditor-4.1.7/lang/zh_CN.js"></script>
+    <script src="~/Scripts/kindeditor-4.1.7/plugins/code/code.js"></script>
+
+    <link href="~/CSS/EduUser/EduUserManage.css" rel="stylesheet" />
+    <script src="~/Scripts/js/EduUser/EduUserManage.js"></script>
+    <form>
+            <div class="main">
+    <div class="main-div UserOperation">
+        <p class="title"><span>添加人员信息</span></p>
+        <div class="content">
+            <table style="width:600px;margin:0px auto;">
+                <tr><td class="tar">请填写人员名称:</td><td><input type="text" class="textBox txtNickname" /></td></tr>
+                <tr><td class="tar">请填写身份证号:</td><td><input type="text" class="textBox txtIdcard" /></td></tr>
+                <tr><td class="tar">请填写所属公司:</td><td><input type="text" class="textBox txtCompany" /></td></tr>
+                <tr><td class="tar">请填写角色:</td><td><input type="text" class="textBox txtRoles" /></td></tr>
+                <tr><td class="tar">请选择性别:</td><td>
+                    <select class="txtGender">
+                        <option value="secret">保密</option><option value="male">男性</option><option value="female">女性</option>
+                    </select>
+                    </td></tr>
+            </table>
+            <table><tr><td></td><td><label class="msgUser">&nbsp;</label></td></tr></table>
+        </div>
+        <div class="btnDiv">
+            <input type="button" class="btn btn-BlueBorder OKBtn" name="OKBtn" value="确定" />
+            <input type="button" class="btn btn-BlueBorder cancelBtn" name="cancelBtn" value="取消" />
+        </div>
+    </div>
+        </div>
+    <input type="hidden" id="hdnID" value="@Html.ViewBag.id">
+</form>
+</body>
+</html>

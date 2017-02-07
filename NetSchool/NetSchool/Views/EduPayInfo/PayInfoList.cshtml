@@ -1,0 +1,118 @@
+﻿@{
+    ViewBag.Title = "EduPayInfoList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body>
+    <script src="~/Scripts/Echarts-2.2.7/echarts-all.js"></script>
+
+    <link href="~/Scripts/ChooseDate/css/jcDate.css" rel="stylesheet" />
+    <script src="~/Scripts/ChooseDate/js/jQuery-jcDate.js"></script>
+
+    <link href="~/CSS/EduPayInfo/EduPayInfoList.css" rel="stylesheet" />
+    <script src="~/Scripts/js/EduPayInfo/EduPayInfoList.js"></script>
+        <div class="main-div EduPayInfoOperation">
+            <p class="title"><span>支付信息统计</span></p>
+            <table class="fr " style="width:1080px">
+                <colgroup>
+                    <col /><col /><col /><col /><col /><col /><col /><col /><col width="60"/>
+                </colgroup>
+                <tr>
+                    <td class="tar">身份证号:</td>
+                    <td class="tal"><input type="text" class="textBox serIDCard" /></td>
+                    <td class="tar">企业:</td>
+                    <td class="tal"><input type="text" class="textBox serCompany" /></td>
+                    <td class="tar">区域:</td>
+                    <td class="tal"><input type="text" class="textBox serTerritory" /></td>
+                    <td></td>
+                    <td></td>
+                    <td rowspan="2"><div class="searchButton"></div></td>
+                </tr>
+                <tr>
+                    <td class="tar">支付时间(始):</td>
+                    <td class="tal">
+                        <input type="text" class="textBox jcDate serBeginTime" />
+                    </td>
+                    <td class="tar">支付时间(终):</td>
+                    <td class="tal">
+                        <input type="text" class="textBox jcDate serEndTime" />
+                    </td>
+                    <td class="tar">支付信息:</td>
+                    <td class="tal">
+                        <select class="serPayment">
+                            <option value="all">不限</option>
+                            <option value="none">无</option>
+                            <option value="alipay">支付宝</option>
+                            <option value="tenpay">财付通</option>
+                            <option value="coin">一卡通</option>
+                            <option value="wxpay">微信支付</option>
+                        </select>
+                    </td>
+                    <td class="tar">支付状态:</td>
+                    <td class="tal">
+                        <select class="serStatus">
+                            <option value="all">不限</option>
+                            <option value="created">创建，未支付</option>
+                            <option value="paid">已支付</option>
+                            <option value="refunding">退款中</option>
+                            <option value="refunded">已退款</option>
+                            <option value="cancelled">取消</option>
+                        </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="8" class="tar">
+                        <a class="alink countPaymentBtn">支付信息统计图</a>
+                        <a class="alink countStatusBtn">支付状态统计图</a>
+                        <a class="alink countTerritoryBtn">区域统计图</a>
+                    </td>
+                </tr>
+            </table>
+            <div class="clear"></div>
+        </div>
+        <div class="main-div">
+            <div class="pieBox-Status">
+                <p>支付状态统计图</p>
+                <div id="pieBoxStatus" style="width:800px;height:600px;margin:0px auto;border:1px solid #ccc;"></div>
+            </div>
+            <div class="pieBox-Cayment">
+                <p>支付信息统计图</p>
+                <div id="pieBoxCayment" style="width:800px;height:600px;margin:0px auto;border:1px solid #ccc;"></div>
+            </div>
+            <div class="list-all">
+                <table class="ExamInfoList" cellspacing=0 cellpadding=0>
+                    <colgroup>
+                        <col width="60" />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col width="80" />
+                        <col width="80" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>姓名</th>
+                            <th>公司</th>
+                            <th>区域</th>
+                            <th>支付时间</th>
+                            <th>支付类型</th>
+                            <th>支付状态</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody_ExamInfoList"></tbody>
+                </table>
+                <div class="pagin">
+                    <div id="Pagin" class="paginControl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    <input type="hidden" id="hdnCount" />
+    <input type="hidden" id="hdnSearch" />
+    <input type="hidden" id="hdnPageSize" value="20" />
+</body>
+</html>

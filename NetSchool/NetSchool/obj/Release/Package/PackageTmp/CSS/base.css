@@ -1,0 +1,66 @@
+﻿/*基本设置*/
+* {font-family:微软雅黑;font-size:14px;}
+body {margin:0px;background-color:#ececec;}
+/*浮动相关*/
+.fl {float:left;}
+.fr {float:right;}
+.clear{ clear:both} 
+
+/*元素基本属性*/
+.tal{text-align:left;}
+.tar{text-align:right;}
+/*文本框*/
+.textBox{border:1px #ccc solid;padding:0px 10px 0px 10px;height:25px;}
+.textBox:focus{border:1px #0093e8 solid;}
+/*按钮*/
+.btn{text-align:center;}
+.btn:hover{cursor:pointer;}
+.btn-Blue {background-color:#0093e8;border:0px;color:#FFF;}
+.btn-Blue:hover {background-color: #0b87cf;}
+.btn-BlueBorder {background-color:#fff;border:1px solid #ccc;color:#666;outline:none;}
+.btn-BlueBorder:hover {border:1px solid #0093e8;color:#0093e8;}
+
+.searchButton{margin:0px auto;width:31px;height:28px;display:block;border:1px solid #ccc;background-image:url(../Image/ui.search/search.png)}
+.searchButton:hover{width:31px;height:28px;display:block;border:1px solid #3695fe;cursor:pointer;background-image:url(../Image/ui.search/search-focus.png)}
+/*表格*/
+table{width:100%;border:0px;text-align:center;}
+table thead th{height:40px;background-color:#3695fe;color:#fff;}
+table tbody td{padding:10px 0px 10px 0px}
+table tbody .odd-row{background-color:#fff;}
+table tbody .even-row{background-color:#f6fcff;}
+/*a编辑按钮*/
+.aOperation{color:#0099CC;text-decoration:underline;}
+.aOperation:hover{cursor:pointer;}
+/*结构相关*/
+/*top*/
+.top {height:100px;width:100%;background-color:#fff;}
+.top-main {width:1100px;margin:0px auto;}
+.top .topLogo{margin:30px 0px 0px 30px;}
+.top .topInfo{width:300px;line-height:100px;}
+.top .topInfo p{margin:40px 10px 0px 0px;}
+.top .topInfo a{margin-left:20px;font-size:12px;color:#0578bb;cursor:pointer;text-decoration:underline;}
+/*menu*/
+.menu {height:40px;width:100%;background-color:#0093e8;user-select:none;-webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;}
+.menuList{width:1100px;height:100%;margin:0px auto;user-select:none;}
+.menuTab{width:130px;height:100%;line-height:40px;text-align:center;color:#fff;font-weight:bold;font-size:15px;position:relative;}
+.menuTab:hover{background-color:#0578bb;cursor:pointer;}
+.menuItemBox{background-color:#0089d9;display:none;z-index:99999999;}
+.menuItem:hover{background-color:#007cc3;}
+/*主干部分*/
+.main{width:1100px;margin:0px auto;padding:0px 0px 30px 0px;}
+.main-div {margin:30px 0px 0px 0px;background-color:#fff;}
+.alink{margin-left:20px;font-size:12px;color:#0578bb;cursor:pointer;text-decoration:underline;}
+
+/**/
+.pagin{margin:25px 0px 10px 0px;}
+/*脚部*/
+.footer {width:100%; height:70px; margin:0px auto;background-color:#fff;text-align:center;padding:10px 0px 0px 0px;color:#999}
+
+/*收索部分*/
+.searchTxt{border: 1px solid #ccc;float: left;border-right: none;font-size: 14px;width: 248px;height: 28px;padding: 0px;}
+.searchBtn{float: left;width: 31px;height: 28px;background-image: url(../Image/ui.search/search.png);border: 1px solid #ccc;cursor: pointer;}
+.searchTxt:focus{border-top: 1px solid #3399FF;border-left: 1px solid #3399FF;border-bottom: 1px solid #3399FF;outline: none;width: 248px;height: 28px;}
+/*.searchTxt-focus{border-top: 1px solid #3399FF;border-left: 1px solid #3399FF;border-bottom: 1px solid #3399FF;outline: none;width: 248px;height: 28px;}*/
+.searchBtn-focus{float: left;width: 31px;height: 28px;background-image: url(../Image/ui.search/search-focus.png);border: 1px solid #3399FF;}
+.select{width: 100px;height: 25px;line-height: 25px;text-align: center;font-size: 12px;color: #333;border: 1px solid #CCC;text-decoration: none !important;cursor: pointer;}
+.select:focus{border: 1px solid #3399FF;outline: none;}

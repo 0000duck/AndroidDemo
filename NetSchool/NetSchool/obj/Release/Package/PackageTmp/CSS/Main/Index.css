@@ -1,0 +1,21 @@
+﻿.menu{height:5px;}
+/*主干*/
+.main{margin-top:30px;}
+.title{margin:10px 0px 5px 0px;border-bottom:1px #ccc solid;padding:0px 0px 0px 10px;}
+.title span{font-size:18px;line-height:26px; vertical-align:middle;padding:0px 10px 0px 10px;border-bottom:2px #0093e8 solid;}
+.loginAndImg{width:1100px ;height:260px;}
+.mainImg{width:760px;height:260px;margin-top:0px;}
+.loginBox{width:320px;height:260px;margin-top:0px;display:none;}
+.loginedBox{width:320px;height:260px;margin-top:0px;}
+.LogoutUserName{font-size:18px;font-weight:bold;}
+.userInfo{text-align:center;margin:63px 0px 30px 0px;}
+.textBox{width:240px;height:34px;margin:20px 30px 0px 30px;}
+.loginBtn{width:180px;height:40px;margin:30px 70px 0px 70px;font-weight:bold;}
+.logoutBtn{width:180px;height:40px;margin:30px 70px 0px 70px;font-weight:bold;}
+.News,.Law,.Notice{width:345px;height:200px;margin-left:0px;line-height:25px;}
+.Law,.Notice{margin-left:30px;}
+.contentLine{color:#333;text-decoration:none;font-size:14px;}
+.contentLine:hover{cursor:pointer;text-decoration:underline;}
+.mainImg{cursor:pointer;}
+.titleMore{font-size:14px;line-height:26px; vertical-align:bottom;margin:0px 10px 0px 0px;color:#0093e8;cursor:pointer;}
+.titleMore:hover{text-decoration:underline;}

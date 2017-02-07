@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LawListN</title>
+    <link href="~/CSS/base.css" rel="stylesheet" />
+    <link href="~/CSS/Main/Index.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link href="~/CSS/control/paginControl.css" rel="stylesheet" />
+    <script src="~/Scripts/js/control/paginControl.js"></script>
+    <script src="~/Scripts/js/control/search.js"></script>
+    <script src="~/Scripts/js/Main/login.js"></script>
+    <script src="~/Scripts/Echarts-2.2.7/echarts-all.js"></script>
+    <script src="~/Scripts/js/control/ChartOption.js"></script>
+    <script src="~/Scripts/js/Law/LawListN.js"></script>
+    <link href="~/CSS/Law/LawList.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="top">
+        <div class="top-main">
+            <img src="~/Image/bass/121203319471883677.png" class="topLogo" />
+            @*<div class="topInfo fr"><p class="fr"><span class="currentUserName">admin</span>&nbsp;&nbsp;您好!<a>退出</a></p></div>*@
+        </div>
+    </div>
+    <div class="menu">
+    </div>
+    <div class="main">
+        <div class="main-div LawOperation">
+            <p class="title"><span>法律法规管理</span></p>
+           
+            <div class="search fr">
+                <input type="text" class="searchTxt font-gray3" value="" />
+                <div class="searchButton searchBtn">
+                </div>
+            </div><div class="clear"></div>
+        </div>
+        <div class="main-div">
+            <table class="LawList" cellspacing=0 cellpadding=0>
+                <colgroup>
+                    <col width="80" />
+                    <col />
+                    <col width="100" />
+                    <col width="120" />
+                    <col width="100" />
+                    <col width="100" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>标题</th>
+                        <th>创建人</th>
+                        <th>创建时间</th>
+                        <th>查看次数</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody_lawList"></tbody>
+            </table>
+            <div class="pagin">
+                <div id="Pagin" class="paginControl">
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="hdnCount" />
+        <input type="hidden" id="hdnSearch" />
+        <input type="hidden" id="hdnPageSize" value="20" />
+        <div class="clear"></div>
+    </div>
+    <div class="footer">
+        <p>网校信息管理系统&nbsp;&nbsp;&nbsp;&nbsp;浙ICP备13006852号-1<br />©2015</p>
+    </div>
+</body>
+</html>

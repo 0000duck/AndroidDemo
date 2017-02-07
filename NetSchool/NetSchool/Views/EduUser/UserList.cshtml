@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "EduUserList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/Echarts-2.2.7/echarts-all.js"></script>
+
+<link href="~/Scripts/ChooseDate/css/jcDate.css" rel="stylesheet" />
+<script src="~/Scripts/ChooseDate/js/jQuery-jcDate.js"></script>
+
+<link href="~/CSS/EduUser/EduUserList.css" rel="stylesheet" />
+<script src="~/Scripts/js/EduUser/EduUserList.js"></script>
+<script src="~/Scripts/js/control/ChartOption.js"></script>
+<!DOCTYPE html>
+<html>
+<body>
+        <div class="main-div UserOperation">
+            <p class="title"><span>人员信息管理</span></p>
+            <input type="button" class="btn btn-BlueBorder addUserBtn" value="添加人员信息" />
+            <input type="button" class="btn btn-BlueBorder delUserBtn" value="删除人员信息" />
+            <hr style="border:1px #ccc dashed;width:90%;margin:0px auto; margin-top:20px;margin-bottom:10px" />
+            <table class="fr" style="width:1040px;">
+                <colgroup>
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col width="60" />
+                    <col width="20" />
+                </colgroup>
+                <tr>
+                    <td class="tar">公司:</td>
+                    <td class="tal"><input type="text" class="textBox searchCompany font-gray3 fl" value="" /></td>
+                    <td class="tar">姓名:</td>
+                    <td class="tal"><input type="text" class="textBox searchNickname font-gray3 fl" value="" /></td>
+                    <td class="tar">身份证号:</td>
+                    <td class="tal"><input type="text" class="textBox searchIdcard font-gray3 fl" value="" /></td>
+
+
+                    <td></td>
+                    <td></td>
+                    <td rowspan="3"><div class="searchButton"></div></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="tar">角色:</td>
+                    <td class="tal">
+                        <select id="searchRoles" class="searchRoles fl">
+                            <option value="">不限</option>
+                        </select>
+                    </td>
+                    <td class="tar">性别:</td>
+                    <td class="tal">
+                        <select id="searchGender" class="searchGender fl">
+                            <option value="">不限</option>
+                            <option value="female">女性</option>
+                            <option value="male">男性</option>
+                            <option value="secret">保密</option>
+                        </select>
+                    </td>
+                    <td class="tar">起始时间:</td>
+                    <td class="tal"><input type="text" class="textBox jcDate serBeginTime fl" /></td>
+                    <td class="tar">终止时间:</td>
+                    <td class="tal"><input type="text" class="textBox jcDate serEndTime fl" /></td>
+                </tr>
+            </table>
+
+            <div class="clear"></div>
+        </div>
+        <div class="main-div">
+            <table class="UserList" cellspacing=0 cellpadding=0>
+                <colgroup>
+                    <col width="60" />
+                    <col width="50" />
+                    <col width="170" />
+                    <col width="170" />
+                    <col width="50" />
+                    <col width="170" />
+                    <col />
+                    <col width="100" />
+                    @*<col width="100" />*@
+                    <col width="60" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>全选&nbsp;<input type="checkbox" class="chk-all" /></th>
+                        <th>标号</th>
+                        <th>人员名称</th>
+                        <th>身份证号</th>
+                        <th>性别</th>
+                        <th>角色</th>
+                        <th>公司</th>
+                        <th>时间戳</th>
+                        @*<th>创建时间</th>*@
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody_userList"></tbody>
+            </table>
+            <div class="pagin">
+                <div id="Pagin" class="paginControl">
+                </div>
+            </div>
+        </div>
+        <div class="Chart" style="display:none;">
+            <div style="display:block;height:100px;">
+                <input type="checkbox" class="isCountByStamp" name="isCountByStamp" />是否按时间戳统计
+                <input type="checkbox" class="isCountByRoles" name="isCountByRoles" />是否按角色统计
+                <input type="checkbox" class="isCountByGender" name="isCountByGender" />是否按性别统计
+                <input type="checkbox" class="isCountByIdcard" name="isCountByIdcard" />是否按身份证号统计
+                <input type="checkbox" class="isCountByCompany" name="isCountByCompany" />是否按公司统计
+                <input type="checkbox" class="isCountByTime" name="isCountByTime" />是否按时间统计
+                <br />
+                <input type="text" class="searchLTxt" value="" />
+                <br />
+                <input type="checkbox" class="time" id="Y" name="Y" />年
+                <input type="checkbox" class="time" id="M" name="M" />月
+                <input type="checkbox" class="time" id="D" name="D" />日
+                <input type="checkbox" class="time" id="H" name="H" />时
+                <input type="checkbox" class="time" id="m" name="m" />分
+                <input type="checkbox" class="time" id="S" name="S" />秒
+                <input type="button" id="btn_Search" value="统计" onclick="countList()" />
+            </div>
+            <div id="pieBox" style="width:1000px;height:1000px;border:solid 1px #0026ff"></div>
+            <div id="lineBox" style="width:1000px;height:1000px;border:solid 1px #0026ff"></div>
+            <script src="~/Scripts/js/EduUser/eduUser.js"></script>
+        </div>
+        <input type="hidden" id="hdnCount" />
+        <input type="hidden" id="hdnCompanySearch" />
+        <input type="hidden" id="hdnNicknameSearch" />
+        <input type="hidden" id="hdnRolesSearch" />
+        <input type="hidden" id="hdnGenderSearch" />
+        <input type="hidden" id="hdnIdcardSearch" />
+        <input type="hidden" id="hdnYearSearch" />
+        <input type="hidden" id="hdnPageSize" value="20" />
+</body>
+</html>

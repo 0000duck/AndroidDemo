@@ -1,0 +1,14 @@
+﻿.title {margin:10px 0px 5px 0px;border-bottom:1px #ccc solid;padding:0px 0px 0px 10px;margin:0px 0px 20px 0px;}
+.title span{font-size:18px;line-height:26px; vertical-align:middle;padding:0px 10px 0px 10px;border-bottom:2px #0093e8 solid;}
+
+.main{width:1000px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;}
+.main-div {margin:0px 0px 0px 0px;background-color:#fff;padding:0px 0px 0px 0px;}
+
+.NewsOperation{width:100%;background-color:#fff;padding:10px 0px 20px 0px;}
+.content{width:900px;margin:0px auto;}
+.pTitle,.pContent{font-size:16px; }
+.txtTitle{width:600px;height:30px}
+.newsContent{width:890px;height:300px;}
+.btnDiv {text-align:center;}
+.OKBtn{margin-right:50px;}
+.OKBtn,.cancelBtn{height:30px;width:150px;margin-top:20px;}

@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "EduCompanyList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/Echarts-2.2.7/echarts-all.js"></script>
+
+<link href="~/Scripts/ChooseDate/css/jcDate.css" rel="stylesheet" />
+<script src="~/Scripts/ChooseDate/js/jQuery-jcDate.js"></script>
+
+<link href="~/CSS/EduCompany/EduCompanyList.css" rel="stylesheet" />
+<script src="~/Scripts/js/EduCompany/EduCompanyList.js"></script>
+<!DOCTYPE html>
+<html>
+<body>
+    <div class="main-div CompanyOperation">
+        <p class="title"><span>公司信息管理</span></p>
+        <input type="button" class="btn btn-BlueBorder addCompanyBtn" value="添加公司信息" />
+        <input type="button" class="btn btn-BlueBorder delCompanyBtn" value="删除公司信息" />
+        <hr style="border:1px #ccc dashed;width:90%;margin:0px auto; margin-top:20px;margin-bottom:10px" />
+        <table class="fr" style="width:1000px;">
+            <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col width="60" />
+                <col width="20" />
+            </colgroup>
+            <tr>
+                <td class="tar">公司名：</td>
+                <td class="tal"><input type="text" class="searchCompanyTxt font-gray3 fl" value="" /></td>
+                <td class="tar">区域:</td>
+                <td class="tal"><input type="text" class="searchTerritoryTxt font-gray3 fl" value="" /></td>
+
+                <td class="tar">起始时间:</td>
+                <td class="tal"><input type="text" class="textBox jcDate serBeginTime" /></td>
+                <td class="tar">终止时间:</td>
+                <td class="tal"><input type="text" class="textBox jcDate serEndTime" /></td>
+
+                <td><div class="searchButton"></div></td>
+                <td></td>
+            </tr>
+        </table>
+        <div class="clear"></div>
+    </div>
+    <div class="main-div">
+        <table class="CompanyList" cellspacing=0 cellpadding=0>
+            <colgroup>
+                <col width="60" />
+                <col width="60" />
+                <col />
+                <col />
+                <col width="100" />
+                <col width="100" />
+                <col width="60" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>全选&nbsp;<input type="checkbox" class="chk-all" /></th>
+                    <th>标号</th>
+                    <th>公司名称</th>
+                    <th>区域</th>
+                    <th>时间戳</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody class="tbody_companyList"></tbody>
+        </table>
+        <div class="pagin">
+            <div id="Pagin" class="paginControl">
+            </div>
+        </div>
+    </div>
+    <div class="Chart" style="display:none">
+        <div style="display:block;height:100px;">
+            <input type="checkbox" class="isCountByStamp" name="isCountByStamp" />是否按时间戳统计
+            <input type="checkbox" class="isCountByTerritory" name="isCountByTerritory" />是否按区域统计
+            <input type="checkbox" class="isCountByTime" name="isCountByTime" />是否按时间统计
+            <br />
+            <input type="text" class="searchLTxt" value="" />
+            <br />
+            <input type="checkbox" class="time" id="Y" name="Y" />年
+            <input type="checkbox" class="time" id="M" name="M" />月
+            <input type="checkbox" class="time" id="D" name="D" />日
+            <input type="checkbox" class="time" id="H" name="H" />时
+            <input type="checkbox" class="time" id="m" name="m" />分
+            <input type="checkbox" class="time" id="S" name="S" />秒
+            <input type="button" id="btn_Search" value="统计" onclick="countList()" />
+        </div>
+        <div id="pieBox" style="width:1000px;height:1000px;border:solid 1px #0026ff"></div>
+
+    </div>
+    <input type="hidden" id="hdnCount" />
+    <input type="hidden" id="hdnTerritorySearch" />
+    <input type="hidden" id="hdnCompanySearch" />
+    <input type="hidden" id="hdnYearSearch" />
+    <input type="hidden" id="hdnPageSize" value="20" />
+</body>
+</html>

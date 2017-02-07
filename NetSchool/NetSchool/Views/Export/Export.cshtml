@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "Export";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Export</title>
+
+</head>
+<body>
+    <script src="~/Scripts/Echarts-2.2.7/echarts-all.js"></script>
+    <link href="~/Scripts/ChooseDate/css/jcDate.css" rel="stylesheet" />
+    <script src="~/Scripts/ChooseDate/js/jQuery-jcDate.js"></script>
+    <script src="~/Scripts/js/Export/Export.js"></script>
+    <link href="~/CSS/EduExamInfo/ExamInfoList.css" rel="stylesheet" />
+    <div class="main-div ExamInfoOperation">
+        <p class="title"><span>制卡发证</span></p>
+        <table class="fr " style="width:960px">
+            <colgroup>
+                <col width="100" />
+                <col width="180" />
+                <col width="100" />
+                <col width="180" />
+                <col width="100" />
+                <col width="180" />
+                <col width="100" />
+            </colgroup>
+            <tr>
+                <td class="tar">身份证号:</td>
+                <td class="tal"><input type="text" class="textBox serIDCard" /></td>
+                <td class="tar">企业:</td>
+                <td class="tal"><input type="text" class="textBox serCompany" /></td>
+                <td class="tar">区域:</td>
+                <td class="tal"><input type="text" class="textBox serTerritory" /></td>
+                <td rowspan="2"><div class="searchButton"></div></td>
+            </tr>
+            <tr>
+                <td class="tar">
+                    @*考试状态:*@
+                </td>
+                <td class="tal">
+                    @*<select class="serStatus">
+                            <option value="all">不限</option>
+                            <option value="doing">进行中</option>
+                            <option value="paused">暂停</option>                                                                                                                                                                            
+                            <option value="reviewing">审核中</option>
+                            <option value="finished">完成</option>
+                        </select>*@
+                </td>
+                <td class="tar">结束时间(始):</td>
+                <td class="tal">
+                    <input type="text" class="textBox jcDate serBeginTime" />
+                </td>
+                <td class="tar">结束时间(终):</td>
+                <td class="tal">
+                    <input type="text" class="textBox jcDate serEndTime" />
+                </td>
+
+
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align:right">
+                    @*<a href="/File/Excel/ExportExceladmin(20151227232608).xls" target="_blank">下载</a>*@
+                    <a class="alink exportAccess">导出Access</a>
+                    <a class="alink exportExcel">导出Excel</a>
+                </td>
+            </tr>
+        </table>
+        <div class="clear"></div>
+    </div>
+    <div class="main-div">
+        <div class="pieBox-Status">
+            <p>考试状态统计图</p>
+            <div id="pieBox" style="width:800px;height:600px;margin:0px auto;border:1px solid #ccc;"></div>
+        </div>
+        <div class="list-all">
+            <table class="ExamInfoList" cellspacing=0 cellpadding=0>
+                <colgroup>
+                    <col width="60" />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col width="60" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>姓名</th>
+                        <th>公司</th>
+                        <th>区域</th>
+                        <th>开始时间</th>
+                        <th>结束时间</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody_ExamInfoList">
+                    <tr><td realid="[ID]">1</td><td realid="[idcard]">于智凯</td><td realname="">NO.2</td><td realter="">北京</td><td>2015</td><td>2015</td><td>通过</td></tr>
+                </tbody>
+            </table>
+            <div class="pagin">
+                <div id="Pagin" class="paginControl">
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="hdnCount" />
+    <input type="hidden" id="hdnSearch" />
+    <input type="hidden" id="hdnPageSize" value="20" />
+</body>
+</html>

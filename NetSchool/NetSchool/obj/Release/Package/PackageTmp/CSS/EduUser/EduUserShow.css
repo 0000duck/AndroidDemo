@@ -1,0 +1,13 @@
+﻿.title {margin:10px 0px 5px 0px;border-bottom:1px #ccc solid;padding:0px 0px 0px 10px;margin:0px 0px 20px 0px;}
+.title span{font-size:18px;line-height:26px; vertical-align:middle;padding:0px 10px 0px 10px;border-bottom:2px #0093e8 solid;}
+
+.UserOperation{width:100%;background-color:#fff;padding:10px 0px 20px 0px;}
+.content{width:900px;margin:0px auto;}
+.pTitle,.pContent{font-size:16px; }
+.titleBox{text-align:center;margin: 40px 0px 30px 0px;}
+.titleBox .txtTitle{font-size:22px;font-weight:bold;margin-left:-50px;}
+.userContent{width:890px;height:400px;}
+.btnDiv {text-align:center;}
+.cancelBtn{height:30px;width:150px;margin-top:20px;}
+.txtAuthor{margin:50px 30px 0px 0px;}
+.txtCreateTime{}

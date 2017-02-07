@@ -1,0 +1,12 @@
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Release\NetSchool.DAL.dll
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Release\NetSchool.DAL.pdb
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Release\NetSchool.Common.dll
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Release\NetSchool.IDAL.dll
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Release\NetSchool.Model.dll
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Release\Interop.ADOX.dll
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Release\NetSchool.Common.pdb
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Release\NetSchool.IDAL.pdb
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Release\NetSchool.Model.pdb
+E:\小凯\NetSchool\Code\NetSchool\DAL\obj\Release\NetSchool.DAL.csprojResolveAssemblyReference.cache
+E:\小凯\NetSchool\Code\NetSchool\DAL\obj\Release\NetSchool.DAL.dll
+E:\小凯\NetSchool\Code\NetSchool\DAL\obj\Release\NetSchool.DAL.pdb

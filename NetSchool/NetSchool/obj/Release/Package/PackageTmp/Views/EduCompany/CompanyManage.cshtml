@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CompanyManage</title>
+    <link href="~/CSS/base.css" rel="stylesheet" />
+    <link href="~/CSS/EduCompany/EduCompanyManage.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    @*<script src="~/Scripts/js/base.js"></script>*@
+
+    <link href="~/Scripts/kindeditor-4.1.7/themes/default/default.css" rel="stylesheet" />
+    <link href="~/Scripts/kindeditor-4.1.7/plugins/code/prettify.css" rel="stylesheet" />
+    <script src="~/Scripts/kindeditor-4.1.7/kindeditor-min.js"></script>
+    <script src="~/Scripts/kindeditor-4.1.7/lang/zh_CN.js"></script>
+    <script src="~/Scripts/kindeditor-4.1.7/plugins/code/code.js"></script>
+
+    <script src="~/Scripts/js/EduCompany/EduCompanyManage.js"></script>
+</head>
+<body>
+    <form>
+        <div class="main">
+            <div class="main-div CompanyOperation">
+                <p class="title"><span>添加公司信息</span></p>
+                <div class="content">
+                    <table style="width:600px;margin:0px auto;">
+                        <tr><td class="tar">请填写公司名称:</td><td><input type="text" class="textBox txtCompany" /></td></tr>
+                        <tr><td class="tar">请填写所属区域:</td><td><input type="text" class="textBox txtTerritory" /></td></tr>
+                    </table>
+                    <table><tr><td></td><td><label class="msgConpany">&nbsp;</label></td></tr></table>
+                </div>
+                <div class="btnDiv">
+                    <input type="button" class="btn btn-BlueBorder OKBtn" name="OKBtn" value="确定" />
+                    <input type="button" class="btn btn-BlueBorder cancelBtn" name="cancelBtn" value="取消" />
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="hdnID" value="@Html.ViewBag.id"></form>
+</body>
+</html>

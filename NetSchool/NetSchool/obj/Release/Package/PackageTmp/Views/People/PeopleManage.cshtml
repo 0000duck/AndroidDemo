@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PeopleManage</title>
+    <link href="~/CSS/base.css" rel="stylesheet" />
+    <link href="~/CSS/People/PeopleManage.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/js/base.js"></script>
+    <script src="~/Scripts/js/People/PeopleManage.js"></script>
+</head>
+<body>
+    <form>
+        <div class="main">
+            <div class="main-div peopleOperation">
+                <p class="title"><span>添加管理员</span></p>
+                <div class="content">
+                    <table class="peopleTable" cellspacing="0" cellpadding="0">
+                        <colgroup><col width="60" /><col /><col width="60" /><col /></colgroup>
+                        <tr><td>用户名</td><td><input type="text" class="textBox userName" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" /></td><td>姓名</td><td><input type="text" class="textBox realName" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" /></td></tr>
+                        <tr><td>电话</td><td><input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" class="textBox telephone" /></td><td>E-Mail</td><td><input type="text" class="textBox Email" /></td></tr>
+                        <tr><td>权限</td><td colspan="3"><select class="sltPermission"><option value="0x0001">只读</option><option value="0x0002">读写</option></select></td></tr>
+                    </table>
+                    <table><tr><td></td><td><label class="msgPeople">&nbsp;</label></td></tr></table>
+                </div>
+                <div class="btnDiv">
+                    <input type="button" class="btn btn-BlueBorder OKBtn" name="OKBtn" value="确定" />
+                    <input type="button" class="btn btn-BlueBorder cancelBtn" name="cancelBtn" value="取消" />
+                </div>
+            </div>
+        </div>
+        @*<div class="footer">
+                footer
+            </div>*@
+        <input type="hidden" id="hdnUserName" value="@Html.ViewBag.id">
+    </form>
+</body>
+</html>

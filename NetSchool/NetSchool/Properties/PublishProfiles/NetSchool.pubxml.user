@@ -1,0 +1,1246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\web\NetSchool</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Ajax/EduCompanyManage.ashx">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Ajax/EduExamInfoManage.ashx">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Ajax/EduLearningManage.ashx">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Ajax/EduPayInfoManage.ashx">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Ajax/EduUserManage.ashx">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Ajax/LawManage.ashx">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Ajax/LawManageN.ashx">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Ajax/LoginManage.ashx">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Ajax/NewsManage.ashx">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Ajax/NewsManageN.ashx">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Ajax/NoticeManage.ashx">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Ajax/NoticeManageN.ashx">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Ajax/PeopleManage.ashx">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Ajax/Test.ashx">
+      <publishTime>12/06/2015 20:12:20</publishTime>
+    </File>
+    <File Include="bin/Interop.ADOX.dll">
+      <publishTime>12/29/2015 00:41:30</publishTime>
+    </File>
+    <File Include="bin/NetSchool.BLL.dll">
+      <publishTime>01/04/2016 00:04:28</publishTime>
+    </File>
+    <File Include="bin/NetSchool.Common.dll">
+      <publishTime>01/04/2016 00:04:27</publishTime>
+    </File>
+    <File Include="bin/NetSchool.DAL.dll">
+      <publishTime>01/03/2016 23:34:33</publishTime>
+    </File>
+    <File Include="bin/NetSchool.DALFactory.dll">
+      <publishTime>01/04/2016 00:04:28</publishTime>
+    </File>
+    <File Include="bin/NetSchool.dll">
+      <publishTime>01/04/2016 00:04:29</publishTime>
+    </File>
+    <File Include="bin/NetSchool.IDAL.dll">
+      <publishTime>01/04/2016 00:04:27</publishTime>
+    </File>
+    <File Include="bin/NetSchool.Model.dll">
+      <publishTime>01/04/2016 00:04:26</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>12/28/2015 22:46:33</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>12/28/2015 22:46:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>12/28/2015 22:46:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>12/28/2015 22:46:11</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>12/28/2015 22:46:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>12/28/2015 22:46:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>12/28/2015 22:46:12</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>12/28/2015 22:46:12</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>12/28/2015 22:46:26</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>12/28/2015 22:46:09</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Webpages.Deployment.resources.dll">
+      <publishTime>12/28/2015 22:46:12</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Webpages.Razor.resources.dll">
+      <publishTime>12/28/2015 22:46:12</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Webpages.resources.dll">
+      <publishTime>12/28/2015 22:46:12</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>12/28/2015 22:45:48</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>12/28/2015 22:45:48</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>12/28/2015 22:45:48</publishTime>
+    </File>
+    <File Include="Controls/menuControl.ascx">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="CSS/base.css">
+      <publishTime>01/03/2016 22:24:17</publishTime>
+    </File>
+    <File Include="CSS/control/menuControl.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/control/paginControl.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/EduCompany/EduCompanyList.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/EduCompany/EduCompanyManage.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/EduCompany/EduCompanyShow.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/EduExamInfo/ExamInfoList.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/EduLearningInfo/LearningInfoList.css">
+      <publishTime>01/03/2016 21:03:28</publishTime>
+    </File>
+    <File Include="CSS/EduPayInfo/EduPayInfoList.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/EduUser/EduUserList.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/EduUser/EduUserManage.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/EduUser/EduUserShow.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/Law/LawList.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/Law/LawManage.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/Law/LawShow.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/Main/Index.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/Main/main.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/News/NewsList.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/News/NewsManage.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/News/NewsShow.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/Notice/NoticeList.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/Notice/NoticeManage.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/Notice/NoticeShow.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/People/PasswordChange.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/People/PeopleList.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="CSS/People/PeopleManage.css">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Image/bass/121203319471883677.png">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Image/bass/study.jpg">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Image/ui.search/search-focus.png">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Image/ui.search/search.jpg">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Image/ui.search/search.png">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>12/28/2015 22:45:49</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/ChooseDate/css/jcDate.css">
+      <publishTime>12/28/2015 22:45:59</publishTime>
+    </File>
+    <File Include="Scripts/ChooseDate/img/dateIco.png">
+      <publishTime>12/28/2015 22:45:59</publishTime>
+    </File>
+    <File Include="Scripts/ChooseDate/img/r_left.png">
+      <publishTime>12/28/2015 22:45:59</publishTime>
+    </File>
+    <File Include="Scripts/ChooseDate/img/r_right.png">
+      <publishTime>12/28/2015 22:45:59</publishTime>
+    </File>
+    <File Include="Scripts/ChooseDate/index.html">
+      <publishTime>12/28/2015 22:45:59</publishTime>
+    </File>
+    <File Include="Scripts/ChooseDate/js/jquery-1.10.2.min.js">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/ChooseDate/js/jquery-1.7.2.min.js">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/ChooseDate/js/jQuery-jcDate.js">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/ChooseDate/lanrenzhijia.com下载说明.txt">
+      <publishTime>12/28/2015 22:45:59</publishTime>
+    </File>
+    <File Include="Scripts/ChooseDate/访问懒人之家.url">
+      <publishTime>12/28/2015 22:45:59</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/bar.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/chord.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/eventRiver.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/force.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/funnel.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/gauge.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/heatmap.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/k.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/line.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/map.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/pie.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/radar.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/scatter.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/tree.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/treemap.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/venn.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/chart/wordCloud.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/echarts-all.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/echarts-optimize-conf.js">
+      <publishTime>12/28/2015 22:45:58</publishTime>
+    </File>
+    <File Include="Scripts/Echarts-2.2.7/echarts.js">
+      <publishTime>12/28/2015 22:45:59</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/blank.gif">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/fancybox_loading%402x.gif">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/fancybox_loading.gif">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/fancybox_overlay.png">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/fancybox_sprite%402x.png">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/fancybox_sprite.png">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/fun_Fancybox.js">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/helpers/fancybox_buttons.png">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/helpers/jquery.fancybox-buttons.css">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/helpers/jquery.fancybox-buttons.js">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/helpers/jquery.fancybox-media.js">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/helpers/jquery.fancybox-thumbs.css">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/helpers/jquery.fancybox-thumbs.js">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/jquery.fancybox.css">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/jquery.fancybox.js">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/fancybox-2.1.5/jquery.fancybox.pack.js">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/js/base.js">
+      <publishTime>01/03/2016 23:24:57</publishTime>
+    </File>
+    <File Include="Scripts/js/control/ChartOption.js">
+      <publishTime>01/03/2016 23:59:54</publishTime>
+    </File>
+    <File Include="Scripts/js/control/menuControl.js">
+      <publishTime>01/03/2016 23:17:20</publishTime>
+    </File>
+    <File Include="Scripts/js/control/paginControl.js">
+      <publishTime>01/03/2016 23:17:57</publishTime>
+    </File>
+    <File Include="Scripts/js/control/search.js">
+      <publishTime>01/03/2016 23:18:03</publishTime>
+    </File>
+    <File Include="Scripts/js/EduCompany/eduCompany.js">
+      <publishTime>01/03/2016 23:20:30</publishTime>
+    </File>
+    <File Include="Scripts/js/EduCompany/EduCompanyList.js">
+      <publishTime>01/03/2016 23:18:38</publishTime>
+    </File>
+    <File Include="Scripts/js/EduCompany/EduCompanyManage.js">
+      <publishTime>01/03/2016 23:18:46</publishTime>
+    </File>
+    <File Include="Scripts/js/EduCompany/EduCompanyShow.js">
+      <publishTime>01/03/2016 23:50:00</publishTime>
+    </File>
+    <File Include="Scripts/js/EduExamInfo/ExamInfoList.js">
+      <publishTime>01/04/2016 00:03:25</publishTime>
+    </File>
+    <File Include="Scripts/js/EduLearningInfo/LearningInfoList.js">
+      <publishTime>01/04/2016 00:00:19</publishTime>
+    </File>
+    <File Include="Scripts/js/EduPayInfo/EduPayInfoList.js">
+      <publishTime>01/04/2016 00:00:22</publishTime>
+    </File>
+    <File Include="Scripts/js/EduUser/eduUser.js">
+      <publishTime>12/28/2015 22:45:52</publishTime>
+    </File>
+    <File Include="Scripts/js/EduUser/EduUserList.js">
+      <publishTime>12/28/2015 22:45:52</publishTime>
+    </File>
+    <File Include="Scripts/js/EduUser/EduUserManage.js">
+      <publishTime>01/02/2016 23:09:44</publishTime>
+    </File>
+    <File Include="Scripts/js/EduUser/EduUserShow.js">
+      <publishTime>01/03/2016 23:51:04</publishTime>
+    </File>
+    <File Include="Scripts/js/Export/Export.js">
+      <publishTime>01/03/2016 23:21:39</publishTime>
+    </File>
+    <File Include="Scripts/js/Law/LawList.js">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/js/Law/LawListN.js">
+      <publishTime>01/03/2016 23:22:10</publishTime>
+    </File>
+    <File Include="Scripts/js/Law/LawManage.js">
+      <publishTime>01/02/2016 23:09:44</publishTime>
+    </File>
+    <File Include="Scripts/js/Law/LawShow.js">
+      <publishTime>01/03/2016 23:22:20</publishTime>
+    </File>
+    <File Include="Scripts/js/Law/LawShowN.js">
+      <publishTime>01/03/2016 23:22:31</publishTime>
+    </File>
+    <File Include="Scripts/js/Main/login.js">
+      <publishTime>01/03/2016 23:22:45</publishTime>
+    </File>
+    <File Include="Scripts/js/Main/Main.js">
+      <publishTime>12/28/2015 22:45:52</publishTime>
+    </File>
+    <File Include="Scripts/js/Main/MainChart.js">
+      <publishTime>12/28/2015 22:45:52</publishTime>
+    </File>
+    <File Include="Scripts/js/News/NewsList.js">
+      <publishTime>12/28/2015 22:45:52</publishTime>
+    </File>
+    <File Include="Scripts/js/News/NewsListN.js">
+      <publishTime>01/03/2016 23:23:16</publishTime>
+    </File>
+    <File Include="Scripts/js/News/NewsManage.js">
+      <publishTime>01/03/2016 23:23:25</publishTime>
+    </File>
+    <File Include="Scripts/js/News/NewsShow.js">
+      <publishTime>01/03/2016 23:23:33</publishTime>
+    </File>
+    <File Include="Scripts/js/Notice/NoticeList.js">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Scripts/js/Notice/NoticeListN.js">
+      <publishTime>01/03/2016 23:24:05</publishTime>
+    </File>
+    <File Include="Scripts/js/Notice/NoticeManage.js">
+      <publishTime>01/02/2016 23:09:44</publishTime>
+    </File>
+    <File Include="Scripts/js/Notice/NoticeShow.js">
+      <publishTime>01/03/2016 23:24:18</publishTime>
+    </File>
+    <File Include="Scripts/js/People/PasswordChange.js">
+      <publishTime>01/03/2016 23:24:32</publishTime>
+    </File>
+    <File Include="Scripts/js/People/PeopleList.js">
+      <publishTime>12/28/2015 22:45:52</publishTime>
+    </File>
+    <File Include="Scripts/js/People/PeopleManage.js">
+      <publishTime>01/02/2016 23:09:44</publishTime>
+    </File>
+    <File Include="Scripts/js/test.js">
+      <publishTime>01/01/2016 12:50:44</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/asp.net/bin/LitJSON.dll">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/asp.net/demo.aspx">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/asp.net/file_manager_json.ashx">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/asp.net/README.txt">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/asp.net/upload_json.ashx">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/kindeditor-all-min.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/kindeditor-all.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/kindeditor-min.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/kindeditor.js">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/lang/ar.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/lang/en.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/lang/ko.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/lang/zh_CN.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/lang/zh_TW.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/license.txt">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/anchor/anchor.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/autoheight/autoheight.js">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/baidumap/baidumap.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/baidumap/index.html">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/baidumap/map.html">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/clearhtml/clearhtml.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/code/code.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/code/prettify.css">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/code/prettify.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/emoticons.js">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/0.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/1.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/10.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/100.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/101.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/102.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/103.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/104.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/105.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/106.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/107.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/108.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/109.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/11.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/110.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/111.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/112.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/113.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/114.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/115.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/116.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/117.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/118.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/119.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/12.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/120.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/121.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/122.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/123.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/124.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/125.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/126.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/127.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/128.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/129.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/13.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/130.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/131.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/132.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/133.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/134.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/14.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/15.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/16.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/17.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/18.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/19.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/2.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/20.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/21.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/22.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/23.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/24.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/25.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/26.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/27.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/28.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/29.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/3.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/30.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/31.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/32.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/33.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/34.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/35.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/36.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/37.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/38.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/39.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/4.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/40.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/41.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/42.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/43.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/44.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/45.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/46.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/47.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/48.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/49.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/5.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/50.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/51.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/52.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/53.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/54.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/55.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/56.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/57.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/58.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/59.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/6.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/60.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/61.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/62.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/63.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/64.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/65.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/66.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/67.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/68.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/69.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/7.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/70.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/71.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/72.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/73.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/74.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/75.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/76.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/77.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/78.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/79.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/8.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/80.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/81.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/82.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/83.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/84.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/85.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/86.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/87.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/88.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/89.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/9.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/90.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/91.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/92.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/93.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/94.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/95.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/96.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/97.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/98.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/99.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/emoticons/images/static.gif">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/filemanager/filemanager.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/filemanager/images/file-16.gif">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/filemanager/images/file-64.gif">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/filemanager/images/folder-16.gif">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/filemanager/images/folder-64.gif">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/filemanager/images/go-up.gif">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/flash/flash.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/image/image.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/image/images/align_left.gif">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/image/images/align_right.gif">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/image/images/align_top.gif">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/image/images/refresh.png">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/insertfile/insertfile.js">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/lineheight/lineheight.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/link/link.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/map/map.html">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/map/map.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/media/media.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/multiimage/images/image.png">
+      <publishTime>12/28/2015 22:46:03</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/multiimage/images/select-files-en.png">
+      <publishTime>12/28/2015 22:46:03</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/multiimage/images/select-files-zh_CN.png">
+      <publishTime>12/28/2015 22:46:03</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/multiimage/images/swfupload.swf">
+      <publishTime>12/28/2015 22:46:03</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/multiimage/multiimage.js">
+      <publishTime>12/28/2015 22:46:03</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/pagebreak/pagebreak.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/plainpaste/plainpaste.js">
+      <publishTime>12/28/2015 22:46:03</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/preview/preview.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/quickformat/quickformat.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/table/table.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/template/html/1.html">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/template/html/2.html">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/template/html/3.html">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/template/template.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/plugins/wordpaste/wordpaste.js">
+      <publishTime>12/28/2015 22:46:02</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/themes/common/anchor.gif">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/themes/common/blank.gif">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/themes/common/flash.gif">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/themes/common/loading.gif">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/themes/common/media.gif">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/themes/common/rm.gif">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/themes/default/background.png">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/themes/default/default.css">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/themes/default/default.png">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/themes/qq/editor.gif">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/themes/qq/qq.css">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/kindeditor-4.1.7/themes/simple/simple.css">
+      <publishTime>12/28/2015 22:46:00</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>12/28/2015 22:45:51</publishTime>
+    </File>
+    <File Include="Views/EduCompany/CompanyList.cshtml">
+      <publishTime>01/02/2016 10:07:54</publishTime>
+    </File>
+    <File Include="Views/EduCompany/CompanyManage.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/EduCompany/CompanyShow.cshtml">
+      <publishTime>01/03/2016 23:53:50</publishTime>
+    </File>
+    <File Include="Views/EduExamInfo/ExamInfoList.cshtml">
+      <publishTime>12/31/2015 15:17:38</publishTime>
+    </File>
+    <File Include="Views/EduLearningInfo/LearningInfoList.cshtml">
+      <publishTime>01/02/2016 23:07:39</publishTime>
+    </File>
+    <File Include="Views/EduPayInfo/PayInfoList.cshtml">
+      <publishTime>01/02/2016 23:09:44</publishTime>
+    </File>
+    <File Include="Views/EduUser/UserList.cshtml">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Views/EduUser/UserManage.cshtml">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Views/EduUser/UserShow.cshtml">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Views/Export/Export.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/Law/LawList.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/Law/LawListN.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/Law/LawManage.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/Law/LawShow.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/Law/LawShowN.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/Main/GetFromDB.cshtml">
+      <publishTime>12/13/2015 15:52:14</publishTime>
+    </File>
+    <File Include="Views/Main/Index.cshtml">
+      <publishTime>01/02/2016 17:13:03</publishTime>
+    </File>
+    <File Include="Views/Main/List.cshtml">
+      <publishTime>12/10/2015 21:17:48</publishTime>
+    </File>
+    <File Include="Views/Main/Login.cshtml">
+      <publishTime>12/13/2015 11:10:02</publishTime>
+    </File>
+    <File Include="Views/Main/Main.cshtml">
+      <publishTime>01/02/2016 10:07:54</publishTime>
+    </File>
+    <File Include="Views/Main/Test.cshtml">
+      <publishTime>12/10/2015 21:17:48</publishTime>
+    </File>
+    <File Include="Views/News/NewsList.cshtml">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Views/News/NewsListN.cshtml">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Views/News/NewsManage.cshtml">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Views/News/NewsShow.cshtml">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Views/News/NewsShowN.cshtml">
+      <publishTime>12/28/2015 22:46:06</publishTime>
+    </File>
+    <File Include="Views/Notice/NoticeList.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/Notice/NoticeListN.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/Notice/NoticeManage.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/Notice/NoticeShow.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/Notice/NoticeShowN.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/People/PasswordChange.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/People/PeopleList.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/People/PeopleManage.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/Shared/footer.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/Shared/Menu.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>01/02/2016 23:15:58</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>12/28/2015 22:46:07</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/04/2016 00:04:30</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

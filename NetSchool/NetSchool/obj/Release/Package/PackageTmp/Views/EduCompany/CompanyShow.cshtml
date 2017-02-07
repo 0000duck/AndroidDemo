@@ -1,0 +1,41 @@
+﻿@model NetSchool.Model.EduCompany
+@{
+    ViewBag.Title = "CompanyShow";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <link href="~/CSS/base.css" rel="stylesheet" />
+    <link href="~/CSS/EduCompany/EduCompanyShow.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    <link href="~/Scripts/kindeditor-4.1.7/themes/default/default.css" rel="stylesheet" />
+    <link href="~/Scripts/kindeditor-4.1.7/plugins/code/prettify.css" rel="stylesheet" />
+    <script src="~/Scripts/kindeditor-4.1.7/kindeditor-min.js"></script>
+    <script src="~/Scripts/kindeditor-4.1.7/lang/zh_CN.js"></script>
+    <script src="~/Scripts/kindeditor-4.1.7/plugins/code/code.js"></script>
+
+    <script src="~/Scripts/js/EduCompany/EduCompanyShow.js"></script>
+
+    <div class="main">
+        <div class="main-div CompanyOperation">
+            <p class="title"><span>公司信息查看</span></p>
+            <div class="content">
+                <div class="titleBox">
+                    <label class="txtTitle">@Html.DisplayFor(model => model.Company)</label><br />
+                    <p>
+                        <label class="txtAuthor">创建时间戳：<span>@Html.DisplayFor(model => model.CreatedTime)</span></label>
+                        <label class="txtCreateTime">创建时间：<span>@Html.DisplayFor(model => model.CreateTime).ToString().Split(' ')[0]</span></label>
+                    </p>
+                </div>
+            </div>
+            <div class="btnDiv">
+                <input type="button" class="btn btn-BlueBorder cancelBtn" name="cancelBtn" value="关闭" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

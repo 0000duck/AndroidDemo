@@ -1,0 +1,7 @@
+﻿/*menu*/
+.menu {height:40px;width:100%;background-color:#0093e8;user-select:none;-webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;}
+.menuList{width:1100px;height:100%;margin:0px auto;user-select:none;}
+.menuTab{width:130px;height:100%;line-height:40px;text-align:center;color:#fff;font-weight:bold;font-size:15px;position:relative;}
+.menuTab:hover{background-color:#0578bb;cursor:pointer;}
+.menuItemBox{background-color:#0089d9;display:none;z-index:9;}
+.menuItem:hover{background-color:#007cc3;}

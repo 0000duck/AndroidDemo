@@ -1,0 +1,36 @@
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Debug\NetSchool.DAL.dll
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Debug\NetSchool.DAL.pdb
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Debug\NetSchool.Common.dll
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Debug\NetSchool.IDAL.dll
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Debug\NetSchool.Model.dll
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Debug\NetSchool.Common.pdb
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Debug\NetSchool.IDAL.pdb
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Debug\NetSchool.Model.pdb
+E:\小凯\NetSchool\Code\NetSchool\DAL\obj\Debug\NetSchool.DAL.csprojResolveAssemblyReference.cache
+E:\小凯\NetSchool\Code\NetSchool\DAL\obj\Debug\NetSchool.DAL.dll
+E:\小凯\NetSchool\Code\NetSchool\DAL\obj\Debug\NetSchool.DAL.pdb
+E:\小凯\NetSchool\Code\NetSchool\DAL\bin\Debug\Interop.ADOX.dll
+E:\小凯\新建文件夹 (2)\NetSchool\DAL\bin\Debug\NetSchool.DAL.dll
+E:\小凯\新建文件夹 (2)\NetSchool\DAL\bin\Debug\NetSchool.DAL.pdb
+E:\小凯\新建文件夹 (2)\NetSchool\DAL\bin\Debug\NetSchool.Common.dll
+E:\小凯\新建文件夹 (2)\NetSchool\DAL\bin\Debug\NetSchool.IDAL.dll
+E:\小凯\新建文件夹 (2)\NetSchool\DAL\bin\Debug\NetSchool.Model.dll
+E:\小凯\新建文件夹 (2)\NetSchool\DAL\bin\Debug\Interop.ADOX.dll
+E:\小凯\新建文件夹 (2)\NetSchool\DAL\bin\Debug\NetSchool.Common.pdb
+E:\小凯\新建文件夹 (2)\NetSchool\DAL\bin\Debug\NetSchool.IDAL.pdb
+E:\小凯\新建文件夹 (2)\NetSchool\DAL\bin\Debug\NetSchool.Model.pdb
+E:\小凯\新建文件夹 (2)\NetSchool\DAL\obj\Debug\NetSchool.DAL.csprojResolveAssemblyReference.cache
+E:\小凯\新建文件夹 (2)\NetSchool\DAL\obj\Debug\NetSchool.DAL.dll
+E:\小凯\新建文件夹 (2)\NetSchool\DAL\obj\Debug\NetSchool.DAL.pdb
+C:\Users\DevinYu\Desktop\NetSchool\DAL\bin\Debug\NetSchool.DAL.dll
+C:\Users\DevinYu\Desktop\NetSchool\DAL\bin\Debug\NetSchool.DAL.pdb
+C:\Users\DevinYu\Desktop\NetSchool\DAL\bin\Debug\NetSchool.Common.dll
+C:\Users\DevinYu\Desktop\NetSchool\DAL\bin\Debug\NetSchool.IDAL.dll
+C:\Users\DevinYu\Desktop\NetSchool\DAL\bin\Debug\NetSchool.Model.dll
+C:\Users\DevinYu\Desktop\NetSchool\DAL\bin\Debug\Interop.ADOX.dll
+C:\Users\DevinYu\Desktop\NetSchool\DAL\bin\Debug\NetSchool.Common.pdb
+C:\Users\DevinYu\Desktop\NetSchool\DAL\bin\Debug\NetSchool.IDAL.pdb
+C:\Users\DevinYu\Desktop\NetSchool\DAL\bin\Debug\NetSchool.Model.pdb
+C:\Users\DevinYu\Desktop\NetSchool\DAL\obj\Debug\NetSchool.DAL.csprojResolveAssemblyReference.cache
+C:\Users\DevinYu\Desktop\NetSchool\DAL\obj\Debug\NetSchool.DAL.dll
+C:\Users\DevinYu\Desktop\NetSchool\DAL\obj\Debug\NetSchool.DAL.pdb

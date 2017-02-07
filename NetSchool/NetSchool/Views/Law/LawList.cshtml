@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "LawList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script src="~/Scripts/js/Law/LawList.js"></script>
+    <link href="~/CSS/Law/LawList.css" rel="stylesheet" />
+    <div class="main-div LawOperation">
+        <p class="title"><span>法律法规管理</span></p>
+        <input type="button" class="btn btn-BlueBorder addLawBtn" value="添加法律法规" />
+        <input type="button" class="btn btn-BlueBorder delLawBtn" value="删除法律法规" />
+        <div class="search fr">
+            <input type="text" class="searchTxt font-gray3" value="" />
+            <div class="searchButton searchBtn">
+            </div>
+        </div><div class="clear"></div>
+    </div>
+    <div class="main-div">
+        <table class="LawList" cellspacing=0 cellpadding=0>
+            <colgroup>
+                <col width="80" />
+                <col width="60" />
+                <col />
+                <col width="100" />
+                <col width="100" />
+                <col width="120" />
+                <col width="100" />
+                <col width="80" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>全选&nbsp;<input type="checkbox" class="chk-all" /></th>
+                    <th>标号</th>
+                    <th>标题</th>
+                    <th>创建人</th>
+                    <th>创建时间</th>
+                    <th>查看次数</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody class="tbody_lawList"></tbody>
+        </table>
+        <div class="pagin">
+            <div id="Pagin" class="paginControl">
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="hdnCount" />
+    <input type="hidden" id="hdnSearch" />
+    <input type="hidden" id="hdnPageSize" value="20" />
+</body>
+</html>

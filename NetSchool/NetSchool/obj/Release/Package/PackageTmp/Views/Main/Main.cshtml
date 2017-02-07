@@ -1,0 +1,79 @@
+﻿@using System.Data;
+@model IDictionary<string, DataTable>
+@{
+    ViewBag.Title = "Main";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body>
+    <link href="~/CSS/Main/main.css" rel="stylesheet" />
+    <script src="~/Scripts/Echarts-2.2.7/echarts-all.js"></script>
+    <script src="~/Scripts/js/control/ChartOption.js"></script>
+    <script src="~/Scripts/js/Main/Main.js"></script>
+
+    <div class="main">
+
+        <div class="main-div News fl">
+            <p class="title"><span class="titleSpan">新闻</span><a href="/News/NewsList" class="titleMore fr">more</a></p>
+            <ul class="newsList">
+                @foreach (DataRow item in Model["News"].Rows)
+                {
+                    <li>
+                        <a class="contentLine" target="_blank" href="/News/NewsShow?id=@item["NewsId"]">
+                            @item["Title"]
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="main-div Law fl">
+            <p class="title"><span class="titleSpan">法律法规</span><a href="/Law/LawList" class="titleMore fr">more</a></p>
+            <ul class="lawList">
+                @foreach (DataRow item in Model["Law"].Rows)
+                {
+                    <li>
+                        <a class="contentLine" target="_blank" href="/Law/LawShow?id=@item["LawId"]">
+                            @item["Title"]
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="main-div Notice fl">
+            <p class="title"><span class="titleSpan">通知公告</span><a href="/Notice/NoticeList" class="titleMore fr">more</a></p>
+            <ul class="noticeList">
+                @foreach (DataRow item in Model["Notice"].Rows)
+                {
+                    <li>
+                        <a class="contentLine" target="_blank" href="/Notice/NoticeShow?id=@item["NoticeId"]">
+                            @item["Title"]
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div class="main-div LinePhoto fl">
+            <p class="title"><span class="titleSpan">统计图</span></p>
+            <div class="photoBox fl">
+                <div id="lineBox" style="width:720px;height:330px;"></div>
+                <div id="pieBox" style="width:720px;height:330px;display:none;"></div>
+                <script src="~/Scripts/js/Main/MainChart.js"></script>
+            </div>
+            <div class="photoTab fl">
+                <a class="contentLine" href="javascript:void(0)" onclick="countLearn()"><p class="contentLine-active">本年每月学习人数</p></a><br />
+                <a class="contentLine" href="javascript:void(0)" onclick="countExam()"><p>本年每月考试人数</p></a><br />
+                <a class="contentLine" href="javascript:void(0)" onclick="countPayInfo()"><p>本月支付情况</p></a><br />
+            </div>
+            <div class="clear"></div>
+        </div>
+        @*<div class="main-div people fl">
+                <p class="title"><span class="titleSpan">我也不知道这里放神马好</span></p>
+            </div>*@
+
+
+        <div class="clear"></div>
+    </div>
+</body>
+</html>

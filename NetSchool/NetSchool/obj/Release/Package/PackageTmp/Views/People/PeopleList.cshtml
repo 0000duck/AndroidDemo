@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "PeopleList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body>
+    <link href="~/Scripts/fancybox-2.1.5/jquery.fancybox.css" rel="stylesheet" />
+    <script src="~/Scripts/fancybox-2.1.5/fun_Fancybox.js"></script>
+    <script src="~/Scripts/fancybox-2.1.5/jquery.fancybox.js"></script>
+
+    <link href="~/CSS/People/PeopleList.css" rel="stylesheet" />
+    <script src="~/Scripts/js/People/PeopleList.js"></script>
+        <div class="main-div PeopleOperation">
+            <p class="title"><span>系统管理员</span></p>
+            <input type="button" class="btn btn-BlueBorder addPeopleBtn" value="添加人员" />
+            <input type="button" class="btn btn-BlueBorder delPeopleBtn" value="删除人员" />
+            <div class="search fr">
+                <input type="text" class="searchTxt font-gray3" value="" />
+                <div class="searchBtn searchButton">
+                </div>
+            </div><div class="clear"></div>
+        </div>
+        <div class="main-div">
+            <table class="PeopleList" cellspacing=0 cellpadding=0>
+                <colgroup><col width="80" /></colgroup>
+                <thead>
+                    <tr>
+                        <th>全选&nbsp;<input type="checkbox" class="chk-all" /></th>
+                        <th>登录名</th>
+                        <th>姓名</th>
+                        <th>电话</th>
+                        <th>E-Mail</th>
+                        <th>权限</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody_PeopleList">
+                    <tr>
+                        <td><input type="checkbox" id="" name="chkn" class="chk" /></td>
+                        <td>yuzhikai</td>
+                        <td>于智凯</td>
+                        <td>11111111</td>
+                        <td>hontmail</td>
+                        <td>只读</td>
+                        <td><a class="peopleEdit aOperation">编辑</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pagin">
+                <div id="Pagin" class="paginControl">
+                </div>
+            </div>
+        </div>
+    <input type="hidden" id="hdnCount" />
+    <input type="hidden" id="hdnSearch" />
+    <input type="hidden" id="hdnPageSize" value="20" />
+</body>
+</html>

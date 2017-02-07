@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    
+    <link href="~/CSS/base.css" rel="stylesheet" />
+    <link href="~/CSS/control/paginControl.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/js/base.js"></script>
+    <script src="~/Scripts/js/control/paginControl.js"></script>
+    <script src="~/Scripts/js/control/search.js"></script>
+
+    <link href="~/Scripts/fancybox-2.1.5/jquery.fancybox.css" rel="stylesheet" />
+    <script src="~/Scripts/fancybox-2.1.5/fun_Fancybox.js"></script>
+    <script src="~/Scripts/fancybox-2.1.5/jquery.fancybox.js"></script>
+</head>
+<body>
+    <div class="top">
+        <div class="top-main">
+            <img src="~/Image/bass/121203319471883677.png" class="topLogo" />
+            <div class="topInfo fr"><p class="fr"><span class="currentUserName">@Session["Realname"]</span>&nbsp;&nbsp;您好!<a class="ALink-PasswordChange">修改密码</a><a class="ALink-Logout">退出</a></p></div>
+        </div>
+    </div>
+    <div class="menu">
+        @RenderPage("~/Views/Shared/Menu.cshtml")
+    </div>
+    <div class="main">
+        @RenderBody()
+    </div>
+    @RenderPage("~/Views/Shared/footer.cshtml")
+</body>
+</html>

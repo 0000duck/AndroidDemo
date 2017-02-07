@@ -1,0 +1,12 @@
+﻿.paginControl{margin: auto;text-align: center;line-height: 30px;vertical-align: middle;margin: auto;font-size: 14px;color: #666;}
+.paginControl .div-page{float: left;margin: 0px 20px 0px 20px;}
+.paginControl .page-selected{background-color: #59aae0;color: #fff;float: left;border: 1px #ccc solid;line-height: 25px;margin: 2px;text-align: center;padding:0px 8px;}
+.paginControl .page{float: left;border: 1px #ccc solid;line-height: 25px;margin: 2px;text-align: center;background-color: #f1eff0;color: #666;padding:0px 8px;}
+.paginControl .page1{float: left;width: 15px;line-height: 25px;margin: 2px;text-align: center;display: none;}
+.paginControl .page2{float: left;border: 1px #fff solid;width: 50px;line-height: 25px;margin: 2px;text-align: center;background-color: none;}
+.paginControl .clearfloat:after{display: block;clear: both;height: 0;line-height: 0;visibility: hidden;content: ".";font-size: 0.1em;}
+.paginControl .clearfloat{display: inline-block;}
+.paginControl .txtJumpPafe{width: 30px;}
+.paginControl .OKjumpPage{margin: 2px 0px 0px 5px;float: left;width: 40px;line-height: 25px;color: #666;cursor: pointer;text-decoration:underline;}
+.OKjumpPage:hover{color: #5996e0;}
+.paginControl .page:hover, .paginControl .page2:hover{cursor: pointer;border: 1px #ccc solid;background-color: #94cbe0;color: #fff;}

@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "LearningInfoList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body>
+    <script src="~/Scripts/Echarts-2.2.7/echarts-all.js"></script>
+
+    <link href="~/Scripts/ChooseDate/css/jcDate.css" rel="stylesheet" />
+    <script src="~/Scripts/ChooseDate/js/jQuery-jcDate.js"></script>
+
+    <link href="~/CSS/EduLearningInfo/LearningInfoList.css" rel="stylesheet" />
+    <script src="~/Scripts/js/EduLearningInfo/LearningInfoList.js"></script>
+    <div class="main-div LearningInfoOperation">
+        <p class="title"><span>学习信息统计</span></p>
+        <table class="fr " style="width:960px">
+            <colgroup>
+                <col width="100" />
+                <col width="180" />
+                <col width="100" />
+                <col width="180" />
+                <col width="100" />
+                <col width="180" />
+                <col width="100" />
+            </colgroup>
+            <tr>
+                <td class="tar">身份证号:</td>
+                <td class="tal"><input type="text" class="textBox serIDCard" /></td>
+                <td class="tar">企业:</td>
+                <td class="tal"><input type="text" class="textBox serCompany" /></td>
+                <td class="tar">区域:</td>
+                <td class="tal"><input type="text" class="textBox serTerritory" /></td>
+                <td rowspan="2"><div class="searchButton"></div></td>
+            </tr>
+            <tr>
+                <td class="tar">时间(始):</td>
+                <td class="tal">
+                    <input type="text" class="textBox jcDate serBeginTime" />
+                </td>
+                <td class="tar">时间(终):</td>
+                <td class="tal">
+                    <input type="text" class="textBox jcDate serEndTime" />
+                </td>
+                <td class="tar"></td>
+                <td class="tal"></td>
+            </tr>
+            <tr>
+                <td colspan="6"></td>
+                <td colspan="2" class="tal">
+                    <a class="alink countTerritoryBtn">区域统计图</a>
+                </td>
+            </tr>
+        </table>
+        <div class="clear"></div>
+    </div>
+    <div class="main-div">
+        <div class="pieBox-Territory" style="display:none;">
+            <p>学习信息统计图</p>
+            <div id="pieBoxTerritory" style="width:800px;height:600px;margin:0px auto;border:1px solid #ccc;"></div>
+        </div>
+        <div class="list-all">
+            <table class="LearningInfoList" cellspacing=0 cellpadding=0>
+                <colgroup>
+                    <col width="60" />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>姓名</th>
+                        <th>公司</th>
+                        <th>区域</th>
+                        <th>时间</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody_LearningInfoList"></tbody>
+            </table>
+            <div class="pagin">
+                <div id="Pagin" class="paginControl">
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="hdnCount" />
+    <input type="hidden" id="hdnSearch" />
+    <input type="hidden" id="hdnPageSize" value="20" />
+</body>
+</html>

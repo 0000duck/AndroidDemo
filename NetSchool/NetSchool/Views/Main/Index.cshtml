@@ -1,0 +1,115 @@
+﻿@using System.Data;
+@model IDictionary<string, DataTable>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/CSS/base.css" rel="stylesheet" />
+    <link href="~/CSS/Main/Index.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/js/Main/login.js"></script>
+    <script src="~/Scripts/Echarts-2.2.7/echarts-all.js"></script>
+    <script src="~/Scripts/js/control/ChartOption.js"></script>
+</head>
+<body>
+    <div class="top">
+        <div class="top-main">
+            <img src="~/Image/bass/121203319471883677.png" class="topLogo" />
+            @*<div class="topInfo fr"><p class="fr"><span class="currentUserName">admin</span>&nbsp;&nbsp;您好!<a>退出</a></p></div>*@
+        </div>
+    </div>
+    <div class="menu">
+    </div>
+    <div class="main">
+        <div class="loginAndImg fl">
+            <div class="main-div mainImg fl" style="background:url(../../Image/bass/study.jpg)">
+                @*这里放图片或者图表<a href="javascript:void(0);" onclick="countList();">出图</a>
+                    <div id="lineBox" style="width:760px;height:260px;border:solid 1px #0026ff"></div>
+                    <script type="text/javascript">
+                        function countList() {
+                            var url = "http://" + window.location.host + "/Ajax/eduUserManage.ashx";
+                            var postdata = { cmd: "getListByStamp", strSearch: "2015" };
+                            $.post(url, postdata, function (jsonData) {
+                                var dataList = jsonData.countList;
+                                if (jsonData.state == "success") {
+                                    var year = jsonData.year + "年度各月的信息统计";
+                                    var type = "bar";
+                                    bindLine(dataList, year, jsonData.monthList, type)
+                                }
+                            }, "json");
+                        }
+                    </script>*@
+            </div>
+            <input type="hidden" value='@Session["UserName"]' id="session"/> 
+            <div class="main-div loginBox fr">
+                <form action="" method="post" id="loginForm">
+                    <p class="title"><span>后台登录</span></p>
+                    <input type="text" id="loginBox" name="user" class="textBox" />
+                    <input type="password" id="pswBox" name="pwd" class="textBox" />
+                    <input type="button" id="btn_login" class="btn loginBtn" value="LOGIN" />
+                </form>
+            </div>
+            <div class="main-div loginedBox fr">
+                <p class="title"><span>已经登录</span></p>
+                <p class="userInfo"><span class="LogoutUserName">@Session["Realname"]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>您好！</span></p>
+                <input type="button" id="btn_logout" class="btn logoutBtn" value="LOGOUT" />
+            </div>
+        </div>
+        <div class="main-div News div-content  fl">
+            <p class="title"><span>新闻咨询</span><a href="/News/NewsListN" target="_blank" class="titleMore fr">more</a></p>
+            <div id="news_List">
+                <ul class="newsList">
+                    @foreach (DataRow item in Model["News"].Rows)
+                    {
+                        <li>
+                            <a class="contentLine" target="_blank" href="/News/NewsShowN?id=@item["NewsId"]">
+                                @item["Title"]
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="main-div Law div-content fl">
+            <p class="title"><span>法律法规</span><a href="/Law/LawListN" target="_blank" class="titleMore fr">more</a></p>
+            <div id="law_List">
+                <ul class="lawList">
+                    @foreach (DataRow item in Model["Law"].Rows)
+                    {
+                        <li>
+                            <a class="contentLine" target="_blank" href="/Law/LawShowN?id=@item["LawId"]">
+                                @item["Title"]
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="main-div Notice fl">
+            <p class="title"><span>通知公告</span><a href="/Notice/NoticeListN" target="_blank" class="titleMore fr">more</a></p>
+            <div id="notice_List">
+                <ul class="noticeList">
+                    @foreach (DataRow item in Model["Notice"].Rows)
+                    {
+                        <li>
+                            <a class="contentLine" target="_blank" href="/Notice/NoticeShowN?id=@item["NoticeId"]">
+                                @item["Title"]
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="footer">
+        <p>网校信息管理系统&nbsp;&nbsp;&nbsp;&nbsp;浙ICP备13006852号-1<br />©2015</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+E:\小凯\NetSchool\Code\NetSchool\Model\bin\Debug\NetSchool.Model.dll
+E:\小凯\NetSchool\Code\NetSchool\Model\bin\Debug\NetSchool.Model.pdb
+E:\小凯\NetSchool\Code\NetSchool\Model\obj\Debug\NetSchool.Model.dll
+E:\小凯\NetSchool\Code\NetSchool\Model\obj\Debug\NetSchool.Model.pdb
+E:\小凯\新建文件夹 (2)\NetSchool\Model\bin\Debug\NetSchool.Model.dll
+E:\小凯\新建文件夹 (2)\NetSchool\Model\bin\Debug\NetSchool.Model.pdb
+E:\小凯\新建文件夹 (2)\NetSchool\Model\obj\Debug\NetSchool.Model.dll
+E:\小凯\新建文件夹 (2)\NetSchool\Model\obj\Debug\NetSchool.Model.pdb
+C:\Users\DevinYu\Desktop\NetSchool\Model\bin\Debug\NetSchool.Model.dll
+C:\Users\DevinYu\Desktop\NetSchool\Model\bin\Debug\NetSchool.Model.pdb
+C:\Users\DevinYu\Desktop\NetSchool\Model\obj\Debug\NetSchool.Model.dll
+C:\Users\DevinYu\Desktop\NetSchool\Model\obj\Debug\NetSchool.Model.pdb
+E:\git\AndroidDemo\NetSchool\Model\bin\Debug\NetSchool.Model.dll
+E:\git\AndroidDemo\NetSchool\Model\bin\Debug\NetSchool.Model.pdb
+E:\git\AndroidDemo\NetSchool\Model\obj\Debug\NetSchool.Model.csprojResolveAssemblyReference.cache
+E:\git\AndroidDemo\NetSchool\Model\obj\Debug\NetSchool.Model.dll
+E:\git\AndroidDemo\NetSchool\Model\obj\Debug\NetSchool.Model.pdb

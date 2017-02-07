@@ -1,0 +1,10 @@
+E:\小凯\NetSchool\Code\NetSchool\Model\bin\Release\NetSchool.Model.dll
+E:\小凯\NetSchool\Code\NetSchool\Model\bin\Release\NetSchool.Model.pdb
+E:\小凯\NetSchool\Code\NetSchool\Model\obj\Release\NetSchool.Model.csprojResolveAssemblyReference.cache
+E:\小凯\NetSchool\Code\NetSchool\Model\obj\Release\NetSchool.Model.dll
+E:\小凯\NetSchool\Code\NetSchool\Model\obj\Release\NetSchool.Model.pdb
+C:\Users\DevinYu\Desktop\NetSchool\Model\bin\Release\NetSchool.Model.dll
+C:\Users\DevinYu\Desktop\NetSchool\Model\bin\Release\NetSchool.Model.pdb
+C:\Users\DevinYu\Desktop\NetSchool\Model\obj\Release\NetSchool.Model.csprojResolveAssemblyReference.cache
+C:\Users\DevinYu\Desktop\NetSchool\Model\obj\Release\NetSchool.Model.dll
+C:\Users\DevinYu\Desktop\NetSchool\Model\obj\Release\NetSchool.Model.pdb

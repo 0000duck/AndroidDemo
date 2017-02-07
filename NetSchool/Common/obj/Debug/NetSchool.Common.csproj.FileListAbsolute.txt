@@ -1,0 +1,40 @@
+E:\小凯\NetSchool\Code\NetSchool\Common\bin\Debug\NetSchool.Common.dll
+E:\小凯\NetSchool\Code\NetSchool\Common\bin\Debug\NetSchool.Common.pdb
+E:\小凯\NetSchool\Code\NetSchool\Common\bin\Debug\NetSchool.Model.dll
+E:\小凯\NetSchool\Code\NetSchool\Common\bin\Debug\NetSchool.Model.pdb
+E:\小凯\NetSchool\Code\NetSchool\Common\obj\Debug\NetSchool.Common.csprojResolveAssemblyReference.cache
+E:\小凯\NetSchool\Code\NetSchool\Common\obj\Debug\NetSchool.Common.csproj.ResolveComReference.cache
+E:\小凯\NetSchool\Code\NetSchool\Common\obj\Debug\NetSchool.Common.dll
+E:\小凯\NetSchool\Code\NetSchool\Common\obj\Debug\NetSchool.Common.pdb
+E:\小凯\NetSchool\Code\NetSchool\Common\bin\Debug\Interop.ADOX.dll
+E:\小凯\NetSchool\Code\NetSchool\Common\bin\Debug\Office.dll
+E:\小凯\新建文件夹 (2)\NetSchool\Common\bin\Debug\NetSchool.Common.dll
+E:\小凯\新建文件夹 (2)\NetSchool\Common\bin\Debug\NetSchool.Common.pdb
+E:\小凯\新建文件夹 (2)\NetSchool\Common\bin\Debug\Interop.ADOX.dll
+E:\小凯\新建文件夹 (2)\NetSchool\Common\bin\Debug\NetSchool.Model.dll
+E:\小凯\新建文件夹 (2)\NetSchool\Common\bin\Debug\Office.dll
+E:\小凯\新建文件夹 (2)\NetSchool\Common\bin\Debug\NetSchool.Model.pdb
+E:\小凯\新建文件夹 (2)\NetSchool\Common\obj\Debug\NetSchool.Common.csprojResolveAssemblyReference.cache
+E:\小凯\新建文件夹 (2)\NetSchool\Common\obj\Debug\NetSchool.Common.csproj.ResolveComReference.cache
+E:\小凯\新建文件夹 (2)\NetSchool\Common\obj\Debug\NetSchool.Common.dll
+E:\小凯\新建文件夹 (2)\NetSchool\Common\obj\Debug\NetSchool.Common.pdb
+C:\Users\DevinYu\Desktop\NetSchool\Common\bin\Debug\NetSchool.Common.dll
+C:\Users\DevinYu\Desktop\NetSchool\Common\bin\Debug\NetSchool.Common.pdb
+C:\Users\DevinYu\Desktop\NetSchool\Common\bin\Debug\Interop.ADOX.dll
+C:\Users\DevinYu\Desktop\NetSchool\Common\bin\Debug\NetSchool.Model.dll
+C:\Users\DevinYu\Desktop\NetSchool\Common\bin\Debug\Office.dll
+C:\Users\DevinYu\Desktop\NetSchool\Common\bin\Debug\NetSchool.Model.pdb
+C:\Users\DevinYu\Desktop\NetSchool\Common\obj\Debug\NetSchool.Common.csprojResolveAssemblyReference.cache
+C:\Users\DevinYu\Desktop\NetSchool\Common\obj\Debug\NetSchool.Common.csproj.ResolveComReference.cache
+C:\Users\DevinYu\Desktop\NetSchool\Common\obj\Debug\NetSchool.Common.dll
+C:\Users\DevinYu\Desktop\NetSchool\Common\obj\Debug\NetSchool.Common.pdb
+E:\git\AndroidDemo\NetSchool\Common\bin\Debug\NetSchool.Common.dll
+E:\git\AndroidDemo\NetSchool\Common\bin\Debug\NetSchool.Common.pdb
+E:\git\AndroidDemo\NetSchool\Common\bin\Debug\Interop.ADOX.dll
+E:\git\AndroidDemo\NetSchool\Common\bin\Debug\NetSchool.Model.dll
+E:\git\AndroidDemo\NetSchool\Common\bin\Debug\Office.dll
+E:\git\AndroidDemo\NetSchool\Common\bin\Debug\NetSchool.Model.pdb
+E:\git\AndroidDemo\NetSchool\Common\obj\Debug\NetSchool.Common.csprojResolveAssemblyReference.cache
+E:\git\AndroidDemo\NetSchool\Common\obj\Debug\NetSchool.Common.csproj.ResolveComReference.cache
+E:\git\AndroidDemo\NetSchool\Common\obj\Debug\NetSchool.Common.dll
+E:\git\AndroidDemo\NetSchool\Common\obj\Debug\NetSchool.Common.pdb

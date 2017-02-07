@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "NewsList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body>
+    <link href="~/CSS/News/NewsList.css" rel="stylesheet" />
+    <script src="~/Scripts/js/News/NewsList.js"></script>
+        <div class="main-div NewsOperation">
+            <p class="title"><span>新闻管理</span></p>
+            <input type="button" class="btn btn-BlueBorder addNewsBtn" value="添加新闻" />
+            <input type="button" class="btn btn-BlueBorder delNewsBtn" value="删除新闻" />
+            <div class="search fr">
+                <input type="text" class="searchTxt font-gray3" value="" />
+                <div class="searchButton searchBtn">
+                </div>
+            </div><div class="clear"></div>
+        </div>
+        <div class="main-div">
+            <table class="NewsList" cellspacing=0 cellpadding=0>
+                <colgroup>
+                    <col width="80" />
+                    <col width="60" />
+                    <col />
+                    <col width="100" />
+                    <col width="100" />
+                    <col width="120" />
+                    <col width="100" />
+                    <col width="80" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>全选&nbsp;<input type="checkbox" class="chk-all" /></th>
+                        <th>标号</th>
+                        <th>标题</th>
+                        <th>创建人</th>
+                        <th>创建时间</th>
+                        <th>查看次数</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody_newsList"></tbody>
+            </table>
+            <div class="pagin">
+                <div id="Pagin" class="paginControl">
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="hdnCount" />
+        <input type="hidden" id="hdnSearch" />
+        <input type="hidden" id="hdnPageSize" value="20" />
+</body>
+</html>
