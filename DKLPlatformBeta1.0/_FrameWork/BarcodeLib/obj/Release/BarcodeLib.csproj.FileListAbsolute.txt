@@ -1,0 +1,10 @@
+D:\DKLPlatformBeta1.0\_FrameWork\BarcodeLib\bin\Release\BarcodeLib.dll
+D:\DKLPlatformBeta1.0\_FrameWork\BarcodeLib\bin\Release\BarcodeLib.pdb
+D:\DKLPlatformBeta1.0\_FrameWork\BarcodeLib\obj\Release\BarcodeLib.dll
+D:\DKLPlatformBeta1.0\_FrameWork\BarcodeLib\obj\Release\BarcodeLib.pdb
+D:\DKLPlatformBeta1.0\_FrameWork\BarcodeLib\obj\Release\BarcodeLib.csprojResolveAssemblyReference.cache
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_FrameWork\BarcodeLib\bin\Release\BarcodeLib.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_FrameWork\BarcodeLib\bin\Release\BarcodeLib.pdb
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_FrameWork\BarcodeLib\obj\Release\BarcodeLib.csprojResolveAssemblyReference.cache
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_FrameWork\BarcodeLib\obj\Release\BarcodeLib.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_FrameWork\BarcodeLib\obj\Release\BarcodeLib.pdb

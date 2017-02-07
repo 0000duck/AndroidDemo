@@ -1,0 +1,113 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+@model DeviceOrderingViewModel
+@{
+    ViewBag.Title = "CreateProject";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+    </style>
+}
+@section PageSpecificJavascriptIncludes{
+<script src="@Url.StaticFile("~/assets/js/jquery-1.8.3.min.js")"></script>
+    <script>
+        var ids = "";
+        var flag;
+        var n = 0;
+        $("#submit").click(function () {
+            var bt1 = $(".bt1");
+            bt1.click();         
+            $("input:checkbox:checked").each(function () {
+            
+                if (ids =="") {
+                    ids += $(this).val();
+                }
+                else {
+                    ids += ","+$(this).val() ;
+                }
+              
+                n++;
+            });
+                $("#m_ArgumentPrice").val(ids);
+                $("#Number").val(n);
+
+        });
+       
+
+
+    </script>
+}
+@section MainContent{
+
+    <div class="p5">
+        <label>项目编号：@Model.orderDetail.ProjectNumber</label>
+        <label>预约时间：@Model.orderDetail.OrderDate</label>
+    </div>
+    
+    <input id="m_ArgumentPrice" type="text" name="textbox" />
+        <table class="table table-striped table-hover ">
+            <thead>
+
+                <tr>
+                    <th></th>
+                    <th>
+                        设备名称
+                    </th>
+                    <th>
+                        设备编号
+                    </th>
+                    @*<th>
+                            操作
+                        </th>*@
+                    @*<th>
+                            预约设备个数
+                        </th>
+                        <th>
+                            实际分配个数
+                        </th>*@
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    if (Model.Device != null)
+                    {
+                       
+                        
+                        foreach (var item in Model.Device)
+                        {
+                            if (item != null)
+                            {
+                                <tr>
+                                    <td>
+                                       
+                                        <input type="text" style="display:none;" name="Number" id="Number" />
+                                        <input type="checkbox" value="@(item.Number)">
+                                    </td>
+                                    <td class="blue">
+                                        <span>@(item.DeivceName)</span>
+                                    </td>
+                                    <td>
+                                        <span>@(item.Number)</span>
+                                    </td>
+                                    @*<td>
+                                            <span>@(Model.orderDetail.OrderNumber)</span>
+                                        </td>*@
+
+                                </tr>
+                            }
+                        }
+                    }
+                }
+
+            </tbody>
+        </table>
+    
+}

@@ -1,0 +1,815 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+@model CreateNew
+
+@{
+    ViewBag.Title = "CreateProject";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+
+}
+@section PageSpecificStyleSheetIncludes{
+
+    <style type="text/css">
+        #search-text-Company {
+            text-align: center;
+            position: relative;
+        }
+
+        .autocomplete {
+            border: 1px solid #9ACCFB;
+            background-color: white;
+            text-align: left;
+        }
+
+            .autocomplete li {
+                list-style-type: none;
+            }
+
+        .clickable {
+            cursor: default;
+        }
+
+        .highlight {
+            background-color: #9ACCFB;
+        }
+    </style>
+
+
+}
+@section PageSpecificJavascriptIncludes{
+
+<script type="text/javascript" src="@Url.StaticFile("~/assets/js/jQuery-Timepicker-Addon/jquery-ui-timepicker-addon.js")"></script>
+<script type="text/javascript" src="@Url.StaticFile("~/assets/js/js/jquery.ui.datepicker-zh-CN.js.js")" charset="gb2312"></script>
+<script type="text/javascript" src="@Url.StaticFile("~/assets/js/js/jquery-ui-timepicker-zh-CN.js")"></script>
+
+    <script type="text/javascript">
+
+        $("#ProjectClosingDate").datetimepicker(
+                {
+
+                    timeFormat: "HH:mm:ss",
+                    dateFormat: "yy-mm-dd",
+                    changeYear: true,
+
+                });
+        $("#ContractDate").datetimepicker(
+               {
+
+                   timeFormat: "HH:mm:ss",
+                   dateFormat: "yy-mm-dd",
+                   changeYear: true,
+
+               });
+        $("#Costings").datetimepicker(
+       {
+
+           timeFormat: "HH:mm:ss",
+           dateFormat: "yy-mm-dd",
+           changeYear: true,
+
+       });
+    </script>
+    <script>
+
+        $(function () {
+            var herf = window.location.href;                    //获取当前地址
+            herf = herf.substr(0, herf.indexOf("Edit"));
+            //取得div层
+            var $search = $('#searchCompany');
+            //取得输入框JQuery对象
+            var $searchInput = $search.find('#search-text-Company');
+            //关闭浏览器提供给输入框的自动完成
+            $searchInput.attr('autocomplete', 'off');
+            //创建自动完成的下拉列表，用于显示服务器返回的数据,插入在搜索按钮的后面，等显示的时候再调整位置
+            var $autocomplete = $('<div class="autocomplete"></div>')
+            .hide()
+            .insertAfter('#submit');
+            //清空下拉列表的内容并且隐藏下拉列表区
+            var clear = function () {
+                $autocomplete.empty().hide();
+            };
+            //注册事件，当输入框失去焦点的时候清空下拉列表并隐藏
+            $searchInput.blur(function () {
+                setTimeout(clear, 500);
+            });
+            //下拉列表中高亮的项目的索引，当显示下拉列表项的时候，移动鼠标或者键盘的上下键就会移动高亮的项目，想百度搜索那样
+            var selectedItem = null;
+            //timeout的ID
+            var timeoutid = null;
+            //设置下拉项的高亮背景
+            var setSelectedItem = function (item) {
+                //更新索引变量
+                selectedItem = item;
+                //按上下键是循环显示的，小于0就置成最大的值，大于最大值就置成0
+                if (selectedItem < 0) {
+                    selectedItem = $autocomplete.find('li').length - 1;
+                }
+                else if (selectedItem > $autocomplete.find('li').length - 1) {
+                    selectedItem = 0;
+                }
+                //首先移除其他列表项的高亮背景，然后再高亮当前索引的背景
+                $autocomplete.find('li').removeClass('highlight')
+                .eq(selectedItem).addClass('highlight');
+            };
+            var ajax_request = function () {
+                //ajax服务端通信
+                $.ajax({
+                    'url': herf + 'GetCompanyList', //服务器的地址
+                    'data': { 'search': $searchInput.val() }, //参数
+                    'dataType': 'json', //返回数据类型
+                    'type': 'POST', //请求类型
+                    'success': function (data) {
+                        if (data.length) {
+                            //遍历data，添加到自动完成区
+                            $.each(data, function (index, term) {
+                                //创建li标签,添加到下拉列表中
+                                $('<li></li>').text(term).appendTo($autocomplete)
+                                .addClass('clickable')
+                                .hover(function () {
+                                    //下拉列表每一项的事件，鼠标移进去的操作
+                                    $(this).siblings().removeClass('highlight');
+                                    $(this).addClass('highlight');
+                                    selectedItem = index;
+                                }, function () {
+                                    //下拉列表每一项的事件，鼠标离开的操作
+                                    $(this).removeClass('highlight');
+                                    //当鼠标离开时索引置-1，当作标记
+                                    selectedItem = -1;
+                                })
+                                .click(function () {
+                                    //鼠标单击下拉列表的这一项的话，就将这一项的值添加到输入框中
+                                    $searchInput.val(term);
+                                    //清空并隐藏下拉列表
+                                    $autocomplete.empty().hide();
+                                });
+                            });//事件注册完毕
+                            //设置下拉列表的位置，然后显示下拉列表
+                            var ypos = $searchInput.position().top;
+                            var xpos = $searchInput.position().left;
+                            $autocomplete.css('width', $searchInput.css('width'));
+                            $autocomplete.css({ 'position': 'relative', 'left': xpos + "px", 'top': ypos + "px" });
+                            setSelectedItem(0);
+                            //显示下拉列表
+                            $autocomplete.show();
+                        }
+                    }
+                });
+            };
+            //对输入框进行事件注册
+            $searchInput
+            .keyup(function (event) {
+                //字母数字，退格，空格
+                if (event.keyCode > 40 || event.keyCode == 8 || event.keyCode == 32) {
+                    //首先删除下拉列表中的信息
+                    $autocomplete.empty().hide();
+                    clearTimeout(timeoutid);
+                    timeoutid = setTimeout(ajax_request, 100);
+                }
+                else if (event.keyCode == 38) {
+                    //上
+                    //selectedItem = -1 代表鼠标离开
+                    if (selectedItem == -1) {
+                        setSelectedItem($autocomplete.find('li').length - 1);
+                    }
+                    else {
+                        //索引减1
+                        setSelectedItem(selectedItem - 1);
+                    }
+                    event.preventDefault();
+                }
+                else if (event.keyCode == 40) {
+                    //下
+                    //selectedItem = -1 代表鼠标离开
+                    if (selectedItem == -1) {
+                        setSelectedItem(0);
+                    }
+                    else {
+                        //索引加1
+                        setSelectedItem(selectedItem + 1);
+                    }
+                    event.preventDefault();
+                }
+            })
+            .keypress(function (event) {
+                //enter键
+                if (event.keyCode == 13) {
+                    //列表为空或者鼠标离开导致当前没有索引值
+                    if ($autocomplete.find('li').length == 0 || selectedItem == -1) {
+                        return;
+                    }
+                    $searchInput.val($autocomplete.find('li').eq(selectedItem).text());
+                    $autocomplete.empty().hide();
+                    event.preventDefault();
+                }
+            })
+            .keydown(function (event) {
+                //esc键
+                if (event.keyCode == 27) {
+                    $autocomplete.empty().hide();
+                    event.preventDefault();
+                }
+            });
+            //注册窗口大小改变的事件，重新调整下拉列表的位置
+            $(window).resize(function () {
+                var ypos = $searchInput.position().top;
+                var xpos = $searchInput.position().left;
+                $autocomplete.css('width', $searchInput.css('width'));
+                $autocomplete.css({ 'position': 'relative', 'left': xpos + "px", 'top': ypos + "px" });
+            });
+        });
+    </script>
+    <script>
+
+        $(function () {
+            var herf = window.location.href;                    //获取当前地址
+            herf = herf.substr(0, herf.indexOf("Edit"));
+            //取得div层
+            var $search = $('#searchCompanyAddress');
+            //取得输入框JQuery对象
+            var $searchInput = $search.find('#search-text-CompanyAddress');
+            //关闭浏览器提供给输入框的自动完成
+            $searchInput.attr('autocomplete', 'off');
+            //创建自动完成的下拉列表，用于显示服务器返回的数据,插入在搜索按钮的后面，等显示的时候再调整位置
+            var $autocomplete = $('<div class="autocomplete"></div>')
+            .hide()
+            .insertAfter('#submit1');
+            //清空下拉列表的内容并且隐藏下拉列表区
+            var clear = function () {
+                $autocomplete.empty().hide();
+            };
+            //注册事件，当输入框失去焦点的时候清空下拉列表并隐藏
+            $searchInput.blur(function () {
+                setTimeout(clear, 500);
+            });
+            //下拉列表中高亮的项目的索引，当显示下拉列表项的时候，移动鼠标或者键盘的上下键就会移动高亮的项目，想百度搜索那样
+            var selectedItem = null;
+            //timeout的ID
+            var timeoutid = null;
+            //设置下拉项的高亮背景
+            var setSelectedItem = function (item) {
+                //更新索引变量
+                selectedItem = item;
+                //按上下键是循环显示的，小于0就置成最大的值，大于最大值就置成0
+                if (selectedItem < 0) {
+                    selectedItem = $autocomplete.find('li').length - 1;
+                }
+                else if (selectedItem > $autocomplete.find('li').length - 1) {
+                    selectedItem = 0;
+                }
+                //首先移除其他列表项的高亮背景，然后再高亮当前索引的背景
+                $autocomplete.find('li').removeClass('highlight')
+                .eq(selectedItem).addClass('highlight');
+            };
+            var ajax_request = function () {
+                //ajax服务端通信
+                $.ajax({
+                    'url': herf + 'GetCompanyAddressList', //服务器的地址
+                    'data': { 'search': $searchInput.val() }, //参数
+                    'dataType': 'json', //返回数据类型
+                    'type': 'POST', //请求类型
+                    'success': function (data) {
+                        if (data.length) {
+                            //遍历data，添加到自动完成区
+                            $.each(data, function (index, term) {
+                                //创建li标签,添加到下拉列表中
+                                $('<li></li>').text(term).appendTo($autocomplete)
+                                .addClass('clickable')
+                                .hover(function () {
+                                    //下拉列表每一项的事件，鼠标移进去的操作
+                                    $(this).siblings().removeClass('highlight');
+                                    $(this).addClass('highlight');
+                                    selectedItem = index;
+                                }, function () {
+                                    //下拉列表每一项的事件，鼠标离开的操作
+                                    $(this).removeClass('highlight');
+                                    //当鼠标离开时索引置-1，当作标记
+                                    selectedItem = -1;
+                                })
+                                .click(function () {
+                                    //鼠标单击下拉列表的这一项的话，就将这一项的值添加到输入框中
+                                    $searchInput.val(term);
+                                    //清空并隐藏下拉列表
+                                    $autocomplete.empty().hide();
+                                });
+                            });//事件注册完毕
+                            //设置下拉列表的位置，然后显示下拉列表
+                            var ypos = $searchInput.position().top;
+                            var xpos = $searchInput.position().left;
+                            $autocomplete.css('width', $searchInput.css('width'));
+                            $autocomplete.css({ 'position': 'relative', 'left': xpos + "px", 'top': ypos + "px" });
+                            setSelectedItem(0);
+                            //显示下拉列表
+                            $autocomplete.show();
+                        }
+                    }
+                });
+            };
+            //对输入框进行事件注册
+            $searchInput
+            .keyup(function (event) {
+                //字母数字，退格，空格
+                if (event.keyCode > 40 || event.keyCode == 8 || event.keyCode == 32) {
+                    //首先删除下拉列表中的信息
+                    $autocomplete.empty().hide();
+                    clearTimeout(timeoutid);
+                    timeoutid = setTimeout(ajax_request, 100);
+                }
+                else if (event.keyCode == 38) {
+                    //上
+                    //selectedItem = -1 代表鼠标离开
+                    if (selectedItem == -1) {
+                        setSelectedItem($autocomplete.find('li').length - 1);
+                    }
+                    else {
+                        //索引减1
+                        setSelectedItem(selectedItem - 1);
+                    }
+                    event.preventDefault();
+                }
+                else if (event.keyCode == 40) {
+                    //下
+                    //selectedItem = -1 代表鼠标离开
+                    if (selectedItem == -1) {
+                        setSelectedItem(0);
+                    }
+                    else {
+                        //索引加1
+                        setSelectedItem(selectedItem + 1);
+                    }
+                    event.preventDefault();
+                }
+            })
+            .keypress(function (event) {
+                //enter键
+                if (event.keyCode == 13) {
+                    //列表为空或者鼠标离开导致当前没有索引值
+                    if ($autocomplete.find('li').length == 0 || selectedItem == -1) {
+                        return;
+                    }
+                    $searchInput.val($autocomplete.find('li').eq(selectedItem).text());
+                    $autocomplete.empty().hide();
+                    event.preventDefault();
+                }
+            })
+            .keydown(function (event) {
+                //esc键
+                if (event.keyCode == 27) {
+                    $autocomplete.empty().hide();
+                    event.preventDefault();
+                }
+            });
+            //注册窗口大小改变的事件，重新调整下拉列表的位置
+            $(window).resize(function () {
+                var ypos = $searchInput.position().top;
+                var xpos = $searchInput.position().left;
+                $autocomplete.css('width', $searchInput.css('width'));
+                $autocomplete.css({ 'position': 'relative', 'left': xpos + "px", 'top': ypos + "px" });
+            });
+        });
+    </script>
+}
+
+@section MainContent{
+
+    @*<div id="searchCompany">
+            <input type="text" id="search-text-Company" name="search-text-Company" />
+            <input type="button" id="submit" style="display:none" value="搜索" />
+        </div>*@
+    <div class="portlet box red m10">
+        <div class="portlet-title">
+            <h4><i class="icon-reorder"></i>成本分析表信息</h4>
+
+            <div class="tools">
+                <a href="javascript:;" class="collapse"></a>
+            </div>
+        </div>
+        <div class="row-fluid">
+
+
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>项目名称：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.ProjectName, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.ProjectName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>项目简介：</label>
+
+
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.ProjectSynopsis, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.ProjectSynopsis)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>业务负责人：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.HeadOfPeople, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.HeadOfPeople)</span>
+                </div>
+            </div>
+            <div class="control-group ">
+                <label class="control-label">项目类型：</label>
+                <div class="controls">
+                    @Html.DropDownList("Costings.Type")
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.Type)</span>
+                </div>
+            </div>
+            @*<div class="control-group">
+                <label class="control-label"><span class="required"></span>项目类型：</label>
+                <div class="controls">
+                    @Html.DropDownList("Type")
+                </div>
+            </div>*@
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>客户区县：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.CustomerCounty, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.CustomerCounty)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>联系人：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.ContactsPserson, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.ContactsPserson)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>所属乡镇：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.Towns, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.Towns)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>联系方式：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.Relation, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.Relation)</span>
+                </div>
+            </div>
+
+
+
+
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>销售额：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.Sales, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.Sales)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">推广费：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.PromotionFee, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.PromotionFee)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">其他费用：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.OtherFees, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.OtherFees)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>游离SiO2个数：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.Free, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.Free)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>物理因素个数：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.PhysicalFactors, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.PhysicalFactors)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>粉尘类个数：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.Dust, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.Dust)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>无机类个数：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.Inorganic, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.Inorganic)</span>
+                </div>
+            </div>
+
+
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>有机类个数：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.Organic, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.Organic)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">备注：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.Remark, new { @class = "m-wrap small" })
+                   
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">签定日期：</label>
+                <div class="controls">
+                    @Html.TextBox("Costings.SignTime", Model.Costings.SignTime, new { @class = "m-wrap", id = "Costings" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.SignTime)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">签字：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Costings.Sign, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Costings.Sign)</span>
+                </div>
+            </div>
+        </div>
+        <div class="portlet-title">
+            <h4><i class="icon-reorder"></i>项目信息</h4>
+
+            <div class="tools">
+                <a href="javascript:;" class="collapse"></a>
+            </div>
+        </div>
+
+        <div class="portlet-body">
+
+            <div class="control-group1 ">
+                <label class="control-label">项目类别：</label>
+                <div class="controls">
+                    @Html.DropDownList("ProjectContracts.ProjectCategory")
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectContracts.ProjectCategory)</span>
+                </div>
+            </div>
+            <div class="control-group1">
+                <label class="control-label">项目名称：</label>
+                <div class="controls">
+
+                    @Html.TextBoxFor(m => m.ProjectContracts.ProjectName, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectContracts.ProjectName)</span>
+                </div>
+            </div>
+            <input type="button" id="submit" style="display:none" value="搜索" />    @*重要！！！ 这个影响底下的联想输入*@
+            <div class="control-group1">
+                <label class="control-label">委托单位名称：</label>
+                <div class="controls">
+
+                    <div id="searchCompany">
+
+                        @Html.TextBoxFor(m => m.ProjectContracts.CompaneName, new { @class = "m-wrap small", id = "search-text-Company" })
+
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectContracts.CompaneName)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group1">
+                <label class="control-label">委托时间</label>
+                <div class="controls">
+                    @Html.TextBox("ProjectContracts.ContractDate", Model.ProjectContracts.ContractDate, new { @class = "m-wrap" ,id ="ContractDate"})
+                </div>
+            </div>
+            <div class="control-group1">
+                <label class="control-label">委托单位地址：</label>
+                <div class="controls">
+                    <div id="searchCompanyAddress">
+                        @Html.TextBoxFor(m => m.ProjectContracts.CompanyAddress, new { @class = "m-wrap small", id = "search-text-CompanyAddress" })
+
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectContracts.CompanyAddress)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group1">
+                <label class="control-label">邮箱：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ProjectContracts.EmailB, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectContracts.EmailB)</span>
+                </div>
+            </div>
+            <input type="button" id="submit1" style="display:none" value="搜索" />@*重要！！！ 这个影响底下的联想输入*@
+            <div class="control-group1">
+                <label class="control-label">电话/传真：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ProjectContracts.FaxA, new { @class = "m-wrap small" })
+
+                </div>
+            </div>
+            <div class="control-group1">
+                <label class="control-label">联系人：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ProjectContracts.ContactPersonA, new { @class = "m-wrap small" })
+
+                </div>
+            </div>
+            <div class="control-group1">
+                <label class="control-label">联系电话：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ProjectContracts.ContactTel, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectContracts.ContactTel)</span>
+                </div>
+            </div>
+            <div class="control-group1">
+                <label class="control-label">承检单位名称：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ProjectContracts.AuthorizedPersonB, new { @class = "m-wrap small" })
+
+                </div>
+            </div> 
+            <div class="control-group1">
+                <label class="control-label">邮箱：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ProjectContracts.EmailA, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectContracts.EmailA)</span>
+                </div>
+            </div>
+            <div class="control-group1">
+                <label class="control-label">联系人：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ProjectContracts.ContactPersonB, new { @class = "m-wrap small" })
+
+                </div>
+            </div>
+            <div class="control-group1">
+                <label class="control-label">联系电话：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ProjectContracts.TelB, new { @class = "m-wrap small" })
+
+                </div>
+            </div>
+            <div class="control-group1">
+                <label class="control-label">完成时间</label>
+                <div class="controls">
+                    @Html.TextBox("ProjectContracts.ProjectClosingDate", Model.ProjectContracts.ProjectClosingDate, new { @class = "m-wrap", id = "ProjectClosingDate" })
+                </div>
+            </div>
+            <div class="control-group1">
+                <label class="control-label">检测类别：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ProjectContracts.AuthorizedPersonJobB, new { @class = "m-wrap small" })
+                </div>
+            </div>
+
+            @*<div class="control-group1">
+                    <label class="control-label">邮编：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.ZipCode, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.ZipCode)</span>
+                    </div>
+                </div>
+                <div class="control-group1">
+                    <label class="control-label">区县：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Area, new { @class = "m-wrap small" })
+                        区
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Area)</span>
+                    </div>
+                </div>
+                <div class="control-group1">
+                    <label class="control-label">完成时间</label>
+                    <div class="controls">
+                        @Html.TextBox("ProjectClosingDate", Model.ProjectClosingDate, new { @class = "m-wrap" })
+                    </div>
+                </div>
+
+                <div class="control-group1">
+                    <label class="control-label">合同额：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Money, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Money)</span>
+
+                    </div>
+                </div>
+                <div class="control-group1">
+                    <label class="control-label">首付比例：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.PayRatioFirst, new { @class = "m-wrap small", Value = "50" })
+                        %
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.PayRatioFirst)</span>
+                    </div>
+                </div>
+
+                <div class="control-group1">
+                    <label class="control-label">甲方法定代表人：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.RepresentativeA, new { @class = "m-wrap small" })
+
+                    </div>
+                </div>
+                <div class="control-group1">
+                    <label class="control-label">甲方法定代表人电话：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.RepresentativeATel, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.RepresentativeATel)</span>
+
+                    </div>
+                </div>
+
+
+                <div class="control-group1">
+                    <label class="control-label">甲方电话：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.TelA, new { @class = "m-wrap small" })
+
+                    </div>
+                </div>
+                <div class="control-group1">
+                    <label class="control-label">甲方地址：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.AddressA, new { @class = "m-wrap small" })
+
+                    </div>
+                </div>
+                <div class="control-group1">
+                    <label class="control-label">甲方邮箱：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.EmailA, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.EmailA)</span>
+                    </div>
+                </div>
+                <div class="control-group1">
+                    <label class="control-label">甲方邮编：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.ZipCodeA, new { @class = "m-wrap small" })
+
+                    </div>
+                </div>
+                <div class="control-group1">
+                    <label class="control-label">甲方授权人姓名：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.AuthorizedPersonA, new { @class = "m-wrap small" })
+
+                    </div>
+                </div>
+                <div class="control-group1">
+                    <label class="control-label">甲方授权人职务：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.AuthorizedPersonJobA, new { @class = "m-wrap small" })
+
+                    </div>
+                </div>*@
+
+
+            @*<div class="control-group1">
+                    <label class="control-label">乙方法定代表人：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.RepresentativeB, new { @class = "m-wrap small", Value = "王辉" })
+
+                    </div>
+                </div>
+                <div class="control-group1">
+                    <label class="control-label">乙方法定代表人电话：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.RepresentativeBTel, new { @class = "m-wrap small", Value = "010-51570158" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.RepresentativeBTel)</span>
+                    </div>
+                </div>
+                <div class="control-group1">
+                    <label class="control-label">乙方传真：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.FaxB, new { @class = "m-wrap small" })
+
+                    </div>
+                </div>
+
+
+                <div class="control-group1">
+                    <label class="control-label">乙方地址：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.AddressB, new { @class = "m-wrap small" })
+
+                    </div>
+                </div>
+                <div class="control-group1">
+                    <label class="control-label">乙方邮箱：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.EmailB, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.EmailB)</span>
+                    </div>
+                </div>
+                <div class="control-group1">
+                    <label class="control-label">乙方邮编：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.ZipCodeB, new { @class = "m-wrap small", Value = "100176" })
+
+                    </div>
+                </div>*@
+        </div>
+        
+    </div>
+}

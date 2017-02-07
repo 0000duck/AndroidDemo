@@ -1,0 +1,27 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Web.Controls
+@using HYZK.Account.Contract
+@using HYZK.FrameWork.Utility
+@model DKLManager.Contract.Model.ProjectInfo 
+@{ 
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+    </style>
+}
+
+@section MainContent{
+    <div>
+        <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+            <div class="form-refer-1">
+                <label class="control-label">意见：</label>
+                <div class="controls">
+                    @Html.TextAreaFor(m => m.TwoCheckOpinion, new { @class = "m-wrap small return1" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.TwoCheckOpinion)</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}

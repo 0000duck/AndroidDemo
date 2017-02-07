@@ -1,0 +1,67 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+@model List<DeviceOrderInfo>
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+
+}
+
+
+@*<div class="p5">
+    <label>项目编号：@Model.orderInfo.ProjectNumber</label>
+    <label>预约时间：@Model.orderInfo.OrderDate</label>
+</div>*@
+
+<table class="table table-striped table-hover ">
+    <thead>
+        <tr>
+            <th width="100">
+                项目编号
+            </th>
+            <th width="50">
+                设备名称
+            </th>
+            <th width="50">
+                设备编号
+            </th>
+            <th width="50">
+                预约日期
+            </th>
+            <th width="50">
+                预订人
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td class="blue">
+                    <span>@(p.ProjectNumber)</span>
+                </td>
+                <td class="blue">
+                    <span>@(p.DeviceName)</span>
+                </td>
+                <td class="blue">
+                    <span>@(p.DeviceNumber)</span>
+                </td>
+                <td class="blue">
+                    <span>@(p.OrderDate)</span>
+                </td>
+                <td class="blue">
+                    <span>@(p.OrderPerson)</span>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+

@@ -1,0 +1,6 @@
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\DKLManager.Contract.dll.config
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\DKLManager.Contract.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\DKLManager.Contract.pdb
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\DKLManager\DKLManager.Contract\obj\Debug\DKLManager.Contract.csprojResolveAssemblyReference.cache
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\DKLManager\DKLManager.Contract\obj\Debug\DKLManager.Contract.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\DKLManager\DKLManager.Contract\obj\Debug\DKLManager.Contract.pdb

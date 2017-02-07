@@ -1,0 +1,238 @@
+﻿
+@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+
+@model HYZK.FrameWork.Common.PagedList<DeviceOrderEntifyModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<div class="portlet box red m10">
+    <div class="portlet-title">
+        <h4><i class="icon-reorder"></i>添加设备预约表</h4>
+
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="row-fluid">
+            <div class="span4">
+                <div>
+                    <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i> 删除</a>
+                    <a class="btn blue thickbox" title='添加新用户' href="@Url.Action("Create")?TB_iframe=true&height=350&width=500"><i class="icon-plus icon-white"></i> 新增</a>
+                </div>
+            </div>
+        </div>
+        @using (Html.BeginForm("Delete", "DeviceOrdrEntify", FormMethod.Post, new { id = "mainForm" }))
+        {
+            <table class="table table-striped table-hover ">
+                <thead>
+                    <tr>
+                        <th style="width: 8px;">
+                            <input type="checkbox" id="checkall" class="group-checkable" />
+                        </th>
+                        <th>
+                            设备名
+                        </th>
+                        <th>
+                            设备数量
+                        </th>
+                        <th>
+                            预约时间
+                        </th>
+                        <th>
+                            状态
+                        </th>
+                        <th>
+                            编辑
+                        </th>
+                </thead>
+                <tbody>
+                    @foreach (var m in Model)
+                    {
+                        if ((EnumOrderState)m.OrderState != EnumOrderState.AddState)
+                        {
+                            continue;
+                        }
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="checkboxes" name='id' value='@m.ID' />
+                            </td>
+                            <td>
+                                @m.DeviceName
+                            </td>
+                            <td>
+                                @m.Count
+                            </td>
+                            <td>
+                                @m.StartTime
+                            </td>
+                            <td>
+                                @EnumHelper.GetEnumTitle((EnumOrderState)@m.OrderState)
+                            </td>
+                            <td>
+                                <a class="btn mini purple thickbox" title='编辑信息' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=350&width=500">
+                                    <i class="icon-edit"></i>
+                                    编辑
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        }
+        <div class="portlet-title">
+            <h4><i class="icon-reorder"></i>以提交的设备</h4>
+
+            <div class="tools">
+                <a href="javascript:;" class="collapse"></a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="row-fluid">
+                <div class="span4">
+                    <div>
+                        <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i> 删除</a>
+                        <a class="btn blue thickbox" title='添加新用户' href="@Url.Action("Create")?TB_iframe=true&height=350&width=500"><i class="icon-plus icon-white"></i> 新增</a>
+                    </div>
+                </div>
+            </div>
+            @using (Html.BeginForm("Return", "DeviceOrderEntify", FormMethod.Post, new { id = "mainForm" }))
+            {
+                <table class="table table-striped table-hover ">
+                    <thead>
+                        <tr>
+                            <th style="width: 8px;">
+                                <input type="checkbox" id="checkall" class="group-checkable" />
+                            </th>
+                            <th>
+                                设备名
+                            </th>
+                            <th>
+                                设备数量
+                            </th>
+                            <th>
+                                开始时间
+                            </th>
+                            <th>
+                                状态
+                            </th>
+                            <th>
+                                退回
+                            </th>
+                    </thead>
+                    <tbody>
+                        @foreach (var m in Model)
+                        {
+                            if ((EnumOrderState)m.OrderState == EnumOrderState.AddState)
+                            {
+                                continue;
+                            }
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="checkboxes" name='id' value='@m.ID' />
+                                </td>
+                                <td>
+                                    @m.DeviceName
+                                </td>
+                                <td>
+                                    @m.Count
+                                </td>
+                                <td>
+                                    @m.StartTime
+                                </td>
+                                <td>
+                                    @EnumHelper.GetEnumTitle((EnumOrderState)@m.OrderState)
+                                </td>
+                                @using (Html.BeginForm("Return", "DeviceOrderEntify", FormMethod.Post, new { id = "mainForm" }))
+                                {   
+                                    <td>
+                                        <input type="submit" value="退回" />
+                                    </td>
+                                }   
+                            </tr>
+                            
+                        }
+
+                    </tbody>
+                </table>
+            }
+            <div class="portlet-title">
+                <h4><i class="icon-reorder"></i>已使用的设备</h4>
+
+                <div class="tools">
+                    <a href="javascript:;" class="collapse"></a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="row-fluid">
+                    <div class="span4">
+                        <div>
+                            <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i> 删除</a>
+                            <a class="btn blue thickbox" title='添加新用户' href="@Url.Action("Create")?TB_iframe=true&height=350&width=500"><i class="icon-plus icon-white"></i> 新增</a>
+                        </div>
+                    </div>
+                </div>
+                @using (Html.BeginForm("Delete", "DeviceOrdrEntify", FormMethod.Post, new { id = "mainForm" }))
+                {
+                    <table class="table table-striped table-hover ">
+                        <thead>
+                            <tr>
+                                <th style="width: 8px;">
+                                    <input type="checkbox" id="checkall" class="group-checkable" />
+                                </th>
+                                <th>
+                                    设备名
+                                </th>
+                                <th>
+                                    设备数量
+                                </th>
+                                <th>
+                                    开始时间
+                                </th>
+                                <th>
+                                    状态
+                                </th>
+                        </thead>
+                        <tbody>
+                            @foreach (var m in Model)
+                            {
+                                if ((EnumOrderState)m.OrderState == EnumOrderState.UsedDevice)
+                                {
+                                    continue;
+                                }
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="checkboxes" name='id' value='@m.ID' />
+                                    </td>
+                                    <td>
+                                        @m.DeviceName
+                                    </td>
+                                    <td>
+                                        @m.Count
+                                    </td>
+                                    <td>
+                                        @m.StartTime
+                                    </td>
+                                    <td>
+                                        @EnumHelper.GetEnumTitle((EnumOrderState)@m.OrderState)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                <div class="dataTables_paginate paging_bootstrap pagination">
+                    @Html.Pager(Model, new PagerOptions() { ShowTotalItemCount = true })
+                </div>
+            </div>
+    </div>
+</div>
+

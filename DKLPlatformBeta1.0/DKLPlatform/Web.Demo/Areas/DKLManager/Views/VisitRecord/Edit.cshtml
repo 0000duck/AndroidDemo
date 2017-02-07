@@ -1,0 +1,89 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Web.Controls
+@using HYZK.Account.Contract
+@using HYZK.FrameWork.Utility
+@model DKLManager.Contract.Model.VisitRecord
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+    </style>
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+            $("#VisitTime").datepicker(
+                {
+                    changeYear: true,
+                    changeMonth: true,
+                });
+    </script>
+}
+
+@section MainContent{
+    <div>
+        <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+            <div class="row-fluid">
+               
+                <div class="control-group">
+                    <label class="control-label">客户：</label>
+                    <div class="controls">
+                        @Html.DropDownList("CustomerName")
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">商谈时间：</label>
+                    <div class="controls">
+                        @Html.TextBox("VisitTime", Model.VisitTime.ToCnDataString(), new { @class = "m-wrap" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.VisitTime)</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">沟通详情：</label>
+                    <div class="controls">
+                        @Html.TextAreaFor(m => m.Detail, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Detail)</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">认知途径：</label>
+                    <div class="controls">
+                        @Html.DropDownList("CognitiveChannel")
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">价格反映：</label>
+                    <div class="controls">
+                        @Html.DropDownList("PriceResponse")
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">访问方式：</label>
+                    <div class="controls">
+                        @Html.DropDownList("VisitWay")
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">跟进级别：</label>
+                    <div class="controls">
+                        @Html.DropDownList("FollowLevel")
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">跟进阶段：</label>
+                    <div class="controls">
+                        @Html.DropDownList("FollowStep")
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}

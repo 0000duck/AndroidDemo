@@ -1,0 +1,98 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model
+@model PagedList<SampleRegisterTable>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row-fluid">
+    <div class="span4">
+        <div>
+            <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i> 删除</a>
+        </div>
+    </div>
+</div>
+@using (Html.BeginForm("delete", "SampleRegisterTable", FormMethod.Post, new { id = "mainForm" }))
+{
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th style="width: 8px;">
+                    <input type="checkbox" id="checkall" class="group-checkable" />
+                </th>
+                <th>
+                    样品登记号
+                </th>
+                <th>
+                    采样日期
+                </th>
+                <th>
+                    样品名称
+                </th>
+                <th>
+                    样品状态
+                </th>
+                <th>
+                    检测参数
+                </th>
+                <th>
+                    样品数量
+                </th>
+                <th>
+                    保存条件
+                </th>
+
+                <th>
+                    状态
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var m in Model)
+            {
+                if ((EnumSampleStates)m.SampleStates != EnumSampleStates.DoneSample)
+                {
+                    continue;
+                }
+                <tr>
+                    <td>
+                        <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
+                    </td>
+                    <td>
+                        @m.SampleRegisterNumber
+                    </td>
+                    <td>
+                        @m.SamplingDay
+                    </td>
+                    <td>
+                        @m.SampleName
+                    </td>
+                    <td>
+                        @m.SampleState
+                    </td>
+                    <td>
+                        @m.SampleNumBer
+                    </td>
+                    <td>
+                        @m.SaveCondition
+                    </td>
+                    <td>
+                        @m.Remark
+                       
+                    </td>
+                    <td>
+                        @EnumHelper.GetEnumTitle((EnumSampleStates)@m.SampleStates)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<div class="dataTables_paginate paging_bootstrap pagination">
+    @Html.Pager(Model, new PagerOptions() { ShowTotalItemCount = true })
+</div>
+

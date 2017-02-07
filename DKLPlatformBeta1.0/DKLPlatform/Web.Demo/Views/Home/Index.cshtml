@@ -1,0 +1,54 @@
+﻿@using Web.Common;
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+
+}
+
+
+
+@*<link href="@Url.StaticFile("/content/uploadify/uploadify.css")" rel="stylesheet" />
+<link href="@Url.StaticFile("/assets/css/metro.css")" rel="stylesheet" />
+<link rel="stylesheet" href="@Url.StaticFile("/content/bootstrap.min.css")" />
+<link rel="stylesheet" href="@Url.StaticFile("/content/bootstrap-responsive.min.css")" />
+<link rel="stylesheet" href="@Url.StaticFile("/content/matrix-style.css")" />
+<link rel="stylesheet" href="@Url.StaticFile("/content/matrix-media.css")" />
+<link rel="stylesheet" href="@Url.StaticFile("/content/font-awesome.css")" />*@
+@section MainContent{
+<label class="control-label" id="preview">封面图片：</label>
+
+<div id="uploader"></div>
+
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="widget-box">
+            <div class="widget-content">
+                <ul class="thumbnails" id="pictrueContainer"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+    }
+@*<script src="@Url.StaticFile("/scripts/jquery-1.11.3.min.js")"></script>
+<script src="@Url.StaticFile("/scripts/jquery.min.js")"></script>
+<script src="@Url.StaticFile("/scripts/jquery.ui.custom.js")"></script>
+<script src="@Url.StaticFile("/scripts/bootstrap.min.js")"></script>
+<script src="@Url.StaticFile("/scripts/matrix.js")"></script>
+<script src="@Url.StaticFile("/Content/Uploadify/jquery.uploadify.v3.2.min.js")"></script>
+<script src="@Url.StaticFile("/Content/Uploadify/swfobject.js")"></script>
+<script type="text/javascript" src="@Url.StaticFile("/scripts/flashupload.js")"></script>
+<script type="text/javascript">
+    $('#uploader').FileUpload({
+        'subfolder': 'dkl',
+        'callback': function (msg) {
+            //msg.url为图片地址
+            var picHtml = '<li class="span2"><a> <img src="' + msg.url + '" alt=""> </a>';
+            picHtml += '<div class="actions"> <a title="" class="" href="#"><i class="icon-pencil"></i></a>';
+            picHtml += ' </div></li>';
+            $("#pictrueContainer").html($("#pictrueContainer").html() + picHtml);
+
+        }
+    });
+</script>*@

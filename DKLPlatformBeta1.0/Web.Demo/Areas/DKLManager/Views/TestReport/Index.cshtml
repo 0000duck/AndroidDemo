@@ -1,0 +1,174 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@model HYZK.FrameWork.Common.PagedList<TestPhysicalReport>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--BLOCK SECTION -->
+<hr />
+<div class="row">
+    <div style=" margin-right: -15px; margin-left: -15px;text-align: center;position: relative;min-height:1px; padding-right:15px; padding-left:15px;">
+        <a class="thickbox" style="position:relative; display: inline-block; width: 90px; height: 70px; padding-top: 16px; margin: 10px; color: #444444; text-align:center; text-decoration: none; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6); -webkit-box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC; box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC;" href="@Url.Action("Create")?TB_iframe=true&height=350&width=500">
+            @*@Url.StaticFile("/Home/CreateProject.cshtml")"*@
+            <i class=" icon-check" style="font-size:2em;border-width: 2px;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;">
+            </i>
+            <br /><span> 新建报告</span>
+            @*<span class="label label-danger">2</span>*@
+        </a>
+
+        <a style="position:relative; display: inline-block; width: 90px; height: 70px; padding-top: 16px; margin: 10px; color: #444444; text-align:center; text-decoration: none; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6); -webkit-box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC; box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC;" href="@Url.Action("Index", "TestChemicalReport")">
+            <i class="icon-signal " style="font-size: 2em;border-width: 2px;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;"></i>
+            <br /><span>化学报告</span>
+            @*<span class="label label-warning">+25</span>*@
+        </a>
+        <a style="position:relative; display: inline-block; width: 90px; height: 70px; padding-top: 16px; margin: 10px; color: #444444; text-align:center; text-decoration: none; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6); -webkit-box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC; box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC;" href="@Url.Action("ReportCreate", "TestReport")">
+            <i class="icon-external-link" style="font-size: 2em;border-width: 2px;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;"></i>
+            <br /><span>生成报告</span>
+            @*<span class="label btn-metis-2">3.14159265</span>*@
+        </a>
+
+    </div>
+</div>
+<hr />
+<div class="portlet box red m10">
+    <div class="portlet-title">
+        <h4><i class="icon-reorder"></i>物理检测报告</h4>
+
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="row-fluid">
+            <div class="span4">
+                <div>
+                    <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i> 删除</a>
+                    <a class="btn blue thickbox" title='添加新报告' href="@Url.Action("Create")?tb_iframe=true&height =600&width =600"><i class="icon-plus icon-white"></i> 新增</a>
+               
+                    <a class="btn mini purple " title='编辑信息' href="@Url.Action("Create")" target="_blank">
+                        <i class=" icon-edit">
+                        </i>
+                        点我制图
+                    </a>
+                    <a class="btn mini purple " title='编辑信息' href="@Url.Action("CreateBar")" target="_blank">
+                        <i class=" icon-edit">
+                        </i>
+                        点我制柱形图
+                    </a>
+                 </div>
+            </div>
+        </div>
+
+        @using (Html.BeginForm("Delete", "TestReport", FormMethod.Post, new { id = "mainForm" }))
+        {
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th style="width: 8px;">
+                            <input type="checkbox" id="checkall" class="group-checkable" />
+                        </th>
+                        <th>
+                            项目编号
+                        </th>
+                        <th>
+                            检测内容
+                        </th>
+                        <th>
+                            样品编号
+                        </th>
+                        <th>
+                            车间
+                        </th>
+                        <th>
+                            岗位
+                        </th>
+                        <th>
+                            测量地点
+                        </th>
+                        <th>
+                            接触时间
+                        </th>
+                        <th>
+                            噪声强度
+                        </th>
+                        <th>
+                            测量结果
+                        </th>
+                        <th>
+                            LEX,8h/LEX,W
+                        </th>
+                        <th>
+                            结果判定
+                        </th>
+
+                        <th>
+                            操作
+                        </th>
+                        
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var m in Model)
+                    {
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
+                            </td>
+                            <td>
+                                @m.ProjectNumber
+                            </td>
+                            <td>
+                                @m.TestContent
+                            </td>
+                            <td>
+                                @m.SampleNumber
+                            </td>
+                            <td>
+                                @m.WordShop
+                            </td>
+                            <td>
+                                @m.Job
+                            </td>
+                            <td>
+                                @m.Location
+                            </td>
+                            <td>
+                                @m.ContactTime
+                            </td>
+                            <td>
+                                @m.NoiseIntensity
+                            </td>
+                            <td>
+                                @m.TestResult
+                            </td>
+                            <td>
+                                @m.Lex8hLexw
+                            </td>
+                            <td>
+                                @m.ResultVerdict
+                            </td>
+                            <td>
+                                <a class="btn mini purple thickbox" title='编辑信息' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=450&width=600">
+                                    <i class="icon-edit"></i>
+                                    编辑
+                                </a>
+                            </td>
+                           
+                           
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+
+            <div class="dataTables_paginate paging_bootstrap pagination">
+                @Html.Pager(Model, new PagerOptions() { ShowTotalItemCount = true })
+            </div>
+        }
+    </div>
+</div>

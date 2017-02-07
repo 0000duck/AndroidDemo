@@ -1,0 +1,62 @@
+﻿@using DKLManager.Contract.Model;
+@using HYZK.FrameWork.Utility;
+@using HYZK.FrameWork.Common
+
+@model PagedList<ProjectDocFileHistory>
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.View.cshtml";
+}
+
+<div class="portlet box red m10">
+    <div class="portlet-body">
+    @using (Html.BeginForm("DownLoadDocFile", "ProjectDocHistory", FormMethod.Post))
+    { 
+            <table class="table table-striped table-hover ">
+                <thead>
+                    <tr>
+                        <th>
+                            项目编号
+                        </th>
+                        <th>
+                            报告路径
+                        </th>
+                        <th>
+                            状态
+                        </th>
+                        <th>
+                            修改意见
+                        </th>
+                        <th>
+                            操作
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var m in Model)
+                    {
+                        <tr>
+                            <td>
+                                @m.ProjectNumber
+                            </td>
+                            <td>
+                                @m.FilePath.Substring(@m.FilePath.LastIndexOf("\\") + 1)
+                            </td>
+                            <td>
+                                @m.Status
+                            </td>
+                            <td>
+                                @m.suggenstion
+                            </td>
+                            <td>
+                                <button type="submit" id="submit" class="btn blue" name='id' value='@m.ID'><i class="icon-ok"></i> 下载</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+    }
+    </div>
+</div>
+
+

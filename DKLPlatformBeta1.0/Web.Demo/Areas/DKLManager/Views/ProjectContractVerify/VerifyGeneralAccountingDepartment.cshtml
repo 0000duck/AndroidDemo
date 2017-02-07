@@ -1,0 +1,342 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+@model ProjectContract
+
+@{
+    ViewBag.Title = "CreateProject";
+    Layout = "~/Views/Shared/_Layout.EditContractVerify.cshtml";
+
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+        .form-refer-1 {
+            font-weight: 800;
+            font-size: large;
+            color: black;
+        }
+
+        .form-refer-2 {
+            font-weight: 800;
+            font-size: 16px;
+            margin-top: 10px;
+            resize: none;
+            height: 20px;
+            width: 23%;
+            text-align: center;
+        }
+
+        .form-refer-3 {
+            font-weight: 800;
+            font-size: large;
+            width: 25%;
+            margin-top: 10px;
+            margin-left: 10px;
+            resize: none;
+            text-align: center;
+        }
+    </style>
+
+
+}
+@section PageSpecificJavascriptIncludes{
+
+    <script type="text/javascript">
+        $('#uploader').FileUpload({
+            'subfolder': 'dkl',
+            'callback': function (msg) {
+                //msg.url为图片地址
+                var picHtml = '<li class="span2"><a> <img src="' + msg.url + '" alt=""> </a>';
+                picHtml += '<div class="actions"> <a title="" class="" href="#"><i class="icon-pencil"></i></a>';
+                picHtml += ' </div></li>';
+                $("#pictrueContainer").html($("#pictrueContainer").html() + picHtml);
+                document.getElementById("pictrueFilePaths").value += msg.url + ",";
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $("#ProjectClosingDate").datetimepicker(
+                {
+                    timeFormat: "HH:mm:ss",
+                    dateFormat: "yy-mm-dd",
+                    changeYear: true,
+                });
+        $("#ContractDate").datetimepicker(
+               {
+                   timeFormat: "HH:mm:ss",
+                   dateFormat: "yy-mm-dd",
+                   changeYear: true,
+               });
+    </script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var str = $("#1").val();
+        if (str != "") {
+            var item1 = document.getElementById("2");
+            item1.style.display = "";
+        }
+    });
+    $('#uploader').FileUpload({
+        'subfolder': 'dkl',
+        'callback': function (msg) {
+            //msg.url为图片地址
+            var picHtml = '<li class="span2"><a> <img src="' + msg.url + '" alt=""> </a>';
+            picHtml += '<div class="actions"> <a title="" class="" href="#"><i class="icon-pencil"></i></a>';
+            picHtml += ' </div></li>';
+            $("#pictrueContainer").html($("#pictrueContainer").html() + picHtml);
+
+            document.getElementById("pictrueFilePaths").value += msg.url + ",";
+        }
+    });
+
+
+    $("#ProjectClosingDate").datepicker(
+        {
+            changeYear: true,
+            changeMonth: true,
+        });
+
+
+</script>
+<script type="text/javascript">
+    $("#ProjectClosingDate").datepicker(
+        {
+            changeYear: true,
+            changeMonth: true,
+        });
+</script>
+<script>
+    window.onload = function aaa() {
+        var asd = document.getElementById("test").value;
+        //alert(asd);
+        if (asd == "") {
+            //alert('1');
+            document.getElementById('1').removeAttribute("checked", "checked");
+            document.getElementById('2').removeAttribute("checked", "checked");
+
+        }
+        else {
+            //alert(asd);
+            var b = new Array(14);
+            for (var i = 0; i < 14; i = i + 2) {
+                b[i] = asd.substring(i, i + 1);
+                if (b[i].length < 1) {
+                    break;
+                }
+                else {
+                    document.getElementById(b[i]).removeAttribute("checked", "checked");
+                }
+            }
+        }
+    }
+</script>
+
+}
+@section MainContent{
+    <input style="display:none" type="text" value="@Model.GeneralAccountingDepartmentStatusProblem" id="test" /> 
+    <div class="portlet box red m10">
+
+        <div class="portlet-title">
+            <h4><i class="icon-reorder"></i>合同评审信息</h4>
+
+            <div class="tools">
+                <a href="javascript:;" class="collapse"></a>
+            </div>
+        </div>
+        @using (Html.BeginForm("Verify", "ProjectContractVerify", FormMethod.Post, new { id = "mainForm" }))
+        {
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th style="width: 8px;">
+                            
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="checkboxes" name='ids' value='1' id="1" checked="checked" />
+                        </td>
+                        <td>
+                          	1．	合同付款信息是否正确。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="checkboxes" name='ids' value='2' id="2" checked="checked" />
+                        </td>
+                        <td>
+                            2．	付款方式等和财务制度有关条款是否符合要求。
+                        </td>
+                    </tr>
+                   
+                   
+                </tbody>
+            </table>
+            <button type="submit" id="submit" class="btn blue"><i class="icon-ok"></i> 提交</button>
+        <span id="submitloading" style="display:none;"><img src='@Url.StaticFile("~/content/images/loading.gif")' /></span>
+        <button type="button" class="btn" id="cancel"><i class="icon-reply"></i>撤销</button>
+            <div class="portlet-title">
+            <h4><i class="icon-reorder"></i>项目信息</h4>
+                <div class="control-group">
+
+
+                    <div class="form-refer-1">
+                        &nbsp;&nbsp;&nbsp;
+                        项目类别：<textarea class=" form-refer-2" readonly>@HYZK.FrameWork.Utility.EnumHelper.GetEnumTitle((EnumProjectCategory)@Model.ProjectCategory)</textarea>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        项目编号：
+                        &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.ProjectNumber</textarea>
+                    </div>
+                    <div class="col-md-6 col-xs-6 form-refer-1 ">
+                        &nbsp;&nbsp;&nbsp;
+                        项目名称：<textarea class=" form-refer-2" readonly>@Model.ProjectName</textarea>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        委托时间时间：<textarea class=" form-refer-2" readonly>@Model.ContractDate.ToShortDateString()</textarea>
+
+                    </div>
+                    <div class="col-md-6 col-xs-6 form-refer-1 ">
+                        &nbsp;&nbsp;&nbsp;
+                        委托单位名称：
+                        <textarea class=" form-refer-2" readonly>@Model.CompaneName</textarea>
+                        &nbsp;&nbsp;
+                        委托单位地址：
+                        &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.CompanyAddress</textarea>
+                    </div>
+                    <div class="col-md-6 col-xs-6 form-refer-1 ">
+                        &nbsp;&nbsp;&nbsp;
+                        甲方传真：
+                        <textarea class=" form-refer-2" readonly>@Model.FaxA</textarea>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        甲方联系人：<textarea class=" form-refer-2" readonly>@Model.ContactPersonA</textarea>
+                    </div>
+                    <div class="col-md-12 col-xs-12 form-refer-1">
+                        &nbsp;&nbsp;
+                        联系电话：<textarea class=" form-refer-2" readonly>@Model.ContactTel</textarea>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    </div>
+                    <div class="col-md-6 col-xs-6 form-refer-1 ">
+                        &nbsp;&nbsp;&nbsp;
+                        承检单位名称：<textarea class=" form-refer-2" readonly>@Model.AuthorizedPersonB</textarea>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        邮箱：
+                        &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.EmailA</textarea>
+
+                    </div>
+                    <div class="col-md-6 col-xs-6 form-refer-1 ">
+                        &nbsp;&nbsp;&nbsp;
+                        联系人：<textarea class=" form-refer-2" readonly>@Model.ContactPersonB</textarea>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        联系电话：
+                        &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.TelB</textarea>
+                    </div>
+                    <div class="col-md-6 col-xs-6 form-refer-1 ">
+                        &nbsp;&nbsp;&nbsp;
+                        检测类型：
+                        <textarea class=" form-refer-2" readonly>@Model.AuthorizedPersonJobB</textarea>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        委托时间时间：
+                        &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.ContractDate.ToShortDateString()</textarea>
+                    </div>
+                    @*<div class="col-md-6 col-xs-6 form-refer-1 ">
+                &nbsp;&nbsp;&nbsp;
+                邮政编码：<textarea class=" form-refer-2" readonly>@Model.ZipCode</textarea>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                委托单位地址：
+                &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.CompanyAddress</textarea>
+            </div>
+            <div class="col-md-6 col-xs-6 form-refer-1 ">
+                &nbsp;&nbsp;&nbsp;
+                完成时间：<textarea class=" form-refer-2" readonly>@Model.ProjectClosingDate</textarea>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                委托时间时间：
+                &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.ContractDate.ToShortDateString()</textarea>
+            </div>
+
+            <div class="col-md-6 col-xs-6 form-refer-1 ">
+                &nbsp;&nbsp;&nbsp;
+                合同额：<textarea class=" form-refer-2" readonly>@Model.Money</textarea>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                甲方法定代表人：
+                &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.RepresentativeA</textarea>
+            </div>
+            <div class="col-md-6 col-xs-6 form-refer-1 ">
+                &nbsp;&nbsp;&nbsp;
+                甲方法定代表人电话：<textarea class=" form-refer-2" readonly>@Model.RepresentativeATel</textarea>
+
+                甲方传真：
+                &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.FaxA</textarea>
+            </div>
+            <div class="col-md-6 col-xs-6 form-refer-1 ">
+                &nbsp;&nbsp;&nbsp;
+                甲方联系人：<textarea class=" form-refer-2" readonly>@Model.ContactPersonA</textarea>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                甲方电话：
+                &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.TelA</textarea>
+            </div>
+            <div class="col-md-6 col-xs-6 form-refer-1 ">
+                &nbsp;&nbsp;&nbsp;
+                甲方地址：<textarea class=" form-refer-2" readonly>@Model.AddressA</textarea>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                甲方邮箱：
+                &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.EmailA</textarea>
+            </div>
+            <div class="col-md-6 col-xs-6 form-refer-1 ">
+                &nbsp;&nbsp;&nbsp;
+                甲方邮编：<textarea class=" form-refer-2" readonly>@Model.ZipCodeA</textarea>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                甲方授权人姓名：
+                &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.AuthorizedPersonA</textarea>
+            </div>
+            <div class="col-md-6 col-xs-6 form-refer-1 ">
+                &nbsp;&nbsp;&nbsp;
+                甲方授权人职务：<textarea class=" form-refer-2" readonly>@Model.AuthorizedPersonJobA</textarea>
+                &nbsp;&nbsp;
+                乙方法定代表人：
+                &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.RepresentativeB</textarea>
+            </div>
+            <div class="col-md-6 col-xs-6 form-refer-1 ">
+                &nbsp;&nbsp;&nbsp;
+                乙方法定代表人电话：<textarea class=" form-refer-2" readonly>@Model.RepresentativeBTel</textarea>
+
+                乙方传真：
+                &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.FaxB</textarea>
+            </div>
+            <div class="col-md-6 col-xs-6 form-refer-1 ">
+                &nbsp;&nbsp;&nbsp;
+                乙方联系人：<textarea class=" form-refer-2" readonly>@Model.ContactPersonB</textarea>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                乙方电话：
+                &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.TelB</textarea>
+            </div>
+            <div class="col-md-6 col-xs-6 form-refer-1 ">
+                &nbsp;&nbsp;&nbsp;
+                乙方地址：<textarea class=" form-refer-2" readonly>@Model.AddressB</textarea>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                乙方邮箱：
+                &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.EmailB</textarea>
+            </div>
+            <div class="col-md-6 col-xs-6 form-refer-1 ">
+                &nbsp;&nbsp;&nbsp;
+                乙方授权人姓名：<textarea class=" form-refer-2" readonly>@Model.AuthorizedPersonB</textarea>
+                &nbsp;&nbsp;
+                乙方授权人职务：
+                &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.AuthorizedPersonJobB</textarea>
+            </div>
+            <div class="col-md-6 col-xs-6 form-refer-1 ">
+                &nbsp;&nbsp;&nbsp;
+                首付比例：<textarea class=" form-refer-2" readonly>@Model.PayRatioFirst</textarea>
+                &nbsp;&nbsp;
+            </div>*@
+                </div>
+        </div>         
+        }
+        
+    </div>
+}

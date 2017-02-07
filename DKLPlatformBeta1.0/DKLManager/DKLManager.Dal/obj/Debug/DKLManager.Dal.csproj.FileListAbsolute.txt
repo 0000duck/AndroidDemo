@@ -1,0 +1,12 @@
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\DKLManager.Dal.dll.config
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\DKLManager.Dal.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\DKLManager.Dal.pdb
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\DKLManager\DKLManager.Dal\obj\Debug\DKLManager.Dal.csprojResolveAssemblyReference.cache
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\DKLManager\DKLManager.Dal\obj\Debug\DKLManager.Dal.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\DKLManager\DKLManager.Dal\obj\Debug\DKLManager.Dal.pdb
+D:\DKLPlatformBeta1.0\bin\DKLManager.Dal.dll.config
+D:\DKLPlatformBeta1.0\bin\DKLManager.Dal.dll
+D:\DKLPlatformBeta1.0\bin\DKLManager.Dal.pdb
+D:\DKLPlatformBeta1.0\DKLManager\DKLManager.Dal\obj\Debug\DKLManager.Dal.csprojResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\DKLManager\DKLManager.Dal\obj\Debug\DKLManager.Dal.dll
+D:\DKLPlatformBeta1.0\DKLManager\DKLManager.Dal\obj\Debug\DKLManager.Dal.pdb

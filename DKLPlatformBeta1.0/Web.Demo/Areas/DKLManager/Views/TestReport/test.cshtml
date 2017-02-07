@@ -1,0 +1,90 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Web.Controls
+@using HYZK.Account.Contract
+@using HYZK.FrameWork.Utility
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@{
+    Layout = null;
+}
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="height:400px;border:1px solid black;"></div>
+   
+    <input type="button" id="btnSub" name="btnSub" value="调用Action" />
+    <!-- ECharts单文件引入 -->
+    <script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
+    <script src="@Url.Content("~/Scripts/jquery-1.11.3.min.js")" type="text/javascript"></script>
+    <script type="text/javascript">       
+        $(document).ready(function () {
+        $("#btnSub").click(function () {
+            $.ajax({
+                //type: "POST",
+                url: "test1",
+               //data: "",
+                dataType: 'json',
+                success: function (sesponseTest) {                                  
+                    var model = sesponseTest;
+                    var myChart = echarts.init(document.getElementById('main'));                                  
+                    option = {
+                        title: {
+                            text: '某站点用户访问来源',
+                            subtext: '纯属虚构',
+                            x: 'center'
+                        },
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                        },
+                        legend: {
+                            orient: 'vertical',
+                            x: 'left',
+                            data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+                        },
+                        toolbox: {
+                            show: true,
+                            feature: {
+                                mark: { show: true },
+                                dataView: { show: true, readOnly: false },
+                                magicType: {
+                                    show: true,
+                                    type: ['bar', 'funnel'],
+                                    option: {
+                                        funnel: {
+                                            x: '25%',
+                                            width: '50%',
+                                            funnelAlign: 'left',
+                                            max: 1548
+                                        }
+                                    }
+                                },
+                                restore: { show: true },
+                                saveAsImage: { show: true }
+                            }
+                        },
+                        calculable: true,
+                        series: [
+                            {
+                                name: '访问来源',
+                                type: 'pie',
+                                radius: '55%',
+                                center: ['50%', '60%'],
+                                data: model                               
+                            }
+                        ]
+                    };
+                    // 为echarts对象加载数据
+                    myChart.setOption(option);
+                }
+            });
+        });
+    }); 
+    </script>   
+    <script type="text/javascript" language="javascript">
+    
+    </script>
+</body>

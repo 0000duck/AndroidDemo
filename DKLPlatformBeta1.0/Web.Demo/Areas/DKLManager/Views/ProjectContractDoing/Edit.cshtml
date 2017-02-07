@@ -1,0 +1,105 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+
+@model ContractProblem
+@{
+    ViewBag.Title = "CreateProject";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+
+}
+
+
+    <table class="table ">
+        <thead>
+            <tr>          
+                  
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="font-size:30px;font-weight:800;">市场部问题</td>
+                
+            </tr>
+            @foreach (var m in Model.listMarket)
+            {
+                <tr>
+                    
+                    <td style="font-size: 19px; font-weight: 400;">
+                       @HYZK.FrameWork.Utility.EnumHelper.GetEnumTitle((EnumContractMarket)@m.ToInt())
+                    </td>
+                    
+                </tr>
+            }
+            <tr>
+               <td style="font-size:30px;font-weight:800;">质管部问题</td> 
+            </tr>
+            @foreach (var m in Model.listQuality)
+            {
+                <tr>
+
+                    <td style="font-size: 19px; font-weight: 400;">
+                        @HYZK.FrameWork.Utility.EnumHelper.GetEnumTitle((EnumContractQuality)@m.ToInt())
+                    </td>
+
+                </tr>
+            }
+            <tr>
+                <td style="font-size:30px;font-weight:800;">检测部问题</td>
+            </tr>
+            @foreach (var m in Model.listTest)
+            {
+                <tr>
+
+                    <td style="font-size: 19px; font-weight: 400;">
+                        @HYZK.FrameWork.Utility.EnumHelper.GetEnumTitle((EnumContractTest)@m.ToInt())
+                    </td>
+
+                </tr>
+            }
+            <tr>
+                <td style="font-size:30px;font-weight:800;">  技术员工问题</td>
+            </tr>
+            @foreach (var m in Model.listWorker)
+            {
+                <tr>
+
+                    <td style="font-size: 19px; font-weight: 400;">
+                        @HYZK.FrameWork.Utility.EnumHelper.GetEnumTitle((EnumContractWorker)@m.ToInt())
+                    </td>
+
+                </tr>
+            }
+            <tr>
+                <td style="font-size:30px;font-weight:800;">财务部问题</td>
+            </tr>
+            @foreach (var m in Model.listGeneralAccountingDepartment)
+            {
+                <tr>
+
+                    <td style="font-size: 19px; font-weight: 400;">
+                        @HYZK.FrameWork.Utility.EnumHelper.GetEnumTitle((EnumContractFinancial)@m.ToInt())
+                    </td>
+
+                </tr>
+            }
+            <tr>
+                <td style="font-size:30px;font-weight:800;">职评部问题</td>
+            </tr>
+            @foreach (var m in Model.listEstimate)
+            {
+                <tr>
+
+                    <td style="font-size: 19px; font-weight: 400;">
+                        @HYZK.FrameWork.Utility.EnumHelper.GetEnumTitle((EnumContractJob)@m.ToInt())
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+

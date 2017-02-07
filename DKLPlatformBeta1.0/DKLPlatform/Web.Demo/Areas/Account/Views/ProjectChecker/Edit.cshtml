@@ -1,0 +1,45 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Web.Controls
+@using HYZK.Account.Contract
+@using HYZK.FrameWork.Utility
+@using DKLManager.Contract.Model
+
+@model ProjectChecker
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+
+
+
+<div>
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+
+            <div class="control-group">
+                <label class="control-label">项目类别：</label>
+                <div class="controls">
+                    @Html.DropDownList("ProjectCategory")
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectCategory)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">审核级别：</label>
+                <div class="controls">
+                    @Html.DropDownList("CheckLevel")
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.CheckLevel)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">用户名称：</label>
+                <div class="controls">
+                    @Html.DropDownList("Name")
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.CheckLevel)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,1972 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AE96DFB9-B095-4250-88F1-8E61062955AE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web.Demo</RootNamespace>
+    <AssemblyName>Web.Demo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
+    <Compile Include="Areas\Account\Controllers\AuthController.cs" />
+    <Compile Include="Areas\Account\Controllers\ChangeAccountTypeController.cs" />
+    <Compile Include="Areas\Account\Controllers\CommonController.cs" />
+    <Compile Include="Areas\Account\Controllers\ProjectCheckerController.cs" />
+    <Compile Include="Areas\Account\Controllers\RoleController.cs" />
+    <Compile Include="Areas\Account\Controllers\SecondManagerController.cs" />
+    <Compile Include="Areas\Account\Controllers\UserController.cs" />
+    <Compile Include="Areas\Account\Models\LoginViewModel.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\AnalyzeCheckController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\AnalyzePersonCheckController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\AnalyzePersonController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\AnalyzePersonHistoryController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ArgumentValueCheckController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\DKLManager\Controllers\ArgumentValueHistoryController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\AssessmentGoBackController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\AuthorizationPersonController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\CostingController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\CostingDirectorController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\CostingDoingController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\CostingHistoryController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\CostingVicePresidentController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\CustomerController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DetectionResultController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceBigApparatusController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceCalibrationRemarkController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceIdentityController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceOrderBaseController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceOrderByTestPersonController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceOrderFailedController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceOrderingController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceOrderSuccessController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceServiceController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceSiteDetectionCalibrationController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceSiteDetectionController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceSiteUseController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceStateController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceStatisticalFigureController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceUseController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviceUseRecordModelController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DeviseController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\DownLoadFilesController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\FinancialDepartmentController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\LabController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\MaketDirectorController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\MothFinishProjectNumStatisticsController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\MothNewController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\MothNewMarketController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\MothNewProjectNumStatisticsController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\OccupationaldiseaseHarmController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\OfficeViewController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\DKLManager\Controllers\ParameterController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectChargeAssessorController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectChargeController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectChartController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectConsultPersonController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectConsultController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectConsultUncheckController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectContractController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectContractDoingController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectContractHistoryController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectContractVerifyController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectDocHistoryController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectDoingController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectEngineerController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectEvaluateController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectFinancialController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectFinishController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectGeneralController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectGoBackController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectHistoryController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectImgFileHistoryController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectInfoController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectJobController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectLeaderAssessorController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectLeaderController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectMaketController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectQualityControlController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectReportNumStatisticsMothController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectResultCheckController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectStatisticsMothController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectTechnologyController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ProjectUnCheckController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\QualityInspectorController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ReportFormationController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ReportListController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ReportReceiveListController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\SampleBaseController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\SampleCheckController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\SampleHistoryController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\SampleProjectGistController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\SampleRegisterCountController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\SampleRegisterTableController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\SelectLookController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\StaySubmitController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\TechnologyController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\TechnologyReviewController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\TestChemicalReportController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\TestReportController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\CostingTheGeneralManagerController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ThreeAssessorController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ThressPersonCheckController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\VisitRecordController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\WaterDetectionCheckController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\WaterDetectionController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\WaterSamplingMemberController.cs" />
+    <Compile Include="Areas\DKLManager\Controllers\ZPThressCheckController.cs" />
+    <Compile Include="Areas\DKLManager\DKLManagerAreaRegistration.cs" />
+    <Compile Include="Areas\DKLManager\Models\AnalyzePersonViewModel.cs" />
+    <Compile Include="Areas\DKLManager\Models\ArgumentVlueView.cs" />
+    <Compile Include="Areas\DKLManager\Models\BarChartData.cs" />
+    <Compile Include="Areas\DKLManager\Models\CreateNew.cs" />
+    <Compile Include="Areas\DKLManager\Models\DetectionParamenterView.cs" />
+    <Compile Include="Areas\DKLManager\Models\DeviceOrderingViewModel.cs" />
+    <Compile Include="Areas\DKLManager\Models\MarketSearch.cs" />
+    <Compile Include="Areas\DKLManager\Models\ProjectImgFileViewModel.cs" />
+    <Compile Include="Areas\DKLManager\Models\ProjectNewMarket.cs" />
+    <Compile Include="Areas\DKLManager\Models\ProjectSearch.cs" />
+    <Compile Include="Areas\DKLManager\Models\ProjectWholeInfoViewModel.cs" />
+    <Compile Include="Areas\DKLManager\Models\SampleTableHistoryViewModel.cs" />
+    <Compile Include="Common\AdminCacheContext.cs" />
+    <Compile Include="Common\AdminControllerBase.cs" />
+    <Compile Include="Common\AdminCookieContext.cs" />
+    <Compile Include="Common\AdminMenu.cs" />
+    <Compile Include="Common\AdminUserContext.cs" />
+    <Compile Include="Common\GlobalData.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="FileUpload.ashx.cs">
+      <DependentUpon>FileUpload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Account\Views\User\Edit.cshtml" />
+    <Content Include="Assets\bootstrap-colorpicker\css\colorpicker.css" />
+    <Content Include="Assets\bootstrap-colorpicker\img\alpha.png" />
+    <Content Include="Assets\bootstrap-colorpicker\img\hue.png" />
+    <Content Include="Assets\bootstrap-colorpicker\img\saturation.png" />
+    <Content Include="Assets\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="Assets\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="Assets\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Assets\bootstrap-daterangepicker\date.js" />
+    <Content Include="Assets\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="Assets\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Assets\bootstrap-daterangepicker\examples.html" />
+    <Content Include="Assets\bootstrap-fileupload\bootstrap-fileupload.css" />
+    <Content Include="Assets\bootstrap-fileupload\bootstrap-fileupload.js" />
+    <Content Include="Assets\bootstrap-timepicker\.gitignore" />
+    <Content Include="Assets\bootstrap-timepicker\compiled\timepicker.css" />
+    <Content Include="Assets\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Assets\bootstrap-toggle-buttons\.gitignore" />
+    <Content Include="Assets\bootstrap-toggle-buttons\examples\index.html" />
+    <Content Include="Assets\bootstrap-toggle-buttons\static\js\jquery.min.js" />
+    <Content Include="Assets\bootstrap-toggle-buttons\static\js\jquery.toggle.buttons.js" />
+    <Content Include="Assets\bootstrap-toggle-buttons\static\stylesheets\bootstrap-toggle-buttons.css" />
+    <Content Include="Assets\bootstrap-tree\.gitignore" />
+    <Content Include="Assets\bootstrap-tree\bootstrap-tree\css\bootstrap-tree.css" />
+    <Content Include="Assets\bootstrap-tree\bootstrap-tree\img\ajax-loader.gif" />
+    <Content Include="Assets\bootstrap-tree\bootstrap-tree\img\bstree-halflings.png" />
+    <Content Include="Assets\bootstrap-tree\bootstrap-tree\img\bstree-halflings_.png" />
+    <Content Include="Assets\bootstrap-tree\bootstrap-tree\js\bootstrap-tree.js" />
+    <Content Include="Assets\bootstrap-tree\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Assets\bootstrap-tree\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Assets\bootstrap-tree\bootstrap\css\bootstrap.css" />
+    <Content Include="Assets\bootstrap-tree\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Assets\bootstrap-tree\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Assets\bootstrap-tree\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Assets\bootstrap-tree\bootstrap\js\bootstrap.js" />
+    <Content Include="Assets\bootstrap-tree\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Assets\bootstrap-tree\example.js" />
+    <Content Include="Assets\bootstrap-tree\htmlexample.html" />
+    <Content Include="Assets\bootstrap-tree\index.html" />
+    <Content Include="Assets\bootstrap-tree\xmlexample.xml" />
+    <Content Include="Assets\bootstrap-wizard\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Assets\bootstrap-wizard\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Assets\bootstrap-wizard\bootstrap\css\bootstrap.css" />
+    <Content Include="Assets\bootstrap-wizard\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Assets\bootstrap-wizard\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Assets\bootstrap-wizard\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Assets\bootstrap-wizard\bootstrap\js\bootstrap.js" />
+    <Content Include="Assets\bootstrap-wizard\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Assets\bootstrap-wizard\examples\basic-custombuttons.html" />
+    <Content Include="Assets\bootstrap-wizard\examples\basic-custombuttonsfirstlast.html" />
+    <Content Include="Assets\bootstrap-wizard\examples\basic-disabletabclick.html" />
+    <Content Include="Assets\bootstrap-wizard\examples\basic-finishbutton.html" />
+    <Content Include="Assets\bootstrap-wizard\examples\basic-formvalidation.html" />
+    <Content Include="Assets\bootstrap-wizard\examples\basic-inverse.html" />
+    <Content Include="Assets\bootstrap-wizard\examples\basic-pills.html" />
+    <Content Include="Assets\bootstrap-wizard\examples\basic-progressbar.html" />
+    <Content Include="Assets\bootstrap-wizard\examples\basic-tabsleft.html" />
+    <Content Include="Assets\bootstrap-wizard\examples\basic.html" />
+    <Content Include="Assets\bootstrap-wizard\examples\multiple.html" />
+    <Content Include="Assets\bootstrap-wizard\index.html" />
+    <Content Include="Assets\bootstrap-wizard\jquery.bootstrap.wizard.js" />
+    <Content Include="Assets\bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Assets\bootstrap-wizard\prettify.css" />
+    <Content Include="Assets\bootstrap-wizard\prettify.js" />
+    <Content Include="Assets\bootstrap-wysihtml5\bootstrap-wysihtml5.css" />
+    <Content Include="Assets\bootstrap-wysihtml5\bootstrap-wysihtml5.js" />
+    <Content Include="Assets\bootstrap-wysihtml5\wysihtml5-0.3.0.js" />
+    <Content Include="Assets\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Assets\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Assets\bootstrap\css\bootstrap.css" />
+    <Content Include="Assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Assets\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Assets\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Assets\bootstrap\js\bootstrap.js" />
+    <Content Include="Assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Assets\breakpoints\breakpoints.js" />
+    <Content Include="Assets\breakpoints\example.html" />
+    <Content Include="Assets\chosen-bootstrap\.gitignore" />
+    <Content Include="Assets\chosen-bootstrap\chosen\chosen-sprite.png" />
+    <Content Include="Assets\chosen-bootstrap\chosen\chosen.css" />
+    <Content Include="Assets\chosen-bootstrap\chosen\chosen.jquery.js" />
+    <Content Include="Assets\chosen-bootstrap\chosen\chosen.jquery.min.js" />
+    <Content Include="Assets\chosen-bootstrap\chosen\chosen.proto.js" />
+    <Content Include="Assets\chosen-bootstrap\chosen\chosen.proto.min.js" />
+    <Content Include="Assets\chosen-bootstrap\example.jquery.html" />
+    <Content Include="Assets\chosen-bootstrap\example.proto.html" />
+    <Content Include="Assets\ckeditor\build-config.js" />
+    <Content Include="Assets\ckeditor\ckeditor.js" />
+    <Content Include="Assets\ckeditor\config.js" />
+    <Content Include="Assets\ckeditor\contents.css" />
+    <Content Include="Assets\ckeditor\lang\af.js" />
+    <Content Include="Assets\ckeditor\lang\ar.js" />
+    <Content Include="Assets\ckeditor\lang\bg.js" />
+    <Content Include="Assets\ckeditor\lang\bn.js" />
+    <Content Include="Assets\ckeditor\lang\bs.js" />
+    <Content Include="Assets\ckeditor\lang\ca.js" />
+    <Content Include="Assets\ckeditor\lang\cs.js" />
+    <Content Include="Assets\ckeditor\lang\cy.js" />
+    <Content Include="Assets\ckeditor\lang\da.js" />
+    <Content Include="Assets\ckeditor\lang\de.js" />
+    <Content Include="Assets\ckeditor\lang\el.js" />
+    <Content Include="Assets\ckeditor\lang\en-au.js" />
+    <Content Include="Assets\ckeditor\lang\en-ca.js" />
+    <Content Include="Assets\ckeditor\lang\en-gb.js" />
+    <Content Include="Assets\ckeditor\lang\en.js" />
+    <Content Include="Assets\ckeditor\lang\eo.js" />
+    <Content Include="Assets\ckeditor\lang\es.js" />
+    <Content Include="Assets\ckeditor\lang\et.js" />
+    <Content Include="Assets\ckeditor\lang\eu.js" />
+    <Content Include="Assets\ckeditor\lang\fa.js" />
+    <Content Include="Assets\ckeditor\lang\fi.js" />
+    <Content Include="Assets\ckeditor\lang\fo.js" />
+    <Content Include="Assets\ckeditor\lang\fr-ca.js" />
+    <Content Include="Assets\ckeditor\lang\fr.js" />
+    <Content Include="Assets\ckeditor\lang\gl.js" />
+    <Content Include="Assets\ckeditor\lang\gu.js" />
+    <Content Include="Assets\ckeditor\lang\he.js" />
+    <Content Include="Assets\ckeditor\lang\hi.js" />
+    <Content Include="Assets\ckeditor\lang\hr.js" />
+    <Content Include="Assets\ckeditor\lang\hu.js" />
+    <Content Include="Assets\ckeditor\lang\is.js" />
+    <Content Include="Assets\ckeditor\lang\it.js" />
+    <Content Include="Assets\ckeditor\lang\ja.js" />
+    <Content Include="Assets\ckeditor\lang\ka.js" />
+    <Content Include="Assets\ckeditor\lang\km.js" />
+    <Content Include="Assets\ckeditor\lang\ko.js" />
+    <Content Include="Assets\ckeditor\lang\ku.js" />
+    <Content Include="Assets\ckeditor\lang\lt.js" />
+    <Content Include="Assets\ckeditor\lang\lv.js" />
+    <Content Include="Assets\ckeditor\lang\mk.js" />
+    <Content Include="Assets\ckeditor\lang\mn.js" />
+    <Content Include="Assets\ckeditor\lang\ms.js" />
+    <Content Include="Assets\ckeditor\lang\nb.js" />
+    <Content Include="Assets\ckeditor\lang\nl.js" />
+    <Content Include="Assets\ckeditor\lang\no.js" />
+    <Content Include="Assets\ckeditor\lang\pl.js" />
+    <Content Include="Assets\ckeditor\lang\pt-br.js" />
+    <Content Include="Assets\ckeditor\lang\pt.js" />
+    <Content Include="Assets\ckeditor\lang\ro.js" />
+    <Content Include="Assets\ckeditor\lang\ru.js" />
+    <Content Include="Assets\ckeditor\lang\sk.js" />
+    <Content Include="Assets\ckeditor\lang\sl.js" />
+    <Content Include="Assets\ckeditor\lang\sr-latn.js" />
+    <Content Include="Assets\ckeditor\lang\sr.js" />
+    <Content Include="Assets\ckeditor\lang\sv.js" />
+    <Content Include="Assets\ckeditor\lang\th.js" />
+    <Content Include="Assets\ckeditor\lang\tr.js" />
+    <Content Include="Assets\ckeditor\lang\ug.js" />
+    <Content Include="Assets\ckeditor\lang\uk.js" />
+    <Content Include="Assets\ckeditor\lang\vi.js" />
+    <Content Include="Assets\ckeditor\lang\zh-cn.js" />
+    <Content Include="Assets\ckeditor\lang\zh.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Assets\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Assets\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Assets\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Assets\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Assets\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Assets\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="Assets\ckeditor\plugins\icons.png" />
+    <Content Include="Assets\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Assets\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Assets\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Assets\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Assets\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Assets\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Assets\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Assets\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Assets\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Assets\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Assets\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Assets\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Assets\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Assets\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Assets\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Assets\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Assets\ckeditor\samples\ajax.html" />
+    <Content Include="Assets\ckeditor\samples\api.html" />
+    <Content Include="Assets\ckeditor\samples\appendto.html" />
+    <Content Include="Assets\ckeditor\samples\assets\inlineall\logo.png" />
+    <Content Include="Assets\ckeditor\samples\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Assets\ckeditor\samples\assets\sample.css" />
+    <Content Include="Assets\ckeditor\samples\assets\sample.jpg" />
+    <Content Include="Assets\ckeditor\samples\assets\uilanguages\languages.js" />
+    <Content Include="Assets\ckeditor\samples\divreplace.html" />
+    <Content Include="Assets\ckeditor\samples\index.html" />
+    <Content Include="Assets\ckeditor\samples\inlineall.html" />
+    <Content Include="Assets\ckeditor\samples\inlinebycode.html" />
+    <Content Include="Assets\ckeditor\samples\plugins\dialog\assets\my_dialog.js" />
+    <Content Include="Assets\ckeditor\samples\plugins\dialog\dialog.html" />
+    <Content Include="Assets\ckeditor\samples\plugins\enterkey\enterkey.html" />
+    <Content Include="Assets\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="Assets\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="Assets\ckeditor\samples\plugins\htmlwriter\outputforflash.html" />
+    <Content Include="Assets\ckeditor\samples\plugins\htmlwriter\outputhtml.html" />
+    <Content Include="Assets\ckeditor\samples\plugins\magicline\magicline.html" />
+    <Content Include="Assets\ckeditor\samples\plugins\toolbar\toolbar.html" />
+    <Content Include="Assets\ckeditor\samples\plugins\wysiwygarea\fullpage.html" />
+    <Content Include="Assets\ckeditor\samples\readonly.html" />
+    <Content Include="Assets\ckeditor\samples\replacebyclass.html" />
+    <Content Include="Assets\ckeditor\samples\replacebycode.html" />
+    <Content Include="Assets\ckeditor\samples\sample.css" />
+    <Content Include="Assets\ckeditor\samples\sample.js" />
+    <Content Include="Assets\ckeditor\samples\tabindex.html" />
+    <Content Include="Assets\ckeditor\samples\uicolor.html" />
+    <Content Include="Assets\ckeditor\samples\uilanguages.html" />
+    <Content Include="Assets\ckeditor\samples\xhtmlstyle.html" />
+    <Content Include="Assets\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Assets\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Assets\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Assets\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Assets\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Assets\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="Assets\ckeditor\skins\moono\editor.css" />
+    <Content Include="Assets\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Assets\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Assets\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Assets\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Assets\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Assets\ckeditor\skins\moono\icons.png" />
+    <Content Include="Assets\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Assets\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Assets\ckeditor\skins\moono\images\mini.png" />
+    <Content Include="Assets\ckeditor\styles.js" />
+    <Content Include="Assets\clockface\CHANGELOG.txt" />
+    <Content Include="Assets\clockface\css\clockface.css" />
+    <Content Include="Assets\clockface\js\clockface.js" />
+    <Content Include="Assets\css\metro.css" />
+    <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\css\style_blue.css" />
+    <Content Include="Assets\css\style_brown.css" />
+    <Content Include="Assets\css\style_default.css" />
+    <Content Include="Assets\css\style_light.css" />
+    <Content Include="Assets\css\style_purple.css" />
+    <Content Include="Assets\css\style_responsive.css" />
+    <Content Include="Assets\data-tables\DT_bootstrap.css" />
+    <Content Include="Assets\data-tables\DT_bootstrap.js" />
+    <Content Include="Assets\data-tables\jquery.dataTables.js" />
+    <Content Include="Assets\dropzone\css\basic.css" />
+    <Content Include="Assets\dropzone\css\dropzone.css" />
+    <Content Include="Assets\dropzone\dropzone-amd-module.js" />
+    <Content Include="Assets\dropzone\dropzone.js" />
+    <Content Include="Assets\dropzone\images\spritemap%402x.png" />
+    <Content Include="Assets\dropzone\images\spritemap.png" />
+    <Content Include="Assets\fancybox\.gitattributes" />
+    <Content Include="Assets\fancybox\demo\1_b.jpg" />
+    <Content Include="Assets\fancybox\demo\1_s.jpg" />
+    <Content Include="Assets\fancybox\demo\2_b.jpg" />
+    <Content Include="Assets\fancybox\demo\2_s.jpg" />
+    <Content Include="Assets\fancybox\demo\3_b.jpg" />
+    <Content Include="Assets\fancybox\demo\3_s.jpg" />
+    <Content Include="Assets\fancybox\demo\4_b.jpg" />
+    <Content Include="Assets\fancybox\demo\4_s.jpg" />
+    <Content Include="Assets\fancybox\demo\5_b.jpg" />
+    <Content Include="Assets\fancybox\demo\5_s.jpg" />
+    <Content Include="Assets\fancybox\demo\ajax.txt" />
+    <Content Include="Assets\fancybox\demo\iframe.html" />
+    <Content Include="Assets\fancybox\demo\index.html" />
+    <Content Include="Assets\fancybox\lib\jquery-1.8.2.min.js" />
+    <Content Include="Assets\fancybox\lib\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="Assets\fancybox\source\blank.gif" />
+    <Content Include="Assets\fancybox\source\fancybox_loading.gif" />
+    <Content Include="Assets\fancybox\source\fancybox_overlay.png" />
+    <Content Include="Assets\fancybox\source\fancybox_sprite.png" />
+    <Content Include="Assets\fancybox\source\helpers\fancybox_buttons.png" />
+    <Content Include="Assets\fancybox\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Assets\fancybox\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Assets\fancybox\source\helpers\jquery.fancybox-media.js" />
+    <Content Include="Assets\fancybox\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Assets\fancybox\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Assets\fancybox\source\jquery.fancybox.css" />
+    <Content Include="Assets\fancybox\source\jquery.fancybox.js" />
+    <Content Include="Assets\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="Assets\flot\API.txt" />
+    <Content Include="Assets\flot\examples\ajax.html" />
+    <Content Include="Assets\flot\examples\annotating.html" />
+    <Content Include="Assets\flot\examples\arrow-down.gif" />
+    <Content Include="Assets\flot\examples\arrow-left.gif" />
+    <Content Include="Assets\flot\examples\arrow-right.gif" />
+    <Content Include="Assets\flot\examples\arrow-up.gif" />
+    <Content Include="Assets\flot\examples\basic.html" />
+    <Content Include="Assets\flot\examples\graph-types.html" />
+    <Content Include="Assets\flot\examples\hs-2004-27-a-large_web.jpg" />
+    <Content Include="Assets\flot\examples\image.html" />
+    <Content Include="Assets\flot\examples\index.html" />
+    <Content Include="Assets\flot\examples\interacting-axes.html" />
+    <Content Include="Assets\flot\examples\interacting.html" />
+    <Content Include="Assets\flot\examples\layout.css" />
+    <Content Include="Assets\flot\examples\multiple-axes.html" />
+    <Content Include="Assets\flot\examples\navigate.html" />
+    <Content Include="Assets\flot\examples\percentiles.html" />
+    <Content Include="Assets\flot\examples\pie.html" />
+    <Content Include="Assets\flot\examples\realtime.html" />
+    <Content Include="Assets\flot\examples\resize.html" />
+    <Content Include="Assets\flot\examples\selection.html" />
+    <Content Include="Assets\flot\examples\setting-options.html" />
+    <Content Include="Assets\flot\examples\stacking.html" />
+    <Content Include="Assets\flot\examples\symbols.html" />
+    <Content Include="Assets\flot\examples\thresholding.html" />
+    <Content Include="Assets\flot\examples\time.html" />
+    <Content Include="Assets\flot\examples\tracking.html" />
+    <Content Include="Assets\flot\examples\turning-series.html" />
+    <Content Include="Assets\flot\examples\visitors.html" />
+    <Content Include="Assets\flot\examples\zooming.html" />
+    <Content Include="Assets\flot\excanvas.js" />
+    <Content Include="Assets\flot\excanvas.min.js" />
+    <Content Include="Assets\flot\FAQ.txt" />
+    <Content Include="Assets\flot\jquery.colorhelpers.js" />
+    <Content Include="Assets\flot\jquery.flot.crosshair.js" />
+    <Content Include="Assets\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Assets\flot\jquery.flot.image.js" />
+    <Content Include="Assets\flot\jquery.flot.js" />
+    <Content Include="Assets\flot\jquery.flot.navigate.js" />
+    <Content Include="Assets\flot\jquery.flot.pie.js" />
+    <Content Include="Assets\flot\jquery.flot.resize.js" />
+    <Content Include="Assets\flot\jquery.flot.selection.js" />
+    <Content Include="Assets\flot\jquery.flot.stack.js" />
+    <Content Include="Assets\flot\jquery.flot.symbol.js" />
+    <Content Include="Assets\flot\jquery.flot.threshold.js" />
+    <Content Include="Assets\flot\jquery.js" />
+    <Content Include="Assets\flot\LICENSE.txt" />
+    <Content Include="Assets\flot\NEWS.txt" />
+    <Content Include="Assets\flot\PLUGINS.txt" />
+    <Content Include="Assets\flot\README.txt" />
+    <Content Include="Assets\font-awesome\.gitignore" />
+    <Content Include="Assets\font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="Assets\font-awesome\css\font-awesome.css" />
+    <Content Include="Assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Assets\font-awesome\docs\assets\css\font-awesome-ie7.min.css" />
+    <Content Include="Assets\font-awesome\docs\assets\css\font-awesome.css" />
+    <Content Include="Assets\font-awesome\docs\assets\css\font-awesome.min.css" />
+    <Content Include="Assets\font-awesome\docs\assets\css\prettify.css" />
+    <Content Include="Assets\font-awesome\docs\assets\css\site.css" />
+    <Content Include="Assets\font-awesome\docs\assets\ico\favicon.ico" />
+    <Content Include="Assets\font-awesome\docs\assets\img\contribution-sample.png" />
+    <Content Include="Assets\font-awesome\docs\assets\img\fort_awesome.jpg" />
+    <Content Include="Assets\font-awesome\docs\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="Assets\font-awesome\docs\assets\img\glyphicons-halflings.png" />
+    <Content Include="Assets\font-awesome\docs\assets\js\backbone.min.js" />
+    <Content Include="Assets\font-awesome\docs\assets\js\bootstrap-222.min.js" />
+    <Content Include="Assets\font-awesome\docs\assets\js\index\index.js" />
+    <Content Include="Assets\font-awesome\docs\assets\js\jquery-1.7.1.min.js" />
+    <Content Include="Assets\font-awesome\docs\assets\js\prettify.min.js" />
+    <Content Include="Assets\font-awesome\docs\assets\js\underscore.min.js" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\tests\buttons.html" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\tests\css-tests.css" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\tests\css-tests.html" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\tests\forms-responsive.html" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\tests\forms.html" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\tests\navbar-fixed-top.html" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\tests\navbar-static-top.html" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\tests\navbar.html" />
+    <Content Include="Assets\font-awesome\docs\design.html" />
+    <Content Include="Assets\font-awesome\docs\index.html" />
+    <Content Include="Assets\font-awesome\docs\test.html" />
+    <Content Include="Assets\fullcalendar\changelog.txt" />
+    <Content Include="Assets\fullcalendar\demos\agenda-views.html" />
+    <Content Include="Assets\fullcalendar\demos\basic-views.html" />
+    <Content Include="Assets\fullcalendar\demos\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Assets\fullcalendar\demos\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="Assets\fullcalendar\demos\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Assets\fullcalendar\demos\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Assets\fullcalendar\demos\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Assets\fullcalendar\demos\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Assets\fullcalendar\demos\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Assets\fullcalendar\demos\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Assets\fullcalendar\demos\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Assets\fullcalendar\demos\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Assets\fullcalendar\demos\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Assets\fullcalendar\demos\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Assets\fullcalendar\demos\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Assets\fullcalendar\demos\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Assets\fullcalendar\demos\cupertino\theme.css" />
+    <Content Include="Assets\fullcalendar\demos\default.html" />
+    <Content Include="Assets\fullcalendar\demos\external-dragging.html" />
+    <Content Include="Assets\fullcalendar\demos\gcal.html" />
+    <Content Include="Assets\fullcalendar\demos\json.html" />
+    <Content Include="Assets\fullcalendar\demos\selectable.html" />
+    <Content Include="Assets\fullcalendar\demos\theme.html" />
+    <Content Include="Assets\fullcalendar\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="Assets\fullcalendar\fullcalendar\fullcalendar.css" />
+    <Content Include="Assets\fullcalendar\fullcalendar\fullcalendar.js" />
+    <Content Include="Assets\fullcalendar\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Assets\fullcalendar\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Assets\fullcalendar\fullcalendar\gcal.js" />
+    <Content Include="Assets\fullcalendar\GPL-LICENSE.txt" />
+    <Content Include="Assets\fullcalendar\jquery\jquery-1.8.1.min.js" />
+    <Content Include="Assets\fullcalendar\jquery\jquery-ui-1.8.23.custom.min.js" />
+    <Content Include="Assets\fullcalendar\MIT-LICENSE.txt" />
+    <Content Include="Assets\glyphicons\css\glyphicons.css" />
+    <Content Include="Assets\glyphicons\css\style.css" />
+    <Content Include="Assets\glyphicons\fonts\glyphicons-regular.svg" />
+    <Content Include="Assets\glyphicons\images\glyphicons-white.png" />
+    <Content Include="Assets\glyphicons\images\glyphicons-white.svg" />
+    <Content Include="Assets\glyphicons\images\glyphicons.png" />
+    <Content Include="Assets\glyphicons\images\glyphicons.svg" />
+    <Content Include="Assets\glyphicons\index.html" />
+    <Content Include="Assets\glyphicons\scripts\modernizr.js" />
+    <Content Include="Assets\glyphicons\scripts\modernizr_license.txt" />
+    <Content Include="Assets\glyphicons_halflings\css\halflings.css" />
+    <Content Include="Assets\glyphicons_halflings\css\style.css" />
+    <Content Include="Assets\glyphicons_halflings\fonts\glyphiconshalflings-regular.svg" />
+    <Content Include="Assets\glyphicons_halflings\images\glyphicons_halflings-white.png" />
+    <Content Include="Assets\glyphicons_halflings\images\glyphicons_halflings-white.svg" />
+    <Content Include="Assets\glyphicons_halflings\images\glyphicons_halflings.png" />
+    <Content Include="Assets\glyphicons_halflings\images\glyphicons_halflings.svg" />
+    <Content Include="Assets\glyphicons_halflings\index.html" />
+    <Content Include="Assets\glyphicons_halflings\scripts\modernizr.js" />
+    <Content Include="Assets\glyphicons_halflings\scripts\modernizr_license.txt" />
+    <Content Include="Assets\gritter\css\jquery.gritter.css" />
+    <Content Include="Assets\gritter\images\gritter-blue.png" />
+    <Content Include="Assets\gritter\images\gritter-brown.png" />
+    <Content Include="Assets\gritter\images\gritter-light.png" />
+    <Content Include="Assets\gritter\images\gritter-long.png" />
+    <Content Include="Assets\gritter\images\gritter-purple.png" />
+    <Content Include="Assets\gritter\images\gritter.png" />
+    <Content Include="Assets\gritter\images\ie-spacer.gif" />
+    <Content Include="Assets\gritter\images_original\gritter-light.png" />
+    <Content Include="Assets\gritter\images_original\gritter-long.png" />
+    <Content Include="Assets\gritter\images_original\gritter.png" />
+    <Content Include="Assets\gritter\images_original\ie-spacer.gif" />
+    <Content Include="Assets\gritter\images_original\trees.jpg" />
+    <Content Include="Assets\gritter\index.html" />
+    <Content Include="Assets\gritter\js\jquery.gritter.js" />
+    <Content Include="Assets\gritter\js\jquery.gritter.min.js" />
+    <Content Include="Assets\img\arrow-down.png" />
+    <Content Include="Assets\img\avatar.png" />
+    <Content Include="Assets\img\avatar1.jpg" />
+    <Content Include="Assets\img\avatar1_small.jpg" />
+    <Content Include="Assets\img\avatar2.jpg" />
+    <Content Include="Assets\img\avatar3.jpg" />
+    <Content Include="Assets\img\avatar3_small.jpg" />
+    <Content Include="Assets\img\dashboard\test.jpg" />
+    <Content Include="Assets\img\dashboard\test1.jpg" />
+    <Content Include="Assets\img\dashboard\test2.jpg" />
+    <Content Include="Assets\img\dashboard\test3.jpg" />
+    <Content Include="Assets\img\dashboard\test4.jpg" />
+    <Content Include="Assets\img\dashboard\user-feedback.jpg" />
+    <Content Include="Assets\img\gallery\image1.jpg" />
+    <Content Include="Assets\img\gallery\image2.jpg" />
+    <Content Include="Assets\img\gallery\image3.jpg" />
+    <Content Include="Assets\img\gallery\image4.jpg" />
+    <Content Include="Assets\img\gallery\image5.jpg" />
+    <Content Include="Assets\img\gallery\preview_02.png" />
+    <Content Include="Assets\img\gallery\preview_03.png" />
+    <Content Include="Assets\img\gallery\preview_04.png" />
+    <Content Include="Assets\img\gallery\preview_05.png" />
+    <Content Include="Assets\img\gallery\preview_06.png" />
+    <Content Include="Assets\img\gallery\preview_07.png" />
+    <Content Include="Assets\img\gallery\preview_08.png" />
+    <Content Include="Assets\img\gallery\preview_09.png" />
+    <Content Include="Assets\img\gallery\preview_10.png" />
+    <Content Include="Assets\img\gallery\preview_11.png" />
+    <Content Include="Assets\img\gallery\preview_12.png" />
+    <Content Include="Assets\img\gallery\preview_13.png" />
+    <Content Include="Assets\img\gallery\preview_14.png" />
+    <Content Include="Assets\img\gallery\preview_15.png" />
+    <Content Include="Assets\img\gallery\preview_16.png" />
+    <Content Include="Assets\img\gallery\preview_17.png" />
+    <Content Include="Assets\img\gallery\preview_18.png" />
+    <Content Include="Assets\img\icon-color-close.png" />
+    <Content Include="Assets\img\icon-color.png" />
+    <Content Include="Assets\img\icon-img-down.png" />
+    <Content Include="Assets\img\icon-img-up.png" />
+    <Content Include="Assets\img\invoice\walmart.png" />
+    <Content Include="Assets\img\loading.gif" />
+    <Content Include="Assets\img\logo-big.png" />
+    <Content Include="Assets\img\logo.png" />
+    <Content Include="Assets\img\menu-toggler.png" />
+    <Content Include="Assets\img\overlay-icon.png" />
+    <Content Include="Assets\img\photo1.jpg" />
+    <Content Include="Assets\img\photo2.jpg" />
+    <Content Include="Assets\img\portlet-collapse-icon-white.png" />
+    <Content Include="Assets\img\portlet-collapse-icon.png" />
+    <Content Include="Assets\img\portlet-config-icon-white.png" />
+    <Content Include="Assets\img\portlet-config-icon.png" />
+    <Content Include="Assets\img\portlet-expand-icon-white.png" />
+    <Content Include="Assets\img\portlet-expand-icon.png" />
+    <Content Include="Assets\img\portlet-reload-icon-white.png" />
+    <Content Include="Assets\img\portlet-reload-icon.png" />
+    <Content Include="Assets\img\portlet-remove-icon-white.png" />
+    <Content Include="Assets\img\portlet-remove-icon.png" />
+    <Content Include="Assets\img\profile\portfolio\logo_azteca.jpg" />
+    <Content Include="Assets\img\profile\portfolio\logo_conquer.jpg" />
+    <Content Include="Assets\img\profile\portfolio\logo_metronic.jpg" />
+    <Content Include="Assets\img\profile\profile-img.jpg" />
+    <Content Include="Assets\img\profile\profile-img.png" />
+    <Content Include="Assets\img\remove-icon-small.png" />
+    <Content Include="Assets\img\search-icon-blue.png" />
+    <Content Include="Assets\img\search-icon-brown.png" />
+    <Content Include="Assets\img\search-icon-purple.png" />
+    <Content Include="Assets\img\search-icon-red.png" />
+    <Content Include="Assets\img\search-icon-white.png" />
+    <Content Include="Assets\img\search-icon.png" />
+    <Content Include="Assets\img\search\img1.jpg" />
+    <Content Include="Assets\img\search\img2.jpg" />
+    <Content Include="Assets\img\search\img3.jpg" />
+    <Content Include="Assets\img\select-caret.png" />
+    <Content Include="Assets\img\sidebar-menu-arrow-green.png" />
+    <Content Include="Assets\img\sidebar-menu-arrow.png" />
+    <Content Include="Assets\img\sidebar-search-close-blue.png" />
+    <Content Include="Assets\img\sidebar-search-close-brown.png" />
+    <Content Include="Assets\img\sidebar-search-close-light.png" />
+    <Content Include="Assets\img\sidebar-search-close-purple.png" />
+    <Content Include="Assets\img\sidebar-search-close.png" />
+    <Content Include="Assets\img\sidebar-toggler-blue.jpg" />
+    <Content Include="Assets\img\sidebar-toggler-brown.jpg" />
+    <Content Include="Assets\img\sidebar-toggler-light.jpg" />
+    <Content Include="Assets\img\sidebar-toggler-purple.jpg" />
+    <Content Include="Assets\img\sidebar-toggler.jpg" />
+    <Content Include="Assets\img\sidebar-toggler.png" />
+    <Content Include="Assets\img\syncfusion-icons-white.png" />
+    <Content Include="Assets\img\syncfusion-icons.png" />
+    <Content Include="Assets\jquery-file-upload\.gitignore" />
+    <Content Include="Assets\jquery-file-upload\cors\postmessage.html" />
+    <Content Include="Assets\jquery-file-upload\cors\result.html" />
+    <Content Include="Assets\jquery-file-upload\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="Assets\jquery-file-upload\css\jquery.fileupload-ui.css" />
+    <Content Include="Assets\jquery-file-upload\css\style.css" />
+    <Content Include="Assets\jquery-file-upload\img\loading.gif" />
+    <Content Include="Assets\jquery-file-upload\img\progressbar.gif" />
+    <Content Include="Assets\jquery-file-upload\index.html" />
+    <Content Include="Assets\jquery-file-upload\js\cors\jquery.postmessage-transport.js" />
+    <Content Include="Assets\jquery-file-upload\js\cors\jquery.xdr-transport.js" />
+    <Content Include="Assets\jquery-file-upload\js\jquery.fileupload-fp.js" />
+    <Content Include="Assets\jquery-file-upload\js\jquery.fileupload-ui.js" />
+    <Content Include="Assets\jquery-file-upload\js\jquery.fileupload.js" />
+    <Content Include="Assets\jquery-file-upload\js\jquery.iframe-transport.js" />
+    <Content Include="Assets\jquery-file-upload\js\main.js" />
+    <Content Include="Assets\jquery-file-upload\js\vendor\canvas-to-blob.min.js" />
+    <Content Include="Assets\jquery-file-upload\js\vendor\jquery.ui.widget.js" />
+    <Content Include="Assets\jquery-file-upload\js\vendor\load-image.min.js" />
+    <Content Include="Assets\jquery-file-upload\js\vendor\tmpl.min.js" />
+    <Content Include="Assets\jquery-file-upload\server\gae-go\static\favicon.ico" />
+    <Content Include="Assets\jquery-file-upload\server\gae-go\static\robots.txt" />
+    <Content Include="Assets\jquery-file-upload\server\gae-python\static\favicon.ico" />
+    <Content Include="Assets\jquery-file-upload\server\gae-python\static\robots.txt" />
+    <Content Include="Assets\jquery-file-upload\server\node\.gitignore" />
+    <Content Include="Assets\jquery-file-upload\server\node\public\files\thumbnail\.gitignore" />
+    <Content Include="Assets\jquery-file-upload\server\node\server.js" />
+    <Content Include="Assets\jquery-file-upload\server\node\tmp\.gitignore" />
+    <Content Include="Assets\jquery-file-upload\test\index.html" />
+    <Content Include="Assets\jquery-file-upload\test\test.js" />
+    <Content Include="Assets\jquery-knob\index.html" />
+    <Content Include="Assets\jquery-knob\js\jquery.knob.js" />
+    <Content Include="Assets\jquery-nestable\index.html" />
+    <Content Include="Assets\jquery-nestable\jquery.nestable.css" />
+    <Content Include="Assets\jquery-nestable\jquery.nestable.js" />
+    <Content Include="Assets\jquery-simpletree\jquery.simpletree.css" />
+    <Content Include="Assets\jquery-simpletree\jquery.simpletree.js" />
+    <Content Include="Assets\jquery-slimscroll\examples\allow-page-scroll.html" />
+    <Content Include="Assets\jquery-slimscroll\examples\chaining.html" />
+    <Content Include="Assets\jquery-slimscroll\examples\disable-fade-out.html" />
+    <Content Include="Assets\jquery-slimscroll\examples\height-width.html" />
+    <Content Include="Assets\jquery-slimscroll\examples\libs\prettify\prettify.css" />
+    <Content Include="Assets\jquery-slimscroll\examples\libs\prettify\prettify.js" />
+    <Content Include="Assets\jquery-slimscroll\examples\mouse-wheel.html" />
+    <Content Include="Assets\jquery-slimscroll\examples\multiple-elements.html" />
+    <Content Include="Assets\jquery-slimscroll\examples\programmatic-scrolling.html" />
+    <Content Include="Assets\jquery-slimscroll\examples\rail.html" />
+    <Content Include="Assets\jquery-slimscroll\examples\scrollbar.html" />
+    <Content Include="Assets\jquery-slimscroll\examples\start-position.html" />
+    <Content Include="Assets\jquery-slimscroll\examples\style.css" />
+    <Content Include="Assets\jquery-slimscroll\examples\top-bottom-events.html" />
+    <Content Include="Assets\jquery-slimscroll\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Assets\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="Assets\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Assets\jquery-tags-input\example.html" />
+    <Content Include="Assets\jquery-tags-input\jquery.tagsinput.css" />
+    <Content Include="Assets\jquery-tags-input\jquery.tagsinput.js" />
+    <Content Include="Assets\jquery-tags-input\jquery.tagsinput.min.js" />
+    <Content Include="Assets\jquery-tags-input\test\fake_json_endpoint.html" />
+    <Content Include="Assets\jquery-tags-input\test\fake_plaintext_endpoint.html" />
+    <Content Include="Assets\jquery-ui-touch-punch\jquery.ui.touch-punch.js" />
+    <Content Include="Assets\jquery-ui-touch-punch\jquery.ui.touch-punch.min.js" />
+    <Content Include="Assets\jquery-ui\images\animated-overlay.gif" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Assets\jquery-ui\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Assets\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Assets\jquery-ui\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Assets\jquery-ui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Assets\jquery-ui\images\ui-icons_454545_256x240.png" />
+    <Content Include="Assets\jquery-ui\images\ui-icons_888888_256x240.png" />
+    <Content Include="Assets\jquery-ui\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Assets\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Assets\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Assets\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Assets\jquery-ui\jquery-ui-1.10.1.custom.css" />
+    <Content Include="Assets\jquery-ui\jquery-ui-1.10.1.custom.min.css" />
+    <Content Include="Assets\jquery-ui\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="Assets\jquery-ui\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Assets\jquery-validation\changelog.txt" />
+    <Content Include="Assets\jquery-validation\demo\ajaxSubmit-intergration-demo.html" />
+    <Content Include="Assets\jquery-validation\demo\captcha\captcha.js" />
+    <Content Include="Assets\jquery-validation\demo\captcha\images\button.png" />
+    <Content Include="Assets\jquery-validation\demo\captcha\style.css" />
+    <Content Include="Assets\jquery-validation\demo\css\chili.css" />
+    <Content Include="Assets\jquery-validation\demo\css\cmxform.css" />
+    <Content Include="Assets\jquery-validation\demo\css\cmxformTemplate.css" />
+    <Content Include="Assets\jquery-validation\demo\css\core.css" />
+    <Content Include="Assets\jquery-validation\demo\css\reset.css" />
+    <Content Include="Assets\jquery-validation\demo\css\screen.css" />
+    <Content Include="Assets\jquery-validation\demo\custom-messages-data-demo.html" />
+    <Content Include="Assets\jquery-validation\demo\custom-methods-demo.html" />
+    <Content Include="Assets\jquery-validation\demo\dynamic-totals.html" />
+    <Content Include="Assets\jquery-validation\demo\errorcontainer-demo.html" />
+    <Content Include="Assets\jquery-validation\demo\file_input.html" />
+    <Content Include="Assets\jquery-validation\demo\images\bg.gif" />
+    <Content Include="Assets\jquery-validation\demo\images\checked.gif" />
+    <Content Include="Assets\jquery-validation\demo\images\cmxform-divider.gif" />
+    <Content Include="Assets\jquery-validation\demo\images\cmxform-fieldset.gif" />
+    <Content Include="Assets\jquery-validation\demo\images\loading.gif" />
+    <Content Include="Assets\jquery-validation\demo\images\unchecked.gif" />
+    <Content Include="Assets\jquery-validation\demo\index.html" />
+    <Content Include="Assets\jquery-validation\demo\jquerymobile.html" />
+    <Content Include="Assets\jquery-validation\demo\js\chili-1.7.pack.js" />
+    <Content Include="Assets\jquery-validation\demo\login\images\bg.gif" />
+    <Content Include="Assets\jquery-validation\demo\login\images\header1.jpg" />
+    <Content Include="Assets\jquery-validation\demo\login\images\page.gif" />
+    <Content Include="Assets\jquery-validation\demo\login\images\required_star.gif" />
+    <Content Include="Assets\jquery-validation\demo\login\index.html" />
+    <Content Include="Assets\jquery-validation\demo\login\screen.css" />
+    <Content Include="Assets\jquery-validation\demo\marketo\ie6.css" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\backRequiredGray.gif" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\back_green-fade.gif" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\back_nav_blue.gif" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\blank.gif" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\button-submit.gif" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\favicon.ico" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\help.png" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\left-nav-callout-long.png" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\login-sprite.gif" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\logo_marketo.gif" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\sf.png" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\step1-24.gif" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\step2-24.gif" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\step3-24.gif" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\tab-sprite.gif" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\tab_green.gif" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\time.png" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\toggle.gif" />
+    <Content Include="Assets\jquery-validation\demo\marketo\images\warning.gif" />
+    <Content Include="Assets\jquery-validation\demo\marketo\index.html" />
+    <Content Include="Assets\jquery-validation\demo\marketo\jquery.maskedinput.js" />
+    <Content Include="Assets\jquery-validation\demo\marketo\mktSignup.js" />
+    <Content Include="Assets\jquery-validation\demo\marketo\step2.htm" />
+    <Content Include="Assets\jquery-validation\demo\marketo\stylesheet.css" />
+    <Content Include="Assets\jquery-validation\demo\milk\bg.gif" />
+    <Content Include="Assets\jquery-validation\demo\milk\index.html" />
+    <Content Include="Assets\jquery-validation\demo\milk\left_white.png" />
+    <Content Include="Assets\jquery-validation\demo\milk\milk.css" />
+    <Content Include="Assets\jquery-validation\demo\milk\milk.png" />
+    <Content Include="Assets\jquery-validation\demo\milk\right_white.png" />
+    <Content Include="Assets\jquery-validation\demo\multipart\index.html" />
+    <Content Include="Assets\jquery-validation\demo\multipart\js\jquery.maskedinput-1.0.js" />
+    <Content Include="Assets\jquery-validation\demo\multipart\js\ui.accordion.js" />
+    <Content Include="Assets\jquery-validation\demo\multipart\js\ui.core.js" />
+    <Content Include="Assets\jquery-validation\demo\multipart\style.css" />
+    <Content Include="Assets\jquery-validation\demo\radio-checkbox-select-demo.html" />
+    <Content Include="Assets\jquery-validation\demo\tabs\index.html" />
+    <Content Include="Assets\jquery-validation\demo\themerollered.html" />
+    <Content Include="Assets\jquery-validation\demo\tinymce\index.html" />
+    <Content Include="Assets\jquery-validation\demo\tinymce\themes\simple\editor_template.js" />
+    <Content Include="Assets\jquery-validation\demo\tinymce\themes\simple\img\icons.gif" />
+    <Content Include="Assets\jquery-validation\demo\tinymce\themes\simple\langs\en.js" />
+    <Content Include="Assets\jquery-validation\demo\tinymce\themes\simple\skins\default\ui.css" />
+    <Content Include="Assets\jquery-validation\demo\tinymce\tiny_mce.js" />
+    <Content Include="Assets\jquery-validation\dist\additional-methods.js" />
+    <Content Include="Assets\jquery-validation\dist\additional-methods.min.js" />
+    <Content Include="Assets\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="Assets\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="Assets\jquery-validation\grunt.js" />
+    <Content Include="Assets\jquery-validation\lib\jquery-1.6.4.js" />
+    <Content Include="Assets\jquery-validation\lib\jquery-1.7.2.js" />
+    <Content Include="Assets\jquery-validation\lib\jquery-1.8.3.js" />
+    <Content Include="Assets\jquery-validation\lib\jquery-1.9.0.js" />
+    <Content Include="Assets\jquery-validation\lib\jquery.form.js" />
+    <Content Include="Assets\jquery-validation\lib\jquery.js" />
+    <Content Include="Assets\jquery-validation\lib\jquery.mockjax.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_ar.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_bg.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_ca.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_cs.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_da.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_de.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_el.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_es.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_et.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_eu.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_fa.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_fi.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_fr.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_he.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_hr.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_hu.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_it.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_ja.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_ka.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_kk.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_lt.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_lv.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_my.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_nl.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_no.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_pl.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_pt_BR.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_pt_PT.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_ro.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_ru.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_si.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_sk.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_sl.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_sr.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_sv.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_th.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_tr.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_uk.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_vi.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_zh.js" />
+    <Content Include="Assets\jquery-validation\localization\messages_zh_TW.js" />
+    <Content Include="Assets\jquery-validation\localization\methods_de.js" />
+    <Content Include="Assets\jquery-validation\localization\methods_nl.js" />
+    <Content Include="Assets\jquery-validation\localization\methods_pt.js" />
+    <Content Include="Assets\jquery-validation\test\events.html" />
+    <Content Include="Assets\jquery-validation\test\firebug\errorIcon.png" />
+    <Content Include="Assets\jquery-validation\test\firebug\firebug.css" />
+    <Content Include="Assets\jquery-validation\test\firebug\firebug.html" />
+    <Content Include="Assets\jquery-validation\test\firebug\firebug.js" />
+    <Content Include="Assets\jquery-validation\test\firebug\firebugx.js" />
+    <Content Include="Assets\jquery-validation\test\firebug\infoIcon.png" />
+    <Content Include="Assets\jquery-validation\test\firebug\warningIcon.png" />
+    <Content Include="Assets\jquery-validation\test\index.html" />
+    <Content Include="Assets\jquery-validation\test\jquery.js" />
+    <Content Include="Assets\jquery-validation\test\large.html" />
+    <Content Include="Assets\jquery-validation\test\messages.js" />
+    <Content Include="Assets\jquery-validation\test\methods.js" />
+    <Content Include="Assets\jquery-validation\test\qunit\qunit.css" />
+    <Content Include="Assets\jquery-validation\test\qunit\qunit.js" />
+    <Content Include="Assets\jquery-validation\test\rules.js" />
+    <Content Include="Assets\jquery-validation\test\selects\index.html" />
+    <Content Include="Assets\jquery-validation\test\tabs.html" />
+    <Content Include="Assets\jquery-validation\test\test.js" />
+    <Content Include="Assets\jqvmap\.gitignore" />
+    <Content Include="Assets\jqvmap\jqvmap\data\jquery.vmap.sampledata.js" />
+    <Content Include="Assets\jqvmap\jqvmap\jquery.vmap.js" />
+    <Content Include="Assets\jqvmap\jqvmap\jquery.vmap.min.js" />
+    <Content Include="Assets\jqvmap\jqvmap\jquery.vmap.packed.js" />
+    <Content Include="Assets\jqvmap\jqvmap\jqvmap.css" />
+    <Content Include="Assets\jqvmap\jqvmap\maps\jquery.vmap.europe.js" />
+    <Content Include="Assets\jqvmap\jqvmap\maps\jquery.vmap.germany.js" />
+    <Content Include="Assets\jqvmap\jqvmap\maps\jquery.vmap.russia.js" />
+    <Content Include="Assets\jqvmap\jqvmap\maps\jquery.vmap.usa.js" />
+    <Content Include="Assets\jqvmap\jqvmap\maps\jquery.vmap.world.js" />
+    <Content Include="Assets\jqvmap\samples\europe.html" />
+    <Content Include="Assets\jqvmap\samples\germany.html" />
+    <Content Include="Assets\jqvmap\samples\multi.html" />
+    <Content Include="Assets\jqvmap\samples\russia.html" />
+    <Content Include="Assets\jqvmap\samples\usa.html" />
+    <Content Include="Assets\jqvmap\samples\world.html" />
+    <Content Include="Assets\js\app.js" />
+    <Content Include="Assets\js\demo.gmaps.js" />
+    <Content Include="Assets\js\excanvas.js" />
+    <Content Include="Assets\js\gmaps.js" />
+    <Content Include="Assets\js\jquery-1.8.2.js" />
+    <Content Include="Assets\js\jquery-1.8.2.min.js" />
+    <Content Include="Assets\js\jquery-1.8.3.min.js" />
+    <Content Include="Assets\js\jquery.blockui.js" />
+    <Content Include="Assets\js\jquery.cookie.js" />
+    <Content Include="Assets\js\jquery.pulsate.min.js" />
+    <Content Include="Assets\js\respond.js" />
+    <Content Include="Assets\layer\extend\layer.ext.js" />
+    <Content Include="Assets\layer\jquery.js" />
+    <Content Include="Assets\layer\layer.min.js" />
+    <Content Include="Assets\layer\skin\default\icon_ext.png" />
+    <Content Include="Assets\layer\skin\default\textbg.png" />
+    <Content Include="Assets\layer\skin\default\xubox_ico0.png" />
+    <Content Include="Assets\layer\skin\default\xubox_loading0.gif" />
+    <Content Include="Assets\layer\skin\default\xubox_loading1.gif" />
+    <Content Include="Assets\layer\skin\default\xubox_loading2.gif" />
+    <Content Include="Assets\layer\skin\default\xubox_loading3.gif" />
+    <Content Include="Assets\layer\skin\default\xubox_title0.png" />
+    <Content Include="Assets\layer\skin\layer.css" />
+    <Content Include="Assets\layer\skin\layer.ext.css" />
+    <Content Include="Assets\uniform\css\uniform.default.css" />
+    <Content Include="Assets\uniform\demo\demo.html" />
+    <Content Include="Assets\uniform\images\bg-input-focus.png" />
+    <Content Include="Assets\uniform\images\bg-input.png" />
+    <Content Include="Assets\uniform\images\sprite.png" />
+    <Content Include="Assets\uniform\images\sprite_original.png" />
+    <Content Include="Assets\uniform\jquery.uniform.js" />
+    <Content Include="Assets\uniform\jquery.uniform.min.js" />
+    <EmbeddedResource Include="Config\AdminMenuConfig.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Config\CacheConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\DaoConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\Log4net.xml" />
+    <Content Include="Config\SettingConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\SystemConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\UploadConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap-wysihtml5.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\colorpicker.css" />
+    <Content Include="Content\datepicker.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\fullcalendar.css" />
+    <Content Include="Content\Images\avatar.gif" />
+    <Content Include="Content\Images\bg.jpg" />
+    <Content Include="Content\Images\bg1.jpg" />
+    <Content Include="Content\Images\bg2.jpg" />
+    <Content Include="Content\Images\DKLlogo.png" />
+    <Content Include="Content\Images\error.gif" />
+    <Content Include="Content\Images\error.png" />
+    <Content Include="Content\Images\loading.gif" />
+    <Content Include="Content\Images\loadingAnimation.gif" />
+    <Content Include="Content\Images\logo-big.png" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\no_picture.jpg" />
+    <Content Include="Content\jquery.gritter.css" />
+    <Content Include="Content\matrix-login.css" />
+    <Content Include="Content\matrix-media.css" />
+    <Content Include="Content\matrix-style.css" />
+    <Content Include="Content\Scripts\admin.main.js" />
+    <Content Include="Content\Scripts\echarts-all.js" />
+    <Content Include="Content\Scripts\flashupload.js" />
+    <Content Include="Content\Scripts\highcharts.exporting.js" />
+    <Content Include="Content\Scripts\highcharts.js" />
+    <Content Include="Content\Scripts\jquery-ui.combobox.js" />
+    <Content Include="Content\Scripts\jquery.numeric.js" />
+    <Content Include="Content\Scripts\jquery.powerFloat.js" />
+    <Content Include="Content\Scripts\jquery.thickbox.js" />
+    <Content Include="Content\Scripts\jquery.ui.datapicker-zh-CN.js" />
+    <Content Include="Content\Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Content\Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Content\Scripts\jquery.validate.js" />
+    <Content Include="Content\Scripts\jquery.validate.min.js" />
+    <Content Include="Content\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\Scripts\Silverlight.js" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\Styles\admin.main.css" />
+    <Content Include="Content\Styles\jquery.thickbox.css" />
+    <Content Include="Content\uniform.css" />
+    <Content Include="Content\Uploadify\cancel.png" />
+    <Content Include="Content\Uploadify\float.css" />
+    <Content Include="Content\Uploadify\jquery-1.4.2.min.js" />
+    <Content Include="Content\Uploadify\jquery.uploadify.v2.1.4.js" />
+    <Content Include="Content\Uploadify\jquery.uploadify.v2.1.4.min.js" />
+    <Content Include="Content\Uploadify\jquery.uploadify.v3.2.js" />
+    <Content Include="Content\Uploadify\jquery.uploadify.v3.2.min.js" />
+    <Content Include="Content\Uploadify\swfobject.js" />
+    <Content Include="Content\Uploadify\uploadbutton.png" />
+    <Content Include="Content\Uploadify\uploadify.cn.swf" />
+    <Content Include="Content\Uploadify\uploadify.css" />
+    <Content Include="Content\Uploadify\uploadify.swf" />
+    <Content Include="Content\Uploadify\uploadify.v3.2.css" />
+    <Content Include="Content\Uploadify\uploadify.v3.2.swf" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="FileUpload.ashx" />
+    <Content Include="Assets\bootstrap-colorpicker\less\colorpicker.less" />
+    <Content Include="Assets\bootstrap-datepicker\less\datepicker.less" />
+    <Content Include="Assets\bootstrap-daterangepicker\README.md" />
+    <Content Include="Assets\bootstrap-timepicker\less\timepicker.less" />
+    <Content Include="Assets\bootstrap-timepicker\README.md" />
+    <Content Include="Assets\bootstrap-toggle-buttons\LICENSE" />
+    <Content Include="Assets\bootstrap-toggle-buttons\README.md" />
+    <Content Include="Assets\bootstrap-toggle-buttons\static\config.rb" />
+    <Content Include="Assets\bootstrap-toggle-buttons\static\sass\bootstrap-toggle-buttons.scss" />
+    <Content Include="Assets\bootstrap-tree\jsonexample.json" />
+    <Content Include="Assets\bootstrap-tree\README.md" />
+    <Content Include="Assets\bootstrap-wizard\README.md" />
+    <Content Include="Assets\breakpoints\README.md" />
+    <Content Include="Assets\chosen-bootstrap\Cakefile" />
+    <Content Include="Assets\chosen-bootstrap\chosen\lib\chosen.less" />
+    <Content Include="Assets\chosen-bootstrap\coffee\chosen.jquery.coffee" />
+    <Content Include="Assets\chosen-bootstrap\coffee\chosen.proto.coffee" />
+    <Content Include="Assets\chosen-bootstrap\coffee\lib\abstract-chosen.coffee" />
+    <Content Include="Assets\chosen-bootstrap\coffee\lib\select-parser.coffee" />
+    <Content Include="Assets\chosen-bootstrap\LICENSE.md" />
+    <Content Include="Assets\chosen-bootstrap\package.json" />
+    <Content Include="Assets\chosen-bootstrap\README.md" />
+    <Content Include="Assets\chosen-bootstrap\VERSION" />
+    <Content Include="Assets\ckeditor\CHANGES.md" />
+    <Content Include="Assets\ckeditor\LICENSE.md" />
+    <Content Include="Assets\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Assets\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Assets\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Assets\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Assets\ckeditor\README.md" />
+    <Content Include="Assets\ckeditor\samples\assets\posteddata.php" />
+    <Content Include="Assets\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="Assets\ckeditor\samples\sample_posteddata.php" />
+    <Content Include="Assets\ckeditor\skins\moono\readme.md" />
+    <Content Include="Assets\clockface\LICENSE-MIT" />
+    <Content Include="Assets\clockface\README.md" />
+    <Content Include="Assets\dropzone\css\stylus\basic.styl" />
+    <Content Include="Assets\dropzone\css\stylus\dropzone.styl" />
+    <Content Include="Assets\dropzone\upload.php" />
+    <Content Include="Assets\fancybox\CHANGELOG.md" />
+    <Content Include="Assets\fancybox\README.md" />
+    <Content Include="Assets\flot\examples\data-eu-gdp-growth-1.json" />
+    <Content Include="Assets\flot\examples\data-eu-gdp-growth-2.json" />
+    <Content Include="Assets\flot\examples\data-eu-gdp-growth-3.json" />
+    <Content Include="Assets\flot\examples\data-eu-gdp-growth-4.json" />
+    <Content Include="Assets\flot\examples\data-eu-gdp-growth-5.json" />
+    <Content Include="Assets\flot\examples\data-eu-gdp-growth.json" />
+    <Content Include="Assets\flot\examples\data-japan-gdp-growth.json" />
+    <Content Include="Assets\flot\examples\data-usa-gdp-growth.json" />
+    <Content Include="Assets\flot\Makefile" />
+    <Content Include="Assets\font-awesome\docs\assets\font\fontawesome-webfont.eot" />
+    <Content Include="Assets\font-awesome\docs\assets\font\fontawesome-webfont.ttf" />
+    <Content Include="Assets\font-awesome\docs\assets\font\fontawesome-webfont.woff" />
+    <Content Include="Assets\font-awesome\docs\assets\font\FontAwesome.otf" />
+    <Content Include="Assets\font-awesome\docs\assets\font\museo_slab_300-webfont.eot" />
+    <Content Include="Assets\font-awesome\docs\assets\font\museo_slab_300-webfont.ttf" />
+    <Content Include="Assets\font-awesome\docs\assets\font\museo_slab_500-webfont.eot" />
+    <Content Include="Assets\font-awesome\docs\assets\font\museo_slab_500-webfont.ttf" />
+    <Content Include="Assets\font-awesome\docs\assets\font\proximanova-sbold-webfont.eot" />
+    <Content Include="Assets\font-awesome\docs\assets\font\proximanova-sbold-webfont.ttf" />
+    <Content Include="Assets\font-awesome\docs\assets\font\proximanova-webfont.eot" />
+    <Content Include="Assets\font-awesome\docs\assets\font\proximanova-webfont.ttf" />
+    <Content Include="Assets\font-awesome\docs\assets\img\icon-flag.pdf" />
+    <Content Include="Assets\font-awesome\docs\assets\less\font-awesome-ie7.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\font-awesome.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\font-site.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\mixins.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\site.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\accordion.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\alerts.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\bootstrap.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\breadcrumbs.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\button-groups.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\buttons.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\carousel.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\close.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\code.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\component-animations.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\dropdowns.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\forms.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\grid.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\hero-unit.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\labels-badges.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\layouts.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\media.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\mixins.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\modals.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\navbar.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\navs.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\pager.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\pagination.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\popovers.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\progress-bars.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\reset.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\responsive-1200px-min.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\responsive-767px-max.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\responsive-768px-979px.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\responsive-navbar.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\responsive-utilities.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\responsive.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\scaffolding.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\sprites.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\tables.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\thumbnails.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\tooltip.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\type.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\utilities.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\variables.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\twbs-222\wells.less" />
+    <Content Include="Assets\font-awesome\docs\assets\less\variables.less" />
+    <Content Include="Assets\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="Assets\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="Assets\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="Assets\font-awesome\font\FontAwesome.otf" />
+    <Content Include="Assets\font-awesome\less\font-awesome-ie7.less" />
+    <Content Include="Assets\font-awesome\less\font-awesome.less" />
+    <Content Include="Assets\font-awesome\README.md" />
+    <Content Include="Assets\font-awesome\sass\font-awesome.sass" />
+    <Content Include="Assets\font-awesome\sass\font-awesome.scss" />
+    <Content Include="Assets\fullcalendar\demos\json-events.php" />
+    <Content Include="Assets\glyphicons\fonts\glyphicons-regular.eot" />
+    <Content Include="Assets\glyphicons\fonts\glyphicons-regular.otf" />
+    <Content Include="Assets\glyphicons\fonts\glyphicons-regular.ttf" />
+    <Content Include="Assets\glyphicons\fonts\glyphicons-regular.woff" />
+    <Content Include="Assets\glyphicons\less\glyphicons.less" />
+    <Content Include="Assets\glyphicons\less\reset.less" />
+    <Content Include="Assets\glyphicons\less\site.less" />
+    <Content Include="Assets\glyphicons\less\style.less" />
+    <Content Include="Assets\glyphicons_halflings\fonts\glyphiconshalflings-regular.eot" />
+    <Content Include="Assets\glyphicons_halflings\fonts\glyphiconshalflings-regular.otf" />
+    <Content Include="Assets\glyphicons_halflings\fonts\glyphiconshalflings-regular.ttf" />
+    <Content Include="Assets\glyphicons_halflings\fonts\glyphiconshalflings-regular.woff" />
+    <Content Include="Assets\glyphicons_halflings\less\halflings.less" />
+    <Content Include="Assets\glyphicons_halflings\less\reset.less" />
+    <Content Include="Assets\glyphicons_halflings\less\site.less" />
+    <Content Include="Assets\glyphicons_halflings\less\style.less" />
+    <Content Include="Assets\gritter\README.markdown" />
+    <Content Include="Assets\jquery-file-upload\blueimp-file-upload.jquery.json" />
+    <Content Include="Assets\jquery-file-upload\CONTRIBUTING.md" />
+    <Content Include="Assets\jquery-file-upload\package.json" />
+    <Content Include="Assets\jquery-file-upload\README.md" />
+    <Content Include="Assets\jquery-file-upload\server\gae-go\app.yaml" />
+    <Content Include="Assets\jquery-file-upload\server\gae-go\app\main.go" />
+    <Content Include="Assets\jquery-file-upload\server\gae-python\app.yaml" />
+    <Content Include="Assets\jquery-file-upload\server\gae-python\main.py" />
+    <Content Include="Assets\jquery-file-upload\server\node\package.json" />
+    <Content Include="Assets\jquery-file-upload\server\php\files\.htaccess" />
+    <Content Include="Assets\jquery-file-upload\server\php\index.php" />
+    <Content Include="Assets\jquery-file-upload\server\php\UploadHandler.php" />
+    <Content Include="Assets\jquery-knob\README.md" />
+    <Content Include="Assets\jquery-nestable\README.md" />
+    <Content Include="Assets\jquery-slimscroll\README.md" />
+    <Content Include="Assets\jquery-slimscroll\slimScroll.jquery.json" />
+    <Content Include="Assets\jquery-tags-input\README.md" />
+    <Content Include="Assets\jquery-ui-touch-punch\README.md" />
+    <Content Include="Assets\jquery-validation\demo\captcha\fonts\Anorexia.ttf" />
+    <Content Include="Assets\jquery-validation\demo\captcha\images\image.php" />
+    <Content Include="Assets\jquery-validation\demo\captcha\image_req.php" />
+    <Content Include="Assets\jquery-validation\demo\captcha\index.php" />
+    <Content Include="Assets\jquery-validation\demo\captcha\newsession.php" />
+    <Content Include="Assets\jquery-validation\demo\captcha\process.php" />
+    <Content Include="Assets\jquery-validation\demo\captcha\rand.php" />
+    <Content Include="Assets\jquery-validation\demo\form.php" />
+    <Content Include="Assets\jquery-validation\demo\form.phps" />
+    <Content Include="Assets\jquery-validation\demo\marketo\emails.php" />
+    <Content Include="Assets\jquery-validation\demo\marketo\emails.phps" />
+    <Content Include="Assets\jquery-validation\demo\milk\emails.php" />
+    <Content Include="Assets\jquery-validation\demo\milk\emails.phps" />
+    <Content Include="Assets\jquery-validation\demo\milk\users.php" />
+    <Content Include="Assets\jquery-validation\demo\milk\users.phps" />
+    <Content Include="Assets\jquery-validation\package.json" />
+    <Content Include="Assets\jquery-validation\README.md" />
+    <Content Include="Assets\jqvmap\README.md" />
+    <Content Include="Assets\uniform\README.textile" />
+    <Content Include="Content\Uploadify\uploadify.fla" />
+    <Content Include="Areas\Account\Views\web.config" />
+    <Content Include="Areas\Account\Views\Auth\Login.cshtml" />
+    <Content Include="Areas\Account\Views\Auth\Index.cshtml" />
+    <Content Include="Areas\Account\Views\Auth\ModifyPwd.cshtml" />
+    <Content Include="Areas\Account\Views\User\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\web.config" />
+    <Content Include="Areas\DKLManager\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectMaket\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectHistory\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectQualityControl\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectCharge\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectGeneral\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectMaket\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectMaket\View.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectDoing\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectDoing\View.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectConsult\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectConsult\View.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectConsultPerson\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectConsultPerson\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectCharge\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectGeneral\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectGeneral\View.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeader\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeader\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeader\View.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectQualityControl\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceCalibrationRemark\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceCalibrationRemark\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceService\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceService\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceState\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceState\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Devise\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Devise\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceIdentity\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceIdentity\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceUseRecordModel\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceUseRecordModel\Index.cshtml" />
+    <Content Include="Areas\Account\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Account\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Account\Views\ProjectChecker\Index.cshtml" />
+    <Content Include="Areas\Account\Views\ProjectChecker\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectImgFileHistory\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectImgFileHistory\ViewList.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectDocHistory\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectDocHistory\ViewList.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectMaket\Refer.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectUnCheck\CheckDoc.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectUnCheck\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SampleRegisterTable\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SampleRegisterTable\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SampleProjectGist\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SampleProjectGist\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\OccupationaldiseaseHarm\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\OccupationaldiseaseHarm\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Customer\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Customer\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\VisitRecord\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\VisitRecord\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectConsult\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectCharge\Submit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectConsultPerson\CheckModfiySubmit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeaderAssessor\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeaderAssessor\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeaderAssessor\View.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeaderAssessor\CheckDoc.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectChargeAssessor\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectChargeAssessor\CheckDoc.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectChargeAssessor\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ThreeAssessor\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ThreeAssessor\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ThreeAssessor\CheckDoc.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectGoBack\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectGoBack\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectGoBack\CheckDoc.cshtml" />
+    <Content Include="Areas\DKLManager\Views\StaySubmit\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\StaySubmit\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\StaySubmit\CheckDoc.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AssessmentGoBack\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AssessmentGoBack\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AssessmentGoBack\CheckDoc.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ReportList\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceOrderFailed\Create.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceOrderFailed\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceOrdering\Create.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceOrdering\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceOrdering\Submit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceOrderSuccess\View.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SampleRegisterTable\Create.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SampleHistory\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SampleHistory\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Parameter\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Parameter\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AnalyzePerson\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AnalyzePerson\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ArgumentValueHistory\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\TestReport\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\TestReport\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\TestReport\ReportCreate.cshtml" />
+    <Content Include="Areas\DKLManager\Views\TestChemicalReport\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\TestChemicalReport\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DetectionResult\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DetectionResult\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectHistory\View.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ReportReceiveList\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceOrderByTestPerson\Create.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectConsultPerson\View.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeader\Return.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectGeneral\UpdateChemical.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectGeneral\EditChemical.cshtml" />
+    <Content Include="Areas\DKLManager\Views\MothNewProjectNumStatistics\Graph.cshtml" />
+    <Content Include="Areas\DKLManager\Views\MothNewProjectNumStatistics\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceOrdering\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceUse\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceUse\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectQualityControl\Problem.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectQualityControl\Return.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeader\Problem.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectCharge\Problem.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectGeneral\Problem.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectDoing\Problem.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Lab\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Lab\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectConsult\Return.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectConsult\Problem.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectConsultPerson\Problem.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceSiteUse\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceBigApparatus\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceSiteDetectionCalibration\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceSiteDetection\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceSiteDetection\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceSiteDetectionCalibration\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceSiteUse\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceBigApparatus\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Costing\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Costing\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingDirector\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingDirector\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingVicePresident\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingVicePresident\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContract\Create.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContract\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractDoing\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractDoing\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractDoing\Refer.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractDoing\Submit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractHistory\Create.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractHistory\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractHistory\Refer.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractVerify\Create.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractVerify\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractVerify\Refer.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractVerify\VerifyEstimate.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractVerify\VerifyGeneralAccountingDepartment.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractVerify\VerifyMarket.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractVerify\VerifyQuality.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractVerify\VerifyTest.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractVerify\VerifyWorker.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContract\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectJob\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\MothNewProjectNumStatistics\Welcome.cshtml" />
+    <Content Include="Areas\DKLManager\Views\MothNewProjectNumStatistics\AreaSearch.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContract\Refer.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractDoing\CreateWord.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContract\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectGeneral\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeader\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectMaket\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectQualityControl\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ReportList\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ReportReceiveList\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeaderAssessor\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectCharge\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AssessmentGoBack\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\MothNewProjectNumStatistics\Detail.cshtml" />
+    <Content Include="Areas\DKLManager\Views\MothNewProjectNumStatistics\MarketSearch.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectGeneralUncheck\CheckDoc.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectGeneralUncheck\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContract\Submit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\MothNewProjectNumStatistics\Index2.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceStatisticalFigure\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceStatisticalFigure\SelectDevice.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractDoing\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingHistory\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingTheGeneralManager\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingTheGeneralManager\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractVerify\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectDoing\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Costing\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingDirector\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingVicePresident\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingTheGeneralManager\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectHistory\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectImgFileHistory\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Costing\Submit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingDirector\Submit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingVicePresident\Submit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingTheGeneralManager\Submit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingHistory\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractHistory\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingDoing\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\CostingDoing\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Technology\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\MothNew\AreaSearch.cshtml" />
+    <Content Include="Areas\DKLManager\Views\MothNewMarket\MarketSearch.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectCharge\AddData.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeader\AddData.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectCharge\UpdateChemical.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectCharge\EditChemical.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeader\EditChemical.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeader\UpdateChemical.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceOrdering\Indext.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SelectLook\Check.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SelectLook\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AnalyzePersonHistory\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectJob\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectJob\Return.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectJob\Problem.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectJob\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectQualityControl\WaterIndex.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectQualityControl\WaterEdit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ReportFormation\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AnalyzePerson\Check.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Lab\WaterIndex.cshtml" />
+    <Content Include="Areas\DKLManager\Views\Lab\EditW.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ReportFormation\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AssessmentGoBack\UploadFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DownLoadFiles\DownLoadFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectEvaluateControl\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectEvaluateControl\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectEvaluateControl\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectEvaluateControl\Problem.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectEvaluateControl\Return.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectEngineerControl\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectEngineerControl\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectEngineerControl\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectEngineerControl\Problem.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectEngineerControl\Return.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectTechnologyControl\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectTechnologyControl\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectTechnologyControl\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectTechnologyControl\Problem.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectTechnologyControl\Return.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectJob\SubmitPJ.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectCharge\SubmitPJ.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeaderAssessor\UploadFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeaderAssessor\DownLoadFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectChargeAssessor\UploadFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContractVerify\UploadFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DownLoadFiles\DownLoadProjectFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ArgumentValueCheck\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SampleCheck\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SampleCheck\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectResultCheck\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AnalyzeCheck\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AnalyzeCheck\UploadFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AnalyzePersonCheck\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AnalyzeCheck\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AnalyzePersonCheck\DownLoadProjectFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AnalyzePersonCheck\UploadFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DownLoadFiles\SDownLoadFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectEvaluateControl\UploadFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectFinish\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectFinish\Edit.cshtml" />
+    <Content Include="Areas\Account\Views\SecondManager\Index.cshtml" />
+    <Content Include="Areas\Account\Views\SecondManager\Edit.cshtml" />
+    <Content Include="Areas\Account\Views\ChangeAccountType\Index.cshtml" />
+    <Content Include="Areas\Account\Views\ChangeAccountType\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\QualityInspector\CheckDoc.cshtml" />
+    <Content Include="Areas\DKLManager\Views\QualityInspector\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\QualityInspector\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\QualityInspector\UploadFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\TechnologyReview\CheckDoc.cshtml" />
+    <Content Include="Areas\DKLManager\Views\TechnologyReview\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\TechnologyReview\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\TechnologyReview\UploadFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AuthorizationPerson\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AnalyzePersonCheck\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AuthorizationPerson\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DownLoadFiles\ReadProjectContractFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DownLoadFiles\ReadProjectFiles.cshtml" />
+    <Content Include="Areas\DKLManager\Views\DeviceOrderSuccess\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectChargeAssessor\WriteOption.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectLeaderAssessor\WriteOption.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AnalyzeCheck\Show.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SampleRegisterCount\Count.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\DKLManager\Views\SampleRegisterCount\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\AssessmentGoBack\WriteOption.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SampleRegisterTable\CreatePhysics.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SampleRegisterTable\IndexPhysics.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SampleRegisterTable\EditPhysics.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SampleRegisterCount\Count.cshtml" />
+    <Content Include="Areas\DKLManager\Views\SampleRegisterCount\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContract\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\MothNewMarket\Detail.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ProjectContract\CreateWord.cshtml" />
+    <None Include="Areas\DKLManager\Views\TestReport\test.cshtml" />
+    <Content Include="Areas\DKLManager\Views\TimeInstructions\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ThreeAssessor\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\WaterDetection\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\WaterSamplingMember\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\WaterDetection\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\WaterSamplingMember\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\WaterDetection\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\WaterDetection\Return.cshtml" />
+    <Content Include="Areas\DKLManager\Views\WaterSamplingMember\Return.cshtml" />
+    <Content Include="Areas\DKLManager\Views\WaterSamplingMember\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\WaterDetectionCheck\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ThressPersonCheck\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ThressPersonCheck\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ZPThressCheck\Index.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ZPThressCheck\CheckDoc.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ZPThressCheck\Edit.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ZPThressCheck\WriteOption.cshtml" />
+    <Content Include="Areas\DKLManager\Views\ZPThressCheck\Course.cshtml" />
+    <Content Include="Areas\DKLManager\Views\WaterDetection\Problem.cshtml" />
+    <None Include="Properties\PublishProfiles\test.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\flashupload.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <Content Include="Scripts\jquery.ui.custom.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\masked.js" />
+    <Content Include="Scripts\matrix.calendar.js" />
+    <Content Include="Scripts\matrix.charts.js" />
+    <Content Include="Scripts\matrix.chat.js" />
+    <Content Include="Scripts\matrix.dashboard.js" />
+    <Content Include="Scripts\matrix.form_common.js" />
+    <Content Include="Scripts\matrix.form_validation.js" />
+    <Content Include="Scripts\matrix.interface.js" />
+    <Content Include="Scripts\matrix.js" />
+    <Content Include="Scripts\matrix.login.js" />
+    <Content Include="Scripts\matrix.popover.js" />
+    <Content Include="Scripts\matrix.tables.js" />
+    <Content Include="Scripts\matrix.wizard.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LayoutBefore.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout.Edit.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Shared\_Theme.cshtml" />
+    <Content Include="Views\Home\pictrue.cshtml" />
+    <Content Include="Views\Shared\_Dpf.cshtml" />
+    <Content Include="Views\Shared\_Layout.Edit2.cshtml" />
+    <Content Include="Views\Shared\_LayoutEdits.cshtml" />
+    <Content Include="Views\Shared\Check.cshtml" />
+    <Content Include="Views\Shared\_Layout.View.cshtml" />
+    <Content Include="Views\Shared\_Layout.EditNoSubmit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Account\Views\Common\" />
+    <Folder Include="Areas\DKLManager\Views\DeviceOrderBase\" />
+    <Folder Include="Areas\DKLManager\Views\DeviceOrderEntify\" />
+    <Folder Include="Areas\DKLManager\Views\MaketDirector\" />
+    <Folder Include="Areas\DKLManager\Views\MothFinishProjectNumStatistics\" />
+    <Folder Include="Areas\DKLManager\Views\ProjectInfo\" />
+    <Folder Include="Areas\DKLManager\Views\ProjectReportNumStatisticsMoth\" />
+    <Folder Include="Areas\DKLManager\Views\ProjectReportNumStatistics\" />
+    <Folder Include="Areas\DKLManager\Views\ProjectStatisticsMoth\" />
+    <Folder Include="Areas\DKLManager\Views\SampleBase\" />
+    <Folder Include="Areas\DKLManager\Views\TheGeneralManager\" />
+    <Folder Include="Assets\css\data-tables\" />
+    <Folder Include="Assets\jquery-file-upload\server\php\files\thumbnail\" />
+    <Folder Include="Views\OfficeView\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DKLManager\DKLManager.Bll\DKLManager.Bll.csproj">
+      <Project>{8afc0d41-912c-40ed-ba25-0e2336e707f5}</Project>
+      <Name>DKLManager.Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DKLManager\DKLManager.Contract\DKLManager.Contract.csproj">
+      <Project>{149d5832-3934-4936-9230-528b235d49ba}</Project>
+      <Name>DKLManager.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OfficeDocGenerate\OfficeDocGenerate.csproj">
+      <Project>{8aa70d2e-41b0-4a75-82e0-5e2a14cc7479}</Project>
+      <Name>OfficeDocGenerate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web.Common\Web.Common.csproj">
+      <Project>{605fb1a6-7506-4daa-bce0-3544f4c0a7ef}</Project>
+      <Name>Web.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\_Account\HYZK.Account.AccountService\HYZK.Account.BLL.csproj">
+      <Project>{62942255-1129-4d06-945c-925eaf073a35}</Project>
+      <Name>HYZK.Account.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\_Account\HYZK.Account.Contract\HYZK.Account.Contract.csproj">
+      <Project>{56dd41db-a54e-4f26-bd0d-bd4348b53ea0}</Project>
+      <Name>HYZK.Account.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\_Core\HYZK.Core.Cache\HYZK.Core.Cache.csproj">
+      <Project>{a155c5d8-fee0-415c-940a-26c94d61be9b}</Project>
+      <Name>HYZK.Core.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\_Core\HYZK.Core.Config\HYZK.Core.Config.csproj">
+      <Project>{3bf4147e-d01d-4fff-b8e7-fe24959b2d7e}</Project>
+      <Name>HYZK.Core.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\_Core\HYZK.Core.Service\HYZK.Core.Service.csproj">
+      <Project>{812c05fd-2baa-4799-b0ab-2711781133ba}</Project>
+      <Name>HYZK.Core.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\_Core\HYZK.Core.Upload\HYZK.Core.Upload.csproj">
+      <Project>{99d0022f-17d5-4dd5-b4d3-ba8fdc81f7af}</Project>
+      <Name>HYZK.Core.Upload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\_FrameWork\BarcodeLib\BarcodeLib.csproj">
+      <Project>{f8646414-0c9c-49bb-9da3-3923bf78a398}</Project>
+      <Name>BarcodeLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\_FrameWork\HYZK.FrameWork.Common\HYZK.FrameWork.Common.csproj">
+      <Project>{ce8c6d5c-05d3-4428-8c4d-718445abfcab}</Project>
+      <Name>HYZK.FrameWork.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\_FrameWork\HYZK.FrameWork.Utility\HYZK.FrameWork.Utility.csproj">
+      <Project>{e7622209-9cb2-48bf-aaa7-86d8bcae07ac}</Project>
+      <Name>HYZK.FrameWork.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\_FrameWork\HYZK.FrameWork.Web\HYZK.FrameWork.Web.csproj">
+      <Project>{097bf041-6ffa-4cf4-bdfe-0a0ff1994de7}</Project>
+      <Name>HYZK.FrameWork.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5673</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5673/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <servers defaultServer="SelfHostServer">
+            <server name="SelfHostServer" exePath="" cmdArgs="" url="http://localhost:5673/" workingDir="" />
+          </servers>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

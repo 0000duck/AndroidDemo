@@ -1,0 +1,73 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model
+
+@model PagedList<DetectionResult>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row-fluid">
+    <div class="span4">
+        <div>
+            <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i> 删除</a>
+            <a class="btn blue thickbox" title='添加新角色' href="@Url.Action("Create")?TB_iframe=true&height=350&width=500"><i class="icon-plus icon-white"></i> 新增</a>
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm("Delete", "DetectionResult", FormMethod.Post, new { id = "mainForm" }))
+{
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th style="width: 8px;">
+                    <input type="checkbox" id="checkall" class="group-checkable" />
+                </th>
+                <th>
+                    物理/化学
+                </th>
+                <th>
+                    车间
+                </th>
+                <th>
+                    岗位
+                </th>
+                <th>
+                    状态
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
+                    </td>
+                    <td>
+                        @HYZK.FrameWork.Utility.EnumHelper.GetEnumTitle((EnumPhysicochemical)@m.Physicochemical)
+                    </td>
+                    <td>
+                        @m.Workshop
+                    </td>
+                    <td>
+                        @m.Post
+                    </td>
+                    <td>
+                        @m.State
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<div class="dataTables_paginate paging_bootstrap pagination">
+    @Html.Pager(Model)
+</div>
+
+
+

@@ -1,0 +1,13 @@
+D:\DKLPlatformBeta1.0\bin\Web.Common.dll.config
+D:\DKLPlatformBeta1.0\bin\Web.Common.dll
+D:\DKLPlatformBeta1.0\bin\Web.Common.pdb
+D:\DKLPlatformBeta1.0\Web.Common\obj\Release\Web.Common.csprojFakesResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\Web.Common\obj\Release\Web.Common.dll
+D:\DKLPlatformBeta1.0\Web.Common\obj\Release\Web.Common.pdb
+D:\DKLPlatformBeta1.0\Web.Common\obj\Release\Web.Common.csprojResolveAssemblyReference.cache
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\Web.Common.dll.config
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\Web.Common.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\Web.Common.pdb
+E:\git\AndroidDemo\DKLPlatformBeta1.0\Web.Common\obj\Release\Web.Common.csprojResolveAssemblyReference.cache
+E:\git\AndroidDemo\DKLPlatformBeta1.0\Web.Common\obj\Release\Web.Common.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\Web.Common\obj\Release\Web.Common.pdb

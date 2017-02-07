@@ -1,0 +1,12 @@
+D:\DKLPlatformBeta1.0\bin\HYZK.Account.BLL.dll.config
+D:\DKLPlatformBeta1.0\bin\HYZK.Account.BLL.dll
+D:\DKLPlatformBeta1.0\bin\HYZK.Account.BLL.pdb
+D:\DKLPlatformBeta1.0\_Account\HYZK.Account.AccountService\obj\Release\HYZK.Account.BLL.csprojResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\_Account\HYZK.Account.AccountService\obj\Release\HYZK.Account.BLL.dll
+D:\DKLPlatformBeta1.0\_Account\HYZK.Account.AccountService\obj\Release\HYZK.Account.BLL.pdb
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\HYZK.Account.BLL.dll.config
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\HYZK.Account.BLL.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\HYZK.Account.BLL.pdb
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_Account\HYZK.Account.AccountService\obj\Release\HYZK.Account.BLL.csprojResolveAssemblyReference.cache
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_Account\HYZK.Account.AccountService\obj\Release\HYZK.Account.BLL.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_Account\HYZK.Account.AccountService\obj\Release\HYZK.Account.BLL.pdb

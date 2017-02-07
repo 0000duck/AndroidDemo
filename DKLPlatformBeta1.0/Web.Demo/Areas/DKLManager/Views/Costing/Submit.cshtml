@@ -1,0 +1,218 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Web.Controls
+@using HYZK.Account.Contract
+@using HYZK.FrameWork.Utility
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+@model DKLManager.Contract.Model.Costing
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    @*<script type="text/javascript">
+        $("#submit").click(function () {
+            $("#mainForm").submit();
+        });
+
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#CalibrationTime").datepicker(
+                {
+                    changeYear: true,
+                    changeMonth: true,
+                });
+        });
+
+    </script>*@
+
+
+
+
+
+
+
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript" src="@Url.StaticFile("~/assets/js/js/jquery-1.8.2.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("~/assets/js/js/jquery-ui.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("~/assets/js/jQuery-Timepicker-Addon/jquery-ui-timepicker-addon.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("~/assets/js/js/jquery.ui.datepicker-zh-CN.js.js")" charset="gb2312"></script>
+    <script type="text/javascript" src="@Url.StaticFile("~/assets/js/js/jquery-ui-timepicker-zh-CN.js")"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#BuyTime").datetimepicker(
+            {
+                timeFormat: "HH:mm:ss",
+                dateFormat: "yy-mm-dd",
+                changeYear: true,
+            });
+        });
+        $(document).ready(function () {
+            $("#SignTime").datetimepicker(
+                {
+                    timeFormat: "HH:mm:ss",
+                    dateFormat: "yy-mm-dd",
+                    changeYear: true,
+                });
+        });
+    </script>
+
+
+
+}
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+
+
+
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>项目名称：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ProjectName, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>项目简介：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ProjectSynopsis, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectSynopsis)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>业务负责人：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.HeadOfPeople, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.HeadOfPeople)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>项目类型：</label>
+                <div class="controls">
+                    @Html.DropDownList("Type")
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>客户区县：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.CustomerCounty, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.CustomerCounty)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>联系人：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ContactsPserson, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ContactsPserson)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>所属乡镇：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Towns, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Towns)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>联系方式：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Relation, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Relation)</span>
+                </div>
+            </div>
+
+
+
+
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>销售额：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Sales, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Sales)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">推广费：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.PromotionFee, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.PromotionFee)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">其他费用：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.OtherFees, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.OtherFees)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>游离SiO2个数：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Free, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Free)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>物理因素个数：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.PhysicalFactors, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.PhysicalFactors)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>粉尘类个数：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Dust, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Dust)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>无机类个数：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Inorganic, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Inorganic)</span>
+                </div>
+            </div>
+
+
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>有机类个数：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Organic, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Organic)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">备注：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Remark, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">签字定日期：</label>
+                <div class="controls">
+                    <textarea class=" form-refer-2" readonly>@Model.SignTime</textarea>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.SignTime)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">签字：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Sign, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Sign)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+

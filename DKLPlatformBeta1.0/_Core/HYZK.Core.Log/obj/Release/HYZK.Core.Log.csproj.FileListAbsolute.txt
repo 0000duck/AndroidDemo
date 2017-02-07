@@ -1,0 +1,12 @@
+D:\DKLPlatformBeta1.0\bin\HYZK.Core.Log.dll.config
+D:\DKLPlatformBeta1.0\bin\HYZK.Core.Log.dll
+D:\DKLPlatformBeta1.0\bin\HYZK.Core.Log.pdb
+D:\DKLPlatformBeta1.0\_Core\HYZK.Core.Log\obj\Release\HYZK.Core.Log.csprojResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\_Core\HYZK.Core.Log\obj\Release\HYZK.Core.Log.dll
+D:\DKLPlatformBeta1.0\_Core\HYZK.Core.Log\obj\Release\HYZK.Core.Log.pdb
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\HYZK.Core.Log.dll.config
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\HYZK.Core.Log.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\HYZK.Core.Log.pdb
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_Core\HYZK.Core.Log\obj\Release\HYZK.Core.Log.csprojResolveAssemblyReference.cache
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_Core\HYZK.Core.Log\obj\Release\HYZK.Core.Log.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_Core\HYZK.Core.Log\obj\Release\HYZK.Core.Log.pdb

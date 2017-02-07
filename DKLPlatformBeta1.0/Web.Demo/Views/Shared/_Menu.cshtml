@@ -1,0 +1,47 @@
+﻿@using HYZK.Core.Config
+@using Web.Demo.Common
+
+@{
+    var adminMenuConfig = Web.Demo.Common.AdminMenu.CurrentMenu;
+}
+<div class="page-sidebar nav-collapse collapse">
+	<!-- BEGIN SIDEBAR MENU -->        	
+	<ul>
+		<li>
+			<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+			<div class="sidebar-toggler hidden-phone"><h4 style="margin-left:-160px; line-height:20px;  color:#000000; ">主功能菜单</h4></div>
+			<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+		</li>
+
+        @foreach (var group in adminMenuConfig.AdminMenuArrays)
+{
+    var menus = group.AdminMenus;
+    var hasSub = menus.Count() > 0;
+
+    if (!hasSub && string.IsNullOrEmpty(group.Url))
+    {
+        continue;
+    }
+
+    <li class="@(hasSub?"sub":string.Empty)">
+        <a href="@(hasSub ? "javascript:;" : group.Url)">
+            <i class="@group.Icon"></i>
+            <span class="title">@group.Name</span>
+        </a>
+
+        <ul class="sub" style="margin:-3px; display:block" >
+            @foreach (var menu in menus)
+            {
+                <li><a href="@menu.Url" title="@menu.Info">@menu.Name</a></li>
+            }
+        </ul>
+
+    </li>
+}
+
+	</ul>
+	<!-- END SIDEBAR MENU -->
+</div>
+
+
+

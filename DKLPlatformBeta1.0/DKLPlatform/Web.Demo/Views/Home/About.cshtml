@@ -1,0 +1,108 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+
+@model ProjectInfo
+
+@{
+    ViewBag.Title = "CreateProject";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+
+}
+
+
+@section MainContent{
+    <div class="portlet box red m10">
+        <div class="portlet-title">
+            <h4><i class="icon-reorder"></i>项目信息</h4>
+
+            <div class="tools">
+                <a href="javascript:;" class="collapse"></a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="control-group">
+                <label class="control-label">项目类别：</label>
+                <div class="controls">
+                    @*@Html.DropDownList("ProjectCategory")*@
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectCategory)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">项目编号：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ProjectNumber, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectNumber)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">项目姓名：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ProjectName, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">公司名称：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.CompaneName, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.CompaneName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">公司地址：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.CompanyAddress, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.CompanyAddress)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">公司联系人：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.CompanyContact, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.CompanyContact)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">联系电话：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ContactTel, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ContactTel)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">邮编：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ContactTel, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ContactTel)</span>
+                </div>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-success">保存</button>
+            <button type="submit" class="btn btn-success">生成流程卡等文件</button>
+            <button type="submit" class="btn btn-success">上传扫描件</button>
+            <button type="submit" class="btn btn-success">查看存档</button>
+
+        </div>
+    </div>
+
+    <label class="control-label" id="preview">上传文件扫描件：</label>
+
+    <div id="uploader"></div>
+
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="widget-box">
+                <div class="widget-content">
+                    <ul class="thumbnails" id="pictrueContainer"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

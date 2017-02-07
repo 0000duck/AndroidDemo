@@ -1,0 +1,283 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+@model ProjectWholeInfoViewModel
+@{
+    ViewBag.Title = "CreateProject";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+<style type="text/css">
+    .form-refer-1 {
+        font-weight: 800;
+        font-size: large;
+        color: black;
+        background-color: #cccccc;
+    }
+
+    .form-refer-2 {
+        font-weight: 800;
+        font-size: 16px;
+        margin-top: 10px;
+        resize: none;
+        height: 20px;
+        width: 23%;
+        text-align: center;
+    }
+
+    .form-refer-3 {
+        font-weight: 800;
+        font-size: large;
+        width: 23%;
+        margin-top: 10px;
+        margin-left: 18px;
+        resize: none;
+        text-align: center;
+    }
+</style>
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+        $('#uploader').FileUpload({
+            'subfolder': 'dkl',
+            'callback': function (msg) {
+                //msg.url为图片地址
+                var picHtml = '<li class="span2"><a> <img src="' + msg.url + '" alt=""> </a>';
+                picHtml += '<div class="actions"> <a title="" class="" href="#"><i class="icon-pencil"></i></a>';
+                picHtml += ' </div></li>';
+                $("#pictrueContainer").html($("#pictrueContainer").html() + picHtml);
+                document.getElementById("pictrueFilePaths").value += msg.url + ",";
+            }
+        });
+        $("#ProjectClosingDate").datepicker(
+            {
+                changeYear: true,
+                changeMonth: true,
+            });
+    </script>
+    <script type="text/javascript">
+        $("#ProjectClosingDate").datepicker(
+            {
+                changeYear: true,
+                changeMonth: true,
+            });
+    </script>
+}
+    <div class="portlet box red m10">
+        <div>@Html.HiddenFor(m => m.projectBasicImgFile.FilePath,new{@id="pictrueFilePaths"})</div>
+        <div class="portlet-title">
+            <h4><i class="icon-reorder"></i>项目信息</h4>
+          
+        </div>
+        <div class="form-refer-1 ">
+            <div class="form-refer-1">
+                &nbsp;&nbsp;&nbsp;
+                项目类别：<textarea class=" form-refer-2" readonly>@ViewData["ProjectCategory"]</textarea>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                项目编号：
+                &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.projectBasicinfo.ProjectNumber</textarea>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-6 form-refer-1 ">
+            &nbsp;&nbsp;&nbsp;
+            项目名称：<textarea class=" form-refer-2" readonly>@Model.projectBasicinfo.ProjectName</textarea>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            公司名称：
+            &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.projectBasicinfo.CompaneName</textarea>
+        </div>
+        <div class="col-md-12 col-xs-12 form-refer-1">
+            &nbsp;&nbsp;&nbsp;
+            联系电话：<textarea class=" form-refer-2" readonly>@Model.projectBasicinfo.ContactTel</textarea>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            公司联系人：
+            <textarea class=" form-refer-2" readonly>@Model.projectBasicinfo.CompanyContact</textarea>
+        </div>
+        <div class="col-md-6 col-xs-6 form-refer-1">
+            &nbsp;&nbsp;&nbsp;
+            邮政编码：<textarea class=" form-refer-2" readonly>@Model.projectBasicinfo.ZipCode</textarea>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            公司地址：
+            <textarea class=" form-refer-3" readonly>@Model.projectBasicinfo.CompanyAddress</textarea>
+        </div>
+
+
+            <div class="col-md-6 col-xs-6 form-refer-1">
+                &nbsp;&nbsp;&nbsp;
+                完成时间:
+                <textarea class=" form-refer-3" style="margin-top: -5px; margin-left: 12px; height: 20px;" readonly>@Model.projectBasicinfo.ProjectClosingDate</textarea>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                任务进行状态：
+                <textarea class=" form-refer-2" readonly>@ViewData["ProjectPersonCategory"]</textarea>
+            </div>
+
+            @if (Model.projectBasicinfo.ProjectStatus == 1||Model.projectBasicinfo.ProjectStatus == 2)
+            {
+                 <div class="progress">
+                 <div class="bar" id="prograssStatus" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 5%;"></div>
+                     </div>
+            }
+            else if (Model.projectBasicinfo.ProjectStatus == 3)
+            {
+                <div class="progress">
+                    <div class="bar" id="prograssStatus" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>                 
+                </div>
+            }
+            else if (Model.projectBasicinfo.ProjectStatus == 5)
+            {
+                <div class="progress">
+               <div class="bar" id="prograssStatus" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 15%;"></div> 
+                </div>
+            }
+            else if (Model.projectBasicinfo.ProjectStatus == 6)
+            {
+                 <div class="progress">
+                <div class="bar" id="prograssStatus" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"></div> 
+                </div>
+            }
+            else if (Model.projectBasicinfo.ProjectStatus == 7)
+            {
+              <div class="progress">
+             <div class="bar" id="prograssStatus" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div> 
+            </div>
+            }
+            else if (Model.projectBasicinfo.ProjectStatus == 8)
+            {
+            <div class="progress">
+            <div class="bar" id="prograssStatus" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div> 
+            </div>
+            }
+            else if (Model.projectBasicinfo.ProjectStatus == 9 || Model.projectBasicinfo.ProjectStatus == 10)
+            {
+                <div class="progress">
+                    <div class="bar" id="prograssStatus" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 35%;"></div>
+                </div>
+            }
+            else if (Model.projectBasicinfo.ProjectStatus == 11 || Model.projectBasicinfo.ProjectStatus == 12)
+            {
+            <div class="progress">
+           <div class="bar" id="prograssStatus" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 45%;"></div>
+            </div>
+            }
+            else if (Model.projectBasicinfo.ProjectStatus == 13 || Model.projectBasicinfo.ProjectStatus == 14)
+            {
+            <div class="progress">
+            <div class="bar" id="prograssStatus" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 55%;"></div>
+            </div>
+            }
+            else if (Model.projectBasicinfo.ProjectStatus == 17)
+            {
+            <div class="progress"> 
+            <div class="bar" id="prograssStatus" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+            </div>
+            }
+            else if (Model.projectBasicinfo.ProjectStatus == 21)
+            {
+                <div class="progress">
+                    <div class="bar" id="prograssStatus" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                </div>
+            }
+            else if (Model.projectBasicinfo.ProjectStatus == 22)
+            {
+                <div class="progress">
+                    <div class="bar" id="prograssStatus" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                </div>
+            }
+            else if (Model.projectBasicinfo.ProjectStatus == 23)
+            {
+                <div class="progress">
+                    <div class="bar" id="prograssStatus" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                </div>
+            }
+            else if (Model.projectBasicinfo.ProjectStatus == 24)
+            {
+                <div class="progress">
+                    <div class="bar" id="prograssStatus" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                </div>
+            }
+            else if (Model.projectBasicinfo.ProjectStatus == 25)
+            {
+                <div class="progress">
+                    <div class="bar" id="prograssStatus" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                </div>
+            }
+        </div>
+
+            <div>
+                    <img src="C:\Users\1\Pictures\Camera Roll" alt="" />
+            </div>
+            @*<div class="portlet-body">
+            </div>*@
+
+
+
+    <label class="control-label" id="preview">文件扫描件：</label>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="widget-box">
+                <div class="widget-content">
+                    <ul class="thumbnails" id="pictrueContainer">
+                        @if (ViewData["picFiles"] != null)
+                        {
+                            foreach (var fileHtml in ViewData["picFiles"] as List<string>)
+                            {
+                                @Html.Raw(fileHtml)
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<table class="table ">
+    <thead>
+        <tr>
+            <th>
+                项目编号
+            </th>
+            <th>
+                检测内容
+            </th>
+            <th>
+                样品编号
+            </th>
+            <th>
+                车间
+            </th>
+            <th>
+                岗位
+            </th>
+            <th>
+                测量地点
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model.projectTestBasicinfoList)
+        {
+            <tr>
+                <td>
+                    @m.ProjectNumber
+                </td>
+                <td>
+                    @m.TestContent
+                </td>
+                <td>
+                    @m.SampleNumber
+                </td>
+                <td>
+                    @m.WordShop
+                </td>
+                <td>
+                    @m.Job
+                </td>
+                <td>
+                    @m.Location
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

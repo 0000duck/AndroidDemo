@@ -1,0 +1,141 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+
+@model HYZK.FrameWork.Common.PagedList<ProjectInfo>
+
+@{
+    ViewBag.Title = "ProjectCharge";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<div class="portlet box red m10">
+    <div class="portlet-title">
+        <h4><i class="icon-reorder"></i>待分配项目列表</h4>
+
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="span8 offset4">
+            @using (Html.BeginForm(null, null, null, FormMethod.Get, new { id = "search" }))
+            {
+                <div class="row"> </div>
+                <div class="dataTables_filter">
+                    <label>
+                        <button type="submit" class="btn">搜索 <i class="icon-search"></i></button>
+                    </label>
+                    <label>
+                        <span>项目编号：</span>
+                        @Html.TextBox("ProjectNumber", null, new { @class = "m-wrap small" })
+                    </label>
+                    <label>
+                        <span>项目负责人：</span>
+                        @Html.TextBox("ProjectCheif", null, new { @class = "m-wrap small" })
+                    </label>
+                </div>
+            }
+        </div>
+        @using (Html.BeginForm("UpdatePersonStatus", "ProjectCharge", FormMethod.Post, new { id = "mainForm" }))
+        {
+            <table class="table table-striped table-hover ">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DropDownList("ProjectPersonCategory", "请选择任务状态")
+                        </th>
+                        <th>
+                            项目编号
+                        </th>
+                        <th>
+                            项目名称
+                        </th>
+                       
+                        <th>
+                            项目类别
+                        </th>
+                        <th>
+                            项目状态
+                        </th>
+                       
+                        <td>
+                            @Html.DropDownList("ProjectLeader","指定组长")
+                        </td>
+                        <th>
+                            项目进度
+                        </th>
+                        <th>
+                            操作
+                        </th>
+                        <th>
+                            提交
+                        </th>
+                        <th>
+                            退回
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var m in Model)
+                    {
+                            <tr>
+                               
+                                <td>
+                                    @EnumHelper.GetEnumTitle((EnumProjectPersonCategory)@m.ProjectPersonCategory)
+                                </td>
+                                <td>
+                                    @m.ProjectNumber
+                                </td>
+                                <td>
+                                    @m.ProjectName
+                                </td>
+                              
+                                <td>
+                                    @EnumHelper.GetEnumTitle((EnumProjectCategory)@m.ProjectCategory)
+                                </td>
+                                <td>
+                                    @EnumHelper.GetEnumTitle((EnumProjectSatus)@m.ProjectStatus)
+                                </td>
+                               
+                                <td>
+                                    @m.ProjectLeader
+                                </td>
+                                <td>
+                                    <div class="progress">
+                                        <div class="bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+                                        </div>
+                                    </div>
+                                </td>
+                             
+                                <td>
+                                    <button type="submit" id="submit" class="btn-sm" name='id' value='@m.ID'><i></i> 更新状态/指定负责人</button>                                   
+                                </td>
+                                <td>
+                                    <a class="btn mini purple thickbox" title='编辑信息' href="@Url.Action("Return", new { id = m.ID })?TB_iframe=true&height=500&width=800">
+                                        <i class="icon-edit"></i>
+                                        提交
+                                    </a>
+                                    
+                                </td>
+
+                                <td>
+                                    <a class="btn mini thickbox" href="@Url.Action("Submit", new { id = m.ID })?TB_iframe=true&height=400&width=800">
+                                        <i class="icon-edit"></i>
+                                        退回
+                                    </a>
+                                   
+                                </td>
+                               
+                            </tr>
+                        }
+                </tbody>
+            </table>
+        }
+        <div class="dataTables_paginate paging_bootstrap pagination">
+            @Html.Pager(Model, new PagerOptions() { ShowTotalItemCount = true })
+        </div>
+    </div>
+</div>

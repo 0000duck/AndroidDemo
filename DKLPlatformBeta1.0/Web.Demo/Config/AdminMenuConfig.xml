@@ -1,0 +1,953 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AdminMenuConfig>
+  <AdminMenuGroups>
+    
+    <AdminMenuGroup id="0">
+      <AdminMenuArrays>
+        
+        <AdminMenuArray  url="/DKLManager/ProjectDoing/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray url="/" icon="icon-cog"name="系统管理"  >-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/ProjectDoing/Index" icon="icon-home" info="欢迎登录系统！" permission="AccountManage_User" />
+            <AdminMenu name="用户管理" url="/Account/User/Index" info="添加修改删除用户" permission="AccountManage_User" />
+            <AdminMenu name="用户第二职业管理" url="/Account/SecondManager/Index" info="添加修改用户第二职业" permission="AccountManage_User" />
+            <AdminMenu name="审核人管理" url="/Account/ProjectChecker/Index" info="添加修改删除审核人" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray  url="/" icon="icon-cog"name="职位管理" >-->
+          <AdminMenus>
+          <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+       
+        <AdminMenuArray  url="/"icon="icon-th-large"name="统计分析" >-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+             <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+            <AdminMenuArray  url="/"icon="icon-map-marker"name="项目管理" >-->
+          <AdminMenus>
+            
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays> 
+    </AdminMenuGroup>
+
+    <AdminMenuGroup id="1">
+      <AdminMenuArrays>
+        <AdminMenuArray  url="/DKLManager/ProjectMaket/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="成本分析表" url="/" icon="icon-repeat">-->
+          <AdminMenus>
+            <AdminMenu  name="首页" url="/DKLManager/ProjectMaket/Index" icon="icon-home" info="欢迎登录系统！" />
+            <AdminMenu name="成本分析表" url="/DKLManager/Costing/Index" info="成本分析表"  />
+            <AdminMenu name="正在审核成本分析表" url="/DKLManager/CostingDoing/Index" info="成本分析表"  />
+            <AdminMenu name="成本分析历史表" url="/DKLManager/CostingHistory/Index" info="查看成本分析历史记录"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="合同管理" url="/"  icon=" icon-book">-->
+          <AdminMenus>
+            <AdminMenu name="合同首页" url="/DKLManager/ProjectContract/Index" info="正在审核的合同"  />
+            <AdminMenu name="正在审核的合同" url="/DKLManager/ProjectContractDoing/Index" info="正在审核的合同"  />
+            <AdminMenu name="历史合同" url="/DKLManager/ProjectContractHistory/Index" info="查看咨询项目历史记录"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="项目管理"  url="/"  icon="icon-map-marker">-->
+          <AdminMenus>
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="职位管理" url="/" icon="icon-cog" >-->
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+            <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+    
+    <AdminMenuGroup id="2">
+      <AdminMenuArrays>
+        <AdminMenuArray url="/DKLManager/ProjectConsult/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="项目管理" icon="icon-hand-down">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/ProjectConsult/Index" icon="icon-home" info="欢迎登录系统！" />
+            <AdminMenu name="代办项目" url="/DKLManager/ProjectConsult/Index" info="处理代办项目"  />
+            <AdminMenu name="主管审核项目" url="/DKLManager/ProjectUnCheck/Index" info="审核项目"  />
+            <AdminMenu name="待提交报告" url="/DKLManager/StaySubmit/Index" info="提交项目"  />
+             <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+      
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="已完成项目" icon="icon-th-list">-->
+          <AdminMenus>
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="职位管理" url="/" icon="icon-cog" >-->
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+                <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+             <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup id="3">
+      <AdminMenuArrays>
+        <AdminMenuArray  url="/DKLManager/ThressPersonCheck/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="项目管理" icon="icon-hand-down">-->
+          <AdminMenus>
+            <AdminMenu name="水质     审核" url="/DKLManager/ThressPersonCheck/Index" icon="icon-home" info="欢迎登录系统！" />
+            <AdminMenu name="职评三审" url="/DKLManager/ZPThressCheck/Index" info="待审核"  />
+            <AdminMenu name="报告列表" url="/DKLManager/ReportList/Index" info="列表"  />
+            <AdminMenu name="待编辑项目" url="/DKLManager/ProjectConsultPerson/Index" info="处理待编辑项目"  />
+            <AdminMenu name="退回审核列表" url="/DKLManager/ProjectGoBack/Index" info="退回审核"  />
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="正在审核的合同" url="/DKLManager/ProjectContractDoing/Index" info="正在审核的合同"  />
+           <AdminMenu name="合同审核" url="/DKLManager/ProjectContractVerify/Index" info="查看正在进行项目"  />
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看咨询项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+           <AdminMenuArray name="设备管理" icon=" icon-cog">-->
+       <AdminMenus>
+          <AdminMenu name="预约成功" url="/DKLManager/DeviceOrderSuccess/Index" info="查询成功预约列表"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="职位管理" url="/" icon="icon-cog" >-->
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+                <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+             <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+    <AdminMenuGroup id="4">
+      <AdminMenuArrays>
+        <AdminMenuArray  url="/DKLManager/ProjectQualityControl/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="项目管理" icon="icon-hand-down">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/ProjectQualityControl/Index" icon="icon-home" info="欢迎登录系统！" />
+            <AdminMenu name="代办项目" url="/DKLManager/ProjectConsultPerson/Index" info="处理代办项目"  />
+            <AdminMenu name="检测评价三审" url="/DKLManager/ThreeAssessor/Index" info="审核"  />
+            <AdminMenu name="待接收报告" url="/DKLManager/ReportReceiveList/Index" info="接收完成的报告"  />
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="正在审核的合同" url="/DKLManager/ProjectContractDoing/Index" info="正在审核的合同"  />
+            <AdminMenu name="合同审核" url="/DKLManager/ProjectContractVerify/Index" info="查看正在进行项目"  />
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>         
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="设备管理" icon=" icon-cog">-->
+          <AdminMenus>
+            <AdminMenu name="预约成功" url="/DKLManager/DeviceOrderSuccess/Index" info="查询成功预约列表"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray  name="职位管理" url="/" icon="icon-cog">-->
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+                <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+             <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup id="5">
+      <AdminMenuArrays>
+        <AdminMenuArray  url="/DKLManager/ProjectCharge/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArrayname="项目管理" icon="icon-hand-down">--> 
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/ProjectCharge/Index" icon="icon-home" info="欢迎登录系统！" />
+            <AdminMenu name="代办项目" url="/DKLManager/ProjectCharge/Index" info="处理代办项目"  />
+            <AdminMenu name="待接收报告" url="/DKLManager/ReportReceiveList/Index" info="接收完成的报告"  />
+            <AdminMenu name="主管审核" url="/DKLManager/ProjectChargeAssessor/Index" info="处理代办项目"  />
+            <AdminMenu name="项目负责人审核" url="/DKLManager/ProjectLeaderAssessor/Index" info="审核"  />
+            <AdminMenu name="审核分析结果" url="/DKLManager/ArgumentValueCheck/Index" info="审核"  />
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="正在审核的合同" url="/DKLManager/ProjectContractDoing/Index" info="正在审核的合同"  />
+            <AdminMenu name="合同审核" url="/DKLManager/ProjectContractVerify/Index" info="查看正在进行项目"  />
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArrayname="设备管理" icon="icon-map-marker">--> 
+          <AdminMenus>
+            <AdminMenu name="预约成功" url="/DKLManager/DeviceOrderSuccess/Index" info="查询成功预约列表"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray  name="职位管理" url="/" icon="icon-cog">-->
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+               <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+             <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup id="6">
+      <AdminMenuArrays>
+        <AdminMenuArray  url="/DKLManager/AuthorizationPerson/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="项目管理" icon="icon-hand-down">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/AuthorizationPerson/Index" icon="icon-home" info="欢迎登录系统！" />
+            <AdminMenu name="代办项目" url="/DKLManager/ProjectLeader/Index" info="代办项目"  />
+            <AdminMenu name="报告列表" url="/DKLManager/ReportList/Index" info="列表"  />
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="设备管理" icon="icon-map-marker">-->
+          <AdminMenus>
+            <AdminMenu name="预约成功" url="/DKLManager/DeviceOrderSuccess/Index" info="查询成功预约列表"  />
+            <AdminMenu name="预约失败" url="/DKLManager/DeviceOrderFailed/Index" info="查询失败预约列表"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray  name="职位管理" url="/" icon="icon-cog">-->
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+             <AdminMenuArrayname="统计分析" url="/" icon="icon-th-large">--> 
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+             <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup id="7">
+      <AdminMenuArrays>
+        <AdminMenuArray  url="/DKLManager/ProjectGeneral/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArrayname="项目管理" icon="icon-hand-down">--> 
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/ProjectGeneral/Index" icon="icon-home" info="欢迎登录系统！" />
+            <AdminMenu name="代办项目" url="/DKLManager/ProjectGeneral/Index" info="处理代办项目"  />
+            <AdminMenu name="代办项目" url="/DKLManager/ProjectGeneral/Index" info="处理代办项目"  />
+            <AdminMenu name="项目负责人审核" url="/DKLManager/ProjectLeaderAssessor/Index" info="审核"  />          
+            <AdminMenu name="检测结果" url="/DKLManager/ProjectResultCheck/Index" info="审核"  />
+            <AdminMenu name="样品登记表" url="/DKLManager/SampleRegisterTable/Index" info="样品登记"  />
+            <AdminMenu name="退回审核列表" url="/DKLManager/AssessmentGoBack/Index" info="列表"  />
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="设备管理" icon="icon-minus">-->
+          <AdminMenus>
+            <AdminMenu name="预约成功" url="/DKLManager/DeviceOrderSuccess/Index" info="查询成功预约列表"  />
+            <AdminMenu name="预约失败" url="/DKLManager/DeviceOrderFailed/Index" info="查询失败预约列表"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="职位管理" url="/" icon="icon-cog">--> 
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+                 <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+             <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+			 <AdminMenu name="参数值历史列表" url="/DKLManager/ArgumentValueHistory/Index" info="参数值"  />	 
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+    
+    <AdminMenuGroup id="8">
+      <AdminMenuArrays>
+        <AdminMenuArray  url="/DKLManager/DeviceOrdering/Index"  icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="设备管理" icon="icon-th-list">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/DeviceOrdering/Index"  icon="icon-home" info="欢迎登录系统！"  />
+            <AdminMenu name="设备预约管理" url="/DKLManager/DeviceOrdering/Index" info="设备预约管理"  />
+            <AdminMenu name="设备表记录管理" url="/DKLManager/Devise/Index" info="设备表记录管理"  />
+          </AdminMenus>
+          <!--</AdminMenuArray>
+        <AdminMenuArray name="职位管理" url="/" icon="icon-cog">--> 
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+                <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+             <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        </AdminMenuArray>
+          </AdminMenuArrays>
+          </AdminMenuGroup>
+      <AdminMenuGroup id="9">
+        <AdminMenuArrays>
+          <AdminMenuArray  url="/DKLManager/Lab/Index" icon="icon-home" info="欢迎登录系统！">
+          <!--</AdminMenuArray>-->
+          <!--<AdminMenuArrayname="实验室管理" url="/" icon="icon-chevron-up">--> 
+            <AdminMenus>
+              <AdminMenu name="首页"  url="/DKLManager/Lab/Index" icon="icon-home" info="欢迎登录系统！" />
+              <AdminMenu name="参数" url="/DKLManager/Parameter/Index" info="参数"  />
+              <AdminMenu name="职业病危害" url="/DKLManager/OccupationaldiseaseHarm/Index" info="职业病危害及描述"  />
+              <AdminMenu name="实验室审核" url="/DKLManager/SampleCheck/Index" info="实验室审核"  />
+              <AdminMenu name="实验室进行编制" url="/DKLManager/AnalyzeCheck/Index" info="实验室编制"  />
+              <AdminMenu name="水质检测" url="/DKLManager/WaterDetection/Index" info="水质检测"  />
+              <AdminMenu name="化学样品数量统计"  url="/DKLManager/SampleRegisterCount/Index" icon="icon-home" info="化学样品统计！" />
+              <!--<AdminMenu name="水质实验室主管" url="/DKLManager/AuthorizationPerson/Index" info="水质审核"  />-->            
+              <AdminMenu name="采样项目依据" url="/DKLManager/SampleProjectGist/Index" info="设备表记录管理"  />
+              <AdminMenu name="样品结果" url="/DKLManager/ArgumentValueHistory/Index" info="参数值"  />
+              <AdminMenu name="样品历史界面" url="/DKLManager/SampleHistory/Index" info="样品历史界面"  />
+            </AdminMenus>
+          <!--</AdminMenuArray>
+          <AdminMenuArray  name="职位管理" url="/" icon="icon-cog">-->
+            <AdminMenus>
+              <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+            </AdminMenus>
+          <!--</AdminMenuArray>
+                <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />           
+          </AdminMenus>
+        </AdminMenuArray>
+        </AdminMenuArrays> 
+    </AdminMenuGroup>
+
+
+    <AdminMenuGroup id="10">
+      <AdminMenuArrays>
+        <AdminMenuArray url="/DKLManager/AnalyzePerson/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="分析人员" icon="icon-th-list">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/AnalyzePerson/Index" icon="icon-home" info="欢迎登录系统！" />
+            <AdminMenu name="分析人员" url="/DKLManager/AnalyzePerson/Index" info="分析"  />
+            <AdminMenu name="分析人审核" url="/DKLManager/AnalyzePersonCheck/Index" info="审核"  />
+            <AdminMenu name="分析人人员历史表" url="/DKLManager/AnalyzePersonHistory/Index" info="参数值"  />
+            <AdminMenu name="化学样品数量统计"  url="/DKLManager/SampleRegisterCount/Index" icon="icon-home" info="化学样品统计！" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="职位管理" url="/" icon="icon-cog">--> 
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+              <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+             <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+    
+   <AdminMenuGroup id="11">
+      <AdminMenuArrays>
+        <AdminMenuArray url="/DKLManager/ProjectContractVerify/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="成本分析表" icon="icon-th-list">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/ProjectContractVerify/Index" icon="icon-home" info="欢迎登录系统！"  />
+            <AdminMenu name="成本分析表" url="/DKLManager/Costing/Index" info="成本分析表"  />
+            <AdminMenu name="正在审核成本分析表" url="/DKLManager/CostingDoing/Index" info="成本分析表"  />
+            <AdminMenu name="成本分析表主管审核" url="/DKLManager/CostingDirector/Index" info="查看正在进行项目"  />
+            <AdminMenu name="成本分析历史表" url="/DKLManager/CostingHistory/Index" info="查看成本分析历史记录"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="合同管理" icon="icon-hand-down">-->
+          <AdminMenus>
+            <AdminMenu name="合同首页" url="/DKLManager/ProjectContract/Index" info="正在审核的合同"  />
+            <AdminMenu name="正在审核的合同" url="/DKLManager/ProjectContractDoing/Index" info="正在审核的合同"  />
+            <AdminMenu name="合同审核" url="/DKLManager/ProjectContractVerify/Index" info="查看正在进行项目"  />
+            <AdminMenu name="历史合同" url="/DKLManager/ProjectContractHistory/Index" info="查看咨询项目历史记录"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="项目管理" icon="icon-hand-down">-->
+          <AdminMenus>
+            <AdminMenu name="项目开始" url="/DKLManager/ProjectMaket/Index" info="查看项目记录"  />
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看咨询项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArrayname="职位管理" url="/" icon="icon-cog">-->  
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+                <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+             <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup id="12">
+      <AdminMenuArrays>
+        <AdminMenuArray  url="/DKLManager/ProjectContractVerify/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="合同管理" icon="icon-th-list">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/ProjectContractVerify/Index" icon="icon-home" info="欢迎登录系统！"  />
+            <AdminMenu name="正在审核的合同" url="/DKLManager/ProjectContractDoing/Index" info="正在审核的合同"  />
+            <AdminMenu name="合同审核" url="/DKLManager/ProjectContractVerify/Index" info="查看正在进行项目"  />
+            <AdminMenu name="历史合同" url="/DKLManager/ProjectContractHistory/Index" info="查看咨询项目历史记录"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArrayname="项目管理" icon="icon-tasks">--> 
+          <AdminMenus>  
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看咨询项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray  name="职位管理" url="/" icon="icon-cog">-->
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+              <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+             <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup id="13">
+      <AdminMenuArrays>
+        <AdminMenuArray  url="/DKLManager/ProjectJob/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="合同管理" icon="icon-th-list">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/ProjectJob/Index" icon="icon-home" info="欢迎登录系统！"  />
+            <AdminMenu name="正在审核的合同" url="/DKLManager/ProjectContractDoing/Index" info="正在审核的合同"  />
+            <AdminMenu name="合同审核" url="/DKLManager/ProjectContractVerify/Index" info="查看正在进行项目"  />
+            <AdminMenu name="历史合同" url="/DKLManager/ProjectContractHistory/Index" info="查看咨询项目历史记录"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="项目管理" icon="icon-tasks">-->
+          <AdminMenus>
+            
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看咨询项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray  name="职位管理" url="/" icon="icon-cog">-->
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+              <AdminMenuArrayname="统计分析" url="/" icon="icon-th-large">--> 
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+             <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+    <AdminMenuGroup id="14">
+      <AdminMenuArrays>
+        <AdminMenuArray  url="/DKLManager/QualityInspector/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="成本分析表" icon="icon-th-list">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/QualityInspector/Index" icon="icon-home" info="欢迎登录系统！" />
+            <AdminMenu name="成本分析表主管审核" url="/DKLManager/CostingDirector/Index" info="查看正在进行项目"  />
+            <AdminMenu name="成本分析历史表" url="/DKLManager/CostingHistory/Index" info="查看成本分析历史记录"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="合同管理" icon="icon-th-list">-->
+          <AdminMenus>
+            <AdminMenu name="历史合同" url="/DKLManager/ProjectContractHistory/Index" info="查看咨询项目历史记录"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="项目管理" icon="icon-tasks">-->
+          <AdminMenus>
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看咨询项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray  name="职位管理" url="/" icon="icon-cog">-->
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+             <AdminMenuArrayname="统计分析" url="/" icon="icon-th-large">--> 
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+            <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+   
+    <AdminMenuGroup id="15">
+      <AdminMenuArrays>
+        <AdminMenuArray  url="/DKLManager/CostingVicePresident/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="审核" icon="icon-th-list">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/CostingVicePresident/Index" icon="icon-home" info="欢迎登录系统！" />
+            <AdminMenu name="成本分析表副总审核" url="/DKLManager/CostingVicePresident/Index" info="查看正在进行项目"  />
+            <AdminMenu name="正在审核成本分析表" url="/DKLManager/CostingDoing/Index" info="成本分析表"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="合同管理" icon="icon-resize-full">-->
+          <AdminMenus>
+            <AdminMenu name="正在审核的合同" url="/DKLManager/ProjectContractDoing/Index" info="正在审核的合同"  />
+            <AdminMenu name="历史合同" url="/DKLManager/ProjectContractHistory/Index" info="查看咨询项目历史记录"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="项目查看" icon="icon-remove-sign">-->
+          <AdminMenus>
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看咨询项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+
+        <AdminMenuArray name="设备管理" icon="icon-hand-down">-->
+          <AdminMenus>
+            <AdminMenu name="设备表记录管理" url="/DKLManager/Devise/Index" info="设备表记录管理"  />
+            <AdminMenu name="预约成功" url="/DKLManager/DeviceOrderSuccess/Index" info="查询成功预约列表"  />
+            <AdminMenu name="预约失败" url="/DKLManager/DeviceOrderFailed/Index" info="查询失败预约列表"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArrayname="成本分析表" icon="icon-chevron-left">--> 
+          <AdminMenus>
+            <AdminMenu name="成本分析历史表" url="/DKLManager/CostingHistory/Index" info="查看成本分析历史记录"  />   
+            
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="职位管理" url="/" icon="icon-cog">--> 
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+              <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+             <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+    <AdminMenuGroup id="16">
+      <AdminMenuArrays>
+        <AdminMenuArray  url="/DKLManager/CostingTheGeneralManager/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="成本分析表" icon="icon-chevron-up">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/CostingTheGeneralManager/Index" icon="icon-home" info="欢迎登录系统！" />
+            <AdminMenu name="查看" url="/DKLManager/CostingTheGeneralManager/Index" info="查看正在进行项目"  />
+             <AdminMenu name="成本分析历史表" url="/DKLManager/CostingHistory/Index" info="查看成本分析历史记录"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="合同管理" icon=" icon-bell">-->
+          <AdminMenus>
+            <AdminMenu name="正在审核的合同" url="/DKLManager/ProjectContractDoing/Index" info="正在审核的合同"  />
+            <AdminMenu name="历史合同" url="/DKLManager/ProjectContractHistory/Index" info="查看咨询项目历史记录"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="项目查看" icon="icon-th-list">-->
+          <AdminMenus>
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看咨询项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+    
+        <AdminMenuArray name="设备管理" icon="icon-hdd">-->
+          <AdminMenus>
+            <AdminMenu name="设备表记录管理" url="/DKLManager/Devise/Index" info="设备表记录管理"  />
+            <AdminMenu name="预约成功" url="/DKLManager/DeviceOrderSuccess/Index" info="查询成功预约列表"  />
+            <AdminMenu name="预约失败" url="/DKLManager/DeviceOrderFailed/Index" info="查询失败预约列表"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="职位管理" url="/" icon="icon-cog" >-->
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+             <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+             <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+    <AdminMenuGroup id="17">
+      <AdminMenuArrays>
+        <AdminMenuArray  url="/DKLManager/Technology/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="合同管理" icon="icon-th-list">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/Technology/Index" icon="icon-home" info="欢迎登录系统！" />
+            <AdminMenu name="正在审核的合同" url="/DKLManager/ProjectContractDoing/Index" info="正在审核的合同"  />
+            <AdminMenu name="合同审核" url="/DKLManager/ProjectContractVerify/Index" info="查看正在进行项目"  />
+            <AdminMenu name="历史合同" url="/DKLManager/ProjectContractHistory/Index" info="查看咨询项目历史记录"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="项目管理" icon="icon-tasks">-->
+          <AdminMenus>
+           
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看咨询项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="职位管理" url="/" icon="icon-cog" >-->
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+             <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+             <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup id="18">
+      <AdminMenuArrays>
+        <AdminMenuArray url="/DKLManager/WaterSamplingMember/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="项目管理"  url="/"  icon="icon-map-marker">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/WaterSamplingMember/Index" icon="icon-home" info="欢迎登录系统！" />
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="职位管理" url="/" icon="icon-cog" >-->
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+    
+      <AdminMenuGroup id="19">
+      <AdminMenuArrays>
+        <AdminMenuArray  url="/DKLManager/ReportFormation/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="项目管理"  url="/"  icon="icon-map-marker">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/ReportFormation/Index" icon="icon-home" info="欢迎登录系统！"/>
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="样品结果" url="/DKLManager/WaterDetectionCheck/Index" info="参数值"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+
+    
+      <AdminMenuGroup id="20">
+      <AdminMenuArrays>
+        <AdminMenuArray  url="/DKLManager/ProjectGeneral/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="项目管理" icon="icon-hand-down">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/ProjectGeneral/Index" icon="icon-home" info="欢迎登录系统！" />
+            <AdminMenu name="代办项目" url="/DKLManager/ProjectGeneral/Index" info="处理代办项目"  />
+            <AdminMenu name="项目负责人审核" url="/DKLManager/ProjectLeaderAssessor/Index" info="审核"  />
+            <AdminMenu name="检测结果" url="/DKLManager/ProjectResultCheck/Index" info="审核"  />
+            <AdminMenu name="样品登记表" url="/DKLManager/SampleRegisterTable/Index" info="样品登记"  />
+            <AdminMenu name="退回审核列表" url="/DKLManager/AssessmentGoBack/Index" info="列表"  />
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="设备管理" icon="icon-minus">-->
+          <AdminMenus>
+            <AdminMenu name="预约成功" url="/DKLManager/DeviceOrderSuccess/Index" info="查询成功预约列表"  />
+            <AdminMenu name="预约失败" url="/DKLManager/DeviceOrderFailed/Index" info="查询失败预约列表"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="职位管理" url="/" icon="icon-cog" >-->
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+            <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />          
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+      
+      <AdminMenuGroup id="21">
+      <AdminMenuArrays>
+        <AdminMenuArray url="/DKLManager/ProjectEvaluateControl/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="项目管理" icon="icon-hand-down">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/ProjectEvaluateControl/Index" icon="icon-home" info="欢迎登录系统！"  />
+            <AdminMenu name="代办项目" url="/DKLManager/ProjectGeneral/Index" info="处理代办项目"  />
+            <AdminMenu name="样品登记表" url="/DKLManager/SampleRegisterTable/Index" info="样品登记"  />
+            <AdminMenu name="退回审核列表" url="/DKLManager/AssessmentGoBack/Index" info="列表"  />
+            <AdminMenu name="评价报告审核" url="/DKLManager/TechnologyReview/Index" info="项目复审"  />
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="评价项目审核" url="/DKLManager/ProjectEngineerControl/Index" info="评价项目审核"  />
+            <AdminMenu name="技术负责人复审" url="/DKLManager/ProjectTechnologyControl/Index" info="审核"  />
+            <AdminMenu name="评价项目提交" url="/DKLManager/ProjectFinish/Index" info="评价项目提交"  />
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="设备管理" icon="icon-minus">-->
+          <AdminMenus>
+            <AdminMenu name="预约成功" url="/DKLManager/DeviceOrderSuccess/Index" info="查询成功预约列表"  />
+            <AdminMenu name="预约失败" url="/DKLManager/DeviceOrderFailed/Index" info="查询失败预约列表"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="职位管理" url="/" icon="icon-cog" >-->
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+            <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+            <AdminMenu name="参数值历史列表" url="/DKLManager/ArgumentValueHistory/Index" info="参数值"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+    
+    <AdminMenuGroup id="22">
+      <AdminMenuArrays>
+        <AdminMenuArray url="/DKLManager/ProjectTechnologyControl/Index" icon="icon-home" info="欢迎登录系统！">
+        <!--</AdminMenuArray>-->
+        <!--<AdminMenuArray name="项目管理" icon="icon-hand-down">-->
+          <AdminMenus>
+            <AdminMenu name="首页" url="/DKLManager/ProjectTechnologyControl/Index" icon="icon-home" info="欢迎登录系统！"  />
+            <AdminMenu name="代办项目" url="/DKLManager/ProjectGeneral/Index" info="处理代办项目"  />
+            <AdminMenu name="样品登记表" url="/DKLManager/SampleRegisterTable/Index" info="样品登记"  />
+            <AdminMenu name="退回审核列表" url="/DKLManager/AssessmentGoBack/Index" info="列表"  />
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="技术负责人复审" url="/DKLManager/ProjectTechnologyControl/Index" info="审核"  />
+            <AdminMenu name="评价报告审核" url="/DKLManager/TechnologyReview/Index" info="项目复审"  />
+            <AdminMenu name="已完成项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="设备管理" icon="icon-minus">-->
+          <AdminMenus>
+            <AdminMenu name="预约成功" url="/DKLManager/DeviceOrderSuccess/Index" info="查询成功预约列表"  />
+            <AdminMenu name="预约失败" url="/DKLManager/DeviceOrderFailed/Index" info="查询失败预约列表"  />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="职位管理" url="/" icon="icon-cog" >-->
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        <!--</AdminMenuArray>
+        <AdminMenuArray name="统计分析" url="/" icon="icon-th-large">-->
+          <AdminMenus>
+            <AdminMenu name="按负责人统计" url="/DKLManager/MothNewProjectNumStatistics" info="按负责人统计"/>
+            <AdminMenu name="按行政区域查询" url="/DKLManager/MothNew/AreaSearch" info="按行政区域查询"  />
+            <AdminMenu name="按市场人员统计" url="/DKLManager/MothNewMarket/MarketSearch" info="按市场人员统计"  />
+            <AdminMenu name="参数值历史列表" url="/DKLManager/ArgumentValueHistory/Index" info="参数值"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+  </AdminMenuGroups>
+  
+      <!--<AdminMenuGroup id="23">
+      <AdminMenuArrays>
+        <AdminMenuArray name="首页" url="/DKLManager/ThressPersonCheck/Index" icon="icon-home" info="欢迎登录系统！">
+        </AdminMenuArray>
+        <AdminMenuArray name="项目管理"  url="/"  icon="icon-map-marker">
+          <AdminMenus>
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="已完成项目报告" url="/DKLManager/ProjectDocHistory/Index" info="查询已完成项目报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        </AdminMenuArray>
+        <AdminMenuArray name="职位管理" url="/" icon="icon-cog" >
+          <AdminMenus>
+            <AdminMenu name="切换第二职位" url="/Account/ChangeAccountType/Index" info="切换职位" />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>-->
+</AdminMenuConfig>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<AdminMenuGroup name="CMS管理" icon="icon-leaf">
+      <AdminMenuArray>
+        <AdminMenu name="文章管理" url="/" info="添加修改删除文章" permission="CmsManage_Article" />
+        <AdminMenu name="文章频道管理" url="/" info="添加修改删除文章频道" permission="CmsManage_Channel" />
+      </AdminMenuArray>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup name="OA管理" icon="icon-sitemap">
+      <AdminMenuArray>
+        <AdminMenu name="员工管理" url="/" info="添加修改删除员工信息" permission="OAManage_Staff" />
+        <AdminMenu name="部门管理" url="/" info="添加修改删除部门信息" permission="OAManage_Branch" />
+        <AdminMenu name="组织结构管理" url="/" info="管理部门从属关系及员工所属部门" permission="OAManage_Org" />
+      </AdminMenuArray>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup name="CRM管理" icon="icon-phone-sign">
+      <AdminMenuArray>
+        <AdminMenu name="来访来电" url="/" info="添加修改删除来访来电" permission="CrmManage_VisitRecord" />
+        <AdminMenu name="客户管理" url="/" info="添加修改删除客户" permission="CrmManage_Customer" />
+        <AdminMenu name="项目管理" url="/" info="添加修改删除项目" permission="CrmManage_Project" />
+        <AdminMenu name="业绩统计" url="/" info="查看业绩统计" permission="CrmManage_Analysis" />
+        <AdminMenu name="来电统计" url="/" info="查看来电统计" permission="CrmManage_Analysis" />
+      </AdminMenuArray>
+    </AdminMenuGroup>-->
+      <!--</AdminMenuGroups>
+</AdminMenuConfig>-->

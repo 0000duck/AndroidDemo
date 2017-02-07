@@ -1,0 +1,12 @@
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Core.Service.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Core.Service.pdb
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Core\HYZK.Core.Service\obj\Debug\HYZK.Core.Service.csprojFakesResolveAssemblyReference.cache
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Core\HYZK.Core.Service\obj\Debug\HYZK.Core.Service.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Core\HYZK.Core.Service\obj\Debug\HYZK.Core.Service.pdb
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Core\HYZK.Core.Service\obj\Debug\HYZK.Core.Service.csprojResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\bin\HYZK.Core.Service.dll
+D:\DKLPlatformBeta1.0\bin\HYZK.Core.Service.pdb
+D:\DKLPlatformBeta1.0\_Core\HYZK.Core.Service\obj\Debug\HYZK.Core.Service.csprojFakesResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\_Core\HYZK.Core.Service\obj\Debug\HYZK.Core.Service.csprojResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\_Core\HYZK.Core.Service\obj\Debug\HYZK.Core.Service.dll
+D:\DKLPlatformBeta1.0\_Core\HYZK.Core.Service\obj\Debug\HYZK.Core.Service.pdb

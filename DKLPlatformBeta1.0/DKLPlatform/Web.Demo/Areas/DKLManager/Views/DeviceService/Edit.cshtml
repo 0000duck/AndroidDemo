@@ -1,0 +1,72 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Web.Controls
+@using HYZK.Account.Contract
+@using HYZK.FrameWork.Utility
+@using Web.Common;
+
+@model DKLManager.Contract.Model.DeviceServiceRemarkModel
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+    </style>
+}
+@section PageSpecificJavascriptIncludes{
+<script type="text/javascript" src="@Url.StaticFile("~/assets/js/js/jquery-1.8.2.min.js")"></script>
+<script type="text/javascript" src="@Url.StaticFile("~/assets/js/js/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.StaticFile("~/assets/js/jQuery-Timepicker-Addon/jquery-ui-timepicker-addon.js")"></script>
+<script type="text/javascript" src="@Url.StaticFile("~/assets/js/js/jquery.ui.datepicker-zh-CN.js.js")" charset="gb2312"></script>
+<script type="text/javascript" src="@Url.StaticFile("~/assets/js/js/jquery-ui-timepicker-zh-CN.js")"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#BirthDate").datetimepicker(
+            {
+
+                timeFormat: "HH:mm:ss",
+                dateFormat: "yy-mm-dd"
+            });
+        });
+    </script>
+}
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>设备维修编号：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.DeviceServiceId, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.DeviceServiceId)</span>
+                </div>
+            </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">设备维修人员：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.DeviceServicePerson, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.DeviceServicePerson)</span>
+                </div>
+            </div>
+
+
+            <div class="control-group">
+            <label class="control-label">购买日期：</label>
+            <div class="controls">
+          @Html.TextBox("BirthDate", Model.DeviceServiceTime.ToCnDataString(), new { @class = "m-wrap" })
+          <span class="help-inline">@Html.ValidationMessageFor(m => m.DeviceServiceTime)</span>
+        </div>
+
+    <div class="control-group">
+        <label class="control-label">备注：</label>
+        <div class="controls">
+            @Html.TextBoxFor(m => m.Remark, new { @class = "m-wrap small" })
+            <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
+        </div>
+    </div>
+        </div>
+</div>
+}
+    
+   

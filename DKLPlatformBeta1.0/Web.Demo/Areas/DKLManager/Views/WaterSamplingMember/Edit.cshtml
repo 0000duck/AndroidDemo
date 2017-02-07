@@ -1,0 +1,394 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+@model ProjectWholeInfoViewModel
+
+
+@{
+
+    ViewBag.Title = "CreateProject";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+        .form-refer-1 {
+            font-weight: 800;
+            font-size: large;
+            color: black;
+            background-color: #cccccc;
+        }
+
+        .form-refer-2 {
+            font-weight: 800;
+            font-size: 16px;
+            margin-top: 10px;
+            resize: none;
+            height: 20px;
+            width: 23%;
+            text-align: center;
+        }
+
+        .form-refer-3 {
+            font-weight: 800;
+            font-size: large;
+            width: 23%;
+            margin-top: 10px;
+            margin-left: 18px;
+            resize: none;
+            text-align: center;
+        }
+    </style>
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+        $('#uploader').FileUpload({
+            'subfolder': 'dkl',
+            'callback': function (msg) {
+                //msg.url为图片地址
+                var picHtml = '<li class="span2"><a> <img src="' + msg.url + '" alt=""> </a>';
+                picHtml += '<div class="actions"> <a title="" class="" href="#"><i class="icon-pencil"></i></a>';
+                picHtml += ' </div></li>';
+                $("#pictrueContainer").html($("#pictrueContainer").html() + picHtml);
+
+                document.getElementById("pictrueFilePaths").value += msg.url + ",";
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $("#ProjectClosingDate").datepicker(
+            {
+                changeYear: true,
+                changeMonth: true,
+            });
+        $(document).ready(function () {
+            var tableId = document.getElementById("102");
+            if (tableId.rows.length > 1) {
+                if (tableId.rows[1].cells[7].innerHTML > 8) {
+                    tableId.rows[0].cells[7].innerHTML = "LexW";
+
+                }
+                else {
+                    tableId.rows[0].cells[7].innerHTML = "Lex8H";
+                }
+            }
+        });                     //切换页面LEXW/8H列名
+        $("#99").change(function () {
+            var listbox = $("#99");
+            var textbox = $("#100");
+
+            if (listbox.val() == 0) {
+                textbox.html(" Lex8H: ");
+
+            }
+            else {
+                textbox.html(" LexW: ");
+
+            }
+
+        }                         //添加数据是切换LEXW/8H状态
+        );
+        function f1() {
+            var btn = $("#createReport");
+            var l1 = $("#1");
+            var btn2 = $("#2");
+            var btn3 = $("#3");
+            var f = $("#4");
+            var l2 = $("#5");
+            var a1 = $("#6");
+            var a2 = $("#7");
+            var container = $(".page-container");
+            container.fadeTo("slow", 0.7);
+            alert("正在生成报告，部分功能已锁定，请等待20秒");
+            btn.attr("hidden", true);
+            l1.hide();
+            btn2.attr("disabled", true);
+            btn3.attr("disabled", true);
+            f.attr("hidden", true);
+            l2.attr("hidden", false);
+            a1.hide();
+            a2.hide();
+            btn.submit();
+            var time = 20;
+            l2.val(time <= 0 ? "报告生成中，约" : ("" + (time) + "秒后可完成"));
+            var hander = setInterval(function () {
+                if (time <= 0) {
+                    clearInterval(hander); //清除倒计时
+                    l2.text("报告生成成功，请等待弹出下载窗口");
+
+                    return false;
+                }
+                else {
+                    l2.text("报告生成中，约" + (time--) + "秒后可完成");
+                }
+            }, 1000);
+            setTimeout("f2()", 22000);
+        }
+        function f2() {
+            var btn = $("#createReport");
+            var l1 = $("#1");
+            var btn2 = $("#2");
+            var btn3 = $("#3");
+            var f = $("#4");
+            var l2 = $("#5");
+            var a1 = $("#6");
+            var a2 = $("#7");
+            var container = $(".page-container");
+            container.fadeTo("slow", 1.0);
+            alert("锁定解除，若无弹出下载请耐心等待或重试");
+            btn.attr("hidden", false);
+            l1.show();
+            btn2.attr("disabled", false);
+            btn3.attr("disabled", false);
+            f.attr("hidden", false);
+            l2.attr("hidden", true);
+            a1.show();
+            a2.show();
+        }
+
+    </script>
+}
+<div class="portlet box red m10">
+    <div class="portlet-title">
+        <h4><i class="icon-reorder"></i>项目信息</h4>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+        </div>
+    </div>
+    <div class="form-refer-1">
+        <div class="form-refer-1">
+            &nbsp;&nbsp;&nbsp;
+            项目类别：<textarea class=" form-refer-2" readonly>@ViewData["ProjectCategory"]</textarea>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            项目编号：
+            &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.projectBasicinfo.ProjectNumber</textarea>
+        </div>
+    </div>
+    <div class="col-md-6 col-xs-6 form-refer-1 ">
+        &nbsp;&nbsp;&nbsp;
+        项目姓名：<textarea class=" form-refer-2" readonly>@Model.projectBasicinfo.ProjectName</textarea>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        公司名称：
+        &nbsp;&nbsp;&nbsp;<textarea class=" form-refer-2" readonly>@Model.projectBasicinfo.CompaneName</textarea>
+    </div>
+    <div class="col-md-12 col-xs-12 form-refer-1">
+        &nbsp;&nbsp;&nbsp;
+        联系电话：<textarea class=" form-refer-2" readonly>@Model.projectBasicinfo.ContactTel</textarea>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        公司联系人：
+        <textarea class=" form-refer-2" readonly>@Model.projectBasicinfo.CompanyContact</textarea>
+    </div>
+    <div class="col-md-6 col-xs-6 form-refer-1">
+        &nbsp;&nbsp;&nbsp;
+        邮政编码：<textarea class=" form-refer-2" readonly>@Model.projectBasicinfo.ZipCode</textarea>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        公司地址：
+        <textarea class=" form-refer-3" readonly>@Model.projectBasicinfo.CompanyAddress</textarea>
+    </div>
+    <div class="form-refer-1">
+
+        <label class="form-refer-1" style="float:left;">&nbsp;&nbsp;&nbsp;&nbsp;完成时间:</label>
+        <div class="form-refer-1">
+            <textarea class=" form-refer-3" style="margin-top: -5px; margin-left: 12px; height: 20px;" readonly>@Model.projectBasicinfo.ProjectClosingDate</textarea>
+        </div>
+    </div>
+    <div class="form-refer-1">
+
+        <label class="control-label" style="margin-left:2%; float:left;">条形码:</label>
+        <img style="margin-left:3%;" src="@ViewData["ProjectBarCodeImg"]" alt="" />
+    </div>
+</div>
+
+
+<label class="control-label" id="preview" style="font-weight:600;">文件扫描件：</label>
+<div class="container-fluid">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="widget-box">
+                <div class="widget-content">
+                    <ul class="thumbnails" id="pictrueContainer">
+
+                        @if (ViewData["picFiles"] != null)
+                        {
+                            foreach (var fileHtml in ViewData["picFiles"] as List<string>)
+                            {
+                                @Html.Raw(fileHtml)
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a style="margin-left:25%; font-size:30px; font-weight:700; " hidden="hidden" id="5"></a>
+<br />
+@*<h4 class="breadcrumb">检测物理数据</h4>*@
+
+@*@using (Html.BeginForm("AddTestBasicinfo", "ProjectGeneral"))
+{
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-12 col-xs-12">
+
+                <span>&nbsp;因素名称：</span>@Html.DropDownList("ParameterPhysical")
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.projectTestBasicinfo.TestContent)</span>
+                <span>样品编号：</span>@Html.TextBoxFor(m => m.projectTestBasicinfo.SampleNumber, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.projectTestBasicinfo.SampleNumber)</span>
+                <span>车间：</span>@Html.TextBoxFor(m => m.projectTestBasicinfo.WordShop, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.projectTestBasicinfo.WordShop)</span>
+
+                <span>岗位：</span>@Html.TextBoxFor(m => m.projectTestBasicinfo.Job, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.projectTestBasicinfo.Job)</span>
+
+                <span>测量地点：</span>@Html.TextBoxFor(m => m.projectTestBasicinfo.Location, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.projectTestBasicinfo.Location)</span>
+                <div></div>
+                <span>接触时间：</span>@Html.TextBoxFor(m => m.projectTestBasicinfo.TouchTime, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.projectTestBasicinfo.TouchTime)</span>
+                <span>噪声强度：</span>@Html.TextBoxFor(m => m.projectTestBasicinfo.NoiseStrength, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.projectTestBasicinfo.NoiseStrength)</span>
+                @Html.DropDownList("LexCategory", null, "请选择Lex类型", new { id = 99 })
+                <span id="100">Lex8H/LexW:</span>@Html.TextBoxFor(m => m.projectTestBasicinfo.Lex8hLexw, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.projectTestBasicinfo.Lex8hLexw)</span>
+                <input type="submit" value="增加" id="2" />
+
+            </div>
+        </div>
+    </div>
+    @Html.ValidationSummary(true)
+}*@
+@*<table class="table " id="102">
+    <thead>
+        <tr>
+
+            <th>
+                检测内容
+            </th>
+            <th>
+                样品编号
+            </th>
+            <th>
+                车间
+            </th>
+            <th>
+                岗位
+            </th>
+            <th>
+                测量地点
+            </th>
+            <th>
+                接触时间
+            </th>
+            <th>
+                噪声强度
+            </th>
+            <th id="101">
+                Lex8H/LexW
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model.projectTestBasicinfoList)
+        {
+            <tr>
+
+                <td>
+                    @m.TestContent
+                </td>
+                <td>
+                    @m.SampleNumber
+                </td>
+                <td>
+                    @m.WordShop
+                </td>
+                <td>
+                    @m.Job
+                </td>
+                <td>
+                    @m.Location
+                </td>
+                <td>
+                    @m.TouchTime
+                </td>
+                <td>
+                    @m.NoiseStrength
+                </td>
+                <td>
+                    @m.Lex8hLexw
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@
+<hr />
+<h4 class="breadcrumb">检测化学数据</h4>
+@using (Html.BeginForm("AddTestChemicalReport", "WaterSamplingMember"))
+{
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-12 col-xs-12">
+
+                <a class="btn mini purple " title='编辑信息' id="6" href="@Url.Action("UpdateChemical", new { projectNumber =Model.projectBasicinfo.ProjectNumber }) " target="_blank">
+                    <i class=" icon-edit">
+                    </i>
+                    查看化学数据
+                </a>
+
+                <a class="btn mini purple " id="7" href="/DKLManager/SampleRegisterTable/Create?ProjectNumber=@Model.projectBasicinfo.ProjectNumber" target="_blank">
+                    <i class=" icon-edit">
+                    </i>
+                    添加化学数据
+                </a>
+
+            </div>
+        </div>
+    </div>
+    @Html.ValidationSummary(true)
+}
+
+
+<hr />
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-md-12 col-xs-12">
+            @using (Html.BeginForm("DownLoadTestDocFile", "WaterSamplingMember"))
+            {
+                <input type="submit" id="createReport" value="下载水质检测报告" onclick="f1();" />
+            }
+            @*@using (Html.BeginForm("DownLoadTsetDocFile", "WaterSamplingMember"))
+            {
+                <input type="submit" id="createReport" value="下载自动生成检测报告" onclick="f1();" />
+            }
+            @using (Html.BeginForm("WORDTEST", "WaterSamplingMember", FormMethod.Post, new { id = "mainForm1" }))
+            {<button type="submit"><i class="icon-edit"></i>导出评价报告</button>
+            }
+            @using (Html.BeginForm("CreateWordTest", "WaterSamplingMember", FormMethod.Post, new { id = "mainForm1" }))
+            {<button type="submit"><i class="icon-edit"></i>导出职业病危害预评价报告模板</button>
+            }
+            @using (Html.BeginForm("CreateWordTestTwo", "WaterSamplingMember", FormMethod.Post, new { id = "mainForm1" }))
+            {<button type="submit"><i class="icon-edit"></i>导出职业病危害控制效果评价报告书模板</button>
+            }*@
+            @using (Html.BeginForm("UploadFiles", "WaterSamplingMember", FormMethod.Post, new { id = "mainForm", enctype = "multipart/form-data" }))
+            {
+                <div>@Html.HiddenFor(m => m.projectBasicImgFile.FilePath, new { @id = "pictrueFilePaths" })</div>
+                <div class="control-group" style="border:5px solid red; width:30%;">
+                    <label class="control-label">上传文件</label>
+                    <label class="control-label">多个文件请单个多次上传</label>
+                    <input type="file" name="docFile" id="997" />
+                    <input type="submit" style="font-weight:600; width:60px;background-color:#cccccc;" value="上传文件" id="999" />
+                </div>
+
+            }
+            @using (Html.BeginForm("Edit", "WaterSamplingMember", FormMethod.Post, new { id = "mainForm", enctype = "multipart/form-data" }))
+            {
+                <input type="submit" style="font-weight:600; width:60px;background-color:#cccccc;" value="提交" id="3" />
+            }
+        </div>
+    </div>
+</div>

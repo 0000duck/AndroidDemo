@@ -1,0 +1,52 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+@model List<TimeInstructions>
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.EditContractVerify.cshtml";
+}
+@using (Html.BeginForm("Submit", "DeviceOrdering", FormMethod.Post, new { id = "mainForm" }))
+{
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>
+                    项目名称
+                </th>
+                <th>
+                    时间
+                </th>
+                <th>
+                    说明
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                if (p != null)
+                {
+                    <tr>
+                        <td>
+                            <span>@(p.ProjectNumBer)</span>
+                        </td>
+                        <td>
+                            <span>@(p.TimeNode)</span>
+                        </td>
+                        <td>
+                            <span>@(p.Instructions)</span>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+
+    </table>
+}
+

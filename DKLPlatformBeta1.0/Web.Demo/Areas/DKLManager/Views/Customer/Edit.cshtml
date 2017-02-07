@@ -1,0 +1,70 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Web.Controls
+@using HYZK.Account.Contract
+@using HYZK.FrameWork.Utility
+@model DKLManager.Contract.Model.CustomerModel
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+    </style>
+}
+
+@section MainContent{
+    <div>
+        <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+            <div class="row-fluid">
+
+                <div class="control-group">
+                    <label class="control-label">客户名称：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.CustomerName, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.CustomerName)</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">性别：</label>
+                    <div class="controls">
+                        @Html.RadioBoxList("Gender")
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Gender)</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">职业：</label>
+                    <div class="controls">
+                        @Html.DropDownList("Profession")
+
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">电话：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Tel, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Tel)</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">邮箱：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Email)</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">地址：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Address, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Address)</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}

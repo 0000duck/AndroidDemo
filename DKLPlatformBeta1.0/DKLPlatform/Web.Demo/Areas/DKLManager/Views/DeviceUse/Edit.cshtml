@@ -1,0 +1,64 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Web.Controls
+@using HYZK.Account.Contract
+@using HYZK.FrameWork.Utility
+
+@model DKLManager.Contract.Model.DeviceUseRecordModel
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+    </style>
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#BirthDate").datepicker(
+                {
+                    changeYear: true,
+                    changeMonth: true,
+                });
+        });
+    </script>
+}
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>设备使用编号：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.DeviceUseId, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.DeviceUseId)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">设备使用人：</label>
+            <div class="controls">
+                @Html.TextBoxFor(m => m.UserPerson, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.UserPerson)</span>
+            </div>
+        </div>
+
+
+        <div class="control-group">
+            <label class="control-label">使用时间：</label>
+            <div class="controls">
+                @Html.TextBox("BirthDate", Model.UserTime.ToCnDataString(), new { @class = "m-wrap" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.UserTime)</span>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">备注：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Remark, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

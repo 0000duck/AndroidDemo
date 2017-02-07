@@ -1,0 +1,39 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+@model ProjectDocFile
+
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+
+@section BeforeContent{
+
+    @using (Html.BeginForm("UploadFiles", "ProjectContractVerify", FormMethod.Post, new { id = "mainForm", enctype = "multipart/form-data" }))
+    {
+        <div>@Html.HiddenFor(m => m.FilePath, new { @id = "pictrueFilePaths" })</div>
+        <div class="control-group">
+            <label class="control-label">上传文件</label>
+            <label class="control-label">多个文件请单个多次上传</label>
+
+            @*<input type="file" name="docFile" id="997" />
+                <input type="submit" style="font-weight:600; width:60px;background-color:#cccccc;" value="上传文件" id="999" />*@
+        </div>
+
+    }
+}
+@section MainContent{
+    @*这样写主要是让布局文件中的主体内容的提交按钮可用，如果在上边的form里，则提交按钮不可用*@
+    <input type="file" name="docFile" id="997" />
+    <div id="2" class="control-group1" style="float:none;">
+        <label class="control-label">项目编号：</label>
+        <div class="controls">
+            @Html.TextBoxFor(m => m.ProjectNumber, new { @class = "m-wrap small" })
+            <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectNumber)</span>
+        </div>
+    </div>
+}

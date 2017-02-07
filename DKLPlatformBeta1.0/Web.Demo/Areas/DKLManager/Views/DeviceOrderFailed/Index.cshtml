@@ -1,0 +1,120 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+
+@model HYZK.FrameWork.Common.PagedList<DeviceOrderInfo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#OrderDate").datepicker(
+                {
+                    changeYear: true,
+                    changeMonth: true,
+                    numberOfMonths: 2,
+                    defaultDate: "+1w",
+                });
+
+        });
+
+    </script>
+
+
+
+
+}
+
+
+<div class="portlet box red m10">
+    <div class="portlet-title">
+        <h4><i class="icon-reorder"></i>已退回设备预约表</h4>
+
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="span8">
+            @using (Html.BeginForm(null, null, null, FormMethod.Get, new { id = "search" }))
+            {
+                
+                 <table class="table table-striped table-hover " id="1">
+                <thead>
+                    <tr>
+
+                        <th>
+                            <span>项目编号：</span>
+                            @Html.TextBox("ProjectNumber", null, new { @class = "m-wrap small" })
+                        </th>
+                        <th>
+                            <span>预约人：</span>
+                            @Html.TextBox("OrderPerson", null, new { @class = "m-wrap small" })
+                        </th>
+
+                        <th>
+                            <span>预约时间：</span>
+                            @Html.TextBox("OrderDate", null, new { @class = "" })
+                        </th>
+                        <th>
+                            <button type="submit" class="btn">搜索 <i class="icon-search"></i></button>
+                        </th>
+                   </tr>
+                    </table>
+                
+            }
+        </div>
+
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "mainForm" }))
+        {
+            <table class="table table-striped table-hover ">
+                <thead>
+                    <tr>
+                        <th>
+                            项目编号
+                        </th>
+                      
+                        <th>
+                            预约时间
+                        </th>
+                        <th>
+                            预约人
+                        </th>
+                        <th>
+                            操作
+                        </th>
+                </thead>
+                <tbody>
+                    @foreach (var m in Model)
+                    {
+                        <tr>
+                            <td>
+                                @m.ProjectNumber
+                            </td>
+                           
+                            <td>
+                                @m.OrderDate
+                            </td>
+                            <td>
+                                @m.OrderPerson
+                            </td>
+                            <td>
+                                <a class="btn mini" href="@Url.Action("Create", new { id = m.ID })">
+                                    <i class="icon-ok"></i>
+                                    编辑
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        }
+    </div>
+</div>

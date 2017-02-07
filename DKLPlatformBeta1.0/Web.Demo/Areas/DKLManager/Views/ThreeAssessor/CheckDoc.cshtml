@@ -1,0 +1,40 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+@model ProjectDocFile
+
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section BeforeContent{
+    @*@using (Html.BeginForm("DownLoadDocFile", "ThreeAssessor", new { id = "mainForm", number = Model.ProjectNumber, status = Model.Status,ids=Model.ID }))
+    {
+        <td>
+            <input type="submit" value="下载报告" />
+        </td>
+    }*@
+}
+@section MainContent{
+    <div class="portlet box red m10">
+        <div class="control-group">
+            <label class="control-label">审核意见：</label>
+            <div class="controls">
+                @Html.TextAreaFor(m => m.suggenstion)
+            </div>
+        </div>
+        @*<div class="portlet-title">
+            <h4><i class="icon-reorder"></i>审核后的报告上传</h4>
+            <input type="file" name="DocFileForUpload" />
+        </div>*@
+    </div>
+<div class="control-group">
+    <label>
+        <span>审核结果：</span>
+        @Html.DropDownList("Status", "不同意")
+    </label>
+</div>
+}

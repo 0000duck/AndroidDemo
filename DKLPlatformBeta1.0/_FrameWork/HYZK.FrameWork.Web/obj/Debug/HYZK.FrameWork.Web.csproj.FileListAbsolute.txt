@@ -1,0 +1,10 @@
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.FrameWork.Web.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.FrameWork.Web.pdb
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_FrameWork\HYZK.FrameWork.Web\obj\Debug\HYZK.FrameWork.Web.csprojResolveAssemblyReference.cache
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_FrameWork\HYZK.FrameWork.Web\obj\Debug\HYZK.FrameWork.Web.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_FrameWork\HYZK.FrameWork.Web\obj\Debug\HYZK.FrameWork.Web.pdb
+D:\DKLPlatformBeta1.0\bin\HYZK.FrameWork.Web.dll
+D:\DKLPlatformBeta1.0\bin\HYZK.FrameWork.Web.pdb
+D:\DKLPlatformBeta1.0\_FrameWork\HYZK.FrameWork.Web\obj\Debug\HYZK.FrameWork.Web.csprojResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\_FrameWork\HYZK.FrameWork.Web\obj\Debug\HYZK.FrameWork.Web.dll
+D:\DKLPlatformBeta1.0\_FrameWork\HYZK.FrameWork.Web\obj\Debug\HYZK.FrameWork.Web.pdb

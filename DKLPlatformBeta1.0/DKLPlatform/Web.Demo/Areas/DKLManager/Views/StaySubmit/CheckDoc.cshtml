@@ -1,0 +1,21 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+@model ProjectDocFile
+
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+
+@section BeforeContent{
+    @using (Html.BeginForm("DownLoadDocFile", "StaySubmit", new { number = Model.ProjectNumber, status = Model.Status, id = Model.ID }))
+    {
+        <td>
+            <input type="submit" value="下载报告" />
+        </td>
+    }
+}

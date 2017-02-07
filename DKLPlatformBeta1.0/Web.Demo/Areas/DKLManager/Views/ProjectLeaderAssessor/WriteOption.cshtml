@@ -1,0 +1,56 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Web.Controls
+@using HYZK.Account.Contract
+@using HYZK.FrameWork.Utility
+@model DKLManager.Contract.Model.ProjectInfo
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+  <style type="text/css">
+    .form-refer-1 {
+        font-weight: 800;
+        font-size: large;
+        color: black;
+    }
+
+    .form-refer-2 {
+        font-weight: 800;
+        font-size: 16px;
+        margin-top: 10px;
+        resize: none;
+        height: 20px;
+        width: 23%;
+        text-align: center;
+    }
+
+    .form-refer-3 {
+        font-weight: 800;
+        font-size: large;
+        width: 25%;
+        margin-top: 10px;
+        margin-left: 10px;
+        resize: none;
+        text-align: center;
+    }
+</style>
+
+}
+
+
+@section MainContent{
+    <div>
+        <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+            <div class="row-fluid">             
+                <div class="form-refer-1">
+                    <label class="control-label">意见：</label>
+                    <div class="controls">
+                        @Html.TextAreaFor(m => m.OneCheckOpinion, new { @class = "m-wrap small return1" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.OneCheckOpinion)</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

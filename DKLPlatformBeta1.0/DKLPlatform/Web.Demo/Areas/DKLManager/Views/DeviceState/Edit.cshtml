@@ -1,0 +1,35 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Web.Controls
+@using HYZK.Account.Contract
+@using HYZK.FrameWork.Utility
+@model DKLManager.Contract.Model.DeviceStateModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+
+
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>状态编号：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.StateNumber, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.StateNumber)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">状态描述：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.StateDescribe, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.StateDescribe)</span>
+                </div>
+            </div>
+            </div>
+        </div>
+}
+
+
+          

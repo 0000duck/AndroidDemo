@@ -1,0 +1,68 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+@model SampleRegisterTable
+
+@{
+    ViewBag.Title = "CreateProject";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+    </style>
+}
+@section PageSpecificJavascriptIncludes{
+   
+}
+@section MainContent{
+
+    <div class="portlet box red m10">
+        <div class="control-group1">
+            <label class="control-label">车间</label>
+            <div class="controls">
+                @Html.TextBoxFor(m => m.WorkShop, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.WorkShop)</span>
+            </div>
+        </div>
+        <div class="control-group1">
+            <label class="control-label">岗位</label>
+            <div class="controls">
+                @Html.TextBoxFor(m => m.Job, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.Job)</span>
+            </div>
+        </div>
+        <div class="control-group1">
+            <label class="control-label">采样地点</label>
+            <div class="controls">
+                @Html.TextBoxFor(m => m.Location, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.Location)</span>
+            </div>
+        </div>
+        <div class="control-group1">
+            <label class="control-label">CSTEL</label>
+            <div class="controls">
+                @Html.TextBoxFor(m => m.CSTEL, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.CSTEL)</span>
+            </div>
+        </div>
+        <div class="control-group1">
+            <label class="control-label">CTWA</label>
+            <div class="controls">
+                @Html.TextBoxFor(m => m.CTWA, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.CTWA)</span>
+            </div>
+        </div>
+        <div class="control-group1">
+            <label class="control-label">CMAC</label>
+            <div class="controls">
+                @Html.TextBoxFor(m => m.CMAC, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.CMAC)</span>
+            </div>
+        </div>
+    </div>
+}

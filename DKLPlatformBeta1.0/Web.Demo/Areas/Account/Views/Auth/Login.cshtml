@@ -1,0 +1,104 @@
+﻿@using Web.Common
+@model Web.Demo.Areas.Account.Models.LoginViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    @*<meta http-equiv="Content-Type" content="text/html; charset=gbk" />*@
+
+    <title>用户登录 - @HYZK.Core.Config.CachedConfigContext.Current.SettingConfig.WebSiteTitle</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link href="@Url.StaticFile("/assets/bootstrap/css/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.StaticFile("/assets/css/metro.css")" rel="stylesheet" />
+    <link href="@Url.StaticFile("/assets/font-awesome/css/font-awesome.css")" rel="stylesheet" />
+    <link href="@Url.StaticFile("/assets/css/style.css")" rel="stylesheet" />
+    <link href="@Url.StaticFile("/assets/css/style_responsive.css")" rel="stylesheet" />
+    <link href="@Url.StaticFile("/assets/css/style_default.css")" rel="stylesheet" id="style_color" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/uniform/css/uniform.default.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/content/styles/admin.main.css")" />
+</head>
+<body class="login">
+    <!-- BEGIN LOGO -->
+    <div class="logo">
+        @*<img src="@Url.StaticFile("/content/images/DKLlogo.png")" style="width:100px;height:30px" alt="" />*@
+    </div>
+
+    <div class="content">
+        @using (Html.BeginForm())
+        {
+           
+           
+            <h3 class="form-title">请输入你的帐号和密码</h3>
+            <div class="alert alert-error hide">
+                <button class="close" data-dismiss="alert"></button>
+                <span>Enter any username and passowrd.</span>
+            </div>
+            <div class="control-group" style="float:none;">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9"><span class="required">*</span>登录名：</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-user"></i>
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "m-wrap placeholder-no-fix" })
+                    </div>
+                    <span class="help-block">@Html.ValidationMessageFor(m => m.UserName)</span>
+                </div>
+            </div>
+    <div class="control-group" style="float:none;">
+        <label class="control-label visible-ie8 visible-ie9"><span class="required">*</span>密码：</label>
+        <div class="controls">
+            <div class="input-icon left">
+                <i class="icon-lock"></i>
+                @Html.TextBoxFor(m => m.Password, new { @class = "m-wrap placeholder-no-fix" })
+            </div>
+            <span class="help-block">@Html.ValidationMessageFor(m => m.Password)</span>
+        </div>
+    </div>
+            <div class="form-actions">
+                @Html.TextBoxFor(m => m.Verifycode, new { style = "width:80px;", placeholder = "验证码" })
+                <img style="cursor: pointer; vertical-align:middle" src="@Url.Action("VerifyImage", "Common")" id="VerifyImage" title="看不清？点击换一个" onclick="javascript:document.getElementById('VerifyImage').src='@Url.Action("VerifyImage", "Common")?r='+Math.random();return false;">
+                <button type="submit" class="btn green pull-right">
+                    登录 <i class="m-icon-swapright m-icon-white"></i>
+                </button>
+                <div>@Html.ValidationMessage("error") </div>
+            </div>
+            <div class="forget-password">
+                <h4>忘记密码 ?</h4>
+                <p>
+                    请发送邮件 <a href="javascript:;" class="" id="forget-password">wang.xiaoshun@deucalion.com.cn</a>
+                    提出申请重设密码.
+                </p>
+            </div>
+            <div class="create-account dn">
+                <p>
+                    Don't have an account yet ?&nbsp;
+                    <a href="javascript:;" id="register-btn" class="">Create an account</a>
+                </p>
+            </div>
+        }
+    </div>
+
+    <!-- BEGIN JAVASCRIPTS -->
+    <script src="@Url.StaticFile("/assets/js/jquery-1.8.3.min.js")"></script>
+    <script src="@Url.StaticFile("/assets/bootstrap/js/bootstrap.min.js")"></script>
+    <script src="@Url.StaticFile("/assets/js/jquery.blockui.js")"></script>
+    <script src="@Url.StaticFile("/assets/js/app.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/content/scripts/jquery.validate.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/content/scripts/jquery.validate.unobtrusive.min.js")"></script>
+    <script>
+        jQuery(document).ready(function () {
+            App.initLogin();
+        });
+    </script>
+    <!-- END JAVASCRIPTS -->
+</body>
+</html>

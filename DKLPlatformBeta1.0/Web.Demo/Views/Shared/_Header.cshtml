@@ -1,0 +1,39 @@
+﻿@using Web.Common;
+
+<div class="navbar-inner">
+    <div class="container-fluid">
+        <!-- BEGIN LOGO -->
+        <a class="navbar-brand" href="/">
+            <img style="height:50px;" src="@Url.StaticFile("~/content/images/DKLlogo.png")" alt="德康莱协同办公与管理一体化平台" />
+        </a>
+        <a class="navbar-brand" href="/">
+            德康莱协同办公与管理一体化平台
+        </a>
+        <!-- END LOGO -->
+        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+        <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+            <img src="@Url.StaticFile("~/assets/img/menu-toggler.png")" alt="" />
+        </a>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <!-- BEGIN TOP NAVIGATION MENU -->
+        <ul class="nav pull-right">
+            <!-- BEGIN NOTIFICATION DROPDOWN -->
+            <!-- END TODO DROPDOWN -->
+            <!-- BEGIN USER LOGIN DROPDOWN -->
+            <li class="dropdown user">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <img alt="" src="@Url.StaticFile("~/content/images/avatar.gif")" style="height:29px;" />
+                    <span class="username">@Web.Demo.Common.AdminUserContext.Current.LoginInfo.LoginName</span>
+                    <i class="icon-angle-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="divider"></li>
+                    <li><a href="@Url.Action("ModifyPwd", "Auth", new { Area = "Account" })?TB_iframe=true&KeepThis=true&height=380&width=500" class="thickbox" title="修改密码"><i class="icon-key"></i> 修改密码</a></li>
+                    <li><a href="@Url.Action("Logout", "Auth", new { Area = "Account"})"><i class="icon-signout"></i> 退出系统</a></li>
+                </ul>
+            </li>
+            <!-- END USER LOGIN DROPDOWN -->
+        </ul>
+        <!-- END TOP NAVIGATION MENU -->
+    </div>
+</div>

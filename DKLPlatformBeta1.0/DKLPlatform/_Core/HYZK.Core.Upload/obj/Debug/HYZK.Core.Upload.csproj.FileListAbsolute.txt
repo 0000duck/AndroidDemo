@@ -1,0 +1,5 @@
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Core.Upload.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Core.Upload.pdb
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Core\HYZK.Core.Upload\obj\Debug\HYZK.Core.Upload.csprojResolveAssemblyReference.cache
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Core\HYZK.Core.Upload\obj\Debug\HYZK.Core.Upload.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Core\HYZK.Core.Upload\obj\Debug\HYZK.Core.Upload.pdb

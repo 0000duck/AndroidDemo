@@ -1,0 +1,36 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Web.Controls
+@using HYZK.Account.Contract
+@using HYZK.FrameWork.Utility
+@model DKLManager.Contract.Model.OccupationaldiseaseHarm
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+            <div class="control-group" style="float:none;">
+                <label class="control-label">危害：</label>
+                <div class="controls">
+                    @Html.DropDownListFor(m => m.Endanger, ViewData["ParameterName"] as SelectList)
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Endanger)</span>
+                </div>
+            </div>
+            <div class="control-group" style="float:none;">
+                <label class="control-label">描述：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Describe, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Describe)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+
+

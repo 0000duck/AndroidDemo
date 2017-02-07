@@ -1,0 +1,5 @@
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\Web.Common.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\Web.Common.pdb
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\Web.Common\obj\Debug\Web.Common.csprojFakesResolveAssemblyReference.cache
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\Web.Common\obj\Debug\Web.Common.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\Web.Common\obj\Debug\Web.Common.pdb

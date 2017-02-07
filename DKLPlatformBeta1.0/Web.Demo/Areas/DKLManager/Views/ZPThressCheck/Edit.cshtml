@@ -1,0 +1,27 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Web.Controls
+@using HYZK.Account.Contract
+@using HYZK.FrameWork.Utility
+@model DKLManager.Contract.Model.ProjectInfo
+
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+
+
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+
+            <div class="control-group">
+                <label class="control-label"><span class="required"></span>签名：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.WritePerson, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.WritePerson)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

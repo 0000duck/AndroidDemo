@@ -1,0 +1,1250 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using HYZK.FrameWork.DAL;
+using DKLManager.Contract.Model;
+using DKLManager.Contract;
+using HYZK.Core.Config;
+using HYZK.Core.Cache;
+using DKLManager.Dal;
+using HYZK.FrameWork.Common;
+using HYZK.Account.Contract;
+
+
+
+namespace DKLManager.Bll
+{
+    public class DKLManagerSevice : IDKLManager
+    {
+        /// <summary>
+        /// 项目条码表
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<BarCodeProject> GetBarCodeProjectList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.BarCodeProjectDB.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+        public BarCodeProject SelectBarCodeProject(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.BarCodeProjectDB.Where(u => u.ID == id).SingleOrDefault();
+            }
+        }
+        public void InsertBarCodeProject(BarCodeProject BarCodePro)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.Insert<BarCodeProject>(BarCodePro);
+            }
+        }
+        public void DeleteBarCodeProject(List<int> id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.BarCodeProjectDB.Where(u => id.Contains(u.ID)).ToList().ForEach(a => { dbContext.BarCodeProjectDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+        public void DeleteBarCodeProject(string BarCodeProject)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.BarCodeProjectDB.Where(c => c.DeviceName == BarCodeProject).SingleOrDefault();
+                dbContext.SaveChanges();
+            }
+        }
+        public void UpDateBarCodeProject(BarCodeProject BarCodePro)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.Update<BarCodeProject>(BarCodePro);
+            }
+        }
+
+
+
+
+
+        /// <summary>
+        /// 设备条码表
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<BarCodeDevice> GetBarCodeDeviceList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.BarCodeDeviceDB.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+        public BarCodeDevice SelectBarCodeDevice(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.BarCodeDeviceDB.Where(u => u.ID == id).SingleOrDefault();
+            }
+        }
+        public void InsertBarCodeDevice(BarCodeDevice BarCode)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.Insert<BarCodeDevice>(BarCode);
+            }
+        }
+        public void DeleteBarCodeDevice(List<int> id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.BarCodeDeviceDB.Where(u => id.Contains(u.ID)).ToList().ForEach(a => { dbContext.BarCodeDeviceDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+        public void UpDateBarCodeDevice(BarCodeDevice BarCode)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.Update<BarCodeDevice>(BarCode);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public IEnumerable<DeviceStateModel> GetDeviceStateList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+           {
+               return dbContext.DeviceState.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+
+
+        public DeviceStateModel SelectDeviceState(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.DeviceState.Where(u => u.ID == id).SingleOrDefault();
+            }
+        }
+        /// <summary>
+        /// 设备状态表增
+        /// </summary>
+        /// <param name="state"></param>
+        public void InsertDeviceState(DeviceStateModel state)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.Insert<DeviceStateModel>(state);
+            }
+        }
+        /// <summary>
+        /// 设备状态表删
+        /// </summary>
+        /// <param name="ids"></param>
+        public void DeleteDeviceState(List<int> ids)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.DeviceState.Where(u => ids.Contains(u.ID)).ToList().ForEach(a => { dbContext.DeviceState.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+        /// <summary>
+        /// 设备状态表改
+        /// </summary>
+        /// <param name="state"></param>
+        public void UpDateDeviceState(DeviceStateModel state)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.Update<DeviceStateModel>(state);
+            }
+        }
+
+
+        /// <summary>
+        /// 设备表查
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// 
+
+        public IEnumerable<DeviceModel> GetDeviceList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.Device.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+
+        /// <summary>
+        /// 设备表增
+        /// </summary>
+        /// <param name="device"></param>
+        public void InsertDevice(DeviceModel device)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.Insert<DeviceModel>(device);
+            }
+        }
+        /// <summary>
+        /// 设备表删
+        /// </summary>
+        /// <param name="device"></param>
+        public void DeleteDevice(List<int> id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.DeviceState.Where(u => id.Contains(u.ID)).ToList().ForEach(a => { dbContext.DeviceState.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+        /// <summary>
+        /// 设备表改
+        /// </summary>
+        /// <param name="device"></param>
+        public void UpDateDevice(DeviceModel device)
+        {
+            using(var dbContext=new DKLManagerDbContext())
+            {
+                dbContext.Update<DeviceModel>(device);
+            }
+        }
+        public DeviceModel SelectDevice(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.Device.Where(u => u.ID == id).SingleOrDefault();
+            }
+        }
+
+        public IEnumerable<DeviceCalibrationRemarkModel> GetCalibretionRemarkList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.DeviceCalibrationRemark.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+        /// <summary>
+        /// 设备校准表记录表查
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public DeviceCalibrationRemarkModel SelectCalibrationRemark(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.DeviceCalibrationRemark.Where(u => u.ID == id).SingleOrDefault();
+            }
+        }
+        /// <summary>
+        /// 设备校准记录表增
+        /// </summary>
+        /// <param name="calibrationRemark"></param>
+        public void InsertCalibrationRemark(DeviceCalibrationRemarkModel calibrationRemark)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.Insert<DeviceCalibrationRemarkModel>(calibrationRemark);
+            }
+        }
+        /// <summary>
+        /// 设备校准记录表删
+        /// </summary>
+        /// <param name="calibrationRemark"></param>
+        public void DelectCalibrationRemark( List<int> id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.DeviceCalibrationRemark.Where(u => id.Contains(u.ID)).ToList().ForEach(a => { dbContext.DeviceCalibrationRemark.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+        /// <summary>
+        /// 设备校准记录表改
+        /// </summary>
+        /// <param name="calibrationRemark"></param>
+        public void UpdateCalibrationRemark(DeviceCalibrationRemarkModel calibrationRemark)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.Update<DeviceCalibrationRemarkModel>(calibrationRemark);
+            }
+        }
+        public IEnumerable<DeviceIdentityRemarkModel> GetIdentityRemarkList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.DeviceIdentityRemark.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+        /// <summary>
+        /// 设备鉴定记录表查
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public DeviceIdentityRemarkModel SelectIdentityRemark(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.DeviceIdentityRemark.Where(u => u.ID == id).SingleOrDefault();
+            }
+        }
+        /// <summary>
+        /// 设备鉴定记录表增
+        /// </summary>
+        /// <param name="identityRemark"></param>
+        public void InsertIdentityRemark(DeviceIdentityRemarkModel identityRemark)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.Insert<DeviceIdentityRemarkModel>(identityRemark);
+            }
+        }
+        /// <summary>
+        /// 设备鉴定记录表删
+        /// </summary>
+        /// <param name="identityRemark"></param>
+        public void DeleteIdentityRemark(List<int> id)
+        {
+            using(var dbContext=new DKLManagerDbContext())
+            {
+                dbContext.DeviceIdentityRemark.Where(u => id.Contains(u.ID)).ToList().ForEach(a => { dbContext.DeviceIdentityRemark.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+        /// <summary>
+        /// 设备鉴定记录表改
+        /// </summary>
+        /// <param name="identityRemark"></param>
+        public void UpdateIdentityRemark(DeviceIdentityRemarkModel identityRemark)
+        {
+            using(var dbContext=new DKLManagerDbContext())
+            {
+                dbContext.Update<DeviceIdentityRemarkModel>(identityRemark);
+            }
+        }
+
+        public IEnumerable<DeviceOrderEntifyModel> GetOrderEntifyList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                IQueryable<DeviceOrderEntifyModel> DeviceName = dbContext.OrderEntify;
+                if (!string.IsNullOrEmpty(request.DeviceName))
+                    DeviceName = DeviceName.Where(u => u.DeviceName.Contains(request.DeviceName));
+                return DeviceName.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+        /// <summary>
+        /// 预定申请表查
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public DeviceOrderEntifyModel SelectOrderEntify(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+               return dbContext.OrderEntify.Where(u => u.ID == id).SingleOrDefault();
+            }
+        }
+        /// <summary>
+        /// 预定申请表增
+        /// </summary>
+        /// <param name="OrderEntify"></param>
+        public void InsertOrderEntify(DeviceOrderEntifyModel OrderEntify)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.Insert<DeviceOrderEntifyModel>(OrderEntify);
+            }
+        }
+        /// <summary>
+        /// 预定申请表删
+        /// </summary>
+        /// <param name="id"></param>
+        public void DeleteOrderEntify(List<int> id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.OrderEntify.Where(u => id.Contains(u.ID)).ToList().ForEach(a => { dbContext.OrderEntify.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+        /// <summary>
+        /// 预定申请表改
+        /// </summary>
+        /// <param name="OrderEntify"></param>
+        public void UpdateOrderEntify(DeviceOrderEntifyModel OrderEntify)
+        {
+            using(var dbContext=new DKLManagerDbContext())
+            {
+                dbContext.Update<DeviceOrderEntifyModel>(OrderEntify);
+            }
+        }
+        public IEnumerable<DeviceServiceRemarkModel> GetSeviceRemarkList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.DeviceService.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+        /// <summary>
+        /// 设备维修记录表查
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public DeviceServiceRemarkModel SelectServiceRemark(int id)
+        {
+            using(var dbContext=new DKLManagerDbContext())
+            {
+               return dbContext.DeviceService.Where(u => u.ID == id).SingleOrDefault();
+            }
+        }
+        /// <summary>
+        /// 设备维修记录表增
+        /// </summary>
+        /// <param name="serviceRemark"></param>
+        public void InsertServiceRemark(DeviceServiceRemarkModel serviceRemark)
+        {
+            using(var dbContext=new DKLManagerDbContext())
+            {
+                dbContext.Insert<DeviceServiceRemarkModel>(serviceRemark);
+            }
+        }
+        /// <summary>
+        /// 设备维修记录表删
+        /// </summary>
+        /// <param name="serviceRemar"></param>
+        public void DeleteServiceRemark(List<int> id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.DeviceService.Where(u => id.Contains(u.ID)).ToList().ForEach(a => { dbContext.DeviceService.Remove(a); });
+                dbContext.SaveChanges();
+            }
+
+        }
+        /// <summary>
+        /// 设备维修记录表改
+        /// </summary>
+        /// <param name="serviceRemark"></param>
+        public void UpdateServiceRemark(DeviceServiceRemarkModel serviceRemark)
+        {
+            using(var dbContext=new DKLManagerDbContext())
+            {
+                dbContext.Update<DeviceServiceRemarkModel>(serviceRemark);
+            }
+        }
+        public IEnumerable<DeviceUseRecordModel> GetUserRecordList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.DeviceUserRecord.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+        public DeviceUseRecordModel SelectUserRecord(int id)
+        {
+            using(var dbContext=new DKLManagerDbContext())
+            {
+                return dbContext.DeviceUserRecord.Where(u => u.ID == id).SingleOrDefault();
+            }
+        }
+        /// <summary>
+        /// 设备使用记录表增
+        /// </summary>
+        /// <param name="userRecord"></param>
+        public void InsertUserRecord(DeviceUseRecordModel userRecord)
+        {
+            using (var dbContext=new DKLManagerDbContext())
+            {
+                dbContext.Insert<DeviceUseRecordModel>(userRecord);
+            }
+        }
+        /// <summary>
+        /// 设备使用记录表删
+        /// </summary>
+        /// <param name="userRecord"></param>
+        public void DeleteUserRecord(List<int> id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.DeviceUserRecord.Where(u => id.Contains(u.ID)).ToList().ForEach(a => { dbContext.DeviceUserRecord.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+        /// <summary>
+        /// 设备记录表改
+        /// </summary>
+        /// <param name="userRecord"></param>
+        public void UpdateUserRecord(DeviceUseRecordModel userRecord)
+        {
+            using (var dbContext=new DKLManagerDbContext())
+            {
+                dbContext.Update<DeviceUseRecordModel>(userRecord);
+            }
+        }
+
+
+
+
+
+
+        public ProjectFile GetProjectFile(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectFileDB.Where(c => c.ID == id).SingleOrDefault();
+            }
+        }
+        public ProjectFile GetProjectFile(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectFileDB.Where(c => c.ProjectNumber == projectNumber).SingleOrDefault();
+            }
+        }
+        public IEnumerable<ProjectFile> GetProjectFileList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectFileDB.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+        public void AddProjectFile(ProjectFile info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Insert<ProjectFile>(info);
+                }
+            }
+        }
+        public void UpdateProjectFile(ProjectFile info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Update<ProjectFile>(info);
+                }
+            }
+        }
+        public void DeleteProjectFile(List<int> ids)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.ProjectFileDB.Where(u => ids.Contains(u.ID)).ToList().ForEach(a => { dbContext.ProjectFileDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+
+        public void DeleteProjectFile(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.ProjectFileDB.Where(u => u.ProjectNumber == projectNumber).ToList().ForEach(a => { dbContext.ProjectFileDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+
+        public ProjectDocFile GetProjectDocFile(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectDocFileDB.Where(c => c.ID == id).SingleOrDefault();
+            }
+        }
+        public ProjectDocFile GetProjectDocFile(string projectNumber, int status)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectDocFileDB.Where(c => c.ProjectNumber == projectNumber && c.Status == status).SingleOrDefault();
+            }
+        }
+        public IEnumerable<ProjectDocFile> GetProjectDocFileList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectDocFileDB.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+        public IEnumerable<ProjectDocFileHistory> GetProjectDocFileHistoryList(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectDocFileHistoryDB.Where(p => p.ProjectNumber == projectNumber).OrderByDescending(u => u.ID).ToPagedList(1, 20);
+            }
+        }
+        public IEnumerable<ProjectDocFile> GetProjectDocFileList(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectDocFileDB.Where(c => c.ProjectNumber == projectNumber).OrderByDescending(u => u.ID).ToList();
+            }
+        }
+
+        public void AddProjectDocFile(ProjectDocFile info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Insert<ProjectDocFile>(info);
+                }
+            }
+        }
+        public void UpdateProjectDocFile(ProjectDocFile info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Update<ProjectDocFile>(info);
+                }
+            }
+        }
+        public void DeleteProjectDocFile(List<int> ids)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.ProjectDocFileDB.Where(u => ids.Contains(u.ID)).ToList().ForEach(a => { dbContext.ProjectDocFileDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+        public void DeleteProjectDocFile(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.ProjectDocFileDB.Where(u => u.ProjectNumber == projectNumber).ToList().ForEach(a => { dbContext.ProjectDocFileDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+
+
+
+        public ProjectInfo GetProjectInfo(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectInfoDB.Where(c => c.ID == id).SingleOrDefault();
+            }
+        }
+
+        public ProjectInfo GetProjectInfo(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectInfoDB.Where(c => c.ProjectNumber == projectNumber).SingleOrDefault();
+            }
+        }
+
+        public IEnumerable<ProjectInfo> GetProjectInfoList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                IQueryable<ProjectInfo> ProjectDoing = dbContext.ProjectInfoDB;
+                if ((request.ProjectCategory) != -1)
+                {
+                    ProjectDoing = ProjectDoing.Where(u => u.ProjectCategory == (request.ProjectCategory));
+                }
+                if (!string.IsNullOrEmpty(request.ProjectName))
+                    ProjectDoing = ProjectDoing.Where(u => u.ProjectName.Contains(request.ProjectName));                 
+                if (!string.IsNullOrEmpty(request.ProjectNumber))
+                    ProjectDoing = ProjectDoing.Where(u => u.ProjectNumber.Contains(request.ProjectNumber));
+                if (!string.IsNullOrEmpty(request.ProjectCheif))
+                    ProjectDoing = ProjectDoing.Where(u => u.ProjectCheif.Contains(request.ProjectCheif));                 
+                return ProjectDoing.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+
+            }
+        }
+
+        public IEnumerable<ProjectInfo> GetProjectInfoList(string name, bool isLeader = false, ProjectInfoRequest request = null)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+
+                if (isLeader)//组长
+                    return dbContext.ProjectInfoDB.Where(u => (u.ProjectLeader == name) || (u.ProjectPerson.Contains(name))).OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+                else //负责人
+                    return dbContext.ProjectInfoDB.Where(u => (u.ProjectCheif == name) || (u.ProjectPerson.Contains(name))).OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+
+            }
+        }
+
+
+        public void AddProjectInfo(ProjectInfo info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Insert<ProjectInfo>(info);
+                }
+            }
+        }
+        public void UpdateProjectInfo(ProjectInfo info)
+        {
+            if (info != null)
+            {
+
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Update<ProjectInfo>(info);
+                }
+            }
+        }
+        public void DeleteProjectInfo(List<int> ids)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.ProjectInfoDB.Where(u => ids.Contains(u.ID)).ToList().ForEach(a => { dbContext.ProjectInfoDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+
+        public void DeleteProjectInfo(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.ProjectInfoDB.Where(u => u.ProjectNumber == projectNumber).ToList().ForEach(a => { dbContext.ProjectInfoDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+
+
+        public ValueBasicInfo GetVlaueProjectBasicInfo(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ValueProjectInfoDB.Where(c => c.ID == id).SingleOrDefault();
+            }
+        }
+
+        public ValueBasicInfo GetVlaueProjectBasicInfo(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ValueProjectInfoDB.Where(c => c.ProjectNumber == projectNumber).SingleOrDefault();
+            }
+        }
+        public IEnumerable<ValueBasicInfo> GetVlaueProjectBasicInfoList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ValueProjectInfoDB.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+        public void AddVlaueProjectBasicInfo(ValueBasicInfo info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Insert<ValueBasicInfo>(info);
+                }
+            }
+        }
+        public void UpdateVlaueProjectBasicInfo(ValueBasicInfo info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Update<ValueBasicInfo>(info);
+                }
+            }
+        }
+        public void DeleteVlaueProjectBasicInfo(List<int> ids)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.ValueProjectInfoDB.Where(u => ids.Contains(u.ID)).ToList().ForEach(a => { dbContext.ValueProjectInfoDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+        public void DeleteVlaueProjectBasicInfo(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.ValueProjectInfoDB.Where(u => u.ProjectNumber == projectNumber).ToList().ForEach(a => { dbContext.ValueProjectInfoDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+
+
+        public TestBasicInfo GetProjectTestBasicInfo(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.TestBasicInfoDB.Where(c => c.ID == id).SingleOrDefault();
+            }
+        }
+        public TestBasicInfo GetProjectTestBasicInfo(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.TestBasicInfoDB.Where(c => c.ProjectNumber == projectNumber).SingleOrDefault();
+            }
+        }
+        public IEnumerable<TestBasicInfo> GetProjectTestBasicInfoList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.TestBasicInfoDB.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+        public void AddProjectTestBasicInfo(TestBasicInfo info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Insert<TestBasicInfo>(info);
+                }
+            }
+        }
+        public void UpdateProjectTestBasicInfo(TestBasicInfo info)
+        {
+            if (info != null)
+            {
+
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Update<TestBasicInfo>(info);
+                }
+            }
+        }
+        public void DeleteProjectTestBasicInfo(List<int> ids)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.TestBasicInfoDB.Where(u => ids.Contains(u.ID)).ToList().ForEach(a => { dbContext.TestBasicInfoDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+
+        public void DeleteProjectTestBasicInfo(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.TestBasicInfoDB.Where(u => u.ProjectNumber == projectNumber).ToList().ForEach(a => { dbContext.TestBasicInfoDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+
+
+        public IEnumerable<ConsultBasicInfo> GetConsultBasicInfoList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ConsultBasicInfoDB.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+
+        public void AddConsultBasicInfo(ConsultBasicInfo info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Insert<ConsultBasicInfo>(info);
+                }
+            }
+        }
+
+        public void UpdateConsultBasicInfo(ConsultBasicInfo info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Update<ConsultBasicInfo>(info);
+                }
+            }
+        }
+
+        public void DeleteConsultBasicInfo(List<int> ids)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.ConsultBasicInfoDB.Where(u => ids.Contains(u.ID)).ToList().ForEach(a => { dbContext.ConsultBasicInfoDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+
+        public void DeleteConsultBasicInfo(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.ConsultBasicInfoDB.Where(u => u.ProjectNumber == projectNumber).ToList().ForEach(a => { dbContext.ConsultBasicInfoDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+
+
+        public ConsultBasicInfo GetConsultBasicInfo(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ConsultBasicInfoDB.Where(c => c.ID == id).SingleOrDefault();
+            }
+        }
+        public ConsultBasicInfo GetConsultBasicInfo(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ConsultBasicInfoDB.Where(c => c.ProjectNumber == projectNumber).SingleOrDefault();
+            }
+        }
+
+        //历史记录表以下
+        public IEnumerable<TestBasicInfoHistory> GetProjectTestBasicInfoHistoryList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.TestBasicInfoHistoryDB.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+
+        public void AddProjectTestBasicInfoHistory(TestBasicInfoHistory info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Insert<TestBasicInfoHistory>(info);
+                }
+            }
+        }
+
+        public IEnumerable<ValueBasicInfoHistory> GetVlaueProjectBasicInfoHistoryList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ValueBasicInfoHistoryDB.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+
+        public void AddVlaueProjectBasicInfoHistory(ValueBasicInfoHistory info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Insert<ValueBasicInfoHistory>(info);
+                }
+            }
+        }
+
+        public IEnumerable<ConsultBasicInfoHistory> GetConsultBasicInfoHistoryList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ConsultBasicInfoHistoryDB.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+
+        public void AddConsultBasicInfoHistory(ConsultBasicInfoHistory info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Insert<ConsultBasicInfoHistory>(info);
+                }
+            }
+        }
+
+        public IEnumerable<ProjectInfoHistory> GetProjectInfoHistoryList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                IQueryable<ProjectInfoHistory> ProjecInfo = dbContext.ProjectInfoHistoryDB;
+                if ((request.ProjectCategory) != -1)
+                {
+                    ProjecInfo = ProjecInfo.Where(u => u.ProjectCategory == (request.ProjectCategory));
+                }
+                if (!string.IsNullOrEmpty(request.ProjectName))
+                ProjecInfo = ProjecInfo.Where(u => u.ProjectName.Contains(request.ProjectName));
+                if (!string.IsNullOrEmpty(request.ProjectCheif))
+                    ProjecInfo = ProjecInfo.Where(u => u.ProjectName.Contains(request.ProjectCheif)); 
+                return dbContext.ProjectInfoHistoryDB.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+
+        public void AddProjectInfoHistory(ProjectInfoHistory info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Insert<ProjectInfoHistory>(info);
+                }
+            }
+        }
+
+        public ProjectFileHistory GetProjectFileHistory(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectFileHistoryDB.Where(c => c.ID == id).SingleOrDefault();
+            }
+        }
+        public ProjectFileHistory GetProjectFileHistory(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectFileHistoryDB.Where(c => c.ProjectNumber == projectNumber).SingleOrDefault();
+            }
+        }
+        public IEnumerable<ProjectFileHistory> GetProjectFileHistoryList(ProjectInfoRequest request = null)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectFileHistoryDB.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+        public void AddProjectFileHistory(ProjectFileHistory info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Insert<ProjectFileHistory>(info);
+                }
+            }
+        }
+        public void UpdateProjectFileHistory(ProjectFileHistory info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Update<ProjectFileHistory>(info);
+                }
+            }
+        }
+        public void DeleteProjectFileHistory(List<int> ids)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.ProjectFileHistoryDB.Where(u => ids.Contains(u.ID)).ToList().ForEach(a => { dbContext.ProjectFileHistoryDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+        public void DeleteProjectFileHistory(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.ProjectFileHistoryDB.Where(u => u.ProjectNumber == projectNumber).ToList().ForEach(a => { dbContext.ProjectFileHistoryDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+
+        public ProjectDocFileHistory GetProjectDocFileHistory(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectDocFileHistoryDB.Where(c => c.ID == id).SingleOrDefault();
+            }
+        }
+        public ProjectDocFileHistory GetProjectDocFileHistory(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectDocFileHistoryDB.Where(c => c.ProjectNumber == projectNumber).SingleOrDefault();
+            }
+        }
+        public IEnumerable<ProjectDocFileHistory> GetProjectDocFileHistoryList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectDocFileHistoryDB.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+        public void AddProjectDocFileHistory(ProjectDocFileHistory info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Insert<ProjectDocFileHistory>(info);
+                }
+            }
+        }
+        public void UpdateProjectDocFileHistory(ProjectDocFileHistory info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Update<ProjectDocFileHistory>(info);
+                }
+            }
+        }
+        public void DeleteProjectDocFileHistory(List<int> ids)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.ProjectDocFileHistoryDB.Where(u => ids.Contains(u.ID)).ToList().ForEach(a => { dbContext.ProjectDocFileHistoryDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+        public void DeleteProjectDocFileHistory(string projectNumber)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.ProjectDocFileHistoryDB.Where(u => u.ProjectNumber == projectNumber).ToList().ForEach(a => { dbContext.ProjectDocFileHistoryDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+
+
+        //项目审核表操作
+        public ProjectChecker GetProjectChecker(int id)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectCheckerDB.Where(c => c.ID == id).SingleOrDefault();
+            }
+        }
+
+        public ProjectChecker GetProjectChecker(string checkerName)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectCheckerDB.Where(c => c.Name == checkerName).SingleOrDefault();
+            }
+        }
+
+
+        public IEnumerable<ProjectChecker> GetProjectCheckerList(ProjectInfoRequest request = null)
+        {
+            request = (request == null) ? new ProjectInfoRequest() : request;
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectCheckerDB.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+
+        public IEnumerable<ProjectChecker> GetProjectCheckerList(string checkerName, ProjectInfoRequest request = null)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                return dbContext.ProjectCheckerDB.Where(c => c.Name == checkerName).OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+
+
+        public void AddProjectChecker(ProjectChecker info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Insert<ProjectChecker>(info);
+                }
+            }
+        }
+
+        public void UpdateProjectChecker(ProjectChecker info)
+        {
+            if (info != null)
+            {
+                using (var dbContext = new DKLManagerDbContext())
+                {
+                    dbContext.Update<ProjectChecker>(info);
+                }
+            }
+        }
+
+        public void DeleteProjectChecker(List<int> ids)
+        {
+            using (var dbContext = new DKLManagerDbContext())
+            {
+                dbContext.ProjectCheckerDB.Where(u => ids.Contains(u.ID)).ToList().ForEach(a => { dbContext.ProjectCheckerDB.Remove(a); });
+                dbContext.SaveChanges();
+            }
+        }
+
+
+    }
+
+}
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

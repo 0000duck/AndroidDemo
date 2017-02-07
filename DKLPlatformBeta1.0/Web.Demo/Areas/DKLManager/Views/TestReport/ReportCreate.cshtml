@@ -1,0 +1,137 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@model HYZK.FrameWork.Common.PagedList<TestPhysicalReport>
+
+@{
+    ViewBag.Title = "ReportCreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<!--BLOCK SECTION -->
+<hr />
+<div class="row">
+    <div style=" margin-right: -15px; margin-left: -15px;text-align: center;position: relative;min-height:1px; padding-right:15px; padding-left:15px;">
+
+
+        <a style="position:relative; display: inline-block; width: 90px; height: 70px; padding-top: 16px; margin: 10px; color: #444444; text-align:center; text-decoration: none; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6); -webkit-box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC; box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC;" href="@Url.Action("Index", "TestReport")">
+            <i class="icon-external-link" style="font-size: 2em;border-width: 2px;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;"></i>
+            <br /><span>返回</span>
+            @*<span class="label btn-metis-2">3.14159265</span>*@
+        </a>
+
+    </div>
+</div>
+<hr />
+<div class="portlet box red m10">
+    <div class="portlet-title">
+        <h4><i class="icon-reorder"></i>报告生成</h4>
+
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="row-fluid">
+            <div class="span4">
+
+            </div>
+        </div>
+
+        @using (Html.BeginForm("Delete", "TestReport", FormMethod.Post, new { id = "mainForm" }))
+        {
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th style="width: 8px;">
+                            <input type="checkbox" id="checkall" class="group-checkable" />
+                        </th>
+                        <th>
+                            项目名称
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+
+                        <th>
+
+                        </th>
+
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+
+                        <th>
+                            操作
+                        </th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    
+                    @foreach (var m in Model)
+                    {
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
+                            </td>
+                            <td>
+                                @m.ProjectNumber
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a class="btn mini purple thickbox" title='提交报告' href="@Url.Action("CreateWord", new { projectNumber = m.ProjectNumber })">
+                                    <i class="icon-edit"></i>
+                                    生成报告
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+
+            <div class="dataTables_paginate paging_bootstrap pagination">
+                @Html.Pager(Model, new PagerOptions() { ShowTotalItemCount = true })
+            </div>
+        }
+    </div>
+</div>

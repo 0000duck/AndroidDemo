@@ -1,0 +1,10 @@
+D:\DKLPlatformBeta1.0\bin\HYZK.Core.Upload.dll
+D:\DKLPlatformBeta1.0\bin\HYZK.Core.Upload.pdb
+D:\DKLPlatformBeta1.0\_Core\HYZK.Core.Upload\obj\Release\HYZK.Core.Upload.csprojResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\_Core\HYZK.Core.Upload\obj\Release\HYZK.Core.Upload.dll
+D:\DKLPlatformBeta1.0\_Core\HYZK.Core.Upload\obj\Release\HYZK.Core.Upload.pdb
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\HYZK.Core.Upload.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\HYZK.Core.Upload.pdb
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_Core\HYZK.Core.Upload\obj\Release\HYZK.Core.Upload.csprojResolveAssemblyReference.cache
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_Core\HYZK.Core.Upload\obj\Release\HYZK.Core.Upload.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_Core\HYZK.Core.Upload\obj\Release\HYZK.Core.Upload.pdb

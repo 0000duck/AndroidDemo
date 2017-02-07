@@ -1,0 +1,64 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Web.Controls
+@using HYZK.Account.Contract
+@using HYZK.FrameWork.Utility
+
+@model DKLManager.Contract.Model.ArgumentValue
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+    </style>
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#CalibrationTime").datepicker(
+                {
+                    changeYear: true,
+                    changeMonth: true,
+                });
+        });
+
+        $(document).ready(function () {
+            $("#CalibrationPeriod").datepicker(
+                {
+                    changeYear: true,
+                    changeMonth: true,
+                });
+        });
+    </script>
+}
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>样品号：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.SampleRegisterNumber, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.SampleRegisterNumber)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">设备使用人：</label>
+            <div class="controls">
+                @Html.TextBoxFor(m => m.Argument, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.Argument)</span>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">参数值：</label>
+            <div class="controls">
+                @Html.TextBoxFor(m => m.ArgumentPrice, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ArgumentPrice)</span>
+            </div>
+        </div>
+    </div>
+
+}
+

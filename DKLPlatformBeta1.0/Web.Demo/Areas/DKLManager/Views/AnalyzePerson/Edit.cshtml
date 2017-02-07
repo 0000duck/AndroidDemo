@@ -1,0 +1,55 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+@model AnalyzePersonViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+
+<div style="float:left;">
+    <label>添加参数值</label>
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>
+                    样品号
+                </th>
+                <th>
+                    参数名
+                </th>
+                <th>
+                    参数值
+                </th>
+        </thead>
+        <tbody>
+            @foreach (var m in Model.ArgumentValueList)
+            {
+                if (m != null)
+                { 
+                <tr>
+                    <td>
+                        @m.SampleRegisterNumber
+                    </td>
+                    <td>
+                        @m.Argument
+                    </td>
+                    <td>
+                        <div class="controls">                         
+                            <input id="m_ArgumentPrice" name= @m.ID type="text" value="">
+                        </div>
+                    </td>
+                </tr>
+                }
+            }
+        </tbody>
+</table>
+    </div>
+
+
+
+
+

@@ -1,0 +1,7 @@
+D:\DKLPlatformBeta1.0\bin\Web.Common.dll.config
+D:\DKLPlatformBeta1.0\bin\Web.Common.dll
+D:\DKLPlatformBeta1.0\bin\Web.Common.pdb
+D:\DKLPlatformBeta1.0\Web.Common\obj\Debug\Web.Data.csprojFakesResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\Web.Common\obj\Debug\Web.Data.csprojResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\Web.Common\obj\Debug\Web.Common.dll
+D:\DKLPlatformBeta1.0\Web.Common\obj\Debug\Web.Common.pdb

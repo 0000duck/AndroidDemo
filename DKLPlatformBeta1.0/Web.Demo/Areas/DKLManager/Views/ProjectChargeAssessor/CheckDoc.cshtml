@@ -1,0 +1,30 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+@model ProjectDocFile
+
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+
+@section BeforeContent{
+    @*@using (Html.BeginForm("DownLoadDocFile", "ProjectLeaderAssessor", new { id = "mainForm", number = Model.ProjectNumber, status = Model.Status,ids=Model.ID }))
+    {
+        <td>
+            <input type="submit" value="下载报告" />
+        </td>
+    }*@
+}
+@section MainContent{
+<div class="control-group">
+    <label>
+        <span>审核结果：</span>
+        @Html.DropDownList("Status", "审核")
+        评价技术负责人审核：@Html.DropDownList("Person", null, "请选择", new { id = "select" })
+    </label>
+</div>
+}

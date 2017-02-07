@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AdminMenuConfig>
+  <AdminMenuGroups>
+    
+    <AdminMenuGroup id="0">
+      <AdminMenuArrays>
+        <AdminMenuArray name="首页" url="/" icon="icon-home" info="欢迎登录系统！">
+        </AdminMenuArray>
+        <AdminMenuArray name="系统管理" icon="icon-cog" >
+          <AdminMenus>
+            <AdminMenu name="用户管理" url="/Account/User/Index" info="添加修改删除用户" permission="AccountManage_User" />
+            <AdminMenu name="审核人管理" url="/Account/ProjectChecker/Index" info="添加修改删除审核人" />
+          </AdminMenus>
+        </AdminMenuArray>
+        <AdminMenuArray name="项目管理" icon="icon-th-large">
+          <AdminMenus>
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+            <AdminMenu name="历史项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="历史报告" url="/DKLManager/ProjectDocHistory/Index" info="查询历史报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        </AdminMenuArray>
+        <AdminMenuArray name="客户管理" icon="icon-tasks">
+          <AdminMenus>
+            <AdminMenu name="客户管理" url="/DKLManager/Customer/Index" info="客户基本信息"  />
+            <AdminMenu name="访问记录" url="/DKLManager/VisitRecord/Index" info="客户基本信息"  />
+          </AdminMenus>
+        </AdminMenuArray>
+        <AdminMenuArray name="设备管理" icon="icon-th-list">
+          <AdminMenus>
+            <AdminMenu name="设备表记录管理" url="/DKLManager/Devise/Index" info="设备表记录管理"  />
+            <AdminMenu name="设备的使用记录管理" url="/DKLManager/DeviceUseRecordModel/Index" info="设备的使用记录管理"  />
+            <AdminMenu name="设备的维修记录管理" url="/DKLManager/DeviceService/Index" info="设备的维修记录管理"  />
+            <AdminMenu name="设备的校准记理管理" url="/DKLManager/DeviceCalibrationRemark/Index" info="设备的校准记录管理"  />
+            <AdminMenu name="设备预约管理" url="/DKLManager/DeviceOrdering/Index" info="设备预约管理"  />
+            <AdminMenu name="设备鉴定表" url="/DKLManager/DeviceIdentity/Index" info="设备鉴定表"  />
+            <AdminMenu name="设备的状态记录管理" url="/DKLManager/DeviceState/Index" info="设备的状态记录管理"  />
+          </AdminMenus>
+        </AdminMenuArray>
+        
+      </AdminMenuArrays> 
+    </AdminMenuGroup>
+
+    <AdminMenuGroup id="1">
+      <AdminMenuArrays>
+        <AdminMenuArray name="首页" url="/DKLManager/ProjectMaket/Index" icon="icon-home" info="欢迎登录系统！">
+        </AdminMenuArray>
+        <AdminMenuArray name="项目管理" icon="icon-th-large">
+          <AdminMenus>
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+          </AdminMenus>
+        </AdminMenuArray>
+        <AdminMenuArray name="历史项目" url="/" icon="icon-tasks">
+          <AdminMenus>
+            <AdminMenu name="历史项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="历史报告" url="/DKLManager/ProjectDocHistory/Index" info="查询历史报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+    
+    <AdminMenuGroup id="2">
+      <AdminMenuArrays>
+        <AdminMenuArray name="首页" url="/DKLManager/ProjectConsult/Index" icon="icon-home" info="欢迎登录系统！">
+        </AdminMenuArray>
+        <AdminMenuArray name="项目管理" icon="icon-th-large">
+          <AdminMenus>
+            <AdminMenu name="代办项目" url="/DKLManager/ProjectConsult/Index" info="处理代办项目"  />
+            <AdminMenu name="主管审核项目" url="/DKLManager/ProjectUnCheck/Index" info="审核项目"  />
+            <AdminMenu name="待提交报告" url="/DKLManager/StaySubmit/Index" info="提交项目"  />
+             <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+          </AdminMenus>
+        </AdminMenuArray>
+        <AdminMenuArray name="历史项目" url="/" icon="icon-tasks">
+          <AdminMenus>
+            <AdminMenu name="历史项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="历史报告" url="/DKLManager/ProjectDocHistory/Index" info="查询历史报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup id="3">
+      <AdminMenuArrays>
+        <AdminMenuArray name="首页" url="/DKLManager/ProjectConsultPerson/Index" icon="icon-home" info="欢迎登录系统！">
+        </AdminMenuArray>
+        <AdminMenuArray name="项目管理" icon="icon-th-large">
+          <AdminMenus>
+            <AdminMenu name="待编辑项目" url="/DKLManager/ProjectConsultPerson/Index" info="处理待编辑项目"  />
+            <AdminMenu name="退回审核列表" url="/DKLManager/ProjectGoBack/Index" info="退回审核"  />
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+          </AdminMenus>
+        </AdminMenuArray>
+        <AdminMenuArray name="历史记录" icon="icon-tasks">
+          <AdminMenus>
+            <AdminMenu name="历史项目" url="/DKLManager/ProjectHistory/Index" info="查看咨询项目历史记录"  />
+            <AdminMenu name="历史报告" url="/DKLManager/ProjectDocHistory/Index" info="查询历史报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        </AdminMenuArray>
+           <AdminMenuArray name="设备管理" icon="icon-tasks">
+       <AdminMenus>
+          <AdminMenu name="预约成功" url="/DKLManager/DeviceOrderSuccess/Index" info="查询成功预约列表"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+    <AdminMenuGroup id="4">
+      <AdminMenuArrays>
+        <AdminMenuArray name="首页" url="/DKLManager/ProjectQualityControl/Index" icon="icon-home" info="欢迎登录系统！">
+        </AdminMenuArray>
+        <AdminMenuArray name="项目管理" icon="icon-th-large">
+          <AdminMenus>
+            <AdminMenu name="代办项目" url="/DKLManager/ProjectConsultPerson/Index" info="处理代办项目"  />
+            <AdminMenu name="检测评价三审" url="/DKLManager/ThreeAssessor/Index" info="审核"  />
+            <AdminMenu name="待接收报告" url="/DKLManager/ReportReceiveList/Index" info="接收完成的报告"  />
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+          </AdminMenus>         
+        </AdminMenuArray>
+        <AdminMenuArray name="历史记录" icon="icon-tasks">
+          <AdminMenus>
+            <AdminMenu name="历史项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="历史报告" url="/DKLManager/ProjectDocHistory/Index" info="查询历史报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        </AdminMenuArray>
+        <AdminMenuArray name="设备管理" icon="icon-tasks">
+          <AdminMenus>
+            <AdminMenu name="预约成功" url="/DKLManager/DeviceOrderSuccess/Index" info="查询成功预约列表"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup id="5">
+      <AdminMenuArrays>
+        <AdminMenuArray name="首页" url="/DKLManager/ProjectCharge/Index" icon="icon-home" info="欢迎登录系统！">
+        </AdminMenuArray>
+        <AdminMenuArray name="项目管理" icon="icon-th-large">
+          <AdminMenus>
+            <AdminMenu name="代办项目" url="/DKLManager/ProjectCharge/Index" info="处理代办项目"  />
+            <AdminMenu name="组长审核" url="/DKLManager/ProjectChargeAssessor/Index" info="处理代办项目"  />
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+          </AdminMenus>
+        </AdminMenuArray>
+        <AdminMenuArray name="历史记录" icon="icon-tasks">
+          <AdminMenus>
+            <AdminMenu name="历史项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="历史报告" url="/DKLManager/ProjectDocHistory/Index" info="查询历史报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        </AdminMenuArray>
+        <AdminMenuArray name="设备管理" icon="icon-tasks">
+          <AdminMenus>
+            <AdminMenu name="预约成功" url="/DKLManager/DeviceOrderSuccess/Index" info="查询成功预约列表"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup id="6">
+      <AdminMenuArrays>
+        <AdminMenuArray name="首页" url="/DKLManager/ProjectLeader/Index" icon="icon-home" info="欢迎登录系统！">
+        </AdminMenuArray>
+        <AdminMenuArray name="项目管理" icon="icon-th-large">
+          <AdminMenus>
+            <AdminMenu name="代办项目" url="/DKLManager/ProjectLeader/Index" info="代办项目"  />
+            <AdminMenu name="组长审核" url="/DKLManager/ProjectLeaderAssessor/Index" info="审核"  />
+            <AdminMenu name="报告列表" url="/DKLManager/ReportList/Index" info="列表"  />
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+          </AdminMenus>
+        </AdminMenuArray>
+        <AdminMenuArray name="历史记录" icon="icon-tasks">
+          <AdminMenus>
+            <AdminMenu name="历史项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="历史报告" url="/DKLManager/ProjectDocHistory/Index" info="查询历史报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        </AdminMenuArray>
+        <AdminMenuArray name="设备管理" icon="icon-tasks">
+          <AdminMenus>
+            <AdminMenu name="预约成功" url="/DKLManager/DeviceOrderSuccess/Index" info="查询成功预约列表"  />
+            <AdminMenu name="预约失败" url="/DKLManager/DeviceOrderFailed/Index" info="查询失败预约列表"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup id="7">
+      <AdminMenuArrays>
+        <AdminMenuArray name="首页" url="/DKLManager/ProjectGeneral/Index" icon="icon-home" info="欢迎登录系统！">
+        </AdminMenuArray>
+        <AdminMenuArray name="项目管理" icon="icon-th-large">
+          <AdminMenus>
+            <AdminMenu name="代办项目" url="/DKLManager/ProjectGeneral/Index" info="处理代办项目"  />
+            <AdminMenu name="退回审核列表" url="/DKLManager/AssessmentGoBack/Index" info="列表"  />
+            <AdminMenu name="正在进行项目" url="/DKLManager/ProjectDoing/Index" info="查看正在进行项目"  />
+          </AdminMenus>
+        </AdminMenuArray>
+        <AdminMenuArray name="历史记录" icon="icon-tasks">
+          <AdminMenus>
+            <AdminMenu name="历史项目" url="/DKLManager/ProjectHistory/Index" info="查看项目历史记录"  />
+            <AdminMenu name="历史报告" url="/DKLManager/ProjectDocHistory/Index" info="查询历史报告"  />
+            <AdminMenu name="历史附件" url="/DKLManager/ProjectImgFileHistory/Index" info="查询历史附件"  />
+          </AdminMenus>
+        </AdminMenuArray>
+        <AdminMenuArray name="设备管理" icon="icon-tasks">
+          <AdminMenus>
+            <AdminMenu name="预约成功" url="/DKLManager/DeviceOrderSuccess/Index" info="查询成功预约列表"  />
+            <AdminMenu name="预约失败" url="/DKLManager/DeviceOrderFailed/Index" info="查询失败预约列表"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+    
+    <AdminMenuGroup id="8">
+      <AdminMenuArrays>
+        <AdminMenuArray name="首页" url="/DKLManager/DeviceOrdering/Index"  icon="icon-home" info="欢迎登录系统！">
+        </AdminMenuArray>
+        <AdminMenuArray name="设备管理" icon="icon-th-list">
+          <AdminMenus>
+            <AdminMenu name="设备预约管理" url="/DKLManager/DeviceOrdering/Index" info="设备预约管理"  />
+            <AdminMenu name="设备表记录管理" url="/DKLManager/Devise/Index" info="设备表记录管理"  />
+            <AdminMenu name="设备的使用记录管理" url="/DKLManager/DeviceUse/Index" info="设备的使用记录管理"  />
+            <AdminMenu name="设备的维修记录管理" url="/DKLManager/DeviceService/Index" info="设备的维修记录管理"  />
+            <AdminMenu name="设备的校准记理管理" url="/DKLManager/DeviceCalibrationRemark/Index" info="设备的校准记录管理"  />
+            <AdminMenu name="设备的状态记录管理" url="/DKLManager/DeviceState/Index" info="设备的状态记录管理"  />
+            <AdminMenu name="设备鉴定表" url="/DKLManager/DeviceIdentity/Index" info="设备鉴定表"  />
+          </AdminMenus>
+          </AdminMenuArray>
+          </AdminMenuArrays>
+          </AdminMenuGroup>
+      <AdminMenuGroup id="9">
+        <AdminMenuArrays>
+          <AdminMenuArray name="首页" url="/DKLManager/SampleRegisterTable/Index" icon="icon-home" info="欢迎登录系统！">
+          </AdminMenuArray>
+          <AdminMenuArray name="实验室管理" icon="icon-th-list">
+            <AdminMenus>
+              <AdminMenu name="样品登记表" url="/DKLManager/SampleRegisterTable/Index" info="样品登记"  />
+               <AdminMenu name="参数" url="/DKLManager/Parameter/Index" info="参数"  />
+              <AdminMenu name="职业病危害" url="/DKLManager/OccupationaldiseaseHarm/Index" info="职业病危害及描述"  />
+              <AdminMenu name="采样项目依据" url="/DKLManager/SampleProjectGist/Index" info="设备表记录管理"  />
+              <AdminMenu name="样品历史界面" url="/DKLManager/SampleHistory/Index" info="样品历史界面"  />
+            </AdminMenus>
+          </AdminMenuArray>
+        </AdminMenuArrays> 
+    </AdminMenuGroup>
+
+
+    <AdminMenuGroup id="10">
+      <AdminMenuArrays>
+        <AdminMenuArray name="首页" url="/DKLManager/AnalyzePerson/Index" icon="icon-home" info="欢迎登录系统！">
+        </AdminMenuArray>
+        <AdminMenuArray name="分析人员" icon="icon-th-list">
+          <AdminMenus>
+            <AdminMenu name="分析人员" url="/DKLManager/AnalyzePerson/Index" info="分析"  />
+            <AdminMenu name="参数值历史列表" url="/DKLManager/ArgumentValueHistory/Index" info="参数值"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+    
+        <AdminMenuGroup id="11">
+      <AdminMenuArrays>
+        <AdminMenuArray name="首页" url="/DKLManager/TestReport/Index" icon="icon-home" info="欢迎登录系统！">
+        </AdminMenuArray>
+        <AdminMenuArray name="检测报告管理" icon="icon-th-list">
+          <AdminMenus>
+            <AdminMenu name="物理检测报告" url="/DKLManager/TestReport/Index" info="物理检测报告"  />
+            <AdminMenu name="化学检测报告" url="/DKLManager/TestChemicalReport/Index" info="化学检测报告"  />
+            <AdminMenu name="检测结果" url="/DKLManager/DetectionResult/Index" info="检测结果"  />
+          </AdminMenus>
+        </AdminMenuArray>
+      </AdminMenuArrays>
+    </AdminMenuGroup>
+
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!--<AdminMenuGroup name="CMS管理" icon="icon-leaf">
+      <AdminMenuArray>
+        <AdminMenu name="文章管理" url="/" info="添加修改删除文章" permission="CmsManage_Article" />
+        <AdminMenu name="文章频道管理" url="/" info="添加修改删除文章频道" permission="CmsManage_Channel" />
+      </AdminMenuArray>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup name="OA管理" icon="icon-sitemap">
+      <AdminMenuArray>
+        <AdminMenu name="员工管理" url="/" info="添加修改删除员工信息" permission="OAManage_Staff" />
+        <AdminMenu name="部门管理" url="/" info="添加修改删除部门信息" permission="OAManage_Branch" />
+        <AdminMenu name="组织结构管理" url="/" info="管理部门从属关系及员工所属部门" permission="OAManage_Org" />
+      </AdminMenuArray>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup name="CRM管理" icon="icon-phone-sign">
+      <AdminMenuArray>
+        <AdminMenu name="来访来电" url="/" info="添加修改删除来访来电" permission="CrmManage_VisitRecord" />
+        <AdminMenu name="客户管理" url="/" info="添加修改删除客户" permission="CrmManage_Customer" />
+        <AdminMenu name="项目管理" url="/" info="添加修改删除项目" permission="CrmManage_Project" />
+        <AdminMenu name="业绩统计" url="/" info="查看业绩统计" permission="CrmManage_Analysis" />
+        <AdminMenu name="来电统计" url="/" info="查看来电统计" permission="CrmManage_Analysis" />
+      </AdminMenuArray>
+    </AdminMenuGroup>-->
+      </AdminMenuGroups>
+</AdminMenuConfig>

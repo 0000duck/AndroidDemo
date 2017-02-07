@@ -1,0 +1,12 @@
+D:\DKLPlatformBeta1.0\bin\DKLManager.Contract.dll.config
+D:\DKLPlatformBeta1.0\bin\DKLManager.Contract.dll
+D:\DKLPlatformBeta1.0\bin\DKLManager.Contract.pdb
+D:\DKLPlatformBeta1.0\DKLManager\DKLManager.Contract\obj\Release\DKLManager.Contract.csprojResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\DKLManager\DKLManager.Contract\obj\Release\DKLManager.Contract.dll
+D:\DKLPlatformBeta1.0\DKLManager\DKLManager.Contract\obj\Release\DKLManager.Contract.pdb
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\DKLManager.Contract.dll.config
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\DKLManager.Contract.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\DKLManager.Contract.pdb
+E:\git\AndroidDemo\DKLPlatformBeta1.0\DKLManager\DKLManager.Contract\obj\Release\DKLManager.Contract.csprojResolveAssemblyReference.cache
+E:\git\AndroidDemo\DKLPlatformBeta1.0\DKLManager\DKLManager.Contract\obj\Release\DKLManager.Contract.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\DKLManager\DKLManager.Contract\obj\Release\DKLManager.Contract.pdb

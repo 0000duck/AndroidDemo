@@ -1,0 +1,6 @@
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Core.Log.dll.config
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Core.Log.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Core.Log.pdb
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Core\HYZK.Core.Log\obj\Debug\HYZK.Core.Log.csprojResolveAssemblyReference.cache
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Core\HYZK.Core.Log\obj\Debug\HYZK.Core.Log.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Core\HYZK.Core.Log\obj\Debug\HYZK.Core.Log.pdb

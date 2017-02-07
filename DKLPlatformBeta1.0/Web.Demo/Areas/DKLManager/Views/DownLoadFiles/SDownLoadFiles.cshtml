@@ -1,0 +1,31 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+
+@section BeforeContent{
+    @using (Html.BeginForm("DownLoadDoc", "DownLoadFiles", new { id = "mainForm" }))
+    {
+        <div class="portlet box red m10">
+            <div class="control-group">
+                @Html.DropDownList("FilesName")
+            </div>
+        </div>
+        <td>
+            <input type="submit" value="下载报告" />
+        </td>
+    }
+
+}
+@section MainContent{
+
+
+}

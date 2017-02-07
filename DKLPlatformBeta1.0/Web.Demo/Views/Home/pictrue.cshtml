@@ -1,0 +1,109 @@
+﻿@using Web.Common;
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<link href="@Url.StaticFile("/content/uploadify/uploadify.css")" rel="stylesheet" />
+<link href="@Url.StaticFile("/assets/css/metro.css")" rel="stylesheet" />
+<link rel="stylesheet" href="@Url.StaticFile("/content/bootstrap.min.css")" />
+<link rel="stylesheet" href="@Url.StaticFile("/content/bootstrap-responsive.min.css")" />
+<link rel="stylesheet" href="@Url.StaticFile("/content/matrix-style.css")" />
+<link rel="stylesheet" href="@Url.StaticFile("/content/matrix-media.css")" />
+<link rel="stylesheet" href="@Url.StaticFile("/content/font-awesome.css")" />
+
+@section MainContent{
+<div class="portlet-body form-horizontal form-bordered form-row-stripped">
+    <div class="row-fluid">
+
+        <label class="control-label" id="preview">封面图片：</label>
+
+        <div id="uploader"></div>
+        @*<div id="fileQueue"></div>*@
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="widget-box">
+                    <div class="widget-content">
+                        <ul class="thumbnails" id="pictrueContainer"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+}
+<script src="@Url.StaticFile("/scripts/jquery.min.js")"></script>
+<script src="@Url.StaticFile("/scripts/jquery.ui.custom.js")"></script>
+<script src="@Url.StaticFile("/scripts/bootstrap.min.js")"></script>
+<script src="@Url.StaticFile("/scripts/matrix.js")"></script>
+<script src="@Url.StaticFile("/Content/Uploadify/jquery.uploadify.v3.2.min.js")"></script>
+<script src="@Url.StaticFile("/Content/Uploadify/swfobject.js")"></script>
+<script type="text/javascript" src="@Url.StaticFile("/scripts/flashupload.js")"></script>
+<script type="text/javascript">
+
+    $('#uploader').FileUpload({
+        'subfolder': 'dkl',
+        'callback': function (msg) {
+            //msg.url为图片地址
+            var picHtml = '<li class="span2"><a> <img src="' + msg.url + '" alt=""> </a>';
+            picHtml += '<div class="actions"> <a title="" class="" href="#"><i class="icon-pencil"></i></a>';
+            picHtml += ' </div></li>';
+
+            var picText = "<img src='" + getThumbAbsoluteUrl(msg.url) + "'/>";
+            $("#pictrueContainer").html($("#pictrueContainer").html() + picHtml);
+
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="box">
+        <h2 style="padding-bottom:20px;">layer1.8相册模块，点击下述图片试试</h2>
+        <div id="imgs" class="imgs">
+            <img src="images/1.jpg" layer-pname="HTML5资源教程 - 1">
+            <img src="images/2.jpg" layer-pname="HTML5资源教程 - 2">
+            <img src="images/3.jpg" layer-pname="HTML5资源教程 - 3">
+            <img src="images/4.jpg" layer-pname="HTML5资源教程 - 4">
+            <img src="images/1.jpg" layer-pname="HTML5资源教程 - 1">
+            <img src="images/2.jpg" layer-pname="HTML5资源教程 - 2">
+            <img src="images/3.jpg" layer-pname="HTML5资源教程 - 3">
+            <img src="images/4.jpg" layer-pname="HTML5资源教程 - 4">
+        </div>
+        <div style="text-align:center;clear:both;">
+            <script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+            <script src="/follow.js" type="text/javascript"></script>
+        </div>
+    </div>
+    <script>
+        ; !function () {
+            layer.use('extend/layer.ext.js', function () {
+                //初始加载即调用，所以需放在ext回调里
+                layer.ext = function () {
+                    layer.photosPage({
+                        html: '<div style="padding:20px;">这里传入自定义的html<p>相册支持左右方向键，支持Esc关闭</p><p>另外还可以通过异步返回json实现相册。更多用法详见官网。</p><p>' + unescape("%u7D20%u6750%u5BB6%u56ED%20-%20sc.chinaz.com") + '</p><p id="change"></p></div>',
+                        title: '快捷模式-获取页面元素包含的所有图片',
+                        id: 100, //相册id，可选
+                        parent: '#imgs'
+                    });
+                };
+            });
+        }();
+    </script>*@
+            >

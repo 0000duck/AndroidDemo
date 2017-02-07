@@ -1,0 +1,10 @@
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Account.Contract.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Account.Contract.pdb
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Account\HYZK.Account.Contract\obj\Debug\HYZK.Account.Contract.csprojResolveAssemblyReference.cache
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Account\HYZK.Account.Contract\obj\Debug\HYZK.Account.Contract.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Account\HYZK.Account.Contract\obj\Debug\HYZK.Account.Contract.pdb
+D:\DKLPlatformBeta1.0\bin\HYZK.Account.Contract.dll
+D:\DKLPlatformBeta1.0\bin\HYZK.Account.Contract.pdb
+D:\DKLPlatformBeta1.0\_Account\HYZK.Account.Contract\obj\Debug\HYZK.Account.Contract.csprojResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\_Account\HYZK.Account.Contract\obj\Debug\HYZK.Account.Contract.dll
+D:\DKLPlatformBeta1.0\_Account\HYZK.Account.Contract\obj\Debug\HYZK.Account.Contract.pdb

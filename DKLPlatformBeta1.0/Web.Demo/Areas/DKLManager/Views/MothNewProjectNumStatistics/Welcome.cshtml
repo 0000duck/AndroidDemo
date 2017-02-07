@@ -1,0 +1,43 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+
+
+
+
+@{
+    ViewBag.Title = "MarketIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<style>
+   
+</style>
+<script src="@Url.StaticFile("~/assets/js/jquery-1.8.3.min.js")"></script>
+<script>
+  
+</script>
+<!--BLOCK SECTION -->
+<hr />
+<div class="row">
+    <div style=" margin-right: -15px; margin-left: -15px;text-align: center;position: relative;min-height:1px; padding-right:15px; padding-left:15px;">
+
+        <a style="position:relative; display: inline-block; width: 90px; height: 70px; padding-top: 16px; margin: 10px; color: #444444; text-align:center; text-decoration: none; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6); -webkit-box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC; box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC;" href="@Url.Action("Index", "MothNewProjectNumStatistics")">
+            <i class="icon-signal " style="font-size: 2em;border-width: 2px;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;"></i>
+            <br /><span>按负责人统计</span>
+            @*<span class="label label-warning">+25</span>*@
+        </a>
+        <a style="position:relative; display: inline-block; width: 90px; height: 70px; padding-top: 16px; margin: 10px; color: #444444; text-align:center; text-decoration: none; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6); -webkit-box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC; box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC;" href="@Url.Action("AreaSearch", "MothNewProjectNumStatistics")">
+            <i class="icon-external-link" style="font-size: 2em;border-width: 2px;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;"></i>
+            <br /><span>按行政区域查询</span>
+            @*<span class="label btn-metis-2">3.14159265</span>*@
+        </a>
+        <a style="position:relative; display: inline-block; width: 90px; height: 70px; padding-top: 16px; margin: 10px; color: #444444; text-align:center; text-decoration: none; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6); -webkit-box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC; box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC;" href="@Url.Action("MarketSearch", "MothNewProjectNumStatistics")">
+            <i class="icon-signal " style="font-size: 2em;border-width: 2px;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;"></i>
+            <br /><span>按市场人员统计</span>
+            @*<span class="label label-warning">+25</span>*@
+        </a>
+    </div>
+</div>

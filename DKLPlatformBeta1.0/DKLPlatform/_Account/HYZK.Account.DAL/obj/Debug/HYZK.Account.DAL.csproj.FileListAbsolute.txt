@@ -1,0 +1,6 @@
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Account.DAL.dll.config
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Account.DAL.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Account.DAL.pdb
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Account\HYZK.Account.DAL\obj\Debug\HYZK.Account.DAL.csprojResolveAssemblyReference.cache
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Account\HYZK.Account.DAL\obj\Debug\HYZK.Account.DAL.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Account\HYZK.Account.DAL\obj\Debug\HYZK.Account.DAL.pdb

@@ -1,0 +1,78 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model;
+@using Web.Common;
+@using Web.Demo.Areas.DKLManager.Models;
+
+@model PagedList<ArgumentValue>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="span8 offset4">
+    @using (Html.BeginForm("Index", "ArgumentValueHistory", null, FormMethod.Get, new { id = "search" }))
+    {
+        <div class="dataTables_filter">
+            <div>
+                <label>
+                    <button type="submit" class="btn">搜索 <i class="icon-search"></i></button>
+                </label>
+            </div>
+            <div>
+                <div>
+                    <label>
+                        <label>
+                          <span>样品号：</span>
+                           @Html.TextBox("SampleRegisterNumber", null, new { @class = "m-wrap small" })
+                        </label>
+                        <span>参数：</span>
+                        @Html.TextBox("Argument", null, new { @class = "m-wrap small" })
+                    </label>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<hr />
+
+<table class="table table-striped table-hover ">
+    <thead>
+        <tr>
+            <th>
+                样品号
+            </th>
+            <th>
+                参数名
+            </th>
+            <th>
+                参数值
+            </th>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            if (m != null)
+            {
+                <tr>
+                    <td>
+                        @m.SampleRegisterNumber
+                    </td>
+                    <td>
+                        @m.Argument
+                    </td>
+                    <td>
+                        @m.ArgumentPrice
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<div class="dataTables_paginate paging_bootstrap pagination">
+    @Html.Pager(Model, new PagerOptions() { ShowTotalItemCount = true })
+</div>
+
+
+
+

@@ -1,0 +1,10 @@
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Core.Module.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Core.Module.pdb
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Core\HYZK.Core.Module\obj\Debug\HYZK.Core.Module.csprojResolveAssemblyReference.cache
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Core\HYZK.Core.Module\obj\Debug\HYZK.Core.Module.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Core\HYZK.Core.Module\obj\Debug\HYZK.Core.Module.pdb
+D:\DKLPlatformBeta1.0\bin\HYZK.Core.Module.dll
+D:\DKLPlatformBeta1.0\bin\HYZK.Core.Module.pdb
+D:\DKLPlatformBeta1.0\_Core\HYZK.Core.Module\obj\Debug\HYZK.Core.Module.csprojResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\_Core\HYZK.Core.Module\obj\Debug\HYZK.Core.Module.dll
+D:\DKLPlatformBeta1.0\_Core\HYZK.Core.Module\obj\Debug\HYZK.Core.Module.pdb

@@ -1,0 +1,10 @@
+D:\DKLPlatformBeta1.0\bin\HYZK.FrameWork.Common.dll
+D:\DKLPlatformBeta1.0\bin\HYZK.FrameWork.Common.pdb
+D:\DKLPlatformBeta1.0\_FrameWork\HYZK.FrameWork.Common\obj\Release\HYZK.FrameWork.Common.csprojResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\_FrameWork\HYZK.FrameWork.Common\obj\Release\HYZK.FrameWork.Common.dll
+D:\DKLPlatformBeta1.0\_FrameWork\HYZK.FrameWork.Common\obj\Release\HYZK.FrameWork.Common.pdb
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\HYZK.FrameWork.Common.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\HYZK.FrameWork.Common.pdb
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_FrameWork\HYZK.FrameWork.Common\obj\Release\HYZK.FrameWork.Common.csprojResolveAssemblyReference.cache
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_FrameWork\HYZK.FrameWork.Common\obj\Release\HYZK.FrameWork.Common.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_FrameWork\HYZK.FrameWork.Common\obj\Release\HYZK.FrameWork.Common.pdb

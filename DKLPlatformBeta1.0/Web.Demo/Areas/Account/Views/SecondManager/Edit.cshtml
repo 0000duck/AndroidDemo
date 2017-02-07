@@ -1,0 +1,148 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Web.Controls
+@using HYZK.Account.Contract
+@using HYZK.FrameWork.Utility
+@model User
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+        .new1 {
+            width: 15%;
+        }
+    </style>
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#BirthDate").datepicker(
+                {
+                    changeYear: true,
+                    changeMonth: true,
+                });
+        });
+    </script>
+}
+@section MainContent{
+    <div>
+        <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+            <div class="row-fluid">
+
+                <div class="control-group">
+                    <label class="control-label"><span class="required">*</span>登录名：</label>
+                    <div class="controls">
+                        @if (Model.ID == 0)
+                        {
+                            @Html.TextBoxFor(m => m.LoginName, new { @class = "m-wrap small" })
+                            <span class="help-inline">@Html.ValidationMessageFor(m => m.LoginName)</span>
+                        }
+                        else
+                        {
+                            @Model.LoginName
+                        }
+
+
+                    </div>
+                </div>
+
+                @*@if (Model.ID == 0)
+                {
+                    <div class="control-group">
+                        <label class="control-label"><span class="required">*</span>密码：</label>
+                        <div class="controls">
+                            @Html.TextBoxFor(m => m.Password, new { @class = "m-wrap small", @readonly = "" })
+                            <span class="help-inline">默认密码6个1</span>
+                        </div>
+                    </div>
+                }*@
+                <div class="control-group">
+                    <label class="control-label">第二职务总计：</label>
+                    <div class="controls">
+                       @Html.TextBox("AnotherAccountTotally")
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">第二职务：</label>
+                    <div class="controls">
+                        @Html.DropDownList("AnotherAccountType")
+                       
+                    </div>
+                </div>
+
+                @*<div class="control-group" style="float:left;">
+                    <label class="control-label">姓名：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Name, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Name)</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" style="margin-left:10%;">性别：</label>
+                    <div class="controls">
+                        @Html.DropDownList("Gender", null, new { @class = "new1" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Gender)</span>
+                    </div>
+                </div>
+
+                <div class="control-group" style="float:left;">
+                    <label class="control-label">生日：</label>
+                    <div class="controls">
+                        @Html.TextBox("BirthDate", Model.BirthDate.ToCnDataString(), new { @class = "m-wrap" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.BirthDate)</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" style="margin-left:17%;">手机：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Mobile, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Mobile)</span>
+                    </div>
+                </div>
+
+                <div class="control-group" style="float:left;">
+                    <label class="control-label">电话：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Tel, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Tel)</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" style="margin-left:10%;">邮箱：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Email)</span>
+                    </div>
+                </div>
+
+                <div class="control-group" style="float:left;">
+                    <label class="control-label">地址：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Address, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Address)</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" style="margin-left:15%;">是否激活：</label>
+                    <div class="controls">
+                        @Html.CheckBoxFor(m => m.IsActive)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" style="margin-left:9%;float:left;width:150px;">是否拥有工程师证：</label>
+                    <div class="controls">
+                        @Html.CheckBoxFor(m => m.Have)
+                    </div>
+                </div>*@
+
+
+
+            </div>
+        </div>
+    </div>
+}
+

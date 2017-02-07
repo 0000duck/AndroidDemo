@@ -1,0 +1,79 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Web.Controls
+@using HYZK.Account.Contract
+@using HYZK.FrameWork.Utility
+
+@model DKLManager.Contract.Model.Parameter
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>检测参数：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ParameterName, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ParameterName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>仪器名称：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ApparatusName, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ApparatusName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>仪器编号：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ApparatusNumber, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ApparatusNumber)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>检测依据：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.DetectionPursuant, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.DetectionPursuant)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>短时间接触容许浓度：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ShorttimeTouchAllowConcentration, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ShorttimeTouchAllowConcentration)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>时间加权平均容许浓度：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.TimeWeightingAverageAllowConcentration, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.TimeWeightingAverageAllowConcentration)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>最高容许浓度：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.HighestAllowConcentration, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.HighestAllowConcentration)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>超限倍数：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.TransfiniteMultiple, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.TransfiniteMultiple)</span>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+}
+
+
+
+

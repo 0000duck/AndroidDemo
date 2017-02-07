@@ -1,0 +1,10 @@
+D:\DKLPlatformBeta1.0\bin\HYZK.Account.Contract.dll
+D:\DKLPlatformBeta1.0\bin\HYZK.Account.Contract.pdb
+D:\DKLPlatformBeta1.0\_Account\HYZK.Account.Contract\obj\Release\HYZK.Account.Contract.csprojResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\_Account\HYZK.Account.Contract\obj\Release\HYZK.Account.Contract.dll
+D:\DKLPlatformBeta1.0\_Account\HYZK.Account.Contract\obj\Release\HYZK.Account.Contract.pdb
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\HYZK.Account.Contract.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\bin\HYZK.Account.Contract.pdb
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_Account\HYZK.Account.Contract\obj\Release\HYZK.Account.Contract.csprojResolveAssemblyReference.cache
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_Account\HYZK.Account.Contract\obj\Release\HYZK.Account.Contract.dll
+E:\git\AndroidDemo\DKLPlatformBeta1.0\_Account\HYZK.Account.Contract\obj\Release\HYZK.Account.Contract.pdb

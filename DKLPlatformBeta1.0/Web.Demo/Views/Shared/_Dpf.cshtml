@@ -1,0 +1,76 @@
+﻿@using Web.Common;
+@using HYZK.Core.Config
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>@CachedConfigContext.Current.SettingConfig.WebSiteTitle</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link href="@Url.StaticFile("/assets/bootstrap/css/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.StaticFile("/assets/css/metro.css")" rel="stylesheet" />
+    <link href="@Url.StaticFile("/assets/font-awesome/css/font-awesome.css")" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/jquery-ui/jquery-ui-1.10.1.custom.min.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/content/styles/admin.main.css")" />
+    <script type="text/javascript">
+        var staticFileRoot = "@Url.StaticFile()";
+    </script>
+    <link href="@Url.StaticFile("/content/uploadify/uploadify.css")" rel="stylesheet" />
+    @RenderSection("PageSpecificStyleSheetIncludes", required: false)
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body style="background-color: #ffffff">
+
+    @RenderSection("BeforeContent", required: false)
+
+    @using (Html.BeginForm("Create", "BarCodeDevice", FormMethod.Post, new { id = "mainForm", enctype = "multipart/form-data" }))
+    {
+
+        @RenderSection("MainContent", required: false)
+        @RenderBody()
+        <div style="height:50px;"></div>
+
+        <div class="form-actions navbar-fixed-bottom">
+            
+            <button type="submit" id="submit" class=" btn blue"><i class="icon-ok"></i> 提交</button>
+            <span id="submitloading" style="display:none;"><img src='@Url.StaticFile("/content/images/loading.gif")' /></span>
+            <button type="button" class="btn" id="cancel">撤销</button>
+            @Html.ValidationSummary(true)
+        </div>
+    }
+    @RenderSection("OtherContent", required: false)
+
+    <!-- BEGIN JAVASCRIPTS -->
+    <script type="text/javascript">
+        @*var staticFileRoot = "@Url.StaticFile()";*@
+    </script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/js/jquery-1.8.2.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/js/jquery-1.8.2.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/content/scripts/jquery.validate.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/content/scripts/jquery.validate.unobtrusive.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/content/scripts/jquery.numeric.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/jquery-ui/jquery-ui-1.10.1.custom.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/content/scripts/jquery.ui.datapicker-zh-CN.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/content/scripts/admin.edit.js")"></script>
+    <script src="@Url.StaticFile("/scripts/bootstrap.min.js")"></script>
+    <script src="@Url.StaticFile("/Content/Uploadify/jquery.uploadify.v3.2.min.js")"></script>
+    <script src="@Url.StaticFile("/Content/Uploadify/swfobject.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/scripts/flashupload.js")"></script>
+
+    @RenderSection("PageSpecificJavascriptIncludes", required: false)
+    <!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

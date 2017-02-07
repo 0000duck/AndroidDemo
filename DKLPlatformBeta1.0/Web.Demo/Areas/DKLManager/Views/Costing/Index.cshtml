@@ -1,0 +1,201 @@
+﻿@using HYZK.FrameWork.Common
+@using HYZK.FrameWork.Utility
+@using HYZK.FrameWork.Web.Controls
+@using DKLManager.Contract.Model
+
+@model PagedList<Costing>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    function f1() {
+        var btn = $("#createReport");
+        var l1 = $("#1");
+        var btn2 = $("#2");
+        var btn3 = $("#3");
+        var f = $("#4");
+        var l2 = $("#5");
+        var a1 = $("#6");
+        var a2 = $("#7");
+        var container = $(".page-container");
+        container.fadeTo("slow", 0.7);
+        alert("正在生成报告，部分功能已锁定，请等待20秒");
+        btn.attr("hidden", true);
+        l1.hide();
+        btn2.attr("disabled", true);
+        btn3.attr("disabled", true);
+        f.attr("hidden", true);
+        l2.attr("hidden", false);
+        a1.hide();
+        a2.hide();
+        btn.submit();
+        var time = 20;
+        l2.val(time <= 0 ? "报告生成中，约" : ("" + (time) + "秒后可完成"));
+        var hander = setInterval(function () {
+            if (time <= 0) {
+                clearInterval(hander); //清除倒计时
+                l2.text("报告生成成功，请等待弹出下载窗口");
+
+                return false;
+            }
+            else {
+                l2.text("报告生成中，约" + (time--) + "秒后可完成");
+            }
+        }, 1000);
+        setTimeout("f2()", 22000);
+    }
+    function f2() {
+        var btn = $("#createReport");
+        var l1 = $("#1");
+        var btn2 = $("#2");
+        var btn3 = $("#3");
+        var f = $("#4");
+        var l2 = $("#5");
+        var a1 = $("#6");
+        var a2 = $("#7");
+        var container = $(".page-container");
+        container.fadeTo("slow", 1.0);
+        alert("锁定解除，若无弹出下载请耐心等待或重试");
+        btn.attr("hidden", false);
+        l1.show();
+        btn2.attr("disabled", false);
+        btn3.attr("disabled", false);
+        f.attr("hidden", false);
+        l2.attr("hidden", true);
+        a1.show();
+        a2.show();
+    }
+</script>
+<div>
+    <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i> 删除</a>
+   @* <a class="btn blue thickbox" title='添加成本分析表' href="@Url.Action("Create")?TB_iframe=true&height=550&width=600"><i class="icon-plus icon-white"></i> 新增</a>*@
+</div>
+
+                @using (Html.BeginForm("Delete", "Costing", FormMethod.Post, new { id = "mainForm" }))
+                {
+                    <table class="table table-striped table-hover ">
+                        <thead>
+                            <tr>
+                                <th style="width: 8px;">
+                                    <input type="checkbox" id="checkall" class="group-checkable" />
+                                </th>
+                                <th>
+                                    项目名称
+                                </th>
+                                <th>
+                                    项目简介
+                                </th>
+                                <th>
+                                   项目类型
+                                </th>
+                                <th>
+                                    客户区县
+                                </th>
+                                <th>
+                                    联系人
+                                </th>
+                                <th>
+                                    所属乡镇
+                                </th>
+                                <th>
+                                    联系方式
+                                </th>
+                                <th>
+                                    备注
+                                </th>
+                                <th>
+                                    签字
+                                </th>
+                                <th>
+                                    签字日期
+                                </th>
+                                <th>
+                                    操作
+                                </th>
+                                <th>
+                                    生成分析表
+                                </th>
+                                <th>
+                                    提交
+                                </th>
+                                <th>
+                                    详细进度
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var m in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
+                                    </td>
+                                    <td>
+                                        @m.ProjectName
+                                    </td>
+                                    <td>
+                                        @m.ProjectSynopsis
+                                    </td>
+                                    <td>
+                                        @HYZK.FrameWork.Utility.EnumHelper.GetEnumTitle((EnumType)@Convert.ToInt32(m.Type))
+                                    </td>
+                                    <td>
+                                        @m.CustomerCounty
+                                    </td>
+                                    <td>
+                                        @m.ContactsPserson
+                                    </td>
+                                    <td>
+                                        @m.Towns
+                                    </td>
+                                    <td>
+                                        @m.Relation
+                                    </td>
+                                    <td>
+                                        @m.Remark
+                                    </td>
+                                    <td>
+                                        @m.Sign
+                                    </td>
+                                    <td>
+                                        @m.SignTime.ToShortDateString()
+                                    </td>
+                                    <td>
+                                        <a class="btn mini purple thickbox" title='编辑角色资料' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=450&width=500">
+                                            <i class="icon-edit"></i>
+                                            编辑
+                                        </a>
+                                    </td>
+                                    <td>
+                                       
+                                        <a class="btn mini purple thickbox" title='编辑信息' href="@Url.Action("CreateWord", new { id = m.ID })?TB_iframe=true&height=450&width=600">
+                                            <i class="icon-edit"></i>
+                                            生成成本分析表
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a class="btn mini thickbox" href="@Url.Action("Submit", new { id = m.ID })?TB_iframe=true&height=650&width=600">
+                                            <i class="icon-edit"></i>
+                                            提交
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a class="btn mini thickbox" href="@Url.Action("Course", new { ProjectName = m.ProjectName, SignTime = m.SignTime.ToString() })?TB_iframe=true&height=550&width=900">
+                                            <i class="icon-edit"></i>
+                                            查看详细进度
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                <div class="dataTables_paginate paging_bootstrap pagination">
+                    @Html.Pager(Model, new PagerOptions() { ShowTotalItemCount = true })
+                </div>
+            
+
+
+
+

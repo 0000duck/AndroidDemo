@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8AFC0D41-912C-40ED-BA25-0E2336E707F5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DKLManager.Bll</RootNamespace>
+    <AssemblyName>DKLManager.Bll</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DeviseSevice.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\_Core\HYZK.Core.Cache\HYZK.Core.Cache.csproj">
+      <Project>{a155c5d8-fee0-415c-940a-26c94d61be9b}</Project>
+      <Name>HYZK.Core.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\_Core\HYZK.Core.Config\HYZK.Core.Config.csproj">
+      <Project>{3bf4147e-d01d-4fff-b8e7-fe24959b2d7e}</Project>
+      <Name>HYZK.Core.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\_FrameWork\HYZK.FrameWork.Common\HYZK.FrameWork.Common.csproj">
+      <Project>{ce8c6d5c-05d3-4428-8c4d-718445abfcab}</Project>
+      <Name>HYZK.FrameWork.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\_FrameWork\HYZK.FrameWork.DAL\HYZK.FrameWork.DAL.csproj">
+      <Project>{7404a0ce-ab35-499e-a336-7c784872e24a}</Project>
+      <Name>HYZK.FrameWork.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\_FrameWork\HYZK.FrameWork.Utility\HYZK.FrameWork.Utility.csproj">
+      <Project>{e7622209-9cb2-48bf-aaa7-86d8bcae07ac}</Project>
+      <Name>HYZK.FrameWork.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DKLManager.Contract\DKLManager.Contract.csproj">
+      <Project>{149d5832-3934-4936-9230-528b235d49ba}</Project>
+      <Name>DKLManager.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DKLManager.Dal\DKLManager.Dal.csproj">
+      <Project>{cee4e2f6-1025-4554-a030-f1f58765f400}</Project>
+      <Name>DKLManager.Dal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

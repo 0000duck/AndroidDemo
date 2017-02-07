@@ -1,0 +1,12 @@
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Account.BLL.dll.config
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Account.BLL.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\bin\HYZK.Account.BLL.pdb
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Account\HYZK.Account.AccountService\obj\Debug\HYZK.Account.BLL.csprojResolveAssemblyReference.cache
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Account\HYZK.Account.AccountService\obj\Debug\HYZK.Account.BLL.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_Account\HYZK.Account.AccountService\obj\Debug\HYZK.Account.BLL.pdb
+D:\DKLPlatformBeta1.0\bin\HYZK.Account.BLL.dll.config
+D:\DKLPlatformBeta1.0\bin\HYZK.Account.BLL.dll
+D:\DKLPlatformBeta1.0\bin\HYZK.Account.BLL.pdb
+D:\DKLPlatformBeta1.0\_Account\HYZK.Account.AccountService\obj\Debug\HYZK.Account.BLL.csprojResolveAssemblyReference.cache
+D:\DKLPlatformBeta1.0\_Account\HYZK.Account.AccountService\obj\Debug\HYZK.Account.BLL.dll
+D:\DKLPlatformBeta1.0\_Account\HYZK.Account.AccountService\obj\Debug\HYZK.Account.BLL.pdb

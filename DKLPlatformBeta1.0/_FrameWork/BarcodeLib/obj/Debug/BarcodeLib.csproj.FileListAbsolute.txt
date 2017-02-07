@@ -1,0 +1,10 @@
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_FrameWork\BarcodeLib\bin\Debug\BarcodeLib.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_FrameWork\BarcodeLib\bin\Debug\BarcodeLib.pdb
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_FrameWork\BarcodeLib\obj\Debug\BarcodeLib.csprojResolveAssemblyReference.cache
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_FrameWork\BarcodeLib\obj\Debug\BarcodeLib.dll
+D:\代码\branches\新建文件夹\dupengfei\DKLPlatform\_FrameWork\BarcodeLib\obj\Debug\BarcodeLib.pdb
+D:\DKLPlatformBeta1.0\_FrameWork\BarcodeLib\bin\Debug\BarcodeLib.dll
+D:\DKLPlatformBeta1.0\_FrameWork\BarcodeLib\bin\Debug\BarcodeLib.pdb
+D:\DKLPlatformBeta1.0\_FrameWork\BarcodeLib\obj\Debug\BarcodeLib.dll
+D:\DKLPlatformBeta1.0\_FrameWork\BarcodeLib\obj\Debug\BarcodeLib.pdb
+D:\DKLPlatformBeta1.0\_FrameWork\BarcodeLib\obj\Debug\BarcodeLib.csprojResolveAssemblyReference.cache

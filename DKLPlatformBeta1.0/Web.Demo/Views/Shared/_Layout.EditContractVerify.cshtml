@@ -1,0 +1,81 @@
+﻿@using Web.Common;
+@using HYZK.Core.Config
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+ <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>@CachedConfigContext.Current.SettingConfig.WebSiteTitle</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+  
+   
+     <link href="@Url.StaticFile("~/assets/bootstrap/css/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.StaticFile("~/assets/css/metro.css")" rel="stylesheet" />
+    
+    <link href="@Url.StaticFile("~/assets/font-awesome/css/font-awesome.css")" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("~/assets/jquery-ui/jquery-ui-1.10.1.custom.min.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("~/content/styles/admin.main.css")" />
+    @*<link type="text/css" href="~/assets/js/js/jquery-ui.css" rel="stylesheet" />*@
+    <link type="text/css" href="~/assets/js/jQuery-Timepicker-Addon/jquery-ui-timepicker-addon.css" rel="stylesheet" />
+    <link  href="~/assets/js/jQuery-Timepicker-Addon/demos.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        var staticFileRoot = "@Url.StaticFile()";
+    </script>
+    <link href="@Url.StaticFile("~/content/uploadify/uploadify.css")" rel="stylesheet" />
+    @RenderSection("PageSpecificStyleSheetIncludes", required: false)
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body style="background-color: #ffffff">
+    @RenderSection("BeforeContent", required: false)
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "mainForm1", enctype = "multipart/form-data" }))
+        {
+            @RenderSection("MainContent", required: false)
+            @RenderBody()
+            <div style="height:50px;"></div>
+            <div class="form-actions navbar-fixed-bottom">
+                
+                @Html.ValidationSummary(true)
+            </div>
+        }
+        @RenderSection("MainContentRight", required: false)
+            @RenderSection("OtherContent", required: false)
+            <!-- BEGIN JAVASCRIPTS -->
+            <script type="text/javascript">
+                var staticFileRoot = "@Url.StaticFile()";
+            </script>
+            
+             <script type="text/javascript" src="@Url.StaticFile("~/assets/js/jquery-1.8.2.js")"></script>
+            <script type="text/javascript" src="@Url.StaticFile("~/assets/js/jquery-1.8.2.min.js")"></script>
+            <script type="text/javascript" src="@Url.StaticFile("~/content/scripts/jquery.validate.min.js")"></script>
+            <script type="text/javascript" src="@Url.StaticFile("~/content/scripts/jquery.validate.unobtrusive.min.js")"></script>
+            <script type="text/javascript" src="@Url.StaticFile("~/content/scripts/jquery.numeric.js")"></script>
+            <script type="text/javascript" src="@Url.StaticFile("~/assets/jquery-ui/jquery-ui-1.10.1.custom.min.js")"></script>            
+            <script type="text/javascript" src="@Url.StaticFile("~/content/scripts/admin.edit.js")"></script>
+            <script src="@Url.StaticFile("~/scripts/bootstrap.min.js")"></script>
+            <script src="@Url.StaticFile("~/Content/Uploadify/jquery.uploadify.v3.2.min.js")"></script>
+            <script src="@Url.StaticFile("~/Content/Uploadify/swfobject.js")"></script>
+            <script type="text/javascript" src="@Url.StaticFile("~/scripts/flashupload.js")"></script>           
+            @*以下五个用来弹出时间插件及汉化*@
+            <script type="text/javascript" src="@Url.StaticFile("~/assets/js/js/jquery-ui.min.js")"></script>
+            <script type="text/javascript" src="@Url.StaticFile("~/content/scripts/jquery.ui.datapicker-zh-CN.js")"></script>
+            <script type="text/javascript" src="@Url.StaticFile("~/assets/js/jQuery-Timepicker-Addon/jquery-ui-timepicker-addon.js")"></script>
+            <script type="text/javascript" src="@Url.StaticFile("~/assets/js/js/jquery.ui.datepicker-zh-CN.js.js")" charset="gb2312"></script>
+            <script type="text/javascript" src="@Url.StaticFile("~/assets/js/js/jquery-ui-timepicker-zh-CN.js")"></script>
+            @RenderSection("PageSpecificJavascriptIncludes", required: false)
+            <!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>
