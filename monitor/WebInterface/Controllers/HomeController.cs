@@ -10,7 +10,7 @@ namespace WebInterface.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "首页";
 
             return View();
         }

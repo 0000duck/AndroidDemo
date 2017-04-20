@@ -123,7 +123,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\monitor\Controllers\BaseInController.cs" />
+    <Compile Include="Areas\monitor\Controllers\CtController.cs" />
+    <Compile Include="Areas\monitor\Controllers\CtHistoryController.cs" />
     <Compile Include="Areas\monitor\Controllers\MonitorController.cs" />
+    <Compile Include="Areas\monitor\Controllers\MonitorHistoryController.cs" />
+    <Compile Include="Areas\monitor\Controllers\RepairController.cs" />
     <Compile Include="Areas\monitor\Controllers\UserController.cs" />
     <Compile Include="Areas\monitor\Controllers\UserLogController.cs" />
     <Compile Include="Areas\monitor\monitorAreaRegistration.cs" />
