@@ -16,8 +16,8 @@ namespace BJWater.DAL
         public BJContext()
             : base("name=Monitor")
         {  
-            //Database.SetInitializer<BJContext>(null);  //   不对数据库改动默认使用这个        
-            Database.SetInitializer<BJContext>(new DropCreateDatabaseAlways<BJContext>());   //生成新字段，新表用
+            Database.SetInitializer<BJContext>(null);  //   不对数据库改动默认使用这个        
+            //Database.SetInitializer<BJContext>(new DropCreateDatabaseAlways<BJContext>());   //生成新字段，新表用
 
             Configuration.AutoDetectChangesEnabled = true;
             Configuration.LazyLoadingEnabled = true;

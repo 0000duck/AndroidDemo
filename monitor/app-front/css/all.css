@@ -1,0 +1,24 @@
+h1,h2
+{
+    color: #3399CC;
+    font-family: 幼圆;
+}
+body
+{
+	background-color: #ebf6f5;
+}
+/*p
+{
+	color: #a4a4a4;
+}*/
+
+.nav li a{
+    text-decoration: none;
+    height: 50px;
+    color: #000;
+    display: block;
+    text-align: center;
+    
+    font-size: 18px;
+    font-family: 微软雅黑;
+}

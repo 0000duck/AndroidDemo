@@ -53,7 +53,7 @@ namespace MnonitorBack.Areas.EduInfo.Controllers
             {
                 return DELETE(model);
             }
-            return Request.CreateResponse(HttpStatusCode.MethodNotAllowed);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
         public HttpResponseMessage DELETE(User model)                                         //删除图片，并且删除历史操作中的上传记录
         {

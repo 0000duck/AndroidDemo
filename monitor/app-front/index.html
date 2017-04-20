@@ -1,0 +1,51 @@
+﻿<!doctype html>
+<html ng-app="hebei">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+        <meta http-equiv="Access-Control-Allow-Methods" content="POST, GET, OPTIONS, PUT, DELETE">
+		<title>光纤控制器在线监控平台 </title>
+    	<meta name="description" content="平台主要是实时在线显示设备状态，并提供统计分析，历史查询，辅助维修等服务."/>
+		<link rel="stylesheet" href="framework/bootstrap/bootstrap.css">
+		<link rel="stylesheet" href="css/all.css">
+		<link rel="stylesheet" href="framework/bootstrap/bootstrap.min.css">
+		<style>
+			.page-list .pagination {float:left;}
+			.page-list .pagination span {cursor: pointer;}
+			.page-list .pagination .separate span{cursor: default; border-top:none;border-bottom:none;}
+			.page-list .pagination .separate span:hover {background: none;}
+			.page-list .page-total {float:left; margin: 25px 20px;}
+			.page-list .page-total input, .page-list .page-total select{height: 26px; border: 1px solid #ddd;}
+			.page-list .page-total input {width: 40px; padding-left:3px;}
+			.page-list .page-total select {width: 50px;}
+		</style>
+		<!-- <link rel="stylesheet" href="css/index.css"> -->
+	</head>
+	<body ng-controller="Config">
+		<div ng-controller="head">
+			<div ng-include="'tpls/head.html'"></div>
+		</div>
+
+		<div ng-view>
+		</div>
+		<div ng-controller="foot">
+			<div ng-include="'tpls/foot.html'"></div>
+		</div>
+	</body>
+		<script src="framework/jquery/jquery.js"></script>
+		<script src="framework/angular/angular.js"></script>
+		<script src="js/app.js"></script>
+		<script src="framework/echarts/echarts.js"></script>
+		<script src="js/chart.js"></script>
+		<script src="framework/bootstrap/bootstrap.js"></script>
+		<script src="framework/angular/angular-animate.js"></script>
+		<script src="framework/angular/angular-route.js"></script>
+		<script src="framework/angular/angular-cookies.js"></script>
+		<script src="framework/pagination/tm.pagination.js"></script>
+		<script src="js/controller.js"></script>
+		<script src="js/directives.js"></script>
+		<script src="js/service.js"></script>
+		<script src="js/filter.js"></script>
+	    <script  src="js/earlywarning/RiskDecision.js"></script>
+	    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</html>

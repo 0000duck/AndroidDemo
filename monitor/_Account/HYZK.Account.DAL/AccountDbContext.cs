@@ -16,8 +16,8 @@ namespace HYZK.Account.DAL
         public AccountDbContext()
             : base("name=Account")
         {
-            // Database.SetInitializer<AccountDbContext>(null);
-             Database.SetInitializer<AccountDbContext>(new DropCreateDatabaseAlways<AccountDbContext>());
+             Database.SetInitializer<AccountDbContext>(null);
+            // Database.SetInitializer<AccountDbContext>(new DropCreateDatabaseAlways<AccountDbContext>());
 
             Configuration.AutoDetectChangesEnabled = true;
             Configuration.LazyLoadingEnabled = true;

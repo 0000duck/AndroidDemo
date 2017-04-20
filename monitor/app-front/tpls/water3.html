@@ -1,0 +1,122 @@
+
+<div class="container main">
+    <div class="row">
+        <div class="page-header col-md-4">
+            <h1>水污染超标管理</h1>
+            <p>&nbsp;&nbsp;污染管理<p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title"><h4>各个公司近一年污水超标次数</h4></div>
+            </div>
+            <div class="panel-body" style="height: 457px;">
+                <div id="one" style="border: 1px black solid;width: 100%;height: 100%;"></div>
+            </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <div class="panel-title"><h4>超标最多的企业</h4></div>
+                </div>
+            <div class="panel-body" style=" height: 457px;">
+                <div id="two"  style="border: 1px black solid;width: 100%;height: 100%;"></div>
+                <table class="table" style="height:400px;">
+                    <!--<thead><-->
+                    <!--<tr>-->
+                        <!--<th>公司名称</th>-->
+                        <!--<th>超标次数</th>-->
+                    <!--</tr>-->
+                    <!--</thead>-->
+                    <tbody ng-repeat="y in overproof">
+                    <tr>
+                        <td>{{y.company}}</td>
+                        <td>{{y.times}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h4>污染物排放情况</h4>
+                    </div>
+                </div>
+                <div class="panel-body" style="height: 275px;"">
+                <div id="three"  style="border: 1px black solid;width: 100%;height: 100%;"></div>
+                    <!--<table class="table table-bordered">-->
+                        <!--<thead>-->
+                            <!--<tr>-->
+                                <!--<th>污染物</th>-->
+                                <!--<th>A区</th>-->
+                                <!--<th>B区</th>-->
+                                <!--<th>C区</th>-->
+                                <!--<th>D区</th>-->
+                                <!--<th>E区</th>-->
+                            <!--</tr>-->
+                        <!--</thead>-->
+                        <tbody ng-repeat="z in pollutant">
+                            <tr>
+                                <td>z.Name</td>
+                                <td>{{z.A}}</td>
+                                <td>{{z.B}}</td>
+                                <td>{{z.C}}</td>
+                                <td>{{z.D}}</td>
+                                <td>{{z.E}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <div class="panel-title"><h4>悬浮物与病原体</h4></div>
+                </div>
+                <div class="panel-body">
+                    <div id="four" style="height: 243px;width: 450px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="page-header col-md-4">
+            <h1>无机污染分析</h1>
+            <p>&nbsp;&nbsp;污染物<p>
+        </div>
+    </div>
+    <div class="row" style="margin:10px 0px 35px 0px;">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title"><h4>超标无机污染物比例</h4></div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-10 col-md-push-2" style="height: 600px;width: 800px;" id="five"></div>
+                    <div id="five"  style="border: 1px black solid;width: 100%;height: 100%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="well">
+                <div class="alert alert-warning alert-dismissible"><p style="color: black">浑浊度:{{}}</p></div>
+                <div class="alert alert-info alert-dismissible"><p style="color: black">水温:{{}}</p></div>
+                <div class="alert alert-success alert-dismissible"><p style="color: black">ph值:{{}}</p></div>
+                <div class="alert alert-danger alert-dismissible"><p style="color: black">有机碳:{{}}</p></div>
+                <div class="alert alert-warning alert-dismissible"><p style="color: black">细菌总数:{{}}</p></div>
+            </div>
+        </div>
+    </div>
+</div>
