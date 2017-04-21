@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System;
 using System.Linq;
+using System.Configuration;
 
 
 
@@ -15,7 +16,7 @@ namespace BJWater.DAL
     {                                                                  
         public BJContext()
             : base("name=Monitor")
-        {  
+        {            
             Database.SetInitializer<BJContext>(null);  //   不对数据库改动默认使用这个        
             //Database.SetInitializer<BJContext>(new DropCreateDatabaseAlways<BJContext>());   //生成新字段，新表用
 

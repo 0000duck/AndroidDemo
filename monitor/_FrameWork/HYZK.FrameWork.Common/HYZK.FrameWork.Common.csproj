@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnumHelper.cs" />
+    <Compile Include="IConfigService.cs" />
     <Compile Include="ModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -6,6 +6,7 @@ using System.Linq;
 using Account.Contract;
 using HYZK.Account.Contract.Model;
 using HYZK.FrameWork.Common;
+using System.Configuration;
 
 
 
@@ -15,8 +16,8 @@ namespace HYZK.Account.DAL
     {
         public AccountDbContext()
             : base("name=Account")
-        {
-             Database.SetInitializer<AccountDbContext>(null);
+        {            
+            Database.SetInitializer<AccountDbContext>(null);
             // Database.SetInitializer<AccountDbContext>(new DropCreateDatabaseAlways<AccountDbContext>());
 
             Configuration.AutoDetectChangesEnabled = true;

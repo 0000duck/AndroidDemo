@@ -2,7 +2,7 @@
 
 
 app.controller("Config", function ($scope, $http, $cookies, $cookieStore, $rootScope) {
-    $scope.HttpUrl = "http://localhost:5687/api/";
+    $scope.HttpUrl = "http://101.200.210.193:55001//api/";
     $scope.loginame = $cookies.get("user");
     $scope.token = $cookies.get("LoginToken");
     $scope.type = $cookies.get("type");
@@ -1661,7 +1661,28 @@ app.controller('UserManagement', function ($scope, $http, $cookies, $cookieStore
             pagesLength: 15,
             perPageOptions: [10, 20, 30, 40, 50],
             onChange: function () {
-           
+                //$.ajax({
+                //    url: $scope.HttpUrl + 'User',
+                //    dataType: 'json',
+                //    processData: false,
+                //    type: 'get',
+                //    data: {
+                //        currentPage: $scope.paginationConf.currentPage,
+                //        itemsPerPage: $scope.paginationConf.itemsPerPage
+
+                //    },
+                //    success: function (data) {
+                //        alert(data.totalCount);
+                //    },
+                //    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                //        alert(XMLHttpRequest.status);
+                //        alert(XMLHttpRequest.readyState);
+                //        alert(textStatus);
+                //    }
+                //});
+
+
+
                 var Show1 = $.ajax({
                     type: 'GET',
                     url: $scope.HttpUrl + 'User',
@@ -1678,18 +1699,21 @@ app.controller('UserManagement', function ($scope, $http, $cookies, $cookieStore
                         $scope.paginationConf.totalItems = data.totalCount;
                     });
                     console.log(data);
+                    console.log(responese.responseJSON);
                 });
                 Show1.error(function (responese, status, headers, config) {
                     //alert(responese.responseJSON);
                     //location.href = "login.html";
+                    alert(responese.status);
+                    alert(responese.readyState);
                     console.log(responese.responseJSON);
                     if (responese.status == 401) {
                         alert: "用户验证已过期";
                         location.href = "login.html"
                     }
                     console.log(status);
-                    console.log(headers);
-                    console.log(config);
+                    //console.log(headers);
+                    //console.log(config);
                 });
             }
 
@@ -1826,7 +1850,7 @@ app.controller('UserManagement', function ($scope, $http, $cookies, $cookieStore
 			window.location.reload(true);
 		});
 		InsertUser1.error(function(response,status,headers,config){
-			console.log(response.responseJSON);
+			console.log("=============");
 			console.log(status);
 		});
 	};
