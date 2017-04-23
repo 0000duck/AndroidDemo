@@ -2,7 +2,7 @@
 
 
 app.controller("Config", function ($scope, $http, $cookies, $cookieStore, $rootScope) {
-    $scope.HttpUrl = "http://101.200.210.193:55001//api/";
+    $scope.HttpUrl = "http://101.200.210.193:55001/";
     $scope.loginame = $cookies.get("user");
     $scope.token = $cookies.get("LoginToken");
     $scope.type = $cookies.get("type");
@@ -1692,6 +1692,11 @@ app.controller('UserManagement', function ($scope, $http, $cookies, $cookieStore
 
                     },
                     dataType: 'json'
+                });
+                Show1.complete(function (XMLHttpRequest, textStatus) {
+                    console.log("com"+XMLHttpRequest.readyState);
+                    console.log("com" + XMLHttpRequest.Status);
+                    console.log("com" + XMLHttpRequest.responseText);
                 });
                 Show1.success(function (data, status, headers, config) {
                     $scope.$apply(function () {
