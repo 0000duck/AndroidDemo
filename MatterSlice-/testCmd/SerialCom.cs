@@ -1,4 +1,5 @@
-﻿using System.IO.Ports;
+﻿using System;
+using System.IO.Ports;
 using System.Linq;
 
 namespace myconn
@@ -35,9 +36,17 @@ namespace myconn
             return ret;
         }
 
-        public void SendFile(byte[] buffer)
+        public int SendFile(byte[] buffer)
         {
-            m_serialPort.Write(buffer, 0, buffer.Count());
+            try
+            {
+                m_serialPort.Write(buffer, 0, buffer.Count());
+            }
+            catch(Exception)
+            {
+                return -1;
+            }
+            return 0;
         }
 
         public void ReadFile()
