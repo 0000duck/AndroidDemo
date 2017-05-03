@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace myconn
+﻿namespace myconn
 {
     // xx xx xx,
     //页，

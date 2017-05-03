@@ -16,13 +16,71 @@ namespace myconn
         private void Form2_Load(object sender, EventArgs e)
         {
             this.listView1.View = View.Details;
-           
-            this.listView1.Columns.Add("ID", 60, HorizontalAlignment.Left); 
-            this.listView1.Columns.Add("名称", 120, HorizontalAlignment.Left); 
-            this.listView1.Columns.Add("文件地址", 120, HorizontalAlignment.Left); 
+
+            this.listView1.Columns.Add("ID", 60, HorizontalAlignment.Left);
+            this.listView1.Columns.Add("名称", 120, HorizontalAlignment.Left);
+            this.listView1.Columns.Add("文件地址", 120, HorizontalAlignment.Left);
             this.listView1.Columns.Add("文件大小", 120, HorizontalAlignment.Left);
 
-            InitGroupPanel();
+            InitDataGridView();
+        }
+
+        private List<DataGridViewColumn> GetColumn(string name,int width, int count)
+        {
+            List<DataGridViewColumn> cols = new List<DataGridViewColumn>();
+            for (int i = 0; i < count; i++)
+            {
+                DataGridViewColumn column = new DataGridViewTextBoxColumn();
+                column.Width = width;
+                
+                column.HeaderText = name + i.ToString();
+                cols.Add(column);
+            }
+            return cols;
+        }
+
+        private void InitPageColumn()
+        {
+            //页 16*16*16*2
+            var pagecols = GetColumn("page", this.dataGridView1.Width / 8192, 16);
+            foreach (var col in pagecols)
+            {
+                this.dataGridView1.Columns.Add(col);
+            }
+        }
+
+        private void InitSectorColumn()
+        {
+            //扇区 16*16*2
+            var sectorcols = GetColumn("sector", this.dataGridView1.Width / 512, 15);
+            foreach(var col in sectorcols)
+            {
+                this.dataGridView1.Columns.Add(col);
+            }
+        }
+
+        private void InitBolckColumn()
+        {
+            //块 16*16*2
+            var bolckcols = GetColumn("block", this.dataGridView1.Width / 32, 15);
+            foreach (var col in bolckcols)
+            {
+                this.dataGridView1.Columns.Add(col);
+            }
+        }
+
+        private void InitDataGridView()
+        {
+            InitPageColumn();
+            InitSectorColumn();
+            InitBolckColumn();
+
+            DataGridViewColumn column = new DataGridViewTextBoxColumn();
+            column.Width = this.dataGridView1.Width / 2;
+            column.HeaderText = "大文件";
+            this.dataGridView1.Columns.Add(column);
+
+            this.dataGridView1.Rows.Add();
         }
 
         private void InitGroupPanel()
