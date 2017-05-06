@@ -42,7 +42,8 @@ namespace myconn
         private void InitPageColumn()
         {
             //页 16*16*16*2
-            var pagecols = GetColumn("page", this.dataGridView1.Width / 8192, 16);
+            var pagecols = GetColumn("page", 2, 16);
+            //var pagecols = GetColumn("page", this.dataGridView1.Width / 8192, 16);
             foreach (var col in pagecols)
             {
                 this.dataGridView1.Columns.Add(col);
@@ -52,8 +53,9 @@ namespace myconn
         private void InitSectorColumn()
         {
             //扇区 16*16*2
-            var sectorcols = GetColumn("sector", this.dataGridView1.Width / 512, 15);
-            foreach(var col in sectorcols)
+            var sectorcols = GetColumn("sector", 32, 15);
+            //var sectorcols = GetColumn("sector", this.dataGridView1.Width / 512, 15);
+            foreach (var col in sectorcols)
             {
                 this.dataGridView1.Columns.Add(col);
             }
@@ -62,43 +64,77 @@ namespace myconn
         private void InitBolckColumn()
         {
             //块 16*16*2
-            var bolckcols = GetColumn("block", this.dataGridView1.Width / 32, 15);
+            var bolckcols = GetColumn("block", 20, 15);
+            //var bolckcols = GetColumn("block", this.dataGridView1.Width / 32, 15);
             foreach (var col in bolckcols)
             {
-                this.dataGridView1.Columns.Add(col);
+                this.dataGridView2.Columns.Add(col);
             }
+            DataGridViewColumn column = new DataGridViewTextBoxColumn();
+            column.Width = 320;// this.dataGridView1.Width / 2;
+            column.HeaderText = "大文件";
+            this.dataGridView2.Columns.Add(column);
         }
 
         private void InitDataGridView()
         {
+            //this.dataGridView1.Width = 1000;
             InitPageColumn();
             InitSectorColumn();
             InitBolckColumn();
 
-            DataGridViewColumn column = new DataGridViewTextBoxColumn();
-            column.Width = this.dataGridView1.Width / 2;
-            column.HeaderText = "大文件";
-            this.dataGridView1.Columns.Add(column);
-
+            this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Rows.Add();
+            this.dataGridView1.Rows[0].Height = this.dataGridView1.Height;
+            this.dataGridView1.ClearSelection();
+           
+
+            this.dataGridView2.ColumnHeadersVisible = false;
+            this.dataGridView2.Rows.Add();
+            this.dataGridView2.Rows[0].Height = this.dataGridView2.Height;
+            this.dataGridView2.ClearSelection();
+
+            PaintStoreColor(1, 2, 3, true);
+            //ClearStoreColor(1, 2, 0, false);
         }
 
-        private void InitGroupPanel()
+        private void PaintStoreColor(int pageNum,int SectorNum,int BlockNum,bool big)
         {
-            int currentX = this.groupBox2.Location.X;
-            int currentY = this.groupBox2.Location.Y;
-            for (int i = 0; i < 19; i++)
+            if(pageNum != 0)
             {
-                Button btn = new Button();
-                btn.Tag = i;
-                btn.BackColor = Color.White;
-                btn.Height = this.groupBox2.Height - 15;
-                btn.Width = this.groupBox2.Width / 20;
-                btn.Text = "文件" + i.ToString();
-                btn.Location = new Point(currentX, currentY);
-                currentX = btn.Location.X + btn.Width;
-                currentY = btn.Location.Y;
-                this.groupBox2.Controls.Add(btn);
+                this.dataGridView1.Rows[0].Cells[pageNum].Style.BackColor = Color.Blue;
+            }
+            if (SectorNum != 0)
+            {
+                this.dataGridView1.Rows[0].Cells[15+ SectorNum].Style.BackColor = Color.Blue;
+            }
+            if (BlockNum != 0)
+            {
+                this.dataGridView2.Rows[0].Cells[BlockNum -1].Style.BackColor = Color.Blue;
+            }
+            if (big)
+            {
+                this.dataGridView2.Rows[0].Cells[15].Style.BackColor = Color.Blue;
+            }
+        }
+
+        private void ClearStoreColor(int pageNum, int SectorNum, int BlockNum, bool big)
+        {
+            if (pageNum != 0)
+            {
+                this.dataGridView1.Rows[0].Cells[pageNum].Style.BackColor = Color.White;
+            }
+            if (SectorNum != 0)
+            {
+                this.dataGridView1.Rows[0].Cells[15 + SectorNum].Style.BackColor = Color.White;
+            }
+            if (BlockNum != 0)
+            {
+                this.dataGridView2.Rows[0].Cells[BlockNum - 1].Style.BackColor = Color.White;
+            }
+            if (big)
+            {
+                this.dataGridView2.Rows[0].Cells[15].Style.BackColor = Color.White;
             }
         }
 
