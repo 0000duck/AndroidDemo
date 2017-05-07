@@ -1,8 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+Copyright (c) 2017, qwinner
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+
 
 /* ============================================
  * 通讯协议：
@@ -18,8 +26,6 @@ using System.Threading.Tasks;
 6.	校验和：			数据长度、地址码、命令字和数据域的异或，不考虑进位
 
  ============================================== */
-
-
 
 namespace myconn
 {
