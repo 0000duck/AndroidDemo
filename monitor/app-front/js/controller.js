@@ -1661,28 +1661,6 @@ app.controller('UserManagement', function ($scope, $http, $cookies, $cookieStore
             pagesLength: 15,
             perPageOptions: [10, 20, 30, 40, 50],
             onChange: function () {
-                //$.ajax({
-                //    url: $scope.HttpUrl + 'User',
-                //    dataType: 'json',
-                //    processData: false,
-                //    type: 'get',
-                //    data: {
-                //        currentPage: $scope.paginationConf.currentPage,
-                //        itemsPerPage: $scope.paginationConf.itemsPerPage
-
-                //    },
-                //    success: function (data) {
-                //        alert(data.totalCount);
-                //    },
-                //    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                //        alert(XMLHttpRequest.status);
-                //        alert(XMLHttpRequest.readyState);
-                //        alert(textStatus);
-                //    }
-                //});
-
-
-
                 var Show1 = $.ajax({
                     type: 'GET',
                     url: $scope.HttpUrl + 'User',
@@ -1693,11 +1671,7 @@ app.controller('UserManagement', function ($scope, $http, $cookies, $cookieStore
                     },
                     dataType: 'json'
                 });
-                Show1.complete(function (XMLHttpRequest, textStatus) {
-                    console.log("com"+XMLHttpRequest.readyState);
-                    console.log("com" + XMLHttpRequest.Status);
-                    console.log("com" + XMLHttpRequest.responseText);
-                });
+
                 Show1.success(function (data, status, headers, config) {
                     $scope.$apply(function () {
                         $scope.UserData = data.model;
@@ -1707,18 +1681,13 @@ app.controller('UserManagement', function ($scope, $http, $cookies, $cookieStore
                     console.log(responese.responseJSON);
                 });
                 Show1.error(function (responese, status, headers, config) {
-                    //alert(responese.responseJSON);
-                    //location.href = "login.html";
-                    alert(responese.status);
-                    alert(responese.readyState);
+                    alert("出现错误");
                     console.log(responese.responseJSON);
                     if (responese.status == 401) {
                         alert: "用户验证已过期";
                         location.href = "login.html"
                     }
                     console.log(status);
-                    //console.log(headers);
-                    //console.log(config);
                 });
             }
 
