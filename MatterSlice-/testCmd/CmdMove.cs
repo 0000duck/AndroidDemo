@@ -60,19 +60,25 @@ namespace myconn
          * 响应数据域内容（4字节）=电机坐标值                          
          * 
          */
-        public byte[] GetUniformStepCmd(byte axis, bool positive)
+        public byte[] GetUniformStepCmd(byte axis, int rate, int stepDirection)
         {
-            byte[] cmd = new byte[7];
+            byte[] cmd = new byte[12];
             cmd[0] = 0xAA;
             cmd[1] = 0x0B;
             cmd[2] = Global.gCommandAddr;// 0x00;//addr
             cmd[3] = 0xB1;
             cmd[4] = axis;
-
-            cmd[5] = (byte)(positive ? 0x01 : 0x81);
-            cmd[6] = Global.GetCheckSum(cmd);
+            cmd[5] = 0xB1;// (byte)((rate & 0xFF00) >> 8);
+            cmd[6] = 0xB1;// (byte)(rate & 0x00FF);
+            cmd[7] = 0xB1;
+            cmd[8] = 0xB1;
+            cmd[9] = 0xB1;
+            cmd[10] = (byte)(stepDirection & 0x00FF); ;
+            cmd[11] = Global.GetCheckSum(cmd);
             return cmd;
         }
 
+
+        //ing
     }
 }
