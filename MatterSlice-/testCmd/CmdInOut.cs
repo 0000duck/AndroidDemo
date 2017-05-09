@@ -1,8 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+Copyright (c) 2017, qwinner
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 namespace myconn
 {
@@ -19,7 +25,7 @@ namespace myconn
          * 通道输出值：00=输出低电平，01=输出高电平
          * 命令数据域内容（2字节）=设置的输入通道号+置位/清零值
          */
-        public byte[] GetSleepOneCmd(byte axis,byte value)
+        public byte[] GetIOCmd(byte axis,byte value)
         {
             byte[] cmd = new byte[7];
             cmd[0] = 0xAA;
@@ -27,8 +33,8 @@ namespace myconn
             cmd[2] = Global.gCommandAddr;//addr
             cmd[3] = 0xC3;
             cmd[4] = axis;
-            cmd[4] = value;
-            cmd[5] = Global.GetCheckSum(cmd);
+            cmd[5] = value;
+            cmd[6] = Global.GetCheckSum(cmd);
             return cmd;
         }
     }

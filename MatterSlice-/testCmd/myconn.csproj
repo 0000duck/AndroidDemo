@@ -60,6 +60,7 @@
     <Compile Include="CmdGenerator.cs" />
     <Compile Include="CmdInit.cs" />
     <Compile Include="CmdInOut.cs" />
+    <Compile Include="CmdLoop.cs" />
     <Compile Include="CmdMove.cs" />
     <Compile Include="CmdSleep.cs" />
     <Compile Include="CommonCmd.cs" />
