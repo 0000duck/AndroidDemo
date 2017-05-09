@@ -30,9 +30,7 @@ namespace myconn
             return cmd;
         }
 
-        /*1.	循环开始命令：						0xD0	
-         * 循环次数：1字节，十进制，1-99次
-         * 命令数据域内容（1字节）=循环次数
+        /*2.	循环结束命令：						0xD1	
          */
         public byte[] GetLoopStopCmd()
         {

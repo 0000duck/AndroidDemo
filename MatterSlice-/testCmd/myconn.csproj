@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CmdBase.cs" />
+    <Compile Include="CmdFileManage.cs" />
     <Compile Include="CmdGenerator.cs" />
     <Compile Include="CmdInit.cs" />
     <Compile Include="CmdInOut.cs" />
