@@ -59,7 +59,9 @@
     <Compile Include="CmdBase.cs" />
     <Compile Include="CmdGenerator.cs" />
     <Compile Include="CmdInit.cs" />
+    <Compile Include="CmdInOut.cs" />
     <Compile Include="CmdMove.cs" />
+    <Compile Include="CmdSleep.cs" />
     <Compile Include="CommonCmd.cs" />
     <Compile Include="DataChange.cs" />
     <Compile Include="FileRelated.cs" />
