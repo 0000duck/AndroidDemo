@@ -107,5 +107,60 @@ namespace myconn
             cmd[6] = Global.GetCheckSum(cmd);
             return cmd;
         }
+
+        /*6.	读一页数据命令并输出
+        * 命令参数：2字节，十六进制，页地址
+        * 命令	0xAA 0x06 0x01 0xD5 0x00 0xXX 0xXX（包头，长度，地址，命令，页地址,校验）	
+        * 
+        * 
+        */
+        public byte[] GetReadOnePageCmd(byte hvalue, byte lvalue)
+        {
+            byte[] cmd = new byte[7];
+            cmd[0] = 0xAA;
+            cmd[1] = 0x06;
+            cmd[2] = Global.gCommandAddr;//addr
+            cmd[3] = 0xD5;
+            cmd[4] = hvalue;
+            cmd[5] = lvalue;
+            cmd[6] = Global.GetCheckSum(cmd);
+            return cmd;
+        }
+
+        /*7.	读扇区数据命令并输出
+        * 命令参数：2字节，十六进制，扇区地址为00 10，00 20...00 F0,
+        * 命令	0xAA 0x06 0x01 0xD6 0x00 0xXX 0xXX（包头，长度，地址，命令，扇区地址,校验）
+        * 
+        */
+        public byte[] GetReadSectorCmd(byte hvalue, byte lvalue)
+        {
+            byte[] cmd = new byte[7];
+            cmd[0] = 0xAA;
+            cmd[1] = 0x06;
+            cmd[2] = Global.gCommandAddr;//addr
+            cmd[3] = 0xD6;
+            cmd[4] = hvalue;
+            cmd[5] = lvalue;
+            cmd[6] = Global.GetCheckSum(cmd);
+            return cmd;
+        }
+
+        /*8.	读块数据命令并输出
+        * 命令参数：2字节，十六进制，块地址
+        * 命令	0xAA 0x06 0x01 0xD7 0xXX 0x00 0xXX（包头，长度，地址，命令，块地址,校验）
+        * 
+        */
+        public byte[] GetReadBlockCmd(byte hvalue, byte lvalue)
+        {
+            byte[] cmd = new byte[7];
+            cmd[0] = 0xAA;
+            cmd[1] = 0x06;
+            cmd[2] = Global.gCommandAddr;//addr
+            cmd[3] = 0xD6;
+            cmd[4] = hvalue;
+            cmd[5] = lvalue;
+            cmd[6] = Global.GetCheckSum(cmd);
+            return cmd;
+        }
     }
 }
