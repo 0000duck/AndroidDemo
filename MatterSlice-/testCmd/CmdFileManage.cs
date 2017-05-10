@@ -156,7 +156,61 @@ namespace myconn
             cmd[0] = 0xAA;
             cmd[1] = 0x06;
             cmd[2] = Global.gCommandAddr;//addr
-            cmd[3] = 0xD6;
+            cmd[3] = 0xD7;
+            cmd[4] = hvalue;
+            cmd[5] = lvalue;
+            cmd[6] = Global.GetCheckSum(cmd);
+            return cmd;
+        }
+
+        /*9.	通用命令文件执行命令 
+       * 命令参数：2字节，十六进制，扇区地址
+       * 命令	0xAA 0x06 0x01 0xD8 0xXX 0x00 0xXX（包头，长度，地址，命令，扇区地址,校验）
+       * 
+       */
+        public byte[] GetExcuteCommonCmd(byte hvalue, byte lvalue)
+        {
+            byte[] cmd = new byte[7];
+            cmd[0] = 0xAA;
+            cmd[1] = 0x06;
+            cmd[2] = Global.gCommandAddr;//addr
+            cmd[3] = 0xD8;
+            cmd[4] = hvalue;
+            cmd[5] = lvalue;
+            cmd[6] = Global.GetCheckSum(cmd);
+            return cmd;
+        }
+
+        /*10.	4轴轨迹运动文件执行命令
+       * 命令参数：2字节，十六进制，块地址
+       * 命令	0xAA 0x06 0x01 0xD9 0xXX 0x00 0xXX（包头，长度，地址，命令，块地址,校验）
+       * 
+       */
+        public byte[] GetExcute4AxisCmd(byte hvalue, byte lvalue)
+        {
+            byte[] cmd = new byte[7];
+            cmd[0] = 0xAA;
+            cmd[1] = 0x06;
+            cmd[2] = Global.gCommandAddr;//addr
+            cmd[3] = 0xD9;
+            cmd[4] = hvalue;
+            cmd[5] = lvalue;
+            cmd[6] = Global.GetCheckSum(cmd);
+            return cmd;
+        }
+
+        /*11.	传送一个文件（数据块）到页命令
+       * 命令参数：2字节，十六进制，页地址0000-1FFFH
+       * 命令	0xAA 0x06 0x01 0xDA 0xXX 0xXX 0xXX（包头，长度，地址，命令，页地址,校验）
+       * 
+       */
+        public byte[] GetWriteToPageCmd(byte hvalue, byte lvalue)
+        {
+            byte[] cmd = new byte[7];
+            cmd[0] = 0xAA;
+            cmd[1] = 0x06;
+            cmd[2] = Global.gCommandAddr;//addr
+            cmd[3] = 0xDA;
             cmd[4] = hvalue;
             cmd[5] = lvalue;
             cmd[6] = Global.GetCheckSum(cmd);
