@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -42,7 +41,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.初始化命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设置地址命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.设置波特率命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设置坐标系命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设置输入有效电平ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +50,35 @@
             this.读电机坐标值ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.读点击参数ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.读极限值ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.运动命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.单步运动命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.匀速定步长运动ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.变速定步长运动ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.匀速运动到规定通道置位ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.变速运动到规定通道置位ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.低速归零命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.高速归原点ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.延时命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.等待命令1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.等待命令2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.等待通道置位命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.输入输出命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.输出命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.循环命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.循环开始ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.循环结束ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.文件管理命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.擦除扇区命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.擦除块命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.擦除存储器芯片命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.传送文件到扇区ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.传送文件到快区ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.读页命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.读扇区命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.读块命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.通用命令执行ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.轴轨迹运动执行ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.传送文件到页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -64,9 +91,9 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.Location = new System.Drawing.Point(234, 420);
+            this.groupBox1.Location = new System.Drawing.Point(231, 395);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(722, 297);
+            this.groupBox1.Size = new System.Drawing.Size(722, 258);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "控制程序文件列表";
@@ -79,7 +106,7 @@
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(3, 21);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(716, 273);
+            this.listView1.Size = new System.Drawing.Size(716, 234);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -88,7 +115,7 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.LightGray;
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(7, 82);
+            this.groupBox2.Location = new System.Drawing.Point(7, 48);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(946, 165);
             this.groupBox2.TabIndex = 1;
@@ -117,7 +144,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(33, 429);
+            this.button1.Location = new System.Drawing.Point(33, 395);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 36);
             this.button1.TabIndex = 3;
@@ -128,7 +155,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(33, 499);
+            this.button2.Location = new System.Drawing.Point(33, 465);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 36);
             this.button2.TabIndex = 4;
@@ -138,7 +165,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(33, 575);
+            this.button3.Location = new System.Drawing.Point(33, 527);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(98, 36);
             this.button3.TabIndex = 5;
@@ -149,7 +176,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(33, 656);
+            this.button4.Location = new System.Drawing.Point(33, 594);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(98, 36);
             this.button4.TabIndex = 6;
@@ -160,7 +187,7 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.LightGray;
             this.groupBox3.Controls.Add(this.dataGridView2);
-            this.groupBox3.Location = new System.Drawing.Point(10, 249);
+            this.groupBox3.Location = new System.Drawing.Point(10, 219);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(943, 165);
             this.groupBox3.TabIndex = 2;
@@ -190,7 +217,12 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.初始化命令ToolStripMenuItem});
+            this.初始化命令ToolStripMenuItem,
+            this.运动命令ToolStripMenuItem,
+            this.延时命令ToolStripMenuItem,
+            this.输入输出命令ToolStripMenuItem,
+            this.循环命令ToolStripMenuItem,
+            this.文件管理命令ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(965, 35);
@@ -219,14 +251,8 @@
             // 
             this.设置地址命令ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.设置地址命令ToolStripMenuItem.Name = "设置地址命令ToolStripMenuItem";
-            this.设置地址命令ToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
+            this.设置地址命令ToolStripMenuItem.Size = new System.Drawing.Size(290, 32);
             this.设置地址命令ToolStripMenuItem.Text = "设置地址命令";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(67, 4);
             // 
             // 设置波特率命令ToolStripMenuItem
             // 
@@ -282,11 +308,219 @@
             this.读极限值ToolStripMenuItem.Size = new System.Drawing.Size(290, 32);
             this.读极限值ToolStripMenuItem.Text = "读极限值";
             // 
+            // 运动命令ToolStripMenuItem
+            // 
+            this.运动命令ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.单步运动命令ToolStripMenuItem,
+            this.匀速定步长运动ToolStripMenuItem,
+            this.变速定步长运动ToolStripMenuItem,
+            this.匀速运动到规定通道置位ToolStripMenuItem,
+            this.变速运动到规定通道置位ToolStripMenuItem,
+            this.低速归零命令ToolStripMenuItem,
+            this.高速归原点ToolStripMenuItem});
+            this.运动命令ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.运动命令ToolStripMenuItem.Name = "运动命令ToolStripMenuItem";
+            this.运动命令ToolStripMenuItem.Size = new System.Drawing.Size(104, 31);
+            this.运动命令ToolStripMenuItem.Text = "运动命令";
+            // 
+            // 单步运动命令ToolStripMenuItem
+            // 
+            this.单步运动命令ToolStripMenuItem.Name = "单步运动命令ToolStripMenuItem";
+            this.单步运动命令ToolStripMenuItem.Size = new System.Drawing.Size(310, 32);
+            this.单步运动命令ToolStripMenuItem.Text = "单步运动命令";
+            // 
+            // 匀速定步长运动ToolStripMenuItem
+            // 
+            this.匀速定步长运动ToolStripMenuItem.Name = "匀速定步长运动ToolStripMenuItem";
+            this.匀速定步长运动ToolStripMenuItem.Size = new System.Drawing.Size(310, 32);
+            this.匀速定步长运动ToolStripMenuItem.Text = "匀速定步长运动";
+            // 
+            // 变速定步长运动ToolStripMenuItem
+            // 
+            this.变速定步长运动ToolStripMenuItem.Name = "变速定步长运动ToolStripMenuItem";
+            this.变速定步长运动ToolStripMenuItem.Size = new System.Drawing.Size(310, 32);
+            this.变速定步长运动ToolStripMenuItem.Text = "变速定步长运动";
+            // 
+            // 匀速运动到规定通道置位ToolStripMenuItem
+            // 
+            this.匀速运动到规定通道置位ToolStripMenuItem.Name = "匀速运动到规定通道置位ToolStripMenuItem";
+            this.匀速运动到规定通道置位ToolStripMenuItem.Size = new System.Drawing.Size(310, 32);
+            this.匀速运动到规定通道置位ToolStripMenuItem.Text = "匀速运动到规定通道置位";
+            // 
+            // 变速运动到规定通道置位ToolStripMenuItem
+            // 
+            this.变速运动到规定通道置位ToolStripMenuItem.Name = "变速运动到规定通道置位ToolStripMenuItem";
+            this.变速运动到规定通道置位ToolStripMenuItem.Size = new System.Drawing.Size(310, 32);
+            this.变速运动到规定通道置位ToolStripMenuItem.Text = "变速运动到规定通道置位";
+            // 
+            // 低速归零命令ToolStripMenuItem
+            // 
+            this.低速归零命令ToolStripMenuItem.Name = "低速归零命令ToolStripMenuItem";
+            this.低速归零命令ToolStripMenuItem.Size = new System.Drawing.Size(310, 32);
+            this.低速归零命令ToolStripMenuItem.Text = "低速归零命令";
+            // 
+            // 高速归原点ToolStripMenuItem
+            // 
+            this.高速归原点ToolStripMenuItem.Name = "高速归原点ToolStripMenuItem";
+            this.高速归原点ToolStripMenuItem.Size = new System.Drawing.Size(310, 32);
+            this.高速归原点ToolStripMenuItem.Text = "高速归原点";
+            // 
+            // 延时命令ToolStripMenuItem
+            // 
+            this.延时命令ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.等待命令1ToolStripMenuItem,
+            this.等待命令2ToolStripMenuItem,
+            this.等待通道置位命令ToolStripMenuItem});
+            this.延时命令ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.延时命令ToolStripMenuItem.Name = "延时命令ToolStripMenuItem";
+            this.延时命令ToolStripMenuItem.Size = new System.Drawing.Size(104, 31);
+            this.延时命令ToolStripMenuItem.Text = "延时命令";
+            // 
+            // 等待命令1ToolStripMenuItem
+            // 
+            this.等待命令1ToolStripMenuItem.Name = "等待命令1ToolStripMenuItem";
+            this.等待命令1ToolStripMenuItem.Size = new System.Drawing.Size(250, 32);
+            this.等待命令1ToolStripMenuItem.Text = "等待命令1";
+            // 
+            // 等待命令2ToolStripMenuItem
+            // 
+            this.等待命令2ToolStripMenuItem.Name = "等待命令2ToolStripMenuItem";
+            this.等待命令2ToolStripMenuItem.Size = new System.Drawing.Size(250, 32);
+            this.等待命令2ToolStripMenuItem.Text = "等待命令2";
+            // 
+            // 等待通道置位命令ToolStripMenuItem
+            // 
+            this.等待通道置位命令ToolStripMenuItem.Name = "等待通道置位命令ToolStripMenuItem";
+            this.等待通道置位命令ToolStripMenuItem.Size = new System.Drawing.Size(250, 32);
+            this.等待通道置位命令ToolStripMenuItem.Text = "等待通道置位命令";
+            // 
+            // 输入输出命令ToolStripMenuItem
+            // 
+            this.输入输出命令ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.输出命令ToolStripMenuItem});
+            this.输入输出命令ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.输入输出命令ToolStripMenuItem.Name = "输入输出命令ToolStripMenuItem";
+            this.输入输出命令ToolStripMenuItem.Size = new System.Drawing.Size(144, 31);
+            this.输入输出命令ToolStripMenuItem.Text = "输入输出命令";
+            // 
+            // 输出命令ToolStripMenuItem
+            // 
+            this.输出命令ToolStripMenuItem.Name = "输出命令ToolStripMenuItem";
+            this.输出命令ToolStripMenuItem.Size = new System.Drawing.Size(170, 32);
+            this.输出命令ToolStripMenuItem.Text = "输出命令";
+            // 
+            // 循环命令ToolStripMenuItem
+            // 
+            this.循环命令ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.循环开始ToolStripMenuItem,
+            this.循环结束ToolStripMenuItem});
+            this.循环命令ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.循环命令ToolStripMenuItem.Name = "循环命令ToolStripMenuItem";
+            this.循环命令ToolStripMenuItem.Size = new System.Drawing.Size(104, 31);
+            this.循环命令ToolStripMenuItem.Text = "循环命令";
+            // 
+            // 循环开始ToolStripMenuItem
+            // 
+            this.循环开始ToolStripMenuItem.Name = "循环开始ToolStripMenuItem";
+            this.循环开始ToolStripMenuItem.Size = new System.Drawing.Size(170, 32);
+            this.循环开始ToolStripMenuItem.Text = "循环开始";
+            // 
+            // 循环结束ToolStripMenuItem
+            // 
+            this.循环结束ToolStripMenuItem.Name = "循环结束ToolStripMenuItem";
+            this.循环结束ToolStripMenuItem.Size = new System.Drawing.Size(170, 32);
+            this.循环结束ToolStripMenuItem.Text = "循环结束";
+            // 
+            // 文件管理命令ToolStripMenuItem
+            // 
+            this.文件管理命令ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.擦除扇区命令ToolStripMenuItem,
+            this.擦除块命令ToolStripMenuItem,
+            this.擦除存储器芯片命令ToolStripMenuItem,
+            this.传送文件到扇区ToolStripMenuItem,
+            this.传送文件到快区ToolStripMenuItem,
+            this.读页命令ToolStripMenuItem,
+            this.读扇区命令ToolStripMenuItem,
+            this.读块命令ToolStripMenuItem,
+            this.通用命令执行ToolStripMenuItem,
+            this.轴轨迹运动执行ToolStripMenuItem,
+            this.传送文件到页ToolStripMenuItem});
+            this.文件管理命令ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.文件管理命令ToolStripMenuItem.Name = "文件管理命令ToolStripMenuItem";
+            this.文件管理命令ToolStripMenuItem.Size = new System.Drawing.Size(144, 31);
+            this.文件管理命令ToolStripMenuItem.Text = "文件管理命令";
+            // 
+            // 擦除扇区命令ToolStripMenuItem
+            // 
+            this.擦除扇区命令ToolStripMenuItem.Name = "擦除扇区命令ToolStripMenuItem";
+            this.擦除扇区命令ToolStripMenuItem.Size = new System.Drawing.Size(270, 32);
+            this.擦除扇区命令ToolStripMenuItem.Text = "擦除扇区命令";
+            // 
+            // 擦除块命令ToolStripMenuItem
+            // 
+            this.擦除块命令ToolStripMenuItem.Name = "擦除块命令ToolStripMenuItem";
+            this.擦除块命令ToolStripMenuItem.Size = new System.Drawing.Size(270, 32);
+            this.擦除块命令ToolStripMenuItem.Text = "擦除块命令";
+            // 
+            // 擦除存储器芯片命令ToolStripMenuItem
+            // 
+            this.擦除存储器芯片命令ToolStripMenuItem.Name = "擦除存储器芯片命令ToolStripMenuItem";
+            this.擦除存储器芯片命令ToolStripMenuItem.Size = new System.Drawing.Size(270, 32);
+            this.擦除存储器芯片命令ToolStripMenuItem.Text = "擦除存储器芯片命令";
+            // 
+            // 传送文件到扇区ToolStripMenuItem
+            // 
+            this.传送文件到扇区ToolStripMenuItem.Name = "传送文件到扇区ToolStripMenuItem";
+            this.传送文件到扇区ToolStripMenuItem.Size = new System.Drawing.Size(270, 32);
+            this.传送文件到扇区ToolStripMenuItem.Text = "传送文件到扇区";
+            // 
+            // 传送文件到快区ToolStripMenuItem
+            // 
+            this.传送文件到快区ToolStripMenuItem.Name = "传送文件到快区ToolStripMenuItem";
+            this.传送文件到快区ToolStripMenuItem.Size = new System.Drawing.Size(270, 32);
+            this.传送文件到快区ToolStripMenuItem.Text = "传送文件到块/区";
+            // 
+            // 读页命令ToolStripMenuItem
+            // 
+            this.读页命令ToolStripMenuItem.Name = "读页命令ToolStripMenuItem";
+            this.读页命令ToolStripMenuItem.Size = new System.Drawing.Size(270, 32);
+            this.读页命令ToolStripMenuItem.Text = "读页命令";
+            // 
+            // 读扇区命令ToolStripMenuItem
+            // 
+            this.读扇区命令ToolStripMenuItem.Name = "读扇区命令ToolStripMenuItem";
+            this.读扇区命令ToolStripMenuItem.Size = new System.Drawing.Size(270, 32);
+            this.读扇区命令ToolStripMenuItem.Text = "读扇区命令";
+            // 
+            // 读块命令ToolStripMenuItem
+            // 
+            this.读块命令ToolStripMenuItem.Name = "读块命令ToolStripMenuItem";
+            this.读块命令ToolStripMenuItem.Size = new System.Drawing.Size(270, 32);
+            this.读块命令ToolStripMenuItem.Text = "读块命令";
+            // 
+            // 通用命令执行ToolStripMenuItem
+            // 
+            this.通用命令执行ToolStripMenuItem.Name = "通用命令执行ToolStripMenuItem";
+            this.通用命令执行ToolStripMenuItem.Size = new System.Drawing.Size(270, 32);
+            this.通用命令执行ToolStripMenuItem.Text = "通用命令执行";
+            // 
+            // 轴轨迹运动执行ToolStripMenuItem
+            // 
+            this.轴轨迹运动执行ToolStripMenuItem.Name = "轴轨迹运动执行ToolStripMenuItem";
+            this.轴轨迹运动执行ToolStripMenuItem.Size = new System.Drawing.Size(270, 32);
+            this.轴轨迹运动执行ToolStripMenuItem.Text = "4轴轨迹运动执行";
+            // 
+            // 传送文件到页ToolStripMenuItem
+            // 
+            this.传送文件到页ToolStripMenuItem.Name = "传送文件到页ToolStripMenuItem";
+            this.传送文件到页ToolStripMenuItem.Size = new System.Drawing.Size(270, 32);
+            this.传送文件到页ToolStripMenuItem.Text = "传送文件到页";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 723);
+            this.ClientSize = new System.Drawing.Size(965, 665);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -327,7 +561,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 初始化命令ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 设置地址命令ToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 设置波特率命令ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 设置坐标系命令ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 设置输入有效电平ToolStripMenuItem;
@@ -337,5 +570,34 @@
         private System.Windows.Forms.ToolStripMenuItem 读电机坐标值ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 读点击参数ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 读极限值ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 运动命令ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 单步运动命令ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 匀速定步长运动ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 变速定步长运动ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 匀速运动到规定通道置位ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 变速运动到规定通道置位ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 低速归零命令ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 高速归原点ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 延时命令ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 等待命令1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 等待命令2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 等待通道置位命令ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 输入输出命令ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 输出命令ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 循环命令ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 循环开始ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 循环结束ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 文件管理命令ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 擦除扇区命令ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 擦除块命令ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 擦除存储器芯片命令ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 传送文件到扇区ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 传送文件到快区ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 读页命令ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 读扇区命令ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 读块命令ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 通用命令执行ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 轴轨迹运动执行ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 传送文件到页ToolStripMenuItem;
     }
 }
