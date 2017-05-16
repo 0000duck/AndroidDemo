@@ -36,7 +36,7 @@ namespace Cmd.Tests
             CmdFileManage cf = new CmdFileManage();
             byte[] ret = cf.GetEraseAllCmd();
             Assert.AreEqual(ret.Count(), 5);
-            Assert.AreEqual(ret[6], 0xD7);
+            Assert.AreEqual(ret[4], 0xD7);
         }
 
         [TestMethod()]
@@ -74,31 +74,71 @@ namespace Cmd.Tests
         [TestMethod()]
         public void GetReadSectorCmdTest()
         {
-            Assert.Fail();
+            CmdFileManage cf = new CmdFileManage();
+            byte[] ret = cf.GetReadSectorCmd(0x00, 0x00);
+            Assert.AreEqual(ret.Count(), 7);
+            Assert.AreEqual(ret[6], 0xD1);
+
+            Assert.AreEqual(ret[0], 0xAA);
+            Assert.AreEqual(ret[1], 0x06);
+            Assert.AreEqual(ret[2], 0x01);
+            Assert.AreEqual(ret[3], 0xD6);
         }
 
         [TestMethod()]
         public void GetReadBlockCmdTest()
         {
-            Assert.Fail();
+            CmdFileManage cf = new CmdFileManage();
+            byte[] ret = cf.GetReadBlockCmd(0x00, 0x00);
+            Assert.AreEqual(ret.Count(), 7);
+            Assert.AreEqual(ret[6], 0xD0);
+
+            Assert.AreEqual(ret[0], 0xAA);
+            Assert.AreEqual(ret[1], 0x06);
+            Assert.AreEqual(ret[2], 0x01);
+            Assert.AreEqual(ret[3], 0xD7);
         }
 
         [TestMethod()]
         public void GetExcuteCommonCmdTest()
         {
-            Assert.Fail();
+            CmdFileManage cf = new CmdFileManage();
+            byte[] ret = cf.GetExcuteCommonCmd(0x00, 0x01);
+            Assert.AreEqual(ret.Count(), 7);
+            Assert.AreEqual(ret[6], 0xDE);
+
+            Assert.AreEqual(ret[0], 0xAA);
+            Assert.AreEqual(ret[1], 0x06);
+            Assert.AreEqual(ret[2], 0x01);
+            Assert.AreEqual(ret[3], 0xD8);
         }
 
         [TestMethod()]
         public void GetExcute4AxisCmdTest()
         {
-            Assert.Fail();
+            CmdFileManage cf = new CmdFileManage();
+            byte[] ret = cf.GetExcute4AxisCmd(0x01, 0x00);
+            Assert.AreEqual(ret.Count(), 7);
+            Assert.AreEqual(ret[6], 0xDF);
+
+            Assert.AreEqual(ret[0], 0xAA);
+            Assert.AreEqual(ret[1], 0x06);
+            Assert.AreEqual(ret[2], 0x01);
+            Assert.AreEqual(ret[3], 0xD9);
         }
 
         [TestMethod()]
         public void GetWriteToPageCmdTest()
         {
-            Assert.Fail();
+            CmdFileManage cf = new CmdFileManage();
+            byte[] ret = cf.GetWriteToPageCmd(0x00, 0x00);
+            Assert.AreEqual(ret.Count(), 7);
+            Assert.AreEqual(ret[6], 0xDD);
+
+            Assert.AreEqual(ret[0], 0xAA);
+            Assert.AreEqual(ret[1], 0x06);
+            Assert.AreEqual(ret[2], 0x01);
+            Assert.AreEqual(ret[3], 0xDA);
         }
     }
 }

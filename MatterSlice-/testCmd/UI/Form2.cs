@@ -197,7 +197,175 @@ namespace myconn
             }
         }
 
+        private void 设置地址命令ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void 设置波特率命令ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 设置坐标系命令ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 设置输入有效电平ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 设置输出有效电平ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 设置坐标极限值ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 设置当前位置坐标为零ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 读电机坐标值ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 读点击参数ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 读极限值ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 单步运动命令ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 匀速定步长运动ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 变速定步长运动ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 匀速运动到规定通道置位ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 变速运动到规定通道置位ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 低速归零命令ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 高速归原点ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 等待命令1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 等待命令2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 等待通道置位命令ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 输出命令ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 循环开始ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 循环结束ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 擦除扇区命令ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 擦除块命令ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 擦除存储器芯片命令ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 传送文件到扇区ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 传送文件到快区ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 读页命令ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 读扇区命令ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 读块命令ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 通用命令执行ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 轴轨迹运动执行ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 传送文件到页ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
