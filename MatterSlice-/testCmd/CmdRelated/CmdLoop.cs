@@ -14,9 +14,10 @@ namespace myconn
 {
     public class CmdLoop : CmdBase
     {
-        /*1.	循环开始命令：						0xD0	
+        /*1.	循环开始命令：						0xC4	
          * 循环次数：1字节，十进制，1-99次
          * 命令数据域内容（1字节）=循环次数
+         * AA 05 01 C4 05 C5
          */
         public byte[] GetLoopStartCmd( byte value)
         {
@@ -24,21 +25,22 @@ namespace myconn
             cmd[0] = 0xAA;
             cmd[1] = 0x05;
             cmd[2] = Global.gCommandAddr;//addr
-            cmd[3] = 0xD0;
+            cmd[3] = 0xC4;
             cmd[4] = value;
             cmd[5] = Global.GetCheckSum(cmd);
             return cmd;
         }
 
-        /*2.	循环结束命令：						0xD1	
+        /*2.	循环结束命令：						0xC5
+         * AA 04 01 C5 C0
          */
         public byte[] GetLoopStopCmd()
         {
-            byte[] cmd = new byte[6];
+            byte[] cmd = new byte[5];
             cmd[0] = 0xAA;
             cmd[1] = 0x04;
             cmd[2] = Global.gCommandAddr;//addr
-            cmd[3] = 0xD1;
+            cmd[3] = 0xC5;
             cmd[4] = Global.GetCheckSum(cmd);
             return cmd;
         }

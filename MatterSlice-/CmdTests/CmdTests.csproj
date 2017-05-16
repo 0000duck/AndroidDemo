@@ -50,7 +50,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="CmdFileManageTests.cs" />
+    <Compile Include="CmdRelated\CmdFileManageTests.cs" />
+    <Compile Include="CmdRelated\CmdInOutTests.cs" />
+    <Compile Include="CmdRelated\CmdLoopTests.cs" />
+    <Compile Include="CmdRelated\CmdSleepTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
