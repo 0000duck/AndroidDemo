@@ -58,32 +58,34 @@ namespace myconn
         }
 
         //0xA2====//axisValue：坐标系对应值: 00=绝对坐标，01=相对坐标
-        public byte[] GetXAxisCmd(byte axisValue)
+        //AA 05 01 A2 00 A6
+        //AA 05 01 A2 00 A6
+        public byte[] GetAxisCmd(byte axisValue)
         {
-            byte[] cmd = new byte[7];
+            byte[] cmd = new byte[6];
             cmd[0] = 0xAA;
-            cmd[1] = 0x06;
+            cmd[1] = 0x05;
             cmd[2] = Global.gCommandAddr;//addr
             cmd[3] = 0xA2;
-            cmd[4] = 0X00;//X轴
-            cmd[5] = axisValue;
-            cmd[6] = Global.GetCheckSum(cmd);
+            //cmd[4] = 0X00;//X轴
+            cmd[4] = axisValue;
+            cmd[5] = Global.GetCheckSum(cmd);
             return cmd;
         }
 
-        //0xA2====//axisValue：坐标系对应值: 00=绝对坐标，01=相对坐标
-        public byte[] GetYAxisCmd(byte axisValue)
-        {
-            byte[] cmd = new byte[7];
-            cmd[0] = 0xAA;
-            cmd[1] = 0x06;
-            cmd[2] = Global.gCommandAddr;//addr
-            cmd[3] = 0xA2;
-            cmd[4] = 0X01;//X轴
-            cmd[5] = axisValue;
-            cmd[6] = Global.GetCheckSum(cmd);
-            return cmd;
-        }
+        ////0xA2====//axisValue：坐标系对应值: 00=绝对坐标，01=相对坐标
+        //public byte[] GetYAxisCmd(byte axisValue)
+        //{
+        //    byte[] cmd = new byte[7];
+        //    cmd[0] = 0xAA;
+        //    cmd[1] = 0x06;
+        //    cmd[2] = Global.gCommandAddr;//addr
+        //    cmd[3] = 0xA2;
+        //    cmd[4] = 0X01;//X轴
+        //    cmd[5] = axisValue;
+        //    cmd[6] = Global.GetCheckSum(cmd);
+        //    return cmd;
+        //}
 
         //0xA3====设置输入信号有效电平命令
         /*有效电平对应值: 00=4个输入通道低电平有效，正反限位及零开关低电平有效
@@ -204,12 +206,13 @@ namespace myconn
         */
         public byte[] GetMachineValueCmd(byte axis)
         {
-            byte[] cmd = new byte[5];
+            byte[] cmd = new byte[6];
             cmd[0] = 0xAA;
-            cmd[1] = 0x04;
+            cmd[1] = 0x05;
             cmd[2] = Global.gCommandAddr;//addr
             cmd[3] = 0xA8;
-            cmd[4] = Global.GetCheckSum(cmd);
+            cmd[4] = 0x00;
+            cmd[5] = Global.GetCheckSum(cmd);
             return cmd;
         }
 

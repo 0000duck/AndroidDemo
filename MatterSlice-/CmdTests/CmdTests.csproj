@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CmdRelated\CmdFileManageTests.cs" />
+    <Compile Include="CmdRelated\CmdInitTests.cs" />
     <Compile Include="CmdRelated\CmdInOutTests.cs" />
     <Compile Include="CmdRelated\CmdLoopTests.cs" />
     <Compile Include="CmdRelated\CmdMoveTests.cs" />
