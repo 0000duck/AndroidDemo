@@ -15,6 +15,9 @@ namespace MatterHackers.MatterSlice
         private static double yCurrentPosition = 100;
         private static double GPrecision = 0.1;
 
+        private static byte wMove = 0x01;
+        private static byte wNotMove = 0x00;
+
 
 
         //上面是自定义的
@@ -402,7 +405,7 @@ namespace MatterHackers.MatterSlice
                     {
                         for (int xpos = (int)((yWritePosition - yCurrentPosition) * 10); xpos > 0; xpos--)
                         {
-                            string pp = "0001" + zpos + "01";
+                            string pp = "0001" + zpos + wNotMove;// "01";
                             Byte posValue = Convert.ToByte(pp, 2);
                             Global.datas.Add(posValue);
                             //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -413,7 +416,7 @@ namespace MatterHackers.MatterSlice
                     {
                         for (int xpos = (int)((yWritePosition - yCurrentPosition) * 10); xpos < 0; xpos++)
                         {
-                            string pp = "0011" + zpos + "01";
+                            string pp = "0011" + zpos + wNotMove;// "01";
                             Byte posValue = Convert.ToByte(pp, 2);
                             Global.datas.Add(posValue); 
                             //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -428,7 +431,7 @@ namespace MatterHackers.MatterSlice
                     {
                         for (int xpos = (int)((xWritePosition - xCurrentPosition) * 10); xpos > 0; xpos--)
                         {
-                            string pp = "0100" + zpos + "01";
+                            string pp = "0100" + zpos + wNotMove;// "01";
                             Byte posValue = Convert.ToByte(pp, 2);
                             Global.datas.Add(posValue);
                             //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -439,7 +442,7 @@ namespace MatterHackers.MatterSlice
                     {
                         for (int xpos = (int)((xWritePosition - xCurrentPosition) * 10); xpos < 0; xpos++)
                         {
-                            string pp = "1100" + zpos + "01";
+                            string pp = "1100" + zpos + wNotMove;// "01";
                             Byte posValue = Convert.ToByte(pp, 2);
                             Global.datas.Add(posValue);
                             //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -462,7 +465,7 @@ namespace MatterHackers.MatterSlice
                                 xpos = xpos - ypos;
                                 for (; ypos > 0; ypos--)
                                 {
-                                    string pp = "0101" + zpos + "01";
+                                    string pp = "0101" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -471,7 +474,7 @@ namespace MatterHackers.MatterSlice
 
                                 for (; xpos > 0; xpos--)
                                 {
-                                    string pp = "0100" + zpos + "01";
+                                    string pp = "0100" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -483,7 +486,7 @@ namespace MatterHackers.MatterSlice
                                 ypos = ypos - xpos;
                                 for (; xpos > 0; xpos--)
                                 {
-                                    string pp = "0101" + zpos + "01";
+                                    string pp = "0101" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -492,7 +495,7 @@ namespace MatterHackers.MatterSlice
 
                                 for (; ypos > 0; ypos--)
                                 {
-                                    string pp = "0001" + zpos + "01";
+                                    string pp = "0001" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -509,7 +512,7 @@ namespace MatterHackers.MatterSlice
                                 xpos = xpos - ypos;
                                 for (; ypos > 0; ypos--)
                                 {
-                                    string pp = "1101" + zpos + "01";
+                                    string pp = "1101" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -518,7 +521,7 @@ namespace MatterHackers.MatterSlice
 
                                 for (; xpos > 0; xpos--)
                                 {
-                                    string pp = "1100" + zpos + "01";
+                                    string pp = "1100" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -530,7 +533,7 @@ namespace MatterHackers.MatterSlice
                                 ypos = ypos - xpos;
                                 for (; xpos > 0; xpos--)
                                 {
-                                    string pp = "1101" + zpos + "01";
+                                    string pp = "1101" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -539,7 +542,7 @@ namespace MatterHackers.MatterSlice
 
                                 for (; ypos > 0; ypos--)
                                 {
-                                    string pp = "0001" + zpos + "01";
+                                    string pp = "0001" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -560,7 +563,7 @@ namespace MatterHackers.MatterSlice
                                 xpos = xpos - ypos;
                                 for (; ypos > 0; ypos--)
                                 {
-                                    string pp = "0111" + zpos + "01";
+                                    string pp = "0111" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -569,7 +572,7 @@ namespace MatterHackers.MatterSlice
 
                                 for (; xpos > 0; xpos--)
                                 {
-                                    string pp = "0100" + zpos + "01";
+                                    string pp = "0100" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -581,7 +584,7 @@ namespace MatterHackers.MatterSlice
                                 ypos = ypos - xpos;
                                 for (; xpos > 0; xpos--)
                                 {
-                                    string pp = "0111" + zpos + "01";
+                                    string pp = "0111" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -590,7 +593,7 @@ namespace MatterHackers.MatterSlice
 
                                 for (; ypos > 0; ypos--)
                                 {
-                                    string pp = "0011" + zpos + "01";
+                                    string pp = "0011" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -606,7 +609,7 @@ namespace MatterHackers.MatterSlice
                                 xpos = xpos - ypos;
                                 for (; ypos > 0; ypos--)
                                 {
-                                    string pp = "1111" + zpos + "01";
+                                    string pp = "1111" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -615,7 +618,7 @@ namespace MatterHackers.MatterSlice
 
                                 for (; xpos > 0; xpos--)
                                 {
-                                    string pp = "1100" + zpos + "01";
+                                    string pp = "1100" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -627,7 +630,7 @@ namespace MatterHackers.MatterSlice
                                 ypos = ypos - xpos;
                                 for (; xpos > 0; xpos--)
                                 {
-                                    string pp = "0011" + zpos + "01";
+                                    string pp = "0011" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
@@ -636,7 +639,7 @@ namespace MatterHackers.MatterSlice
 
                                 for (; ypos > 0; ypos--)
                                 {
-                                    string pp = "0011" + zpos + "01";
+                                    string pp = "0011" + zpos + wNotMove;// "01";
                                     Byte posValue = Convert.ToByte(pp, 2);
                                     Global.datas.Add(posValue);
                                     //lineToWrite.Append("{0:X} ".FormatWith(posValue));
