@@ -10,20 +10,20 @@ using System.Windows.Forms;
 
 namespace myconn.CmdUI
 {
-    public partial class SetAddrFrm : Basefm
+    public partial class SetInLevelFrm : Basefm
     {
         private byte[] addrc;
         
-        public SetAddrFrm()
+        public SetInLevelFrm()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            byte commandAddr = Convert.ToByte(textBox1.Text);
+            byte commandAddr = Convert.ToByte(comboBox1.Text);
             CmdInit ci = new CmdInit();
-            addrc = ci.GetAddrCmd(commandAddr);
+            addrc = ci.GetInLevelUsefulCmd(commandAddr);
             richTextBox1.Text = DataChange.byteToHexStr(addrc);
         }
 

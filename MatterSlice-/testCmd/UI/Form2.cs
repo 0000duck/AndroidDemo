@@ -10,6 +10,7 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+using myconn.CmdUI;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -199,27 +200,32 @@ namespace myconn
 
         private void 设置地址命令ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SetAddrFrm frm = new SetAddrFrm();
+            frm.ShowDialog();
         }
 
         private void 设置波特率命令ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SetBuddeFrm frm = new SetBuddeFrm();
+            frm.ShowDialog();
         }
 
         private void 设置坐标系命令ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SetAxisCmdFrm frm = new SetAxisCmdFrm();
+            frm.ShowDialog();
         }
 
         private void 设置输入有效电平ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SetInLevelFrm frm = new SetInLevelFrm();
+            frm.ShowDialog();
         }
 
         private void 设置输出有效电平ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SetOutLevelFrm frm = new SetOutLevelFrm();
+            frm.ShowDialog();
         }
 
         private void 设置坐标极限值ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -229,17 +235,20 @@ namespace myconn
 
         private void 设置当前位置坐标为零ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SetNowZeroFrm frm = new SetNowZeroFrm();
+            frm.ShowDialog();
         }
 
         private void 读电机坐标值ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            GetAxisValueFrm frm = new GetAxisValueFrm();
+            frm.ShowDialog();
         }
 
         private void 读点击参数ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            GetMachineValueFrm frm = new GetMachineValueFrm();
+            frm.ShowDialog();
         }
 
         private void 读极限值ToolStripMenuItem_Click(object sender, EventArgs e)

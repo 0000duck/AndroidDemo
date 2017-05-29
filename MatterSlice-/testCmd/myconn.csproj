@@ -68,6 +68,48 @@
     <Compile Include="CmdUI\Basefm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CmdUI\GetMachineValueFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\GetMachineValueFrm.Designer.cs">
+      <DependentUpon>GetMachineValueFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\GetAxisValueFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\GetAxisValueFrm.Designer.cs">
+      <DependentUpon>GetAxisValueFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\SetNowZeroFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\SetNowZeroFrm.Designer.cs">
+      <DependentUpon>SetNowZeroFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\SetOutLevelFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\SetOutLevelFrm.Designer.cs">
+      <DependentUpon>SetOutLevelFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\SetInLevelFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\SetInLevelFrm.Designer.cs">
+      <DependentUpon>SetInLevelFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\SetAxisCmdFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\SetAxisCmdFrm.Designer.cs">
+      <DependentUpon>SetAxisCmdFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\SetBuddeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\SetBuddeFrm.Designer.cs">
+      <DependentUpon>SetBuddeFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CmdUI\SetAddrFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +118,7 @@
     </Compile>
     <Compile Include="Tools\DataChange.cs" />
     <Compile Include="Tools\FileRelated.cs" />
+    <Compile Include="Tools\MiniDump.cs" />
     <Compile Include="UI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +141,27 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\SerialCom.cs" />
+    <EmbeddedResource Include="CmdUI\GetMachineValueFrm.resx">
+      <DependentUpon>GetMachineValueFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\GetAxisValueFrm.resx">
+      <DependentUpon>GetAxisValueFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\SetNowZeroFrm.resx">
+      <DependentUpon>SetNowZeroFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\SetOutLevelFrm.resx">
+      <DependentUpon>SetOutLevelFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\SetInLevelFrm.resx">
+      <DependentUpon>SetInLevelFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\SetAxisCmdFrm.resx">
+      <DependentUpon>SetAxisCmdFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\SetBuddeFrm.resx">
+      <DependentUpon>SetBuddeFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CmdUI\SetAddrFrm.resx">
       <DependentUpon>SetAddrFrm.cs</DependentUpon>
     </EmbeddedResource>

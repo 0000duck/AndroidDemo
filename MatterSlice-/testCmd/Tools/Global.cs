@@ -42,5 +42,8 @@ namespace myconn
             }
             return sum;
         }
+
+        //command response code
+        public static string gAddrRes = "";
     }
 }

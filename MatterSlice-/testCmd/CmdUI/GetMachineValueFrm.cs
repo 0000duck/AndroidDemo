@@ -10,20 +10,21 @@ using System.Windows.Forms;
 
 namespace myconn.CmdUI
 {
-    public partial class SetAddrFrm : Basefm
+    public partial class GetMachineValueFrm : Basefm
     {
         private byte[] addrc;
         
-        public SetAddrFrm()
+        public GetMachineValueFrm()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            byte commandAddr = Convert.ToByte(textBox1.Text);
+            //具体参数文档和串口助手不一致，？、
+            byte commandAddr = (byte)((comboBox1.Text == "0控制板") ? 0x00 : 0x01); ;
             CmdInit ci = new CmdInit();
-            addrc = ci.GetAddrCmd(commandAddr);
+            addrc = ci.GetMachineValueCmd(commandAddr);
             richTextBox1.Text = DataChange.byteToHexStr(addrc);
         }
 
@@ -46,6 +47,11 @@ namespace myconn.CmdUI
             }
 
             richTextBox2.Text += recv;
+        }
+
+        private void GetMachineValueFrm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
