@@ -80,6 +80,12 @@
     <Compile Include="CmdUI\GetAxisValueFrm.Designer.cs">
       <DependentUpon>GetAxisValueFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CmdUI\GetSettedLimiteFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\GetSettedLimiteFrm.Designer.cs">
+      <DependentUpon>GetSettedLimiteFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CmdUI\SetNowZeroFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CmdUI\GetAxisValueFrm.resx">
       <DependentUpon>GetAxisValueFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\GetSettedLimiteFrm.resx">
+      <DependentUpon>GetSettedLimiteFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CmdUI\SetNowZeroFrm.resx">
       <DependentUpon>SetNowZeroFrm.cs</DependentUpon>

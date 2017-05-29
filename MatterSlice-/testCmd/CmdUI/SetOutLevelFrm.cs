@@ -40,7 +40,7 @@ namespace myconn.CmdUI
         public override void OnRecvData(byte[] datas)
         {
             string recv = DataChange.byteToHexOXStr(datas).Replace("0x00","").Trim();
-            if(recv == "0xEE 0x04 0x01 0xA0 0xA5")
+            if(recv == "0xEE 0x04 0x01 0xA4 0xA1")
             {
                 richTextBox2.Text = "设置成功！/r/n";
             }
