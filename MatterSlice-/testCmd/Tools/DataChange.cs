@@ -54,6 +54,20 @@ namespace myconn
             return returnStr;
         }
 
+        //
+        public static string byteToHexOXStr(byte[] bytes)
+        {
+            string returnStr = "";
+            if (bytes != null)
+            {
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    returnStr += "0x" + bytes[i].ToString("X2") + " ";
+                }
+            }
+            return returnStr;
+        }
+
         private static string StringToHexString(string s, Encoding encode)
         {
             byte[] b = encode.GetBytes(s);//按照指定编码将string编程字节数组

@@ -57,6 +57,7 @@
     <Compile Include="CmdRelated\CmdMoveTests.cs" />
     <Compile Include="CmdRelated\CmdSleepTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\DataChangeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\testCmd\myconn.csproj">

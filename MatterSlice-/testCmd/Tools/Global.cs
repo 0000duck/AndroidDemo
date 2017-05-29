@@ -21,7 +21,12 @@ namespace myconn
     //GD25Q16芯片有芯片擦除，块擦除及扇区擦除功能，有页编程功能，读功能是可以读出单个字节。
     public static class Global
     {
+        //需要写到配置文件里，每次读取，同步。
+        public static string gCOM = "COM1";
+        public static int gRealBaudRate = 38400;
         public static byte gCommandAddr = 0x01;
+
+
 
         //波特率对应值:	0:2400 1：4800 2：9600；3：19200；4：38400 5：57600
         public static byte gBaudRate = 0x02;
