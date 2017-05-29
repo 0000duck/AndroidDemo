@@ -253,12 +253,14 @@ namespace myconn
 
         private void 读极限值ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            GetSettedLimiteFrm frm = new GetSettedLimiteFrm();
+            frm.ShowDialog();
         }
 
         private void 单步运动命令ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MoveOneStepFrm frm = new MoveOneStepFrm();
+            frm.ShowDialog();
         }
 
         private void 匀速定步长运动ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -293,87 +295,104 @@ namespace myconn
 
         private void 等待命令1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SetSleepOneFrm frm = new SetSleepOneFrm();
+            frm.ShowDialog();
         }
 
         private void 等待命令2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SetSleepTwoFrm frm = new SetSleepTwoFrm();
+            frm.ShowDialog();
         }
 
         private void 等待通道置位命令ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SetWaitAxisResetFrm frm = new SetWaitAxisResetFrm();
+            frm.ShowDialog();
         }
 
         private void 输出命令ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SetOutputCmdFrm frm = new SetOutputCmdFrm();
+            frm.ShowDialog();
         }
 
         private void 循环开始ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SetLoopStartFrm frm = new SetLoopStartFrm();
+            frm.ShowDialog();
         }
 
         private void 循环结束ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SetLoopStopFrm frm = new SetLoopStopFrm();
+            frm.ShowDialog();
         }
 
         private void 擦除扇区命令ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ExFileEraseSectorFrm frm = new ExFileEraseSectorFrm();
+            frm.ShowDialog();
         }
 
         private void 擦除块命令ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ExFileEraseBlockFrm frm = new ExFileEraseBlockFrm();
+            frm.ShowDialog();
         }
 
         private void 擦除存储器芯片命令ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ExFileEraseAllFrm frm = new ExFileEraseAllFrm();
+            frm.ShowDialog();
         }
 
         private void 传送文件到扇区ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ExFileWriteSectorFrm frm = new ExFileWriteSectorFrm();
+            frm.ShowDialog();
         }
 
         private void 传送文件到快区ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ExFileWriteBlockFrm frm = new ExFileWriteBlockFrm();
+            frm.ShowDialog();
         }
 
         private void 读页命令ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ExFileReadPageFrm frm = new ExFileReadPageFrm();
+            frm.ShowDialog();
         }
 
         private void 读扇区命令ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ExFileReadSectorFrm frm = new ExFileReadSectorFrm();
+            frm.ShowDialog();
         }
 
         private void 读块命令ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ExFileReadBlockFrm frm = new ExFileReadBlockFrm();
+            frm.ShowDialog();
         }
 
         private void 通用命令执行ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ExFileExcuteCommonFrm frm = new ExFileExcuteCommonFrm();
+            frm.ShowDialog();
         }
 
         private void 轴轨迹运动执行ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ExFileExcute4AxisFrm frm = new ExFileExcute4AxisFrm();
+            frm.ShowDialog();
         }
 
         private void 传送文件到页ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ExFileWritePageFrm frm = new ExFileWritePageFrm();
+            frm.ShowDialog();
         }
     }
 

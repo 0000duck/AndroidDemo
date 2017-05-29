@@ -68,6 +68,66 @@
     <Compile Include="CmdUI\Basefm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CmdUI\ExFileEraseAllFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\ExFileEraseAllFrm.Designer.cs">
+      <DependentUpon>ExFileEraseAllFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\ExFileExcute4AxisFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\ExFileExcute4AxisFrm.Designer.cs">
+      <DependentUpon>ExFileExcute4AxisFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\ExFileExcuteCommonFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\ExFileExcuteCommonFrm.Designer.cs">
+      <DependentUpon>ExFileExcuteCommonFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\ExFileReadBlockFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\ExFileReadBlockFrm.Designer.cs">
+      <DependentUpon>ExFileReadBlockFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\ExFileReadSectorFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\ExFileReadSectorFrm.Designer.cs">
+      <DependentUpon>ExFileReadSectorFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\ExFileReadPageFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\ExFileReadPageFrm.Designer.cs">
+      <DependentUpon>ExFileReadPageFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\ExFileWritePageFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\ExFileWritePageFrm.Designer.cs">
+      <DependentUpon>ExFileWritePageFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\ExFileWriteBlockFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\ExFileWriteBlockFrm.Designer.cs">
+      <DependentUpon>ExFileWriteBlockFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\ExFileWriteSectorFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\ExFileWriteSectorFrm.Designer.cs">
+      <DependentUpon>ExFileWriteSectorFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\ExFileEraseBlockFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\ExFileEraseBlockFrm.Designer.cs">
+      <DependentUpon>ExFileEraseBlockFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CmdUI\GetMachineValueFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,11 +146,59 @@
     <Compile Include="CmdUI\GetSettedLimiteFrm.Designer.cs">
       <DependentUpon>GetSettedLimiteFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CmdUI\ExFileEraseSectorFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\ExFileEraseSectorFrm.Designer.cs">
+      <DependentUpon>ExFileEraseSectorFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\SetOutputCmdFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\SetOutputCmdFrm.Designer.cs">
+      <DependentUpon>SetOutputCmdFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\SetLoopStopFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\SetLoopStopFrm.Designer.cs">
+      <DependentUpon>SetLoopStopFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\SetLoopStartFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\SetLoopStartFrm.Designer.cs">
+      <DependentUpon>SetLoopStartFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\SetWaitAxisResetFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\SetWaitAxisResetFrm.Designer.cs">
+      <DependentUpon>SetWaitAxisResetFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\SetSleepTwoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\SetSleepTwoFrm.Designer.cs">
+      <DependentUpon>SetSleepTwoFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\SetSleepOneFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\SetSleepOneFrm.Designer.cs">
+      <DependentUpon>SetSleepOneFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CmdUI\SetNowZeroFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CmdUI\SetNowZeroFrm.Designer.cs">
       <DependentUpon>SetNowZeroFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\MoveOneStepFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\MoveOneStepFrm.Designer.cs">
+      <DependentUpon>MoveOneStepFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="CmdUI\SetOutLevelFrm.cs">
       <SubType>Form</SubType>
@@ -147,6 +255,36 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\SerialCom.cs" />
+    <EmbeddedResource Include="CmdUI\ExFileEraseAllFrm.resx">
+      <DependentUpon>ExFileEraseAllFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\ExFileExcute4AxisFrm.resx">
+      <DependentUpon>ExFileExcute4AxisFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\ExFileExcuteCommonFrm.resx">
+      <DependentUpon>ExFileExcuteCommonFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\ExFileReadBlockFrm.resx">
+      <DependentUpon>ExFileReadBlockFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\ExFileReadSectorFrm.resx">
+      <DependentUpon>ExFileReadSectorFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\ExFileReadPageFrm.resx">
+      <DependentUpon>ExFileReadPageFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\ExFileWritePageFrm.resx">
+      <DependentUpon>ExFileWritePageFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\ExFileWriteBlockFrm.resx">
+      <DependentUpon>ExFileWriteBlockFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\ExFileWriteSectorFrm.resx">
+      <DependentUpon>ExFileWriteSectorFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\ExFileEraseBlockFrm.resx">
+      <DependentUpon>ExFileEraseBlockFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CmdUI\GetMachineValueFrm.resx">
       <DependentUpon>GetMachineValueFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,8 +294,32 @@
     <EmbeddedResource Include="CmdUI\GetSettedLimiteFrm.resx">
       <DependentUpon>GetSettedLimiteFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\ExFileEraseSectorFrm.resx">
+      <DependentUpon>ExFileEraseSectorFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\SetOutputCmdFrm.resx">
+      <DependentUpon>SetOutputCmdFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\SetLoopStopFrm.resx">
+      <DependentUpon>SetLoopStopFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\SetLoopStartFrm.resx">
+      <DependentUpon>SetLoopStartFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\SetWaitAxisResetFrm.resx">
+      <DependentUpon>SetWaitAxisResetFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\SetSleepTwoFrm.resx">
+      <DependentUpon>SetSleepTwoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\SetSleepOneFrm.resx">
+      <DependentUpon>SetSleepOneFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CmdUI\SetNowZeroFrm.resx">
       <DependentUpon>SetNowZeroFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\MoveOneStepFrm.resx">
+      <DependentUpon>MoveOneStepFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CmdUI\SetOutLevelFrm.resx">
       <DependentUpon>SetOutLevelFrm.cs</DependentUpon>
