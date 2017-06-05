@@ -3,4 +3,54 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--亮黄色-->
+    <color name="snow">#FFFAFA</color><!--雪白色 -->
+    <color name="darkorange">#FF8C00</color><!--暗桔黄色 -->
+    <color name="whitesmoke">#F5F5F5</color><!--烟白色 -->
+    <color name="gainsboro">#DCDCDC</color><!--淡灰色 -->
+    <color name="silver">#C0C0C0</color><!--银色 -->
+    <color name="darkgrey">#A9A9A9</color><!--暗灰色 -->
+    <!--天蓝色 -->
+    <color name="gray">#808080</color><!--灰色 -->
+    <color name="aquamarine">#7FFFD4</color><!--碧绿色-->
+    <color name="green">#008000</color><!--绿色 -->
+    <color name="black">#ea000000</color><!--黑色 -->
+    <color name="theme_primary_dark">#1976D2</color>
+    <color name="colorLine">#E3E3E3</color>
+    <color name="colorText">#dd353534</color>
+    <color name="page_top">#FCFCFC</color>
+    <color name="hint">#959495</color>
+    <color name="backcolor">#9c06eff7</color>
+    <color name="backborder">#da009fe7</color>
+    <color name="gary">#898989</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="waterblue">#23afff</color>
+    <color name="backblack">#303032</color>
+    <color name="unchoose">#84868c</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="unselected">#99FFFFFF</color>
+    <color name="liked">#FAFAFA</color>
+    <color name="ivory">#FFFFF0</color><!--象牙色 -->
+    <color name="background">#E1E1E1</color>
+    <color name="textRelated">#666666</color>
+    <color name="marqueeText">#000000</color>
+    <color name="textBlack">#333</color>
+    <color name="twhite">#dfFFFFFF</color>
+    <color name="hotgrade2">#00ce23</color>
+    <color name="hotgrade3">#ffd900</color>
+    <color name="hotgrade4">#ff7f00</color>
+    <color name="hotgrade5">#ee2d00</color>
+    <color name="hex_1b89cd">#FF1B89CD</color>
+    <color name="hex_9c9c9c">#FF9C9C9C</color>
+    <color name="hex_bcbcbc">#FFBCBCBC</color>
+    <color name="hex_e9e9ea">#FFE9E9EA</color>
+    <!--              问政模块4个按钮颜色                   -->
+    <!--              签到页面顶部返回按钮                   -->
+    <!--              通用页面顶部返回按钮                   -->
+    <color name="submit_btn_normal">@color/hex_1b89cd</color>
+    <color name="submit_btn_pressed">#166EA5</color>
+    <color name="submit_btn_disabled">@color/hex_bcbcbc</color>
+    <!--              获取验证码按钮样式                   -->
+
 </resources>

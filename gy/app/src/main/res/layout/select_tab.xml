@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:layout_gravity="center"
+    android:orientation="horizontal"
+    android:background="@color/backblack"
+    android:baselineAligned="false">
+
+    <LinearLayout
+        android:id="@+id/tab_1"
+        android:layout_marginTop="2dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center|center_vertical"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/tab_img1"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:src="@drawable/tabimg1"/>
+
+        <TextView
+            android:id="@+id/tab_text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="@string/tab1"
+            android:textColor="@color/waterblue"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab_2"
+        android:layout_marginTop="2dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center|center_vertical"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/tab_img2"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:src="@drawable/tabimg2"/>
+
+        <TextView
+            android:id="@+id/tab_text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="@string/tab2"
+            android:textColor="@color/unchoose"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_weight="1"
+        android:layout_gravity="center|center_vertical"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/tab_img3"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:src="@drawable/tabimg3"/>
+
+        <TextView
+            android:id="@+id/tab_text3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="@string/tab3"
+            android:textColor="@color/unchoose"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab_4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_weight="1"
+        android:layout_gravity="center|center_vertical"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/tab_img4"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:src="@drawable/tabimg3"/>
+
+        <TextView
+            android:id="@+id/tab_text4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="@string/tab4"
+            android:textColor="@color/unchoose"/>
+    </LinearLayout>
+
+</LinearLayout>

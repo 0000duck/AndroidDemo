@@ -57,4 +57,9 @@ dependencies {
 
     // LeanCloud 应用内搜索包
     compile ('cn.leancloud.android:avoscloud-search:v3.+@aar')
+
+    //阿里V-layout 方便排版。
+    compile ('com.alibaba.android:vlayout:1.0.7@aar') {
+        transitive = true
+    }
 }
