@@ -25,7 +25,7 @@ namespace myconn
         /// </summary>
         /// <param name=”hexString”></param>
         /// <returns></returns>
-        private static byte[] strToToHexByte(string hexString)
+        public static byte[] strToToHexByte(string hexString)
         {
             hexString = hexString.Replace(" ","");
             if ((hexString.Length % 2) != 0)
