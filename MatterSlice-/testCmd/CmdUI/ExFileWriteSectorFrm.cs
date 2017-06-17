@@ -53,5 +53,16 @@ namespace myconn.CmdUI
         {
             //轨迹文件
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (!SerialCom.instance.IsComOpened())
+            {
+                SerialCom.instance.OpenComPort();
+            }
+            SerialCom.instance.SetRecvFrm(this);
+            byte[] data = DataChange.strToToHexByte(richTextBox1.Text);
+            SerialCom.instance.SendFile(data);
+        }
     }
 }

@@ -38,6 +38,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -133,11 +134,23 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // ExFileWriteSectorFrm
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button4.Location = new System.Drawing.Point(407, 203);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(116, 45);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "发送轨迹文件";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // ExFileWriteBlockFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(605, 366);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
@@ -148,7 +161,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Name = "ExFileWriteSectorFrm";
+            this.Name = "ExFileWriteBlockFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "传送一个文件（数据块）到扇区命令";
             this.ResumeLayout(false);
@@ -168,5 +181,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
