@@ -265,32 +265,38 @@ namespace myconn
 
         private void 匀速定步长运动ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MoveUniformStepFrm frm = new MoveUniformStepFrm();
+            frm.ShowDialog();
         }
 
         private void 变速定步长运动ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MoveVrateStillStepFrm frm = new MoveVrateStillStepFrm();
+            frm.ShowDialog();
         }
 
         private void 匀速运动到规定通道置位ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MoveXrateToAxis frm = new MoveXrateToAxis();
+            frm.ShowDialog();
         }
 
         private void 变速运动到规定通道置位ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MoveVrateToAxis frm = new MoveVrateToAxis();
+            frm.ShowDialog();
         }
 
         private void 低速归零命令ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MoveLowRateToZero frm = new MoveLowRateToZero();
+            frm.ShowDialog();
         }
 
         private void 高速归原点ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MoveHiRateToZero frm = new MoveHiRateToZero();
+            frm.ShowDialog();
         }
 
         private void 等待命令1ToolStripMenuItem_Click(object sender, EventArgs e)

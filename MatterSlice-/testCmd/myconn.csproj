@@ -152,6 +152,42 @@
     <Compile Include="CmdUI\ExFileEraseSectorFrm.Designer.cs">
       <DependentUpon>ExFileEraseSectorFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CmdUI\MoveLowRateToZero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\MoveLowRateToZero.Designer.cs">
+      <DependentUpon>MoveLowRateToZero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\MoveHiRateToZero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\MoveHiRateToZero.Designer.cs">
+      <DependentUpon>MoveHiRateToZero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\MoveVrateToAxis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\MoveVrateToAxis.Designer.cs">
+      <DependentUpon>MoveVrateToAxis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\MoveXrateToAxis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\MoveXrateToAxis.Designer.cs">
+      <DependentUpon>MoveXrateToAxis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\MoveVrateStillStepFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\MoveVrateStillStepFrm.Designer.cs">
+      <DependentUpon>MoveVrateStillStepFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdUI\MoveUniformStepFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdUI\MoveUniformStepFrm.Designer.cs">
+      <DependentUpon>MoveUniformStepFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CmdUI\SetOutputCmdFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +332,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CmdUI\ExFileEraseSectorFrm.resx">
       <DependentUpon>ExFileEraseSectorFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\MoveLowRateToZero.resx">
+      <DependentUpon>MoveLowRateToZero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\MoveHiRateToZero.resx">
+      <DependentUpon>MoveHiRateToZero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\MoveVrateToAxis.resx">
+      <DependentUpon>MoveVrateToAxis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\MoveXrateToAxis.resx">
+      <DependentUpon>MoveXrateToAxis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\MoveVrateStillStepFrm.resx">
+      <DependentUpon>MoveVrateStillStepFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdUI\MoveUniformStepFrm.resx">
+      <DependentUpon>MoveUniformStepFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CmdUI\SetOutputCmdFrm.resx">
       <DependentUpon>SetOutputCmdFrm.cs</DependentUpon>
