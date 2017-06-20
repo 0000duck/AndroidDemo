@@ -11,7 +11,12 @@
     <!-- 基础模块 END -->
 
     <!--高德地图，允许程序访问CellID或WiFi热点来获取粗略的位置-->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <!--这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+
 
     <application
         android:name=".gjApp"
@@ -47,7 +52,7 @@
             android:name="com.avos.avoscloud.feedback.ThreadActivity" >
         </activity>
         <!-- 反馈组件 END -->
-
+        <service android:name="com.amap.api.location.APSService"></service>
         <meta-data android:name="com.amap.api.v2.apikey" android:value="4a270980c86018aa4c1d14129ac27767">
         </meta-data>
     </application>
