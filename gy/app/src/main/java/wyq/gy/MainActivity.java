@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_msg) {
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -228,7 +228,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.location_image:
-
                 mLocationTask.startSingleLocate();
                 break;
         }

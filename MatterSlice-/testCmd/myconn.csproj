@@ -282,6 +282,12 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\Global.cs" />
+    <Compile Include="UI\guijitest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\guijitest.Designer.cs">
+      <DependentUpon>guijitest.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\newFileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\guijitest.resx">
+      <DependentUpon>guijitest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\newFileForm.resx">
       <DependentUpon>newFileForm.cs</DependentUpon>

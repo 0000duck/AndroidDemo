@@ -4,5 +4,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_msg">通知消息</string>
+    <string name="action_fankui">问题反馈</string>
+
 </resources>
