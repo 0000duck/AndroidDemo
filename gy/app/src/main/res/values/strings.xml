@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">gy</string>
-    <!--主页面按钮名称相关-->
-    <string name="tab1">首页</string>
-    <string name="tab2">消息</string>
-    <string name="tab3">发现</string>
-    <string name="tab4">我的</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
