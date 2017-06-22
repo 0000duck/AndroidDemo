@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgd"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="50dp"
+            android:shrinkColumns="1"
+            android:stretchColumns="1">
+
+            <TableRow
+                android:background="#6AC6FF"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/zhanghao" />
+
+                <EditText
+                    android:id="@+id/login_nameet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="@string/enterAccount"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="20dp"
+                    android:textColorHint="@color/white"
+                    android:textSize="16sp">
+
+                    <requestFocus />
+                </EditText>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="10dp"
+                android:background="#6AC6FF"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/mima" />
+
+                <EditText
+                    android:id="@+id/login_passwordet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="@string/enterPassword"
+                    android:inputType="textPassword"
+                    android:paddingLeft="20dp"
+                    android:textColorHint="@color/white"
+                    android:textSize="16sp" />
+            </TableRow>
+
+        </TableLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="19dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/forgetPassword"
+            android:textColor="@color/white"
+            android:visibility="visible" />
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/white"
+            android:text="登陆"
+            android:textColor="@color/backborder"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/login_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/login"
+            android:layout_marginRight="19dp"
+            android:layout_marginTop="10dp"
+            android:text="5秒搞定注册"
+            android:textColor="@color/white"
+            android:visibility="visible" />
+    </RelativeLayout>
+</LinearLayout>

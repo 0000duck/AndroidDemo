@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="wyq.gy.RegisterActivity">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:background="#fff"
+        android:shrinkColumns="1"
+        android:stretchColumns="1">
+
+        <TableRow android:layout_marginLeft="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/registerUsername"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/resetpwd_edit_name"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:ems="10"
+                android:hint="@string/enterAccount"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:textColorHint="@color/hint"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1.2dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/colorLine" />
+
+        <TableRow android:layout_marginLeft="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/setPassword"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/resetpwd_edit_pwd_old"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:ems="10"
+                android:hint="@string/enterYourPassword"
+                android:inputType="textPassword"
+                android:paddingLeft="20dp"
+                android:textColorHint="@color/hint"
+                android:textSize="16sp" />
+
+        </TableRow>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1.2dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/colorLine" />
+
+        <TableRow android:layout_marginLeft="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/confirmPassword"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/resetpwd_edit_pwd_new"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/resetpwd_edit_pwd_old"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:ems="10"
+                android:hint="@string/reconfirmPassword"
+                android:inputType="textPassword"
+                android:paddingLeft="20dp"
+                android:textColorHint="@color/hint"
+                android:textSize="16sp" />
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:background="@color/colorLine" />
+    </TableLayout>
+
+    <Button
+        android:id="@+id/register_btn_sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="220dp"
+        android:background="@color/backborder"
+        android:text="@string/register"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/userAgreements"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/register_btn_sure"
+        android:layout_marginRight="19dp"
+        android:layout_marginTop="10dp"
+        android:text="用户协议"
+        android:textColor="@color/backborder"
+        android:visibility="visible" />
+</RelativeLayout>
