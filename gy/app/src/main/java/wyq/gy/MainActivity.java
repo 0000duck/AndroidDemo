@@ -89,12 +89,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mMapView = (MapView) findViewById(R.id.map);
         mMapView.onCreate(savedInstanceState);
         mAmap = mMapView.getMap();
-        mAmap.getUiSettings().setZoomControlsEnabled(true);
+        mAmap.getUiSettings().setZoomControlsEnabled(false);
         mAmap.setOnMapLoadedListener(this);
         mAmap.setOnCameraChangeListener(this);
         mLocationImage = (ImageView) findViewById(R.id.location_image);
         mLocationImage.setOnClickListener(this);
-
+        Button mapBtn = (Button) findViewById(R.id.map_btn);
+        mapBtn.setOnClickListener(this);
     }
 
     @Override
@@ -176,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         markerOptions
                 .icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory
                         .decodeResource(getResources(),
-                                R.drawable.icon_loaction_start)));
+                                R.drawable.map_pin)));
         mPositionMark = mAmap.addMarker(markerOptions);
 
         mPositionMark.setPositionByPixels(mMapView.getWidth() / 2,
@@ -229,6 +230,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (v.getId()) {
             case R.id.location_image:
                 mLocationTask.startSingleLocate();
+                break;
+            case R.id.map_btn:
+                //
                 break;
         }
     }
