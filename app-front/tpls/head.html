@@ -1,0 +1,33 @@
+<div ng-controller="head">
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header" data-ng-init="menu(token,type)">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="">衡水工业新区在线环境监测平台</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#/index">首页</a></li>
+                <li class="dropdown" ng-repeat="x in menuinfo | filter:{ParentID:0}">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{x.Title}}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="y in menuinfo | filter:{ParentID:x.ID}"><a href="{{y.Url}}">{{y.Title}}</a></li>
+                    </ul>
+                </li>
+             
+            </ul>
+        </div>
+        <div>
+            <ul class="nav nav-pills" role="tablist" style="float: left;position: absolute;left: 88%;top: 7%;">
+                <hello></hello>
+            </ul>
+        </div> 
+    </div>
+</nav>
+</div>

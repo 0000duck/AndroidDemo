@@ -1,0 +1,197 @@
+
+<div class="container main" >
+			<div class="row">
+				<div class="col-md-9">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">最近新闻</h3>
+
+						</div>
+						<div class="panel-body" style="height:310px">
+							<div style="max-width:1000px; height:300px" id="indexone">
+								<div class="col-md-12">
+									<div class="panel panel-primary">
+										<div class="panel-body">
+											<form class="form-horizontal" role="form">
+												<table class="table table-striped table-hover" id="TableID">
+													<tr>
+														<th>序号</th>
+														<th>ID</th>
+														<th>新闻标题</th>
+														<th>时间</th>
+														<th>操作</th>
+													</tr>
+													<tr ng-repeat="x in NewsData |orderBy :'ID' |filter:search|filter:searchAll">
+														<td>{{ $index + 1 }}</td>
+														<td>{{ x.ID }} </td>
+														<td>{{ x.NewsTitle }}</td>
+														<td>{{ x.CreateTime }} </td>
+														<td><button type="button" class="btn-link" data-toggle="modal" data-target="#query{{x.ID}}">详情</button></td>
+													</tr>
+
+												</table>
+												<tm-pagination conf="paginationConf"></tm-pagination>
+											</form>
+
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div ng-repeat="x in NewsData |orderBy :'ID' |filter:search|filter:searchAll">
+								<div class="modal fade" id="query{{x.ID}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+									<div class="modal-dialog" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+												<h4 class="modal-title" id="myModalLabel">详细信息</h4>
+											</div>
+											<div class="modal-body" >
+												<div class="panel panel-info">
+													<div class="panel-body">
+														<div class="row" >
+															<div class="col-md-9 col-md-push-1 input-group">
+																<span class="input-group-addon" >新闻标题</span>
+																<input type="text" value="{{x.NewsTitle}}" ng-model="x.NewsTitle" class="form-control" aria-describedb ="modal" >
+															</div>
+															<br>
+															<div class="col-md-9 col-md-push-1 input-group">
+																<span class="input-group-addon">新闻正文</span>
+																<input type="text"  value="{{ x.NewsBody }}" ng-model="x.NewsBody" class="form-control" aria-describedby="modal">
+															</div>
+															<br>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal" id="close">关闭</button>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3 class="panel-title">近日天气</h3>
+						</div>
+						<div class="panel-body" style="height:300px">
+							<iframe allowtransparency="true" frameborder="0" width="140" height="278" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=1&z=1&t=1&v=1&d=3&bd=0&k=000000&f=&q=1&e=0&a=0&c=54702&w=140&h=278&align=center"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h3 class="panel-title">重点污染企业</h3>
+						</div>
+						<div class="panel-body">
+							<table class="table table-bordered table-hover">
+								<thead>
+									<td>公司名称</td>
+									<td>水污染指数</td>
+									<td>大气污染指数</td>
+									<td>报警等级</td>
+									<td>操作</td>
+								</thead>
+								<tbody ng-repeat="company in companies">
+									<td>{{company.name}}</td>
+									<td>{{company.water}}</td>
+									<td>{{company.air}}</td>
+									<td>{{company.level}}</td>
+									<td><button class="btn-link" data-toggle="modal" data-target="#detail{{company.company}}">查看</td>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3 class="panel-title">污染雷达图</h3>
+						</div>
+						<div class="panel-body" style="width: 500px; height: 400px">
+							<!--<div id="indextwo" style="width: 550px; height: 400px"></div>-->
+							 <div id="radar1" style="width: 550px; height: 400px"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3 class="panel-title">污染比例图</h3>
+						</div>
+						<div class="panel-body" style="width: 500px; height: 400px">
+							<!--<div id="indexthree" style="width: 550px; height: 400px"></div>-->
+							<div id="pie1" style="width: 550px; height: 300px"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-warning">
+						<div class="panel-heading">
+							<h3 class="panel-title">报警列表</h3>
+						</div>
+						<div class="panel-body" ng-repeat="warning in warnings">
+							<div class="alert alert-{{warning.type}} alert-dismissible" role="alert">
+                          		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          		<strong>{{warning.degree}}</strong> {{warning.describe}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">新闻资讯</h3>
+						</div>
+						<div class="panel-body">
+							<div style="margin:5px 5px 10px 40px;">
+								<ul class="list-group" ng-repeat="new in news">
+									<li>
+										<a href="{{new.href}}">{{new.title}}</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h3 class="panel-title">企业信息</h3>
+						</div>
+					</div>
+					<div>
+						<div class="col-md-6">
+							<ul ng-repeat="acompanyname in acompanynames">
+								<li>
+									<a href="{{acompanyname.href}}">{{acompanyname.name}}</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-6">
+							<ul ng-repeat="bcompanyname in bcompanynames">
+								<li>
+									<a href="{{bcompanyname.href}}">{{bcompanyname.name}}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+</div>

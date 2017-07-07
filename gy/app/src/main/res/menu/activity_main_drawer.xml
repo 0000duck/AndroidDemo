@@ -3,15 +3,15 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/undone_order"
             android:icon="@drawable/ic_menu_camera"
             android:title="未完成订单" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/my_team"
             android:icon="@drawable/ic_menu_gallery"
             android:title="我的团队" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/order_record"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="订单记录" />
         <item
@@ -20,8 +20,7 @@
             android:title="分享" />
     </group>
 
-    <item android:title="Communicate">
-        <menu>
+
 
             <item
                 android:id="@+id/nav_send"
@@ -31,7 +30,6 @@
                 android:id="@+id/nav_manage"
                 android:icon="@drawable/ic_menu_manage"
                 android:title="设置" />
-        </menu>
-    </item>
+
 
 </menu>

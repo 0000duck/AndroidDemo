@@ -30,6 +30,14 @@ import com.amap.api.maps2d.model.LatLng;
 import com.amap.api.maps2d.model.Marker;
 import com.amap.api.maps2d.model.MarkerOptions;
 import com.amap.api.maps2d.model.MyLocationStyle;
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVGeoPoint;
+import com.avos.avoscloud.AVObject;
+import com.avos.avoscloud.AVQuery;
+import com.avos.avoscloud.AVUser;
+import com.avos.avoscloud.FindCallback;
+
+import java.util.List;
 
 import wyq.gy.lib.LocationTask;
 import wyq.gy.lib.OnLocationGetListener;
@@ -58,30 +66,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         init(savedInstanceState);
         mLocationTask = LocationTask.getInstance(getApplicationContext());
         mLocationTask.setOnLocationGetListener(this);
-        mLocationTask.startSingleLocate();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("快乐兄弟用工雇主端");
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-//        // 测试 SDK 是否正常工作的代码
-//        AVObject testObject = new AVObject("job");
-//        testObject.put("jobTittle","Hello World!");
-//        testObject.put("jobDescrip","Hello World, descrip!");
-//        testObject.saveInBackground(new SaveCallback() {
-//            @Override
-//            public void done(AVException e) {
-//                if(e == null){
-//                    Log.d("saved","success!");
-//                }
-//            }
-//        });
     }
 
 
@@ -98,6 +95,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mapBtn.setOnClickListener(this);
     }
 
+    private void GetNearWorker(double latitue, double longitude){
+        AVQuery<AVUser> query = new AVQuery<>("_User");
+        AVGeoPoint point = new AVGeoPoint(latitue, longitude);
+        query.limit(30);
+        query.whereNear("RegCoordinate", point);
+        query.findInBackground(new FindCallback<AVUser>() {
+            @Override
+            public void done(List<AVUser> list, AVException e) {
+                if(list != null) {
+                    List<AVUser> workers = list;// 离这个位置最近的 10 个 Todo 对象
+                    for (int i = 0; i < workers.size(); i++) {
+                        AVGeoPoint geo = (AVGeoPoint) workers.get(i).get("RegCoordinate");
+                        MarkerOptions markerOptions = new MarkerOptions();
+                        markerOptions.anchor(0.5f, 0.5f);
+                        markerOptions.position(new LatLng(geo.getLatitude(), geo.getLongitude()));
+                        markerOptions
+                                .icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory
+                                        .decodeResource(getResources(),
+                                                R.drawable.work)));
+                        mAmap.addMarker(markerOptions);
+                    }
+                }
+            }
+        });
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -107,6 +129,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             super.onBackPressed();
         }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -119,6 +142,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         if (id == R.id.action_msg) {
             return true;
+        }else if(id == R.id.action_fankui){
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, SuggestionActivity.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -129,18 +156,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.undone_order) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.my_team) {
 
-        } else if (id == R.id.nav_slideshow) {
-
+        } else if (id == R.id.order_record) {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, HistoryOrderActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_manage) {
-
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, SettingActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
-
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, SuggestionActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -203,26 +236,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
             mIsFirst = false;
         }
+        mAmap.clear();
+        GetNearWorker(cameraPosition.target.latitude, cameraPosition.target.longitude);
     }
 
+    //定位ok
     @Override
     public void onLocationGet(PositionEntity entity) {
-        // todo 这里在网络定位时可以减少一个逆地理编码
         RouteTask.getInstance(getApplicationContext()).setStartPoint(entity);
 
         mStartPosition = new LatLng(entity.latitue, entity.longitude);
         CameraUpdate cameraUpate = CameraUpdateFactory.newLatLngZoom(
                 mStartPosition, mAmap.getCameraPosition().zoom);
         mAmap.animateCamera(cameraUpate);
-
+        GetNearWorker(entity.latitue, entity.longitude);
     }
 
     @Override
     public void onRegecodeGet(PositionEntity entity) {
-        entity.latitue = mStartPosition.latitude;
-        entity.longitude = mStartPosition.longitude;
-        RouteTask.getInstance(getApplicationContext()).setStartPoint(entity);
-        RouteTask.getInstance(getApplicationContext()).search();
+
     }
 
     @Override

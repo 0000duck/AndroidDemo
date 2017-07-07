@@ -1,0 +1,325 @@
+
+<div class="container main">
+    <div class="row">
+        <div class="page-header col-md-4">
+            <h1>水污染排放台账</h1>
+            <p>&nbsp;&nbsp;污水排放量<p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h4>一年污水排放总量</h4>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table" style="height: 480px;">
+                        <thead>
+                        <tr>
+                            <th>各个监测点</th>
+                            <th>总汞</th>
+                            <th>烷基汞</th>
+                            <th>总镉</th>
+                            <th>总铬</th>
+                            <th>排放污水总量</th>
+                        </tr>
+                        </thead>
+                        <tbody ng-repeat="wastewater in wastewaters">
+                            <td>{{wastewater.name}}</td>
+                            <td>{{wastewater.hg}}</td>
+                            <td>{{wastewater.gc}}</td>
+                            <td>{{wastewater.cd}}</td>
+                            <td>{{wastewater.cr}}</td>
+                            <td>{{wastewater.amount}}</td>
+                        </tbody>
+                    </table>
+                </div>
+           	</div>
+        </div>
+        <div class="col-md-5">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h4>单季度污水排放总量</h4>
+                    </div>
+                </div>
+            <div class="panel-body">
+                <table class="table table-bordered" style="height:480px;">
+                    <thead>
+                            <td>排放台账</td>
+                            <td>总汞</td>
+                            <td>烷基汞</td>
+                            <td>总镉</td>
+                            <td>总铬</td>
+                            <td>总计</td>
+                    </thead>
+                    <tbody ng-repeat="quarterwater in quarterwaters">           
+                            <th>{{quarterwater.quarter}}</th>
+                            <td>{{quarterwater.hg}}</td>
+                            <td>{{quarterwater.gc}}</td>
+                            <td>{{quarterwater.cd}}</td>
+                            <td>{{quarterwater.cr}}</td>
+                            <td>{{quarterwater.amount}}</td>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin:10px 0px 35px 0px;">
+        <div class="col-md-8">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                	   <h4>各公司排放污水量</h4>
+                    </div>
+                    <form class="form-inline" >
+                        <div class="form-group" style="margin:10px 30px 0px 0px;">
+                         <label for="#">年份</label>
+                            <select class="form-control" ng-repeat="year in years">
+                                <option>2012年</option>
+                                <option>2013年</option>
+                                <option>2014年</option>
+                                <option>2015年</option>
+                                <option>2016年</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-default" style="margin:10px 0px 0px 0px;float:right">查询</button>
+                    </form>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>排放污水量</th>
+                                <th>1月</th>
+                                <th>2月</th>
+                                <th>3月</th>
+                                <th>4月</th>
+                                <th>5月</th>
+                                <th>6月</th>
+                                <th>7月</th>
+                                <th>8月</th>
+                                <th>9月</th>
+                                <th>10月</th>
+                                <th>11月</th>
+                                <th>12月</th>
+                                <th>总计</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>a公司</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>6</td>
+                                <td>2</td>
+                                <td>5</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>11</td>
+                                <td>11</td>
+                            </tr>
+                            <tr>
+                                <td>b公司</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>5</td>
+                                <td>2</td>
+                                <td>7</td>
+                                <td>2</td>
+                                <td>5</td>
+                                <td>2</td>
+                                <td>9</td>
+                                <td>2</td>
+                                <td>11</td>
+                                <td>32</td>
+                            </tr>
+                            <tr>
+                                <td>c公司</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>11</td>
+                                <td>16</td>
+                            </tr>
+                            <tr>
+                                <td>d公司</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>11</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>e公司</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>5</td>
+                                <td>2</td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>11</td>
+                                <td>14</td>
+                            </tr>
+                            <tr>
+                                <td>f公司</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>5</td>
+                                <td>8</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>1</td>
+                                <td>4</td>
+                                <td>1</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>g公司</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>6</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>21</td>
+                            </tr>
+                            <tr>
+                                <td>h公司</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>5</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>7</td>
+                                <td>11</td>
+                                <td>11</td>
+                            </tr>
+                            <tr>
+                                <td>i公司</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>6</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>9</td>
+                                <td>2</td>
+                                <td>4</td>
+                                <td>11</td>
+                                <td>23</td>
+                            </tr>
+                            <tr>
+                                <td>j公司</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>5</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>11</td>
+                                <td>31</td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h4>昨日污水处理厂处理污水量</h4>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table style="height: 471px;" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>污水处理厂</th>
+                                <th>预计处理污水量</th>
+                                <th>实际处理污水量</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A处理厂</td>
+                                <td>15</td>
+                                <td>16</td>
+                            </tr>
+                            <tr>
+                                <td>B处理厂</td>
+                                <td>12</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>C处理厂</td>
+                                <td>15</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td>D处理厂</td>
+                                <td>20</td>
+                                <td>17</td>
+                            </tr>
+                            <tr>
+                                <td>E处理厂</td>
+                                <td>14</td>
+                                <td>15</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

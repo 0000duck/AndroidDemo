@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="wyq.gy.CompleteInfoActivity">
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#fff"
+        android:shrinkColumns="1"
+        android:stretchColumns="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="基本信息(必填)"
+            android:textColor="@color/gray"
+            android:textSize="15sp" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1.2dp"
+        android:background="@color/colorLine" />
+
+    <TableRow  android:background="@color/white"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="姓名"
+            android:textColor="@color/colorText"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/comlete_name"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="请填写"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:textColorHint="@color/hint"
+            android:textSize="16sp" />
+    </TableRow>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1.2dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/colorLine" />
+
+    <TableRow  android:background="@color/white"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/comlete_identity"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="身份证号"
+            android:textColor="@color/colorText"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="请填写"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:textColorHint="@color/hint"
+            android:textSize="16sp" />
+    </TableRow>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1.2dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/colorLine" />
+
+        <TableRow  android:background="@color/white"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="位置"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/select_poi"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:ems="10"
+                android:hint="请选择"
+                android:inputType="textPersonName"
+                android:paddingRight="20dp"
+                android:gravity="center_vertical|right"
+                android:textColorHint="@color/hint"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="35dp"
+                android:src="@drawable/gotoitem" />
+        </TableRow>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1.2dp"
+        android:background="@color/colorLine" />
+
+    </TableLayout>
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:background="#fff"
+        android:shrinkColumns="1"
+        android:stretchColumns="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选填信息(填写完善有助于增加就业机会)"
+            android:textColor="@color/gray"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1.2dp"
+            android:background="@color/colorLine" />
+        <TableRow
+            android:background="@color/white"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="公司名称"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/comlete_company_name"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:ems="10"
+                android:hint="请填写"
+                android:inputType="textPersonName"
+                android:paddingRight="20dp"
+                android:gravity="center_vertical|right"
+                android:textColorHint="@color/hint"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="35dp"
+                android:src="@drawable/gotoitem" />
+        </TableRow>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1.2dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/colorLine" />
+
+        <TableRow
+            android:background="@color/white"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="出生年月"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/comlete_birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:ems="10"
+                android:hint="请选择"
+                android:inputType="textPersonName"
+                android:paddingRight="20dp"
+                android:gravity="center_vertical|right"
+                android:textColorHint="@color/hint"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="35dp"
+                android:src="@drawable/gotoitem" />
+        </TableRow>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1.2dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/colorLine" />
+
+        <TableRow  android:background="@color/white"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="籍贯"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/comlete_birth_place"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:ems="10"
+                android:hint="请选择"
+                android:inputType="textPersonName"
+                android:paddingRight="20dp"
+                android:gravity="center_vertical|right"
+                android:textColorHint="@color/hint"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="35dp"
+                android:src="@drawable/gotoitem" />
+        </TableRow>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1.2dp"
+            android:background="@color/colorLine" />
+
+    </TableLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="360dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/comlete_self_intro"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:gravity="left|top"
+            android:hint="个人介绍"
+            android:inputType="textMultiLine"
+            android:paddingLeft="20dp"
+            android:textColorHint="@color/hint"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/info_done_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="200dp"
+            android:background="@color/backborder"
+            android:text="@string/send"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</RelativeLayout>
+</ScrollView>
+</RelativeLayout>

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html ng-app="hebei">
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta http-equiv="Access-Control-Allow-Origin" content="*">
+        <meta http-equiv="Access-Control-Allow-Methods" content="POST, GET, OPTIONS, PUT, DELETE">
+        <link rel="stylesheet" href="framework/bootstrap/bootstrap.css">
+        <title>登陆</title>
+    </head>
+    <body style="background-color:#edffed">
+        <div class="container" ng-controller="Config">
+            <div class="row" >
+                <div class="col-md-5 col-md-push-3" style="top:200px;">
+                    <div class="panel panel-success">
+                        <div class="panel-body" style="height:300px;">
+                            <div class="row">
+                            	<p style="font-size: 22px;color:#66cccc;font-family: Verdana, Arial;margin:20px 20px 20px 40px;">登陆|Login</p>
+                                <div class="col-md-12">
+                                    <form class="form-horizontal" role="form" ng-controller="Login">
+                                        <div class="form-group">
+                                            <label class="col-md-2 col-md-push-1 control-label">账号：</label>
+                                            <div class="col-md-8 col-md-push-1">
+                                                <input type="text" class="form-control" placeholder="请输入您的邮箱" ng-model="getLogin.Username">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label class="col-md-2 col-md-push-1 control-label">密码：</label>
+                                            <div class="col-md-8 col-md-push-1">
+                                                <input type="password" class="form-control" placeholder="请输入您的密码" ng-model="getLogin.Password">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                        	<button class="col-md-8 col-md-push-2 btn btn-primary" ng-click="Login(getLogin)">登陆</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            	<div class="col-md-5 col-md-push-3" style="margin:200px 1px 1px 1px;">
+            		<div class="panel penle-primary">
+            			<div class="panel-body" style="height:80px;">
+            				<form class="form-horizontal" role="form" style="margin:10px 5px 5px 5px;">
+            				<div>
+            					<p style="color:gray;margin:1px 2px 3px 65px;">忘记密码?<a href="#">点此找回</a>&nbsp;&nbsp;&nbsp;&nbsp;没有账号?<a href="#"> 点此注册</a></p>
+            				</div>
+            			</div>
+            		</div>
+            	</div>
+            </div>
+        </div>
+    </body>
+        <script src="framework/jquery/jquery.js"></script>
+        <script src="framework/angular/angular.js"></script>
+        <script src="js/app.js"></script>
+        <script src="framework/echarts/echarts.js"></script>
+        <script src="js/chart.js"></script>
+        <script src="framework/bootstrap/bootstrap.js"></script>
+        <script src="framework/angular/angular-animate.js"></script>
+        <script src="framework/angular/angular-route.js"></script>
+        <script src="framework/angular/angular-cookies.js"></script>
+        <script src="framework/pagination/tm.pagination.js"></script>
+        <script src="js/controller.js"></script>
+        <script src="js/directives.js"></script>
+        <script src="js/service.js"></script>
+        <script src="js/filter.js"></script>
+</html>

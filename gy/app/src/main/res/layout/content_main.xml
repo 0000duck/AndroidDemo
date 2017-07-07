@@ -27,10 +27,10 @@
 
     <ImageView
         android:id="@+id/location_image"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginRight="20dp"
         android:layout_gravity="center"
         android:src="@drawable/btn_location" />
 

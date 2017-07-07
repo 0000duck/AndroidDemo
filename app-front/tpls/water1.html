@@ -1,0 +1,224 @@
+<div class="container main">
+    <div class="row">
+    <div class="row">
+        <div class="page-header col-md-4">
+            <h1>水质实时监测</h1>
+            <p>&nbsp;&nbsp;监测实时排放污水<p>
+        </div>
+    </div>
+
+	 <div class="row">
+	 <div class="panel panel-success" style="margin:10px 0px 10px 0px;">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title"><h4>污染物实时监测</h4></div>
+            </div>
+			<div class="panel-body" >
+			<!--<div class="panel-body" data-ng-init="showwater1(getwater1)">-->
+			<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#Insertwater1">   添加实时检测</button>
+			<hr style="border:1px #ccc dashed;width:100%;margin:0px auto; margin-top:20px;margin-bottom:10px">
+            <form class="form-inline">
+            	  <div class="form-group">
+            	       <button class="btn btn-default" ng-click="Deletewater1(x)">删除实时检测</button>
+            	       <button class="btn btn-default" ng-click="showwater1(getwater1)">显示数据</button>
+            	       <label>搜索</label>
+            	       <input type="text"  class="form-control" ng-model="search.water1Data" placeholder=" 输入想搜索的任意内容">
+            	  </div>
+            </form>
+			 </div>
+			 </div>
+		 </div>
+</div>
+</div>
+		 <div class="row">
+             <div class="panel panel-success" style="margin:1px 0px 0px 0px;">
+                 <div class="panel panel-primary">
+                     <div class="panel-body">
+                         <form class="form-horizontal" role="form">
+                             <table class="table table-striped table-hover">
+                                 <tr>
+                                     <th></th>
+                                     <th>ID</th>
+                                     <th>监测点</th>
+                                     <th>压力</th>
+                                     <th>瞬时流量</th>
+                                     <th>累计流量</th>
+                                     <th>供电模式</th>
+                                     <th>供电电压</th>
+                                     <th>操作</th>
+                                 </tr>
+                                 <tr ng-repeat="x in water1Data | orderBy :'ID' | filter :search | filter:searchAll">
+                                     <td><input type="checkbox" value="{{x.ID}}"></input></td>
+                                     <td>{{x.ID}}</td>
+                                     <td>{{x.MonitorNumber}}</td>
+                                     <td>{{x.Pressure}}</td>
+                                     <td>{{x.FlowRate}}</td>
+                                     <td>{{x.TotalRate}}</td>
+                                     <td>{{x.PSM}}</td>
+                                     <td>{{x.SupplyVoltage}}</td>
+                                     <td><button type="button" class="btn-link" data-toggle="modal" data-target="    #change1{{x.ID}}">修改</td>
+                                 </tr>
+                             </table>
+                         </form>
+                         <tm-pagination conf="paginationConf"></tm-pagination>
+                     </div>
+                 </div>
+                <div class="col-md-6" style="height: 500px;width: 550px;" id="one"></div>
+                <div class="col-md-6" style="height: 500px;width: 550px;" id="two"></div>
+                <div class="col-md-6" style="height: 500px;width: 550px;" id="three"></div>
+                <div class="col-md-6" style="height: 500px;width: 550px;" id="four"></div>
+           </div>
+        </div>
+    </div>
+	    </div>
+		
+		
+		<div class="modal fade" id="Insertwater1" tabindex="-1" role="dialog" aria-labelledby="insert">
+	<div class="modal-dialog" role="document">
+	    <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">添加实时检测</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+				    <div class="col-md-9 col-md-push-1 input-group">
+                        <span class="input-group-addon">监测点</span>
+                        <input type="text" class="form-control" ng-model="water1.MonitorNumber">
+                    </div>
+				    <br>
+                    <div class="col-md-9 col-md-push-1 input-group">
+                        <span class="input-group-addon">压力</span>
+                        <input type="text" class="form-control" ng-model="water1.Pressure">
+                    </div>
+                    <br>
+                    <div class="col-md-9 col-md-push-1 input-group">
+                        <span class="input-group-addon">瞬时流量</span>
+                        <input type="text" class="form-control" ng-model="water1.FlowRate">
+                    </div>
+                    <br>
+                    <div class="col-md-9 col-md-push-1 input-group">
+                        <span class="input-group-addon">累计流量</span>
+                        <input type="text" class="form-control" ng-model="water1.TotalRate">
+                    </div>
+                    <br>
+                    <div class="col-md-9 col-md-push-1 input-group">
+                        <span class="input-group-addon">供电模式</span>
+                        <input type="text" class="form-control" ng-model="water1.PSM">
+                    </div>
+                    <br>
+					 <div class="col-md-9 col-md-push-1 input-group">
+                        <span class="input-group-addon">供电电压</span>
+                        <input type="text" class="form-control" ng-model="water1.SupplyVoltage">
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" ng-click="Insertwater1(water1)">保存实时监测信息</button>
+            </div>
+	    </div>
+	</div>
+</div>
+		
+		
+		
+		
+	<div ng-repeat="x in water1Data">
+    <div class="modal fade" id="change1{{x.ID}}" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" role="document">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">修改</h4>
+                </div>
+                <div class="modal-body">
+                <div class="row">
+				    <div class="col-md-9 col-md-push-1 input-group">
+                       <span class="input-group-addon" >监测点</span>
+                       <input type="text" value="{{x.MonitorNumber}}" ng-model="x.MonitorNumber" class="form-control" aria-describedb ="modal">
+                    </div>  
+				    <br>
+					<div class="col-md-9 col-md-push-1 input-group">
+                       <span class="input-group-addon" >压力</span>
+                       <input type="text" value="{{x.Pressure}}" ng-model="x.Pressure" class="form-control" aria-describedb ="modal">
+                    </div>
+
+                    <br>
+					<div class="col-md-9 col-md-push-1 input-group">
+                       <span class="input-group-addon" >瞬时流量</span>
+                       <input type="text" value="{{x.FlowRate}}" ng-model="x.FlowRate" class="form-control" aria-describedb ="modal">
+                    </div>
+                    <br>
+					<div class="col-md-9 col-md-push-1 input-group">
+                       <span class="input-group-addon" >累计流量</span>
+                       <input type="text" value="{{x.TotalRate}}" ng-model="x.TotalRate" class="form-control" aria-describedb ="modal">
+                    </div>
+                    <br>
+					<div class="col-md-9 col-md-push-1 input-group">
+                       <span class="input-group-addon" >供电模式</span>
+                       <input type="text" value="{{x.PSM}}" ng-model="x.PSM" class="form-control" aria-describedb ="modal">
+                    </div>
+                    <br>
+					<div class="col-md-9 col-md-push-1 input-group">
+                       <span class="input-group-addon" >供电电压</span>
+                       <input type="text" value="{{x.SupplyVoltage}}" ng-model="x.SupplyVoltage" class="form-control" aria-describedb ="modal">
+                    </div>
+                    <br>
+                </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" ng-click="Savewater1(x)">保存</button>
+                    <button class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="row">
+        <div class=" col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title"><h4>工业污水排放量</h4></div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-6" style="height: 400px;width:485px" id="five"></div>
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title"><h4>生活污水排放量</h4></div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-6" style="height: 400px;width:485px" id="six"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title"><h4>实时排放已处理污水量</h4></div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12" style="height: 800px;width: 1000px" id="seven"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin:10px 0px 35px 0px;">
+        <div class="col-md-10 col-md-push-1">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title"><h4>囤积污水程度</h4></div>
+                </div>
+            <div class="panel-body">
+                <div class="alert alert-warning alert-dismissible" role="alert"><h4>{{amount}}</h4></div>
+            </div>
+        </div>
+    </div>
+</div>

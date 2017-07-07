@@ -28,9 +28,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <!-- 实时通信模块、推送（均需要加入以下声明） START -->
         <!-- 实时通信模块、推送都要使用 PushService -->
@@ -53,18 +51,31 @@
             android:name="com.amap.api.v2.apikey"
             android:value="4a270980c86018aa4c1d14129ac27767" />
 
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/userLoginHeader">
+        <activity android:name=".LoginActivity">
+
+            <!-- &gt;android:label="@string/userLoginHeader" -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-    </activity>
-        <activity android:name=".RegisterActivity"
-            android:label="@string/registerHeader"/>
-        <activity android:name=".UserAgreeMentActivity"
-            android:label="@string/userAgreeHeader"></activity>
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/registerHeader" />
+        <activity
+            android:name=".UserAgreeMentActivity"
+            android:label="@string/userAgreeHeader" />
+        <activity
+            android:name=".HistoryOrderActivity"
+            android:label="@string/historyOrderHeader" />
+        <activity
+            android:name=".SettingActivity"
+            android:label="@string/settingHeader" />
+        <activity android:name=".SuggestionActivity" />
+        <activity android:name=".CompleteInfoActivity" />
+        <activity android:name=".GetPositionActivity" />
+        <activity android:name=".ReleaseOrderActivity"></activity>
     </application>
 
 </manifest>

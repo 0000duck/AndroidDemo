@@ -16,6 +16,8 @@ import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.LogInCallback;
 
+import wyq.gy.lib.ActivityList;
+
 public class LoginActivity extends Activity implements View.OnClickListener{
     private EditText loginnameET;
     private EditText paswordET;
@@ -24,6 +26,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ActivityList.getInstance().addActivity(this);
     }
 
     private void init() {
@@ -46,10 +49,10 @@ public class LoginActivity extends Activity implements View.OnClickListener{
             Intent intent = new Intent();
             intent.setClass(LoginActivity.this, MainActivity.class);
             startActivity(intent);
+            finish();
         } else {
             //缓存用户对象为空时，可打开用户注册界面…
         }
-
     }
 
     private void attempLogin() {
@@ -66,22 +69,27 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                     Intent intent = new Intent();
                     intent.setClass(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             });
         }
     }
+    // 回调的方式来获取指定Activity返回的结果
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // TODO Auto-generated method stub
+        super.onActivityResult(requestCode, resultCode, data);
 
+    }
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login:
                 attempLogin();
-//                finish();
                 break;
             case R.id.login_register:
                 Intent intent = new Intent();
                 intent.setClass(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-               /* finish();*/
+                startActivityForResult(intent,0);
                 break;
         }
     }
